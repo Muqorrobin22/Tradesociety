@@ -102,6 +102,9 @@ module.exports = {
           },
         ],
       },
+      fontFamily: {
+        "roboto": ['var(--font-roboto-mono)'],
+      }
     },
   },
   plugins: [],
