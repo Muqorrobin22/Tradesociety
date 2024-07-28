@@ -31,7 +31,7 @@ export default function Footer() {
     ]
 
     return (
-        <footer className="footer">
+        <footer className="footer py-8">
             <div className="container flex items-center justify-between">
                 <div>
                     <Image
@@ -58,7 +58,7 @@ export default function Footer() {
                     <a href="#" className={clsx()}><Image src={"/images/components/Icon/linkedin.svg"} alt={"Linkedin Icon"} width={24} height={24} /></a>
                 </div>
             </div>
-            <div className={"text-center"}>
+            <div className={"text-center mt-[32px]"}>
                 <p className={clsx("font-roboto text-LG/LG-Normal text-[#00000073] mx-auto")}>© 2024 [Company name]. All rights reserved.</p>
             </div>
         </footer>
