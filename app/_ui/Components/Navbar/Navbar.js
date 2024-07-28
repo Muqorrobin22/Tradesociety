@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 import clsx from "clsx";
+import Button from "@/app/_ui/Micro-Component/Button/Button";
 
 
 export default function Navbar(props) {
@@ -53,9 +54,10 @@ export default function Navbar(props) {
 
                 </ul>
             </div>
-            <div>
-                <Link href={"/"} className={clsx("py-2.5 px-4 bg-primary-color text-white rounded-[100px] font-roboto text-LG/LG-Strong flex items-center ")}> <span className={"mr-2.5"}>Join now</span> <Image src={"/images/components/Icon/arrow_right_up.svg"} alt={"Arrow"} width={24} height={24} /> </Link>
-            </div>
+            {/*<div>*/}
+            {/*    <Link href={"/"} className={clsx("py-2.5 px-4 bg-primary-color text-white rounded-[100px] font-roboto text-LG/LG-Strong flex items-center ")}> <span className={"mr-2.5"}>Join now</span> <Image src={"/images/components/Icon/arrow_right_up.svg"} alt={"Arrow"} width={24} height={24} /> </Link>*/}
+            {/*</div>*/}
+            <Button href={"/"} text={"Join now"} />
         </nav>
     )
 }
