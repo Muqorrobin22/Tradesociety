@@ -33,19 +33,19 @@ export default function Navbar(props) {
     ]
 
     return (
-        <nav className="flex items-center justify-between">
+        <nav className="flex items-center justify-between py-4">
             <div>
                 <Image
                     alt="Logo Tradesociety"
-                    src={"/images/TS_PNG/TS_PNG-01.png"}
-                    width={156}
-                    height={50}
+                    src={"/images/components/icon/Logo.svg"}
+                    width={96}
+                    height={40}
                 />
             </div>
             <div>
                 <ul className={clsx("flex items-center mx-auto")}>
-                    {links.map((link) => (<li key={link.name} className={clsx("[&:not(:last-child)]:mr-6 text-center")} >
-                        <Link href={link.href} className={clsx("text-LG/LG-Normal text-[#15345A] font-roboto  ", {
+                    {links.map((link) => (<li key={link.name} className={clsx("[&:not(:last-child)]:mr-3 text-center transition-all")} >
+                        <Link href={link.href} className={clsx("text-LG/LG-Normal text-[#15345A] font-roboto hover:border-[1px] hover:border-[#C2DBF5] hover:rounded-[100px] py-2.5 px-4 transition-all ", {
                             "bg-primary-light-color rounded-[100px] py-2.5 px-4": pathname === link.href
                         }  )}> {link.name} </Link>
                     </li>))}

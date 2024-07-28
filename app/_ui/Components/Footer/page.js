@@ -36,9 +36,9 @@ export default function Footer() {
                 <div>
                     <Image
                         alt="Logo Tradesociety"
-                        src={"/images/TS_PNG/TS_PNG-01.png"}
-                        width={156}
-                        height={50}
+                        src={"/images/components/icon/Logo.svg"}
+                        width={96}
+                        height={40}
                     />
                 </div>
                 <div>
