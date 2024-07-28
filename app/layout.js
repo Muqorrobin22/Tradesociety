@@ -20,7 +20,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={myFont.className}>
-      <body>{children}</body>
+      <body className=" xl:px-[120px] ">{children}</body>
     </html>
   );
 }
