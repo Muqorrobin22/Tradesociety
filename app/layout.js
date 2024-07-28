@@ -5,6 +5,7 @@ import "./globals.css";
 import Image from "next/image";
 import Navbar from "@/app/_ui/Components/Navbar/Navbar";
 import {Roboto} from "next/font/google"
+import Footer from "@/app/_ui/Components/Footer/page";
 
 const myFont = localFont({
   src: [
@@ -18,7 +19,7 @@ const myFont = localFont({
 
 const roboto_init = Roboto({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["300", "400", "500"],
   style: "normal",
   variable: '--font-roboto-mono',
 })
@@ -37,7 +38,7 @@ export default function RootLayout({ children }) {
       <body className=" xl:px-[120px] ">
         <Navbar />
         {children}
-        <footer>footer</footer>
+        {/*<Footer />*/}
       </body>
     </html>
   );
