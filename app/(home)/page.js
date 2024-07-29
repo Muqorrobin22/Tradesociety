@@ -3,6 +3,8 @@ import clsx from "clsx";
 import Button from "@/app/_ui/Micro-Component/Button/Button";
 import BenefitList from "@/app/_ui/Micro-Component/BenefitList/Benefit-List";
 import ProgramCards from "@/app/_ui/Components/Cards/ProgramCards";
+import Identifiers from "@/app/_ui/Micro-Component/Testimonials/Identifiers/Identifiers";
+import TestimonialCard from "@/app/_ui/Micro-Component/Testimonials/Cards/TestimonialCard";
 
 export default function Home() {
 
@@ -73,6 +75,34 @@ export default function Home() {
       key: 6,
       name: "Special benefits"
     }
+  ]
+
+  const testimonialsList = [
+    {
+      key: 1,
+      name: "Ardas dipa",
+      job: "Writer",
+      comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
+      bgColor: "bg-[#F47643]"
+    },{
+      key: 2,
+      name: "Ardas dipa",
+      job: "Writer",
+      comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
+      bgColor: "bg-[#59AE9B]"
+    },{
+      key: 3,
+      name: "Ardas dipa",
+      job: "Writer",
+      comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
+      bgColor: "bg-[#D1B052]"
+    },{
+      key: 4,
+      name: "Ardas dipa",
+      job: "Writer",
+      comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
+      bgColor: "bg-[#F47643]"
+    },
   ]
 
   return <main className={clsx("mt-10")}>
@@ -151,6 +181,52 @@ export default function Home() {
     </section>
 
     {/*  Our Program - End */}
+
+
+    {/*  Kata kata dari mereka - Start */}
+
+    <section className={clsx("mt-[80px] py-[80px] px-[39px] ")}>
+      {/*  Kata kata dari mereka > Heading - Start   */}
+
+      <section className={clsx("flex flex-col justify-center items-center")}>
+        <p className={clsx("font-roboto text-Base/Base-Strong text-[#1761B1]  ")}>Our testimonials</p>
+        <h3 className={clsx("text-heading-3 text-[#15345A] my-2 ")}>Kata-kata dari mereka</h3>
+        <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color max-w-[550px] text-center")}>Beberapa member sukses Trade Society</p>
+
+      </section>
+
+      {/*  Kata kata dari mereka > Heading - End   */}
+
+
+      {/*  Kata kata dari mereka > Testimonials - Start   */}
+
+      <section className={clsx("mt-[42px] py-[64px] px-8 bg-[#F4F8FD] rounded-[32px]   ")}>
+        <div className={clsx("overflow-x-hidden")}>
+          <div className={clsx("flex items-center justify-between translate-x-[75px]")}>
+            {testimonialsList.map((testimonial) => (
+                <div key={testimonial.key} className={clsx("")}>
+                  <TestimonialCard name={testimonial.name} job={testimonial.job} comments={testimonial.comment}
+                                   bg_color={testimonial.bgColor}/>
+                </div>
+            ))}
+          </div>
+
+          <div className={clsx("flex items-center justify-between mt-4 translate-x-[-75px]")}>
+            {testimonialsList.map((testimonial) => (
+                <div key={testimonial.key} className={clsx("")}>
+                  <TestimonialCard name={testimonial.name} job={testimonial.job} comments={testimonial.comment}
+                                   bg_color={testimonial.bgColor}/>
+                </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/*  Kata kata dari mereka > Testimonials - End   */}
+
+    </section>
+
+    {/*  Kata kata dari mereka - End */}
 
 
   </main>;

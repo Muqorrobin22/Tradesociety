@@ -102,6 +102,14 @@ module.exports = {
             // letterSpacing: "1px",
           },
         ],
+        "SM/SM-Normal": [
+          "12px",
+          {
+            lineHeight: "20px",
+            fontWeight: "400",
+            // letterSpacing: "1px",
+          },
+        ],
       },
       fontFamily: {
         "roboto": ['var(--font-roboto-mono)'],
