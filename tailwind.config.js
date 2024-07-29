@@ -110,6 +110,13 @@ module.exports = {
             fontWeight: "400",
             // letterSpacing: "1px",
           },
+        ],"SM/SM-Strong": [
+          "12px",
+          {
+            lineHeight: "20px",
+            fontWeight: "500",
+            // letterSpacing: "1px",
+          },
         ],
       },
       fontFamily: {
