@@ -67,5 +67,55 @@ export default function AboutUsPage() {
 
         {/*  Why we here - End  */}
 
+        {/*  Jadi bagian dari tim- Start  */}
+
+            <section className={clsx("mt-[80px] py-[80px] px-[92px] relative ")}>
+                <div className={"relative z-20"}>
+                    <div className={clsx("text-center")}>
+                        <h3 className={clsx("text-heading-3 text-[#15345A] mb-4 ")}> jadi bagian dari tim</h3>
+                        <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-center")}>
+                           Bersama kita kembangkan Trade Society.</p>
+                    </div>
+                    <div className={clsx("mt-8 rounded-[32px] border-[1px] border-[#E3EDFB] grid grid-cols-2 ")}>
+                        <div className={clsx("p-8 items-center justify-center ")}>
+                            <div className={"text-center"}>
+                                <h3 className={clsx("text-heading-6 text-[#15345A] mb-4 ")}> Mentor</h3>
+                                <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-center w-[350px] mx-auto ")}>
+                                    Bertanggung jawab sebagai pengajar  dari kelas-kelas yang ada untuk setiap  komunitas Trade Society.</p>
+                            </div>
+                        </div>
+
+                        <div className={clsx("p-8 items-center justify-center border-[#E3EDFB] border-l-[1px] ")}>
+                            <div className={"text-center"}>
+                                <h3 className={clsx("text-heading-6 text-[#15345A] mb-4 ")}> Analyst</h3>
+                                <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-center w-[350px] mx-auto ")}>
+                                    Bertanggung jawab terhadap  signal trading dan market outlook  Trade society.</p>
+                            </div>
+                        </div>
+
+                        <div className={clsx("p-8 items-center justify-center border-t-[1px] border-[#E3EDFB]  ")}>
+                            <div className={"text-center"}>
+                                <h3 className={clsx("text-heading-6 text-[#15345A] mb-4 ")}> leaders</h3>
+                                <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-center w-[350px] mx-auto ")}>
+                                    Bertanggung jawab sebagai ketua  di seluruh komunitas Trade Society</p>
+                            </div>
+                        </div>
+
+                        <div className={clsx("p-8 items-center justify-center border-t-[1px] border-[#E3EDFB] border-l-[1px] ")}>
+                            <div className={"text-center"}>
+                                <h3 className={clsx("text-heading-6 text-[#15345A] mb-4 ")}> consultant</h3>
+                                <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-center w-[350px] mx-auto ")}>
+                                    Bertanggung jawab terhadap proses  onboarding calon member dan
+                                    bimbingan member di komunitas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <Image src={"/images/components/addons/about_us_jadi_bagian_tim_addons.png"} alt={"addons"} className={"absolute z-10"} fill={true} />
+            </section>
+
+        {/*  Jadi bagian dari tim- End  */}
+
     </main>
 }
