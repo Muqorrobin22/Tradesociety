@@ -181,7 +181,7 @@ export default function Home() {
 
     <section className={clsx("relative mt-[180px] h-[306px] flex items-center px-[100px] ")}>
       <Image src={"/images/components/addons/hero_cta_revision_addons.png"} alt={""} height={306} width={1198} className={clsx("absolute z-10 left-[50%] translate-x-[-50%]")} />
-      <div className={clsx("z-20 flex justify-between items-center")}>
+      <div className={clsx("z-20 flex justify-between items-center relative ")}>
         <h1 className={clsx("text-primary-font-color text-heading-4 basis-2/3 ")}>
           Belajar trading <span className={clsx("text-secondary-gold-color")}>100% gratis!</span> <br/> Ikuti kelas
           online dan belajar sampai jago bersama para mentor!
@@ -316,9 +316,9 @@ export default function Home() {
       {/*  FAQ > Footer - Start   */}
 
       <section className={clsx("mt-[60px] relative h-[216px]  px-[77px] bg-linear-gradient-faq rounded-[32px] ")}>
-        <div className={clsx("flex items-center justify-between ")}>
+        <div className={clsx("flex items-center justify-between z-10 relative ")}>
           <div className={clsx("flex items-center")}>
-            <Image src={"/images/components/illustration/faq_join_now.svg"} alt={"Join Now"} width={216} height={216}/>
+            <Image src={"/images/components/illustration/faq_join_now_revision.svg"} alt={"Join Now"} width={216} height={216}/>
 
             <div className={clsx("ml-8")}>
               <h6 className={clsx("text-heading-3 text-white mb-2")}>Ikut kelas online sekarang</h6>
