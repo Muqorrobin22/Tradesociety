@@ -25,14 +25,16 @@ export default function AboutUsPage() {
 
         {/*  Why we here - Start  */}
 
-        <section className={clsx("mt-[80px] py-[40px]")}>
-            <section className={clsx("flex flex-col justify-center items-center")}>
+        <section className={clsx("mt-[80px] py-[40px] relative")}>
+            <section className={clsx("flex flex-col justify-center items-center relative z-20")}>
                 <p className={clsx("font-roboto text-Base/Base-Strong text-[#1761B1]  ")}>Why we here</p>
                 <h3 className={clsx("text-heading-3 text-[#15345A] my-4 ")}>Bersama menuju kesuksesan di industri trading</h3>
                 <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color max-w-[800px] text-center")}>Ada banyak cara untuk sukses dalam berkarir di industri trading yang belum banyak diketahui. Di sini, kami memberikan edukasi secara menyeluruh untuk sukses, tidak hanya sebagai trader, tetapi juga dalam peran profesional lainnya dalam industri trading.
                     sini!</p>
 
             </section>
+            <Image src={"/images/components/addons/hero_cta_revision_addons.png"} alt={""} height={306} width={1198} className={clsx("absolute z-10 top-0 ")} />
+
         </section>
 
         {/*    Why we here - End */}
