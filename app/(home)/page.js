@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import clsx from "clsx";
 import Button from "@/app/_ui/Micro-Component/Button/Button";
@@ -5,8 +7,15 @@ import BenefitList from "@/app/_ui/Micro-Component/BenefitList/Benefit-List";
 import ProgramCards from "@/app/_ui/Components/Cards/ProgramCards";
 import Identifiers from "@/app/_ui/Micro-Component/Testimonials/Identifiers/Identifiers";
 import TestimonialCard from "@/app/_ui/Micro-Component/Testimonials/Cards/TestimonialCard";
+import {useState} from "react";
+import FAQCard from "@/app/_ui/Micro-Component/FAQ/FAQCard";
+import {useDispatch} from "react-redux";
+import {setShowFaq} from "@/app/_lib/store/features/faqslices/faqSlices";
 
 export default function Home() {
+
+  // const [showFaq, setShowFaq] = useState(false);
+  const dispatch = useDispatch()
 
   const newbieBenefitList = [
     {
@@ -102,6 +111,34 @@ export default function Home() {
       job: "Writer",
       comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
       bgColor: "bg-[#F47643]"
+    },
+  ]
+
+  const faqDataList = [
+    {
+      key: 1,
+      activeIndex : 0,
+      question: "Berapa modal minimal untuk trading?",
+      answer: "Tidak ada modal minimal untuk trading, namun disarankan untuk setidaknya memulai trading dengan modal di atas Rp500,000 untuk meminimalisir risiko margin call.",
+      height: "h-[200px]"
+    },{
+      key: 2,
+      activeIndex : 1,
+      question: "Apakah benar bisa belajar gratis?",
+      answer: "100% gratis! Trade Society memiliki program gratis yang terbuka untuk siapa pun. Daftar sekarang dan sampai bertemu di kelas!",
+      height: "h-[200px]"
+    },{
+      key: 3,
+      activeIndex : 2,
+      question: "Saya pemula mau belajar dari 0, harus mulai dari mana?",
+      answer: "Kalian bisa bergabung ke program Newbie, di mana kita akan belajar dasar-dasar trading dari 0 dan juga praktek langsung menggunakan akun demo.",
+      height: "h-[200px]"
+    },{
+      key: 4,
+      activeIndex : 3,
+      question: "Untuk pemula lebih baik trading crypto, saham, atau forex?",
+      answer: "Semua instrumen baik untuk dipelajari karena ketika kalian sudah menjadi ahli di satu instrumen pasti akan menjadi pemula di instrumen lain. Saat ini Trade Society masih berfokus di intrumen forex & komoditas, namun jangan khawatir karena kedepannya akan ada instrumen lainnya.",
+      height: "h-[200px]"
     },
   ]
 
@@ -227,6 +264,36 @@ export default function Home() {
     </section>
 
     {/*  Kata kata dari mereka - End */}
+
+
+    {/*  FAQ - Start */}
+
+    <section className={clsx("mt-[80px] pt-[80px] px-10 pb-10 ")}>
+
+      {/*  FAQ > Heading - Start   */}
+
+      <section className={clsx("flex flex-col justify-center items-start")}>
+        <p className={clsx("font-roboto text-Base/Base-Strong text-[#1761B1]  ")}>Frequently asked questions</p>
+        <h3 className={clsx("text-heading-3 text-[#15345A] my-2 ")}>Jangan khawatir, semua pertanyaan <br /> kalian sudah terjawab!</h3>
+        <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-left")}>Kami sudah mengumpulkan jawaban dari pertanyaan yang sering ditanyakan.</p>
+
+      </section>
+
+      {/*  FAQ > Heading - End   */}
+
+      <section className={clsx("mt-[30px]")}>
+        <div className={clsx("grid grid-cols-2 gap-8 ")}>
+          {faqDataList.map((faq) => (
+              <div key={faq.key} className={clsx("")}>
+                <FAQCard height={faq.height} activeIndex={faq.activeIndex} onClick={() => dispatch(setShowFaq(faq.activeIndex))} theAnswer={faq.answer} theQuestion={faq.question} />
+              </div>
+          ))}
+        </div>
+      </section>
+
+    </section>
+
+    {/*  FAQ - End */}
 
 
   </main>;

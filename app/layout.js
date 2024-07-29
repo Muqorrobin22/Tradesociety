@@ -36,9 +36,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${myFont.className} ${roboto_init.variable}`}>
       <body className=" xl:px-[120px] ">
-        <Navbar />
-        {children}
-        <Footer />
+          <Navbar />
+          {children}
+          <Footer />
       </body>
     </html>
   );
