@@ -37,5 +37,35 @@ export default function AboutUsPage() {
 
         {/*    Why we here - End */}
 
+        {/*  Why we here - Start  */}
+
+        <section className={clsx("mt-[80px] py-[40px] px-[140px] ")}>
+            <div className={clsx("p-8 rounded-[32px] bg-[#F4F8FD]  flex items-center ")}>
+                <Image src={"/images/components/illustration/about_us_vision.svg"} alt={"vision"} width={250}
+                       height={250}/>
+                <div className={clsx("ml-[64px]")}>
+                    <p className={clsx("font-roboto text-Base/Base-Strong text-[#1761B1]  ")}>Vision</p>
+                    <h3 className={clsx("text-heading-3 text-[#15345A] my-2 ")}>Centralized Platform</h3>
+                    <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-left")}>Ada
+                        Menjadi platform yang menghubungkan para trader untuk belajar, bersosialisasi, dan tumbuh menuju
+                        kesuksesan di pasar finansial dan industri trading.</p>
+                </div>
+            </div>
+
+            <div className={clsx("p-8 rounded-[32px] bg-[#F4F8FD]  flex items-center mt-8 ")}>
+
+                <div className={clsx("mr-[64px]")}>
+                    <p className={clsx("font-roboto text-Base/Base-Strong text-[#1761B1]  ")}>Mission</p>
+                    <h3 className={clsx("text-heading-3 text-[#15345A] my-2 ")}>Learning center and growth opportunities</h3>
+                    <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-left")}>
+                        Menyediakan sumber belajar terbaik dari para ahli trading di berbagai instrumen finansial dan memberikan peluang bagi para trader untuk memperbesar dampak mereka di industri trading.</p>
+                </div>
+                <Image src={"/images/components/illustration/about_us_mission.svg"} alt={"vision"} width={250}
+                       height={250}/>
+            </div>
+        </section>
+
+        {/*  Why we here - End  */}
+
     </main>
 }
