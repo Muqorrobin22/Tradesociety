@@ -91,7 +91,7 @@ module.exports = {
           "14px",
           {
             lineHeight: "22px",
-            fontWeight: "600",
+            fontWeight: "500",
             // letterSpacing: "1px",
           },
         ],
