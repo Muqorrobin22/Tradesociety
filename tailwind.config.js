@@ -12,6 +12,7 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "linear-gradient-hero": " linear-gradient( to bottom, #215A99, #4E9AE2 ), url(/images/TS_Graphic_Element/TS_Graphic_Element-08.jpg) ",
+        "linear-gradient-faq": "linear-gradient( to right, #4E9AE2, #215A99 )"
       },
       colors: {
         "primary-color": "#33568B",

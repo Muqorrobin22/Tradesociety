@@ -299,6 +299,7 @@ export default function Home() {
 
       {/*  FAQ > Heading - End   */}
 
+      {/*  FAQ > Main - Start   */}
       <section className={clsx("mt-[30px]")}>
         <div className={clsx("grid grid-cols-2 gap-8 ")}>
           {faqDataList.map((faq) => (
@@ -308,6 +309,32 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/*  FAQ > Main - End   */}
+
+
+      {/*  FAQ > Footer - Start   */}
+
+      <section className={clsx("mt-[60px] relative h-[216px]  px-[77px] bg-linear-gradient-faq rounded-[32px] ")}>
+        <div className={clsx("flex items-center justify-between ")}>
+          <div className={clsx("flex items-center")}>
+            <Image src={"/images/components/illustration/faq_join_now.svg"} alt={"Join Now"} width={216} height={216}/>
+
+            <div className={clsx("ml-8")}>
+              <h6 className={clsx("text-heading-3 text-white mb-2")}>Ikut kelas online sekarang</h6>
+              <p className={clsx("text-white text-XL/XL-Normal font-roboto text-white ")}>Kami bantu untuk bisa profit
+                konsisten!</p>
+            </div>
+          </div>
+          <div>
+            <Button href={"/"} type={"secondary"} text={"Hubungi kami"} />
+          </div>
+        </div>
+
+        <Image src={"/images/components/addons/join_now_addons.png"} alt={""} height={353} width={1200} className={clsx("absolute bottom-0")} />
+      </section>
+
+      {/*  FAQ > Footer - End   */}
 
     </section>
 
