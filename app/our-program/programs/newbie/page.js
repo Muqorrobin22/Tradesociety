@@ -4,6 +4,8 @@ import TestimonialCard from "@/app/_ui/Micro-Component/Testimonials/Cards/Testim
 import Materi from "@/app/_ui/Micro-Component/Lists/Materi/Materi";
 import BenefitList from "@/app/_ui/Micro-Component/BenefitList/Benefit-List";
 import Button from "@/app/_ui/Micro-Component/Button/Button";
+import ProgramCardsWithoutImage from "@/app/_ui/Components/Cards/ProgramCardsWithoutImage";
+import ProgramCards from "@/app/_ui/Components/Cards/ProgramCards";
 
 export default function newbiePage() {
 
@@ -63,6 +65,56 @@ export default function newbiePage() {
         }
     ]
 
+    const familyBenefitList = [
+        {
+            key: 1,
+            name: "Kelas edukasi",
+        },
+        {
+            key: 2,
+            name: "Live trading",
+        },
+        {
+            key: 3,
+            name: "Sharing session",
+        },
+        {
+            key: 4,
+            name: "Group diskusi",
+        },
+        {
+            key: 5,
+            name: "Group diskusi"
+        }
+    ]
+
+    const priorityBenefitList = [
+        {
+            key: 1,
+            name: "Kelas edukasi",
+        },
+        {
+            key: 2,
+            name: "Live trading",
+        },
+        {
+            key: 3,
+            name: "Sharing session",
+        },
+        {
+            key: 4,
+            name: "Group diskusi",
+        },
+        {
+            key: 5,
+            name: "Group diskusi"
+        },
+        {
+            key: 6,
+            name: "Special benefits"
+        }
+    ]
+
     return (
         <main className={clsx("mt-10")}>
 
@@ -73,8 +125,10 @@ export default function newbiePage() {
                 <section className={clsx("text-left  w-[500px] relative z-20 ")}>
                     <p className={clsx("font-roboto text-Base/Base-Strong text-[#1761B1]  ")}>Newbie</p>
                     <h3 className={clsx("text-heading-3 text-[#15345A] my-2 ")}>Cocok untuk yang baru mulai</h3>
-                    <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-left")}>Jangan lagi bingung mulai dari mana, karena <br /> program ini cocok untuk kalian yang baru terjun <br /> ke dunia trading.
-                       </p>
+                    <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-left")}>Jangan
+                        lagi bingung mulai dari mana, karena <br/> program ini cocok untuk kalian yang baru
+                        terjun <br/> ke dunia trading.
+                    </p>
                 </section>
 
                 <Image src={"/images/components/addons/newbie_program_addons.svg"} alt={"newbie hero"} width={1300}
@@ -86,7 +140,9 @@ export default function newbiePage() {
                 <div className={clsx("absolute flex items-center right-[32px] bottom-[32px] z-20 ")}>
                     {testimonialsList.map((testimonial, index) => (
                         <div key={testimonial.key} className={"ml-4"}>
-                            <TestimonialCard name={testimonial.name} job={testimonial.job} bg_color={testimonial.bgColor} comments={testimonial.comment} bg_cards={"bg-[#E3EDFB]"} />
+                            <TestimonialCard name={testimonial.name} job={testimonial.job}
+                                             bg_color={testimonial.bgColor} comments={testimonial.comment}
+                                             bg_cards={"bg-[#E3EDFB]"}/>
                         </div>
                     ))}
                 </div>
@@ -95,7 +151,7 @@ export default function newbiePage() {
 
             {/* Hero Section - End */}
 
-             {/*  Content - Start  */}
+            {/*  Content - Start  */}
 
             <section className={clsx("mt-[80px] flex justify-between")}>
 
@@ -106,19 +162,24 @@ export default function newbiePage() {
                     <section className={clsx(" border-b-[1px] border-[#E3EDFB]  ")}>
                         <ul className={clsx("flex")}>
                             <li>
-                                <a href="#" className={clsx("inline-block border-b-[2px] border-[#154377] pb-2 text-Base/Base-Strong font-roboto text-[#154377] ")} >Deskripsi</a>
+                                <a href="#"
+                                   className={clsx("inline-block border-b-[2px] border-[#154377] pb-2 text-Base/Base-Strong font-roboto text-[#154377] ")}>Deskripsi</a>
                             </li>
 
                             <li className={clsx("ml-8")}>
-                                <a href="#" className={clsx("inline-block border-b-[2px] border-[#154377] pb-2 text-Base/Base-Strong font-roboto text-[#154377] ")} >Materi</a>
+                                <a href="#"
+                                   className={clsx("inline-block border-b-[2px] border-[#154377] pb-2 text-Base/Base-Strong font-roboto text-[#154377] ")}>Materi</a>
                             </li>
 
                             <li className={clsx("ml-8")}>
-                                <a href="#" className={clsx("inline-block border-b-[2px] border-[#154377] pb-2 text-Base/Base-Strong font-roboto text-[#154377] ")} >Jadwal kelas</a>
+                                <a href="#"
+                                   className={clsx("inline-block border-b-[2px] border-[#154377] pb-2 text-Base/Base-Strong font-roboto text-[#154377] ")}>Jadwal
+                                    kelas</a>
                             </li>
 
                             <li className={clsx("ml-8")}>
-                                <a href="#" className={clsx("inline-block border-b-[2px] border-[#154377] pb-2 text-Base/Base-Strong font-roboto text-[#154377] ")} >Benefits</a>
+                                <a href="#"
+                                   className={clsx("inline-block border-b-[2px] border-[#154377] pb-2 text-Base/Base-Strong font-roboto text-[#154377] ")}>Benefits</a>
                             </li>
                         </ul>
                     </section>
@@ -132,7 +193,9 @@ export default function newbiePage() {
                         {/* Deskripsi */}
                         <section className={clsx("pb-8 border-b-[1px] border-[#E3EDFB] ")}>
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Deskripsi</h3>
-                            <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-left")}>Program ini dibuat khusus untuk pemula yang ingin belajar trading dari 0. Tidak hanya materi, tapi kalian juga akan praktek langsung menggunakan akun Demo.
+                            <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-left")}>Program
+                                ini dibuat khusus untuk pemula yang ingin belajar trading dari 0. Tidak hanya materi,
+                                tapi kalian juga akan praktek langsung menggunakan akun Demo.
                             </p>
                         </section>
                         {/*Deskripsi*/}
@@ -140,13 +203,14 @@ export default function newbiePage() {
                         {/* Materi */}
                         <section className={clsx(" mt-8 pb-8 border-b-[1px] border-[#E3EDFB] ")}>
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Materi</h3>
-                            <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-left")}>Beberapa materi yang akan kalian dapatkan di program Newbie.
+                            <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-left")}>Beberapa
+                                materi yang akan kalian dapatkan di program Newbie.
                             </p>
 
                             <div className={clsx("mt-[24px]")}>
                                 {MateriList.map(materi => (
-                                    <div key={materi.key} className={"mt-4"} >
-                                        <Materi Desc={materi.desc} imgSrc={materi.imgSrc} Title={materi.name} />
+                                    <div key={materi.key} className={"mt-4"}>
+                                        <Materi Desc={materi.desc} imgSrc={materi.imgSrc} Title={materi.name}/>
                                     </div>
                                 ))}
                             </div>
@@ -232,7 +296,8 @@ export default function newbiePage() {
                         className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB]  p-8  ")}>
 
 
-                        <div className={"pb-[24px] mb-[24px] border-b-[1px] border-[#E3EDFB] flex items-center justify-between"}>
+                        <div
+                            className={"pb-[24px] mb-[24px] border-b-[1px] border-[#E3EDFB] flex items-center justify-between"}>
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Materi</h3>
                             <div className={"flex"}>
                                 <Image src={"/images/components/icon/star.svg"} alt={"Star"}
@@ -241,19 +306,69 @@ export default function newbiePage() {
                             </div>
                         </div>
                         <div className={clsx("text-center  ")}>
-                        <h1 className={clsx("mb-4 flex items-center  ")}><span
-                                    className={clsx(" text-heading-6",  "text-secondary-green-color")}>Free</span>
+                            <h1 className={clsx("mb-4 flex items-center  ")}><span
+                                className={clsx(" text-heading-6", "text-secondary-green-color")}>Free</span>
 
-                                    <span
-                                        className={clsx("text-font-description-color font-roboto text-LG/LG-Normal ml-2")}>/ Lifetime </span>
-                                </h1>
-                                <Button href={"/"} text={"Gabung Kelas ini"} noIcon={false}/>
-                            </div>
+                                <span
+                                    className={clsx("text-font-description-color font-roboto text-LG/LG-Normal ml-2")}>/ Lifetime </span>
+                            </h1>
+                            <Button href={"/"} text={"Gabung Kelas ini"} noIcon={false}/>
+                        </div>
                     </div>
                 </section>
             </section>
 
             {/*  Content - End  */}
+
+
+            {/*  Program lain yang kamu suka - Start  */}
+
+            <section className={clsx("mt-[80px] pt-8 px-[160px] pb-[60px] relative ")}>
+                <section className={clsx("text-center relative z-20")}>
+                    <h3 className={clsx("text-heading-3 text-[#15345A] my-2 ")}>Program lain yang sesuai dengan
+                        kamu</h3>
+                    <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-center")}>Jangan
+                        Temukan program yang sesuai dengan kemampuan dan skillmu!
+                    </p>
+                </section>
+                <section className={clsx("mt-8 grid grid-cols-2  relative z-20 ")}>
+                    <div className={"w-full"}>
+                        <ProgramCardsWithoutImage benefitList={familyBenefitList} period={"Lifetime"} price={"FREE"}
+                                                  type_class={"Family"} href={"/"}/>
+                    </div>
+                    <div className={"w-full"}>
+                        <ProgramCardsWithoutImage benefitList={priorityBenefitList} period={"Yearly"}
+                                                  price={"rp 1.500.000"} type_class={"priority"} href={"/"}
+                                                  strikethroughPrice={"Rp5.000.000"}/>
+                    </div>
+                </section>
+
+                <Image src={"/images/components/addons/about_us_jadi_bagian_tim_addons.png"} alt={"addons"} className={"absolute z-10"} fill={true} />
+            </section>
+
+            {/*  Program lain yang kamu suka - End  */}
+
+            <section className={clsx("mt-[60px] relative h-[216px]  px-[77px] bg-linear-gradient-faq rounded-[32px] mb-10 ")}>
+                <div className={clsx("flex items-center justify-between z-10 relative ")}>
+                    <div className={clsx("flex items-center")}>
+                        <Image src={"/images/components/illustration/faq_join_now_revision.svg"} alt={"Join Now"}
+                               width={216} height={216}/>
+
+                        <div className={clsx("ml-8")}>
+                            <h6 className={clsx("text-heading-3 text-white mb-2")}>Ikuti kelas online dan mulai <br /> belajar sekarang</h6>
+                            <p className={clsx("text-white text-XL/XL-Normal font-roboto text-white ")}>Kami bantu untuk
+                                bisa profit
+                                konsisten!</p>
+                        </div>
+                    </div>
+                    <div>
+                        <Button href={"/"} type={"secondary"} text={"Hubungi kami"}/>
+                    </div>
+                </div>
+
+                <Image src={"/images/components/addons/join_now_addons.png"} alt={""} height={353} width={1200}
+                       className={clsx("absolute bottom-0")}/>
+            </section>
 
         </main>
     )
