@@ -20,7 +20,7 @@ export default function Footer() {
             dropdown: false
         }, {
             name: "Our programs",
-            href: "/our-programs",
+            href: "/our-program/programs/priority",
             dropdown: true
         }, {
             name: "Contact us",
