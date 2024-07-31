@@ -14,6 +14,10 @@ module.exports = {
         "linear-gradient-hero": " linear-gradient( to bottom, #215A99, #4E9AE2 ), url(/images/TS_Graphic_Element/TS_Graphic_Element-08.jpg) ",
         "linear-gradient-faq": "linear-gradient( to right, #4E9AE2, #215A99 )",
         "linear-gradient-program-newbie": "linear-gradient( to bottom, #8BBCEE, #C2DBF5 )",
+        "linear-gradient-program-family": "linear-gradient( to bottom, #A8DACA, #DBF0E8 )",
+      },
+      dropShadow: {
+        "custom-cards": "0 10px 20px rgba(39, 125, 208, 0.1)"
       },
       colors: {
         "primary-color": "#33568B",

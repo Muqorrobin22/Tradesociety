@@ -10,8 +10,9 @@ import ProgramCardsWithoutImage from "@/app/_ui/Components/Cards/ProgramCardsWit
 import ProgramCards from "@/app/_ui/Components/Cards/ProgramCards";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
+import {familyBenefitList, priorityBenefitList, newbieBenefitList} from "@/app/_lib/const/VARIABLES";
 
-export default function newbiePage() {
+export default function familyPage() {
 
     // Router Handling
     // const router = useRouter();
@@ -82,92 +83,30 @@ export default function newbiePage() {
     const MateriList = [
         {
             key: 1,
-            name: "Basic Market Analysis",
-            desc: "Kalian akan mempelajari dasar-dasar dan cara penerapan dari analisa teknikal dan fundamental.",
-            imgSrc: "/images/components/icon/trending-up.svg"
-        },
-        {
-            key: 2,
             name: "Risk & Money Management",
             desc: "Kalian akan memahami cara mengatur risiko dalam trading dengan baik.",
             imgSrc: "/images/components/icon/alert-triangle.svg"
         },
         {
-            key: 3,
+            key: 2,
             name: "Trading Psychology",
             desc: "Kalian akan mempelajari salah satu hal yang paling penting dalam trading, yakni mengatur emosi dan cara mengontrol diri.",
-            imgSrc: "/images/components/icon/alert-triangle.svg"
-        },
-    ]
-
-    const newbieBenefitList = [
-        {
-            key: 1,
-            name: "Kelas edukasi",
-        },
-        {
-            key: 2,
-            name: "Live trading",
+            imgSrc: "/images/components/icon/smile.svg"
         },
         {
             key: 3,
-            name: "Sharing session",
+            name: "fundamental analysis",
+            desc: "Kalian akan memahami cara menerapkan aspek-aspek analisa fundamental ketika trading.",
+            imgSrc: "/images/components/icon/activity.svg"
         },
         {
             key: 4,
-            name: "Group diskusi",
-        }
+            name: "Intermediate Technical Analysis",
+            desc: "Kalian akan mempelajari beberapa metode analisa teknikal dan cara penerapannya.",
+            imgSrc: "/images/components/icon/Trading.svg"
+        },
     ]
 
-    const familyBenefitList = [
-        {
-            key: 1,
-            name: "Kelas edukasi",
-        },
-        {
-            key: 2,
-            name: "Live trading",
-        },
-        {
-            key: 3,
-            name: "Sharing session",
-        },
-        {
-            key: 4,
-            name: "Group diskusi",
-        },
-        {
-            key: 5,
-            name: "Group diskusi"
-        }
-    ]
-
-    const priorityBenefitList = [
-        {
-            key: 1,
-            name: "Kelas edukasi",
-        },
-        {
-            key: 2,
-            name: "Live trading",
-        },
-        {
-            key: 3,
-            name: "Sharing session",
-        },
-        {
-            key: 4,
-            name: "Group diskusi",
-        },
-        {
-            key: 5,
-            name: "Group diskusi"
-        },
-        {
-            key: 6,
-            name: "Special benefits"
-        }
-    ]
 
     const handleScrollToSection = (id) => {
         // router.push(`#${id}`);
@@ -189,14 +128,12 @@ export default function newbiePage() {
 
             {/* Hero Section */}
             <section
-                className={clsx("relative bg-linear-gradient-program-newbie h-[400px] px-[72px] rounded-[32px] flex items-center ")}>
+                className={clsx("relative bg-linear-gradient-program-family h-[400px] px-[72px] rounded-[32px] flex items-center ")}>
 
-                <section className={clsx("text-left  w-[500px] relative z-20 ")}>
-                    <p className={clsx("font-roboto text-Base/Base-Strong text-[#1761B1]  ")}>Newbie</p>
-                    <h3 className={clsx("text-heading-3 text-[#15345A] my-2 ")}>Cocok untuk yang baru mulai</h3>
-                    <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-left")}>Jangan
-                        lagi bingung mulai dari mana, karena <br/> program ini cocok untuk kalian yang baru
-                        terjun <br/> ke dunia trading.
+                <section className={clsx("text-left  w-[550px] relative z-20 ")}>
+                    <p className={clsx("font-roboto text-Base/Base-Strong text-[#1761B1]  ")}>Family</p>
+                    <h3 className={clsx("text-heading-3 text-[#15345A] my-2 ")}>terbuka untuk umum</h3>
+                    <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-left")}>Untuk para trader yang ingin meningkatkan profit, program ini <br /> cocok banget untuk kalian!
                     </p>
                 </section>
 
@@ -280,9 +217,7 @@ export default function newbiePage() {
                         {/* Deskripsi */}
                         <section className={clsx("pb-8 border-b-[1px] border-[#E3EDFB] ")} id={"Description"} >
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Deskripsi</h3>
-                            <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-left")}>Program
-                                ini dibuat khusus untuk pemula yang ingin belajar trading dari 0. Tidak hanya materi,
-                                tapi kalian juga akan praktek langsung menggunakan akun Demo.
+                            <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-left")}>Program ini cocok untuk kalian yang sudah paham dasar-dasar trading dan siap menggunakan akun real. Kalian juga akan dikelilingi oleh trader-trader lain yang saling merangkul layaknya keluarga.
                             </p>
                         </section>
                         {/*Deskripsi*/}
@@ -291,7 +226,7 @@ export default function newbiePage() {
                         <section className={clsx(" mt-8 pb-8 border-b-[1px] border-[#E3EDFB] ")} id={"Materi"} >
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Materi</h3>
                             <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-left")}>Beberapa
-                                materi yang akan kalian dapatkan di program Newbie.
+                                materi yang akan kalian dapatkan di program Family.
                             </p>
 
                             <div className={clsx("mt-[24px]")}>
@@ -308,7 +243,7 @@ export default function newbiePage() {
                         <section className={clsx("mt-8")} id={"Benefit"} >
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>BenefitS</h3>
                             <div className={clsx("mt-[24px]")}>
-                                {newbieBenefitList.map((benefit) => (
+                                {familyBenefitList.map((benefit) => (
                                     <div key={benefit.key} className={clsx("mb-2")}>
                                         <BenefitList text={benefit.name}/>
                                     </div>
@@ -320,7 +255,7 @@ export default function newbiePage() {
                         {/* Jadwal Kelas */}
                         <section className={clsx("mt-8")} id={"Jadwal_Kelas"} >
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Jadwal kelas</h3>
-                            <div className={clsx("mt-[24px] border-[1px] border-[#E3EDFB] rounded-[32px] flex ")}>
+                            <div className={clsx("mt-[24px] border-[1px] border-[#E3EDFB] rounded-[32px] grid grid-cols-2 ")}>
                                 <div className={clsx("pt-4 px-8 pb-[36px] border-r-[1px] border-[#E3EDFB]")}>
                                     <div className={"flex items-center"}>
                                         <div className={"w-[8px] h-[8px] rounded-full bg-[#277DD0] "}/>
@@ -332,40 +267,50 @@ export default function newbiePage() {
                                     <div className={"flex items-center mt-8"}>
                                         <Image src={"/images/components/icon/calendar.svg"} alt={"calendar"}
                                                width={18} height={18}/>
-                                        <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>Senin,
+                                        <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>Selasa,
                                             20:00 WIB</p>
                                     </div>
                                 </div>
 
-                                <div className={clsx("pt-4 px-8 pb-[36px] border-r-[1px] border-[#E3EDFB]")}>
+                                <div className={clsx("pt-4 px-8 pb-[36px] ")}>
                                     <div className={"flex items-center"}>
-                                        <div className={"w-[8px] h-[8px] rounded-full bg-[#277DD0] "}/>
-                                        <h3 className={clsx("text-heading-9 text-[#15345A] ml-2 ")}>Kelas edukasi</h3>
+                                        <div className={"w-[8px] h-[8px] rounded-full bg-secondary-green-color "}/>
+                                        <h3 className={clsx("text-heading-9 text-[#15345A] ml-2 ")}>Live trading</h3>
                                     </div>
-                                    <p className={"text-Base/Base-Normal font-roboto text-font-description-color"}>Belajar
-                                        bersama mentor Trade Society</p>
+                                    <p className={"text-Base/Base-Normal font-roboto text-font-description-color"}>Trading bersama seluruh member Trade Society</p>
 
                                     <div className={"flex items-center mt-8"}>
                                         <Image src={"/images/components/icon/calendar.svg"} alt={"calendar"}
                                                width={18} height={18}/>
-                                        <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>Senin,
-                                            20:00 WIB</p>
+                                        <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>Senin-Jumat setiap high impact news</p>
                                     </div>
                                 </div>
 
-                                <div className={clsx("pt-4 px-8 pb-[36px]")}>
+                                <div className={clsx("pt-4 px-8 pb-[36px] border-[#E3EDFB] border-t-[1px] border-r-[1px] ")}>
                                     <div className={"flex items-center"}>
-                                        <div className={"w-[8px] h-[8px] rounded-full bg-[#277DD0] "}/>
-                                        <h3 className={clsx("text-heading-9 text-[#15345A] ml-2 ")}>Kelas edukasi</h3>
+                                        <div className={"w-[8px] h-[8px] border-r-[1px]   rounded-full bg-[#F47643] "}/>
+                                        <h3 className={clsx("text-heading-9 text-[#15345A] ml-2 ")}>Sharing session</h3>
                                     </div>
-                                    <p className={"text-Base/Base-Normal font-roboto text-font-description-color"}>Belajar
-                                        bersama mentor Trade Society</p>
+                                    <p className={"text-Base/Base-Normal font-roboto text-font-description-color"}>QnA, Tips & Tricks, How to</p>
 
                                     <div className={"flex items-center mt-8"}>
                                         <Image src={"/images/components/icon/calendar.svg"} alt={"calendar"}
                                                width={18} height={18}/>
-                                        <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>Senin,
-                                            20:00 WIB</p>
+                                        <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>Rabu, 19:00 WIB</p>
+                                    </div>
+                                </div>
+
+                                <div className={clsx("pt-4 px-8 pb-[36px] border-[#E3EDFB] border-t-[1px] ")}>
+                                    <div className={"flex items-center"}>
+                                        <div className={"w-[8px] h-[8px] rounded-full bg-secondary-gold-color  "}/>
+                                        <h3 className={clsx("text-heading-9 text-[#15345A] ml-2 ")}>Live mapping</h3>
+                                    </div>
+                                    <p className={"text-Base/Base-Normal font-roboto text-font-description-color"}>Analisa market bersama Analyst Trade Society</p>
+
+                                    <div className={"flex items-center mt-8"}>
+                                        <Image src={"/images/components/icon/calendar.svg"} alt={"calendar"}
+                                               width={18} height={18}/>
+                                        <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>Minggu, 19:00 WIB</p>
                                     </div>
                                 </div>
                             </div>
@@ -380,12 +325,12 @@ export default function newbiePage() {
 
                 <section className={"basis-1/3 ml-[84px]  z-20 "}>
                     <div
-                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white p-8 sticky  top-[24px]  ")}>
+                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white p-8 sticky  top-[24px] drop-shadow-custom-cards")}>
 
 
                         <div
                             className={"pb-[24px] mb-[24px] border-b-[1px] border-[#E3EDFB] flex items-center justify-between"}>
-                            <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Materi</h3>
+                            <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Family</h3>
                             <div className={"flex"}>
                                 <Image src={"/images/components/icon/star.svg"} alt={"Star"}
                                        width={24} height={24}/>
@@ -420,12 +365,12 @@ export default function newbiePage() {
                 </section>
                 <section className={clsx("mt-8 grid grid-cols-2  relative z-20 ")}>
                     <div className={"w-full"}>
-                        <ProgramCardsWithoutImage benefitList={familyBenefitList} period={"Lifetime"} price={"FREE"}
-                                                  type_class={"Family"} href={"/"}/>
+                        <ProgramCardsWithoutImage benefitList={newbieBenefitList} period={"Lifetime"} price={"FREE"}
+                                                  type_class={"Newbie"} href={"/our-program/programs/newbie"}/>
                     </div>
                     <div className={"w-full"}>
                         <ProgramCardsWithoutImage benefitList={priorityBenefitList} period={"Yearly"}
-                                                  price={"rp 1.500.000"} type_class={"priority"} href={"/"}
+                                                  price={"rp 1.500.000"} type_class={"priority"} href={"/our-program/programs/priority"}
                                                   strikethroughPrice={"Rp5.000.000"}/>
                     </div>
                 </section>

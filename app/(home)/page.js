@@ -11,80 +11,12 @@ import {useState} from "react";
 import FAQCard from "@/app/_ui/Micro-Component/FAQ/FAQCard";
 import {useDispatch} from "react-redux";
 import {setShowFaq} from "@/app/_lib/store/features/faqslices/faqSlices";
+import {familyBenefitList, newbieBenefitList, priorityBenefitList} from "@/app/_lib/const/VARIABLES";
 
 export default function Home() {
 
   // const [showFaq, setShowFaq] = useState(false);
   const dispatch = useDispatch()
-
-  const newbieBenefitList = [
-    {
-      key: 1,
-      name: "Kelas edukasi",
-    },
-    {
-      key: 2,
-      name: "Live trading",
-    },
-    {
-      key: 3,
-      name: "Sharing session",
-    },
-    {
-      key: 4,
-      name: "Group diskusi",
-    }
-  ]
-
-  const familyBenefitList = [
-    {
-      key: 1,
-      name: "Kelas edukasi",
-    },
-    {
-      key: 2,
-      name: "Live trading",
-    },
-    {
-      key: 3,
-      name: "Sharing session",
-    },
-    {
-      key: 4,
-      name: "Group diskusi",
-    },
-    {
-      key: 5,
-      name: "Group diskusi"
-    }
-  ]
-
-  const priorityBenefitList = [
-    {
-      key: 1,
-      name: "Kelas edukasi",
-    },
-    {
-      key: 2,
-      name: "Live trading",
-    },
-    {
-      key: 3,
-      name: "Sharing session",
-    },
-    {
-      key: 4,
-      name: "Group diskusi",
-    },
-    {
-      key: 5,
-      name: "Group diskusi"
-    },
-    {
-      key: 6,
-      name: "Special benefits"
-    }
-  ]
 
   const testimonialsList = [
     {

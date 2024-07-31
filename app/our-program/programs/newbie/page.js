@@ -10,6 +10,7 @@ import ProgramCardsWithoutImage from "@/app/_ui/Components/Cards/ProgramCardsWit
 import ProgramCards from "@/app/_ui/Components/Cards/ProgramCards";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
+import {familyBenefitList, newbieBenefitList, priorityBenefitList} from "@/app/_lib/const/VARIABLES";
 
 export default function newbiePage() {
 
@@ -96,78 +97,11 @@ export default function newbiePage() {
             key: 3,
             name: "Trading Psychology",
             desc: "Kalian akan mempelajari salah satu hal yang paling penting dalam trading, yakni mengatur emosi dan cara mengontrol diri.",
-            imgSrc: "/images/components/icon/alert-triangle.svg"
+            imgSrc: "/images/components/icon/smile.svg"
         },
     ]
 
-    const newbieBenefitList = [
-        {
-            key: 1,
-            name: "Kelas edukasi",
-        },
-        {
-            key: 2,
-            name: "Live trading",
-        },
-        {
-            key: 3,
-            name: "Sharing session",
-        },
-        {
-            key: 4,
-            name: "Group diskusi",
-        }
-    ]
 
-    const familyBenefitList = [
-        {
-            key: 1,
-            name: "Kelas edukasi",
-        },
-        {
-            key: 2,
-            name: "Live trading",
-        },
-        {
-            key: 3,
-            name: "Sharing session",
-        },
-        {
-            key: 4,
-            name: "Group diskusi",
-        },
-        {
-            key: 5,
-            name: "Group diskusi"
-        }
-    ]
-
-    const priorityBenefitList = [
-        {
-            key: 1,
-            name: "Kelas edukasi",
-        },
-        {
-            key: 2,
-            name: "Live trading",
-        },
-        {
-            key: 3,
-            name: "Sharing session",
-        },
-        {
-            key: 4,
-            name: "Group diskusi",
-        },
-        {
-            key: 5,
-            name: "Group diskusi"
-        },
-        {
-            key: 6,
-            name: "Special benefits"
-        }
-    ]
 
     const handleScrollToSection = (id) => {
         // router.push(`#${id}`);
@@ -321,7 +255,7 @@ export default function newbiePage() {
                         <section className={clsx("mt-8")} id={"Jadwal_Kelas"} >
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Jadwal kelas</h3>
                             <div className={clsx("mt-[24px] border-[1px] border-[#E3EDFB] rounded-[32px] flex ")}>
-                                <div className={clsx("pt-4 px-8 pb-[36px] border-r-[1px] border-[#E3EDFB]")}>
+                                <div className={clsx("pt-4 px-8 pb-[36px] border-r-[1px] border-[#E3EDFB] basis-1/3 ")}>
                                     <div className={"flex items-center"}>
                                         <div className={"w-[8px] h-[8px] rounded-full bg-[#277DD0] "}/>
                                         <h3 className={clsx("text-heading-9 text-[#15345A] ml-2 ")}>Kelas edukasi</h3>
@@ -337,35 +271,31 @@ export default function newbiePage() {
                                     </div>
                                 </div>
 
-                                <div className={clsx("pt-4 px-8 pb-[36px] border-r-[1px] border-[#E3EDFB]")}>
+                                <div className={clsx("pt-4 px-8 pb-[36px] border-r-[1px] border-[#E3EDFB] basis-1/3 ")}>
                                     <div className={"flex items-center"}>
-                                        <div className={"w-[8px] h-[8px] rounded-full bg-[#277DD0] "}/>
-                                        <h3 className={clsx("text-heading-9 text-[#15345A] ml-2 ")}>Kelas edukasi</h3>
+                                        <div className={"w-[8px] h-[8px] rounded-full bg-secondary-green-color "}/>
+                                        <h3 className={clsx("text-heading-9 text-[#15345A] ml-2 ")}>Live trading</h3>
                                     </div>
-                                    <p className={"text-Base/Base-Normal font-roboto text-font-description-color"}>Belajar
-                                        bersama mentor Trade Society</p>
+                                    <p className={"text-Base/Base-Normal font-roboto text-font-description-color"}>Trading bersama seluruh member Trade Society</p>
 
                                     <div className={"flex items-center mt-8"}>
                                         <Image src={"/images/components/icon/calendar.svg"} alt={"calendar"}
                                                width={18} height={18}/>
-                                        <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>Senin,
-                                            20:00 WIB</p>
+                                        <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>1x seminggu mengikuti high impact news</p>
                                     </div>
                                 </div>
 
-                                <div className={clsx("pt-4 px-8 pb-[36px]")}>
+                                <div className={clsx("pt-4 px-8 pb-[36px] basis-1/3")}>
                                     <div className={"flex items-center"}>
-                                        <div className={"w-[8px] h-[8px] rounded-full bg-[#277DD0] "}/>
-                                        <h3 className={clsx("text-heading-9 text-[#15345A] ml-2 ")}>Kelas edukasi</h3>
+                                        <div className={"w-[8px] h-[8px] rounded-full bg-secondary-gold-color "}/>
+                                        <h3 className={clsx("text-heading-9 text-[#15345A] ml-2 ")}>Sharing session</h3>
                                     </div>
-                                    <p className={"text-Base/Base-Normal font-roboto text-font-description-color"}>Belajar
-                                        bersama mentor Trade Society</p>
+                                    <p className={"text-Base/Base-Normal font-roboto text-font-description-color"}>QnA, Tips & Tricks, How to</p>
 
                                     <div className={"flex items-center mt-8"}>
                                         <Image src={"/images/components/icon/calendar.svg"} alt={"calendar"}
                                                width={18} height={18}/>
-                                        <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>Senin,
-                                            20:00 WIB</p>
+                                        <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>Rabu, 20:00 WIB</p>
                                     </div>
                                 </div>
                             </div>
@@ -380,12 +310,12 @@ export default function newbiePage() {
 
                 <section className={"basis-1/3 ml-[84px]  z-20 "}>
                     <div
-                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white p-8 sticky  top-[24px]  ")}>
+                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white p-8 sticky  top-[24px] drop-shadow-custom-cards ")}>
 
 
                         <div
                             className={"pb-[24px] mb-[24px] border-b-[1px] border-[#E3EDFB] flex items-center justify-between"}>
-                            <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Materi</h3>
+                            <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Newbie</h3>
                             <div className={"flex"}>
                                 <Image src={"/images/components/icon/star.svg"} alt={"Star"}
                                        width={24} height={24}/>
@@ -421,11 +351,11 @@ export default function newbiePage() {
                 <section className={clsx("mt-8 grid grid-cols-2  relative z-20 ")}>
                     <div className={"w-full"}>
                         <ProgramCardsWithoutImage benefitList={familyBenefitList} period={"Lifetime"} price={"FREE"}
-                                                  type_class={"Family"} href={"/"}/>
+                                                  type_class={"Family"} href={"/our-program/programs/family"}/>
                     </div>
                     <div className={"w-full"}>
                         <ProgramCardsWithoutImage benefitList={priorityBenefitList} period={"Yearly"}
-                                                  price={"rp 1.500.000"} type_class={"priority"} href={"/"}
+                                                  price={"rp 1.500.000"} type_class={"priority"} href={"/our-program/programs/priority"}
                                                   strikethroughPrice={"Rp5.000.000"}/>
                     </div>
                 </section>
