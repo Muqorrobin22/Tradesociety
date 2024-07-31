@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import Image from "next/image";
 import TestimonialCard from "@/app/_ui/Micro-Component/Testimonials/Cards/TestimonialCard";
@@ -6,8 +8,60 @@ import BenefitList from "@/app/_ui/Micro-Component/BenefitList/Benefit-List";
 import Button from "@/app/_ui/Micro-Component/Button/Button";
 import ProgramCardsWithoutImage from "@/app/_ui/Components/Cards/ProgramCardsWithoutImage";
 import ProgramCards from "@/app/_ui/Components/Cards/ProgramCards";
+import {useEffect, useState} from "react";
+import {useRouter} from "next/navigation";
 
 export default function newbiePage() {
+
+    // Router Handling
+    // const router = useRouter();
+
+    // Router Handling
+
+    // Scroll Page Behaviour
+
+    const [scrollPositionCard, setScrollPositionCard] = useState(0);
+    const [scrollPositionDescriptionBar, setScrollPositionDescriptionBar] = useState(0);
+    const [scrollActiveState, setScrollActiveState] = useState("");
+    const [scrollNavbarLink, setScrollNavbarLink] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const position = window.scrollY;
+            setScrollPositionCard(position);
+            setScrollPositionDescriptionBar(position)
+
+            if(position > 605) {
+                setScrollNavbarLink(position)
+            }
+            if (position >= 1414) {
+                setScrollActiveState("jadwal_kelas");
+            } else if (position >= 1132) {
+                setScrollActiveState("benefits");
+            } else if (position >= 705) {
+                setScrollActiveState("materi");
+            } else if (position >= 510) {
+                setScrollActiveState("Description");
+            } else {
+                setScrollActiveState("");
+            }
+
+
+
+
+            console.log("position: ", position)
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    console.log("scroll active state: ", scrollActiveState)
+
+    // Scroll Page Behaviour
 
     const testimonialsList = [
         {
@@ -115,6 +169,21 @@ export default function newbiePage() {
         }
     ]
 
+    const handleScrollToSection = (id) => {
+        // router.push(`#${id}`);
+        const element = document.getElementById(id);
+        if (element) {
+            const headerOffset = 100;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth",
+            });
+        }
+    };
+
     return (
         <main className={clsx("mt-10")}>
 
@@ -153,34 +222,52 @@ export default function newbiePage() {
 
             {/*  Content - Start  */}
 
-            <section className={clsx("mt-[80px] flex justify-between")}>
+            <section className={clsx("mt-[80px] flex justify-between relative")}>
 
 
                 <section className={"basis-2/3"}>
                     {/*  Content > Navbar - Start  */}
 
-                    <section className={clsx(" border-b-[1px] border-[#E3EDFB]  ")}>
+                    <section className={clsx(" border-b-[1px] border-[#E3EDFB]  left-0 right-0  ", scrollNavbarLink && "sticky top-0 z-20 bg-white py-6")}>
                         <ul className={clsx("flex")}>
                             <li>
-                                <a href="#"
-                                   className={clsx("inline-block border-b-[2px] border-[#154377] pb-2 text-Base/Base-Strong font-roboto text-[#154377] ")}>Deskripsi</a>
+                                <a href="#Description"
+                                   onClick={(e) => {
+                                       e.preventDefault();
+                                       handleScrollToSection("Description");
+                                   }}
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong font-roboto text-[#154377] ", scrollActiveState === "Description" ? "border-b-[2px] border-[#154377]" : "")}>Deskripsi</a>
                             </li>
 
                             <li className={clsx("ml-8")}>
-                                <a href="#"
-                                   className={clsx("inline-block border-b-[2px] border-[#154377] pb-2 text-Base/Base-Strong font-roboto text-[#154377] ")}>Materi</a>
+                                <a href="#Materi"
+                                   onClick={(e) => {
+                                       e.preventDefault();
+                                       handleScrollToSection("Materi");
+                                   }}
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong font-roboto text-[#154377] " , scrollActiveState === "materi" ? "border-b-[2px] border-[#154377]" : "")}>Materi</a>
                             </li>
 
                             <li className={clsx("ml-8")}>
-                                <a href="#"
-                                   className={clsx("inline-block border-b-[2px] border-[#154377] pb-2 text-Base/Base-Strong font-roboto text-[#154377] ")}>Jadwal
+                                <a href="#Benefit"
+                                   onClick={(e) => {
+                                       e.preventDefault();
+                                       handleScrollToSection("Benefit");
+                                   }}
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong font-roboto text-[#154377] " , scrollActiveState === "benefits" ? "border-b-[2px] border-[#154377]" : "")}>Benefits</a>
+                            </li>
+
+                            <li className={clsx("ml-8")}>
+                                <a href="#Jadwal_Kelas"
+                                   onClick={(e) => {
+                                       e.preventDefault();
+                                       handleScrollToSection("Jadwal_Kelas");
+                                   }}
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong font-roboto text-[#154377] " , scrollActiveState === "jadwal_kelas" ? "border-b-[2px] border-[#154377]" : "")}>Jadwal
                                     kelas</a>
                             </li>
 
-                            <li className={clsx("ml-8")}>
-                                <a href="#"
-                                   className={clsx("inline-block border-b-[2px] border-[#154377] pb-2 text-Base/Base-Strong font-roboto text-[#154377] ")}>Benefits</a>
-                            </li>
+
                         </ul>
                     </section>
 
@@ -188,10 +275,10 @@ export default function newbiePage() {
 
                     {/*  Content > Description - Start  */}
 
-                    <section className={clsx("mt-8")}>
+                    <section className={clsx("mt-8 relative")}  >
 
                         {/* Deskripsi */}
-                        <section className={clsx("pb-8 border-b-[1px] border-[#E3EDFB] ")}>
+                        <section className={clsx("pb-8 border-b-[1px] border-[#E3EDFB] ")} id={"Description"} >
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Deskripsi</h3>
                             <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-left")}>Program
                                 ini dibuat khusus untuk pemula yang ingin belajar trading dari 0. Tidak hanya materi,
@@ -201,7 +288,7 @@ export default function newbiePage() {
                         {/*Deskripsi*/}
 
                         {/* Materi */}
-                        <section className={clsx(" mt-8 pb-8 border-b-[1px] border-[#E3EDFB] ")}>
+                        <section className={clsx(" mt-8 pb-8 border-b-[1px] border-[#E3EDFB] ")} id={"Materi"} >
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Materi</h3>
                             <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-left")}>Beberapa
                                 materi yang akan kalian dapatkan di program Newbie.
@@ -218,7 +305,7 @@ export default function newbiePage() {
                         {/*Materi*/}
 
                         {/* Benefit */}
-                        <section className={clsx("mt-8")}>
+                        <section className={clsx("mt-8")} id={"Benefit"} >
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>BenefitS</h3>
                             <div className={clsx("mt-[24px]")}>
                                 {newbieBenefitList.map((benefit) => (
@@ -231,7 +318,7 @@ export default function newbiePage() {
                         {/* Benefit */}
 
                         {/* Jadwal Kelas */}
-                        <section className={clsx("mt-8")}>
+                        <section className={clsx("mt-8")} id={"Jadwal_Kelas"} >
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Jadwal kelas</h3>
                             <div className={clsx("mt-[24px] border-[1px] border-[#E3EDFB] rounded-[32px] flex ")}>
                                 <div className={clsx("pt-4 px-8 pb-[36px] border-r-[1px] border-[#E3EDFB]")}>
@@ -291,9 +378,9 @@ export default function newbiePage() {
 
                 </section>
 
-                <section className={"basis-1/3 ml-[84px]"}>
+                <section className={"basis-1/3 ml-[84px]  z-20 "}>
                     <div
-                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB]  p-8  ")}>
+                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white p-8 sticky  top-[24px]  ")}>
 
 
                         <div
