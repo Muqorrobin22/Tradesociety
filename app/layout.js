@@ -24,6 +24,13 @@ const roboto_init = Roboto({
   variable: '--font-roboto-mono',
 })
 
+const inter_init = Inter({
+    subsets: ["latin"],
+    weight: ["300", "400", "500", "600", "700"],
+    style: "normal",
+    variable: "--font-inter"
+})
+
 export const metadata = {
   title: "TradeSociety",
   description: "TradeSociety ",
@@ -34,7 +41,7 @@ export default function RootLayout({ children }) {
 
 
   return (
-    <html lang="en" className={`${myFont.className} ${roboto_init.variable}`}>
+    <html lang="en" className={`${myFont.className} ${roboto_init.variable} ${inter_init.variable} `}>
       <body className=" xl:px-[120px] ">
           <Navbar />
           {children}

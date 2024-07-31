@@ -15,6 +15,7 @@ module.exports = {
         "linear-gradient-faq": "linear-gradient( to right, #4E9AE2, #215A99 )",
         "linear-gradient-program-newbie": "linear-gradient( to bottom, #8BBCEE, #C2DBF5 )",
         "linear-gradient-program-family": "linear-gradient( to bottom, #A8DACA, #DBF0E8 )",
+        "linear-gradient-program-priority": "linear-gradient( to bottom, #D1B052, #F2EDCF )",
       },
       dropShadow: {
         "custom-cards": "0 10px 20px rgba(39, 125, 208, 0.1)"
@@ -142,6 +143,7 @@ module.exports = {
       },
       fontFamily: {
         "roboto": ['var(--font-roboto-mono)'],
+        "inter": ['var(--font-inter)'],
       }
     },
   },
