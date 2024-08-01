@@ -12,7 +12,7 @@ import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
 import {familyBenefitList, priorityBenefitList, newbieBenefitList} from "@/app/_lib/const/VARIABLES";
 
-export default function priorityPage() {
+export default function PriorityPage() {
 
     // Router Handling
     // const router = useRouter();
