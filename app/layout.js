@@ -1,10 +1,10 @@
 
-import { Inter } from "next/font/google";
+
 import localFont from "next/font/local";
 import "./globals.css";
 import Image from "next/image";
 import Navbar from "@/app/_ui/Components/Navbar/Navbar";
-import {Roboto} from "next/font/google"
+import {Roboto, Inter} from "next/font/google"
 import Footer from "@/app/_ui/Components/Footer/page";
 
 const myFont = localFont({

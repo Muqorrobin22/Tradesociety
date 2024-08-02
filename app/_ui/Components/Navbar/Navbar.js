@@ -55,7 +55,7 @@ export default function Navbar(props) {
             <div>
                 <Image
                     alt="Logo Tradesociety"
-                    src={"/images/components/icon/Logo.svg"}
+                    src={"/images/components/Icon/Logo.svg"}
                     width={96}
                     height={40}
                 />

@@ -85,31 +85,31 @@ export default function PriorityPage() {
             key: 1,
             name: "Risk & Money Management",
             desc: "Kalian akan memahami cara mengatur risiko dalam trading dengan baik.",
-            imgSrc: "/images/components/icon/alert-triangle.svg"
+            imgSrc: "/images/components/Icon/alert-triangle.svg"
         },
         {
             key: 2,
             name: "Trading Psychology",
             desc: "Kalian akan mempelajari salah satu hal yang paling penting dalam trading, yakni mengatur emosi dan cara mengontrol diri.",
-            imgSrc: "/images/components/icon/smile.svg"
+            imgSrc: "/images/components/Icon/smile.svg"
         },
         {
             key: 3,
             name: "fundamental analysis",
             desc: "Kalian akan memahami cara menerapkan aspek-aspek analisa fundamental ketika trading.",
-            imgSrc: "/images/components/icon/activity.svg"
+            imgSrc: "/images/components/Icon/activity.svg"
         },
         {
             key: 4,
             name: "Advance Technical Analysis",
             desc: "Memahami secara detail cara menerapkan beberapa metode analisa teknikal advance yang dapat membantu meningkatkan portfolio kalian.",
-            imgSrc: "/images/components/icon/Trading.svg"
+            imgSrc: "/images/components/Icon/Trading.svg"
         },
         {
             key: 5,
             name: "Cash Management",
             desc: "Kalian akan memahami cara mengatur dan mengelola modal trading dengan baik.",
-            imgSrc: "/images/components/icon/pie-chart.svg"
+            imgSrc: "/images/components/Icon/pie-chart.svg"
         },
     ]
 

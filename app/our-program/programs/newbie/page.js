@@ -85,19 +85,19 @@ export default function NewbiePage() {
             key: 1,
             name: "Basic Market Analysis",
             desc: "Kalian akan mempelajari dasar-dasar dan cara penerapan dari analisa teknikal dan fundamental.",
-            imgSrc: "/images/components/icon/trending-up.svg"
+            imgSrc: "/images/components/Icon/trending-up.svg"
         },
         {
             key: 2,
             name: "Risk & Money Management",
             desc: "Kalian akan memahami cara mengatur risiko dalam trading dengan baik.",
-            imgSrc: "/images/components/icon/alert-triangle.svg"
+            imgSrc: "/images/components/Icon/alert-triangle.svg"
         },
         {
             key: 3,
             name: "Trading Psychology",
             desc: "Kalian akan mempelajari salah satu hal yang paling penting dalam trading, yakni mengatur emosi dan cara mengontrol diri.",
-            imgSrc: "/images/components/icon/smile.svg"
+            imgSrc: "/images/components/Icon/smile.svg"
         },
     ]
 
@@ -264,7 +264,7 @@ export default function NewbiePage() {
                                         bersama mentor Trade Society</p>
 
                                     <div className={"flex items-center mt-8"}>
-                                        <Image src={"/images/components/icon/calendar.svg"} alt={"calendar"}
+                                        <Image src={"/images/components/Icon/calendar.svg"} alt={"calendar"}
                                                width={18} height={18}/>
                                         <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>Senin,
                                             20:00 WIB</p>
@@ -279,7 +279,7 @@ export default function NewbiePage() {
                                     <p className={"text-Base/Base-Normal font-roboto text-font-description-color"}>Trading bersama seluruh member Trade Society</p>
 
                                     <div className={"flex items-center mt-8"}>
-                                        <Image src={"/images/components/icon/calendar.svg"} alt={"calendar"}
+                                        <Image src={"/images/components/Icon/calendar.svg"} alt={"calendar"}
                                                width={18} height={18}/>
                                         <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>1x seminggu mengikuti high impact news</p>
                                     </div>
@@ -293,7 +293,7 @@ export default function NewbiePage() {
                                     <p className={"text-Base/Base-Normal font-roboto text-font-description-color"}>QnA, Tips & Tricks, How to</p>
 
                                     <div className={"flex items-center mt-8"}>
-                                        <Image src={"/images/components/icon/calendar.svg"} alt={"calendar"}
+                                        <Image src={"/images/components/Icon/calendar.svg"} alt={"calendar"}
                                                width={18} height={18}/>
                                         <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>Rabu, 20:00 WIB</p>
                                     </div>
