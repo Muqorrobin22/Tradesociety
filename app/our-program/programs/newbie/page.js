@@ -317,7 +317,7 @@ export default function NewbiePage() {
                             className={"pb-[24px] mb-[24px] border-b-[1px] border-[#E3EDFB] flex items-center justify-between"}>
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Newbie</h3>
                             <div className={"flex"}>
-                                <Image src={"/images/components/icon/star.svg"} alt={"Star"}
+                                <Image src={"/images/components/Icon/star.svg"} alt={"Star"}
                                        width={24} height={24}/>
                                 <h6 className={clsx("font-roboto text-heading-5 text-font-description-color ml-1")}>5.0</h6>
                             </div>

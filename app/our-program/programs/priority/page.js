@@ -271,7 +271,7 @@ export default function PriorityPage() {
                                     <p className={"text-Base/Base-Normal font-roboto text-font-description-color"}>Belajar menjadi professional trader</p>
 
                                     <div className={"flex items-center mt-8"}>
-                                        <Image src={"/images/components/icon/calendar.svg"} alt={"calendar"}
+                                        <Image src={"/images/components/Icon/calendar.svg"} alt={"calendar"}
                                                width={18} height={18}/>
                                         <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>Senin-Rabu, 19:00 WIB</p>
                                     </div>
@@ -285,7 +285,7 @@ export default function PriorityPage() {
                                     <p className={"text-Base/Base-Normal font-roboto text-font-description-color"}>Belajar bersama mentor Trade Society</p>
 
                                     <div className={"flex items-center mt-8"}>
-                                        <Image src={"/images/components/icon/calendar.svg"} alt={"calendar"}
+                                        <Image src={"/images/components/Icon/calendar.svg"} alt={"calendar"}
                                                width={18} height={18}/>
                                         <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>SSelasa, 20:00 WIB</p>
                                     </div>
@@ -300,7 +300,7 @@ export default function PriorityPage() {
                                     <p className={"text-Base/Base-Normal font-roboto text-font-description-color"}>Trading bersama seluruh member Trade Society</p>
 
                                     <div className={"flex items-center mt-8"}>
-                                        <Image src={"/images/components/icon/calendar.svg"} alt={"calendar"}
+                                        <Image src={"/images/components/Icon/calendar.svg"} alt={"calendar"}
                                                width={18} height={18}/>
                                         <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>Senin-Jumat setiap high impact news</p>
                                     </div>
@@ -315,7 +315,7 @@ export default function PriorityPage() {
                                         market bersama Analyst Trade Society</p>
 
                                     <div className={"flex items-center mt-8"}>
-                                        <Image src={"/images/components/icon/calendar.svg"} alt={"calendar"}
+                                        <Image src={"/images/components/Icon/calendar.svg"} alt={"calendar"}
                                                width={18} height={18}/>
                                         <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>Minggu,
                                             19:00 WIB</p>
@@ -330,7 +330,7 @@ export default function PriorityPage() {
                                     <p className={"text-Base/Base-Normal font-roboto text-font-description-color"}>QnA, Tips & Tracks, How To</p>
 
                                     <div className={"flex items-center mt-8"}>
-                                        <Image src={"/images/components/icon/calendar.svg"} alt={"calendar"}
+                                        <Image src={"/images/components/Icon/calendar.svg"} alt={"calendar"}
                                                width={18} height={18}/>
                                         <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>Rabu, 19:00 WIB</p>
                                     </div>
@@ -350,7 +350,7 @@ export default function PriorityPage() {
                         className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white  sticky  top-[24px] drop-shadow-custom-cards overflow-hidden")}>
 
                         <div className={clsx("bg-[#E239141A] py-[8px] px-8 flex items-center ")}>
-                            <Image src={"/images/components/icon/alert-circle.svg"} alt={"Star"}
+                            <Image src={"/images/components/Icon/alert-circle.svg"} alt={"Star"}
                                    width={16} height={16}/>
                             <div className={clsx("ml-[12px]")}>
                                 <p className={clsx("font-inter font-light text-[#E23914] ")}>Harga diskon ini terbatas - <br /> <span className={clsx(" font-bold ")}>Gabung sekarang!</span> </p>
@@ -362,7 +362,7 @@ export default function PriorityPage() {
 
                                 <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Priority</h3>
                                 <div className={"flex"}>
-                                    <Image src={"/images/components/icon/star.svg"} alt={"Star"}
+                                    <Image src={"/images/components/Icon/star.svg"} alt={"Star"}
                                            width={24} height={24}/>
                                     <h6 className={clsx("font-roboto text-heading-5 text-font-description-color ml-1")}>5.0</h6>
                                 </div>
