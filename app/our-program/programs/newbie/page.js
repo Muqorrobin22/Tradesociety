@@ -11,6 +11,7 @@ import ProgramCards from "@/app/_ui/Components/Cards/ProgramCards";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
 import {familyBenefitList, newbieBenefitList, priorityBenefitList} from "@/app/_lib/const/VARIABLES";
+import {fonts} from "@/app/_lib/utils/fonts/fonts";
 
 export default function NewbiePage() {
 
@@ -126,9 +127,9 @@ export default function NewbiePage() {
                 className={clsx("relative bg-linear-gradient-program-newbie h-[400px] px-[72px] rounded-[32px] flex items-center ")}>
 
                 <section className={clsx("text-left  w-[500px] relative z-20 ")}>
-                    <p className={clsx("font-roboto text-Base/Base-Strong text-[#1761B1]  ")}>Newbie</p>
+                    <p className={clsx("text-Base/Base-Strong text-[#1761B1]  ", fonts.roboto)}>Newbie</p>
                     <h3 className={clsx("text-heading-3 text-[#15345A] my-2 ")}>Cocok untuk yang baru mulai</h3>
-                    <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-left")}>Jangan
+                    <p className={clsx("text-XL/XL-Normal text-font-description-color  text-left", fonts.roboto)}>Jangan
                         lagi bingung mulai dari mana, karena <br/> program ini cocok untuk kalian yang baru
                         terjun <br/> ke dunia trading.
                     </p>
@@ -170,7 +171,7 @@ export default function NewbiePage() {
                                        e.preventDefault();
                                        handleScrollToSection("Description");
                                    }}
-                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong font-roboto text-[#154377] ", scrollActiveState === "Description" ? "border-b-[2px] border-[#154377]" : "")}>Deskripsi</a>
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ",  fonts.roboto ,scrollActiveState === "Description" ? "border-b-[2px] border-[#154377]" : "")}>Deskripsi</a>
                             </li>
 
                             <li className={clsx("ml-8")}>
@@ -179,7 +180,7 @@ export default function NewbiePage() {
                                        e.preventDefault();
                                        handleScrollToSection("Materi");
                                    }}
-                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong font-roboto text-[#154377] " , scrollActiveState === "materi" ? "border-b-[2px] border-[#154377]" : "")}>Materi</a>
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] " , fonts.roboto , scrollActiveState === "materi" ? "border-b-[2px] border-[#154377]" : "")}>Materi</a>
                             </li>
 
                             <li className={clsx("ml-8")}>
@@ -188,7 +189,7 @@ export default function NewbiePage() {
                                        e.preventDefault();
                                        handleScrollToSection("Benefit");
                                    }}
-                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong font-roboto text-[#154377] " , scrollActiveState === "benefits" ? "border-b-[2px] border-[#154377]" : "")}>Benefits</a>
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] " , fonts.roboto , scrollActiveState === "benefits" ? "border-b-[2px] border-[#154377]" : "")}>Benefits</a>
                             </li>
 
                             <li className={clsx("ml-8")}>
@@ -197,7 +198,7 @@ export default function NewbiePage() {
                                        e.preventDefault();
                                        handleScrollToSection("Jadwal_Kelas");
                                    }}
-                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong font-roboto text-[#154377] " , scrollActiveState === "jadwal_kelas" ? "border-b-[2px] border-[#154377]" : "")}>Jadwal
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] " , fonts.roboto , scrollActiveState === "jadwal_kelas" ? "border-b-[2px] border-[#154377]" : "")}>Jadwal
                                     kelas</a>
                             </li>
 
@@ -214,7 +215,7 @@ export default function NewbiePage() {
                         {/* Deskripsi */}
                         <section className={clsx("pb-8 border-b-[1px] border-[#E3EDFB] ")} id={"Description"} >
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Deskripsi</h3>
-                            <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-left")}>Program
+                            <p className={clsx("text-XL/XL-Normal text-font-description-color  text-left", fonts.roboto)}>Program
                                 ini dibuat khusus untuk pemula yang ingin belajar trading dari 0. Tidak hanya materi,
                                 tapi kalian juga akan praktek langsung menggunakan akun Demo.
                             </p>
@@ -224,7 +225,7 @@ export default function NewbiePage() {
                         {/* Materi */}
                         <section className={clsx(" mt-8 pb-8 border-b-[1px] border-[#E3EDFB] ")} id={"Materi"} >
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Materi</h3>
-                            <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-left")}>Beberapa
+                            <p className={clsx("text-XL/XL-Normal text-font-description-color  text-left", fonts.roboto)}>Beberapa
                                 materi yang akan kalian dapatkan di program Newbie.
                             </p>
 
@@ -260,13 +261,13 @@ export default function NewbiePage() {
                                         <div className={"w-[8px] h-[8px] rounded-full bg-[#277DD0] "}/>
                                         <h3 className={clsx("text-heading-9 text-[#15345A] ml-2 ")}>Kelas edukasi</h3>
                                     </div>
-                                    <p className={"text-Base/Base-Normal font-roboto text-font-description-color"}>Belajar
+                                    <p className={clsx("text-Base/Base-Normal text-font-description-color", fonts.roboto)}>Belajar
                                         bersama mentor Trade Society</p>
 
                                     <div className={"flex items-center mt-8"}>
                                         <Image src={"/images/components/Icon/calendar.svg"} alt={"calendar"}
                                                width={18} height={18}/>
-                                        <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>Senin,
+                                        <p className={clsx("text-Base/Base-Normal text-font-description-color ml-2", fonts.roboto)}>Senin,
                                             20:00 WIB</p>
                                     </div>
                                 </div>
@@ -276,12 +277,12 @@ export default function NewbiePage() {
                                         <div className={"w-[8px] h-[8px] rounded-full bg-secondary-green-color "}/>
                                         <h3 className={clsx("text-heading-9 text-[#15345A] ml-2 ")}>Live trading</h3>
                                     </div>
-                                    <p className={"text-Base/Base-Normal font-roboto text-font-description-color"}>Trading bersama seluruh member Trade Society</p>
+                                    <p className={clsx("text-Base/Base-Normal text-font-description-color", fonts.roboto)}>Trading bersama seluruh member Trade Society</p>
 
                                     <div className={"flex items-center mt-8"}>
                                         <Image src={"/images/components/Icon/calendar.svg"} alt={"calendar"}
                                                width={18} height={18}/>
-                                        <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>1x seminggu mengikuti high impact news</p>
+                                        <p className={clsx("text-Base/Base-Normal text-font-description-color ml-2", fonts.roboto)}>1x seminggu mengikuti high impact news</p>
                                     </div>
                                 </div>
 
@@ -290,12 +291,12 @@ export default function NewbiePage() {
                                         <div className={"w-[8px] h-[8px] rounded-full bg-secondary-gold-color "}/>
                                         <h3 className={clsx("text-heading-9 text-[#15345A] ml-2 ")}>Sharing session</h3>
                                     </div>
-                                    <p className={"text-Base/Base-Normal font-roboto text-font-description-color"}>QnA, Tips & Tricks, How to</p>
+                                    <p className={clsx("text-Base/Base-Normal text-font-description-color", fonts.roboto)}>QnA, Tips & Tricks, How to</p>
 
                                     <div className={"flex items-center mt-8"}>
                                         <Image src={"/images/components/Icon/calendar.svg"} alt={"calendar"}
                                                width={18} height={18}/>
-                                        <p className={"text-Base/Base-Normal font-roboto text-font-description-color ml-2"}>Rabu, 20:00 WIB</p>
+                                        <p className={clsx("text-Base/Base-Normal text-font-description-color ml-2", fonts.roboto)}>Rabu, 20:00 WIB</p>
                                     </div>
                                 </div>
                             </div>
@@ -319,7 +320,7 @@ export default function NewbiePage() {
                             <div className={"flex"}>
                                 <Image src={"/images/components/Icon/star.svg"} alt={"Star"}
                                        width={24} height={24}/>
-                                <h6 className={clsx("font-roboto text-heading-5 text-font-description-color ml-1")}>5.0</h6>
+                                <h6 className={clsx(" text-heading-5 text-font-description-color ml-1", fonts.roboto)}>5.0</h6>
                             </div>
                         </div>
                         <div className={clsx("text-center  ")}>
@@ -327,7 +328,7 @@ export default function NewbiePage() {
                                 className={clsx(" text-heading-6", "text-secondary-green-color")}>Free</span>
 
                                 <span
-                                    className={clsx("text-font-description-color font-roboto text-LG/LG-Normal ml-2")}>/ Lifetime </span>
+                                    className={clsx("text-font-description-color text-LG/LG-Normal ml-2", fonts.roboto)}>/ Lifetime </span>
                             </h1>
                             <Button href={"/"} text={"Gabung Kelas ini"} noIcon={false}/>
                         </div>
@@ -344,7 +345,7 @@ export default function NewbiePage() {
                 <section className={clsx("text-center relative z-20")}>
                     <h3 className={clsx("text-heading-3 text-[#15345A] my-2 ")}>Program lain yang sesuai dengan
                         kamu</h3>
-                    <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-center")}>Jangan
+                    <p className={clsx("text-XL/XL-Normal text-font-description-color  text-center", fonts.roboto)}>Jangan
                         Temukan program yang sesuai dengan kemampuan dan skillmu!
                     </p>
                 </section>
@@ -373,7 +374,7 @@ export default function NewbiePage() {
 
                         <div className={clsx("ml-8")}>
                             <h6 className={clsx("text-heading-3 text-white mb-2")}>Ikuti kelas online dan mulai <br /> belajar sekarang</h6>
-                            <p className={clsx("text-white text-XL/XL-Normal font-roboto text-white ")}>Kami bantu untuk
+                            <p className={clsx("text-white text-XL/XL-Normal ", fonts.roboto)}>Kami bantu untuk
                                 bisa profit
                                 konsisten!</p>
                         </div>

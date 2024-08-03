@@ -8,28 +8,15 @@ import {Roboto, Inter} from "next/font/google"
 import Footer from "@/app/_ui/Components/Footer/page";
 
 const myFont = localFont({
-  src: [
-    {
-      path: "./../public/fonts/BebasNeue-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-  ],
+    src: [
+        {
+            path: "./../public/fonts/BebasNeue-Regular.ttf",
+            weight: "400",
+            style: "normal",
+        },
+    ],
 });
 
-const roboto_init = Roboto({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  style: "normal",
-  variable: '--font-roboto-mono',
-})
-
-const inter_init = Inter({
-    subsets: ["latin"],
-    weight: ["300", "400", "500", "600", "700"],
-    style: "normal",
-    variable: "--font-inter"
-})
 
 export const metadata = {
   title: "TradeSociety",
@@ -41,7 +28,7 @@ export default function RootLayout({ children }) {
 
 
   return (
-    <html lang="en" className={`${myFont.className} ${roboto_init.variable} ${inter_init.variable} `}>
+    <html lang="en" className={`${myFont.className} `}>
       <body className=" xl:px-[120px] ">
           <Navbar />
           {children}

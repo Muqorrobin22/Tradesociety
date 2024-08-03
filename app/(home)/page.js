@@ -12,6 +12,7 @@ import FAQCard from "@/app/_ui/Micro-Component/FAQ/FAQCard";
 import {useDispatch} from "react-redux";
 import {setShowFaq} from "@/app/_lib/store/features/faqslices/faqSlices";
 import {familyBenefitList, newbieBenefitList, priorityBenefitList} from "@/app/_lib/const/VARIABLES";
+import {fonts} from "@/app/_lib/utils/fonts/fonts";
 
 export default function Home() {
 
@@ -102,7 +103,7 @@ export default function Home() {
 
       <section className={clsx("text-center pt-[64px]")}>
         <h1 className={clsx("text-white text-heading-1 w-[400px] mx-auto ")}>Sukses trading bersama  Trade Society</h1>
-        <p className={clsx("text-XL/XL-Normal text-[#F6F6F6] font-roboto text-center mx-auto w-[500px] mt-2 ")}>Bukan hanya belajar, tapi juga kelilingi diri kalian dengan  orang-orang yang yang memiliki tujuan dan mindset untuk menjadi sukses.</p>
+        <p className={clsx("text-XL/XL-Normal text-[#F6F6F6] text-center mx-auto w-[500px] mt-2 ", fonts.roboto)}>Bukan hanya belajar, tapi juga kelilingi diri kalian dengan  orang-orang yang yang memiliki tujuan dan mindset untuk menjadi sukses.</p>
       </section>
     </section>
 
@@ -133,9 +134,9 @@ export default function Home() {
     {/*  Our program > Text Heading - Start  */}
 
       <section className={clsx("flex flex-col justify-center items-center")}>
-        <p className={clsx("font-roboto text-Base/Base-Strong text-[#1761B1]  ")}>Our programs</p>
+        <p className={clsx("text-Base/Base-Strong text-[#1761B1]  ", fonts.roboto)}>Our programs</p>
         <h3 className={clsx("text-heading-3 text-[#15345A] my-2 ")}>Belajar sesuai kemampuan</h3>
-        <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color max-w-[550px] text-center")}>Bebas pilih program yang paling sesuai untuk kalian, baik  pemula ataupun berpengalaman, semuanya ada di sini!</p>
+        <p className={clsx("text-XL/XL-Normal text-font-description-color max-w-[550px] text-center", fonts.roboto)}>Bebas pilih program yang paling sesuai untuk kalian, baik  pemula ataupun berpengalaman, semuanya ada di sini!</p>
 
       </section>
 
@@ -156,7 +157,7 @@ export default function Home() {
       {/*  Our program > Punya pertanyaan lain? - Start  */}
 
       <section className={clsx("text-center flex items-center justify-center mt-10 pt-8 pb-10")}>
-        <h1 className={clsx("text-font-description-color text-XL/XL-Normal font-roboto mr-[10px]")}>Punya pertanyaan lain?</h1>
+        <h1 className={clsx("text-font-description-color text-XL/XL-Normal mr-[10px]", fonts.roboto)}>Punya pertanyaan lain?</h1>
         <div>
           <Button href={"/"} text={"Hubungi kami"} type={"secondary"} />
         </div>
@@ -176,9 +177,9 @@ export default function Home() {
       {/*  Kata kata dari mereka > Heading - Start   */}
 
       <section className={clsx("flex flex-col justify-center items-center")}>
-        <p className={clsx("font-roboto text-Base/Base-Strong text-[#1761B1]  ")}>Our testimonials</p>
+        <p className={clsx(" text-Base/Base-Strong text-[#1761B1]  ", fonts.roboto)}>Our testimonials</p>
         <h3 className={clsx("text-heading-3 text-[#15345A] my-2 ")}>Kata-kata dari mereka</h3>
-        <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color max-w-[550px] text-center")}>Beberapa member sukses Trade Society</p>
+        <p className={clsx("text-XL/XL-Normal text-font-description-color max-w-[550px] text-center", fonts.roboto)}>Beberapa member sukses Trade Society</p>
 
       </section>
 
@@ -223,9 +224,9 @@ export default function Home() {
       {/*  FAQ > Heading - Start   */}
 
       <section className={clsx("flex flex-col justify-center items-start")}>
-        <p className={clsx("font-roboto text-Base/Base-Strong text-[#1761B1]  ")}>Frequently asked questions</p>
+        <p className={clsx(" text-Base/Base-Strong text-[#1761B1]  ", fonts.roboto)}>Frequently asked questions</p>
         <h3 className={clsx("text-heading-3 text-[#15345A] my-2 ")}>Jangan khawatir, semua pertanyaan <br /> kalian sudah terjawab!</h3>
-        <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-left")}>Kami sudah mengumpulkan jawaban dari pertanyaan yang sering ditanyakan.</p>
+        <p className={clsx("text-XL/XL-Normal text-font-description-color  text-left", fonts.roboto)}>Kami sudah mengumpulkan jawaban dari pertanyaan yang sering ditanyakan.</p>
 
       </section>
 
@@ -254,7 +255,7 @@ export default function Home() {
 
             <div className={clsx("ml-8")}>
               <h6 className={clsx("text-heading-3 text-white mb-2")}>Ikut kelas online sekarang</h6>
-              <p className={clsx("text-white text-XL/XL-Normal font-roboto text-white ")}>Kami bantu untuk bisa profit
+              <p className={clsx("text-white text-XL/XL-Normal ", fonts.roboto)}>Kami bantu untuk bisa profit
                 konsisten!</p>
             </div>
           </div>

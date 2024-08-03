@@ -1,11 +1,12 @@
 import Link from "next/link";
 import clsx from "clsx";
 import Image from "next/image";
+import {fonts} from "@/app/_lib/utils/fonts/fonts";
 
 export default function Button({href, type = "primary", noIcon = false, text}) {
     return <div>
         <Link href={href}
-              className={clsx("py-2.5 px-4 text-center  rounded-[100px] font-roboto text-LG/LG-Strong flex items-center justify-center ", type === "primary" && "bg-primary-color text-white", type === "secondary" && "bg-white border-[1px] border-secondary-gold-color text-secondary-gold-color ")}>
+              className={clsx("py-2.5 px-4 text-center  rounded-[100px] text-LG/LG-Strong flex items-center justify-center ",fonts.roboto , type === "primary" && "bg-primary-color text-white", type === "secondary" && "bg-white border-[1px] border-secondary-gold-color text-secondary-gold-color ")}>
             <span> {text} </span>
             <div
                 className={clsx("ml-2.5", noIcon ? "hidden" : "visible", type.toLowerCase() === "secondary" ? "hidden" : "visible")}>

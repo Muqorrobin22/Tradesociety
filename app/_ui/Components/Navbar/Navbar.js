@@ -6,6 +6,7 @@ import {usePathname} from "next/navigation";
 import clsx from "clsx";
 import Button from "@/app/_ui/Micro-Component/Button/Button";
 import {useState} from "react";
+import {fonts} from "@/app/_lib/utils/fonts/fonts";
 
 
 export default function Navbar(props) {
@@ -63,11 +64,11 @@ export default function Navbar(props) {
             <div className={clsx("relative")}>
                 <ul className={clsx("flex items-center mx-auto")}>
                     {links.map((link) => (<li key={link.name} className={clsx("[&:not(:last-child)]:mr-3 text-center transition-all")} >
-                        <Link href={link.dropdown ? "#" : link.href} className={clsx("text-LG/LG-Normal text-[#15345A] font-roboto hover:border-[1px] hover:border-[#C2DBF5] hover:rounded-[100px] py-2.5 px-4 transition-all flex items-center ", {
+                        <Link href={link.dropdown ? "#" : link.href} className={clsx("text-LG/LG-Normal text-[#15345A] hover:border-[1px] hover:border-[#C2DBF5] hover:rounded-[100px] py-2.5 px-4 transition-all flex items-center ", {
                             "bg-primary-light-color rounded-[100px] py-2.5 px-4": pathname === link.href
                         }, {
                             "bg-primary-light-color rounded-[100px] py-2.5 px-4": pathname.includes(link.hrefDetail)
-                        }  )}  onClick={() => handleSetIsOpenOurProgram(link)} > {link.name} <Image src={"/images/components/illustration/arrow_down.svg"} alt={"arrow"} width={14} height={14} className={clsx(link.dropdown ? "visible" : "hidden", "ml-2")} /> </Link>
+                        }, fonts.roboto  )}  onClick={() => handleSetIsOpenOurProgram(link)} > {link.name} <Image src={"/images/components/illustration/arrow_down.svg"} alt={"arrow"} width={14} height={14} className={clsx(link.dropdown ? "visible" : "hidden", "ml-2")} /> </Link>
                     </li>))}
 
 
@@ -77,7 +78,7 @@ export default function Navbar(props) {
                         <Image src={"/images/components/illustration/dropdown_newbie.png"} alt={"dropdown_newbie"} width={80} height={80} />
                         <div className={clsx("ml-4")}>
                             <h6 className={clsx("text-heading-8 text-[#15345A] ")}>Newbie</h6>
-                            <p className={clsx(" text-Base/Base-Normal font-roboto text-font-description-color ")}>Khusus pemula belajar dari 0 dan praktek langsung menggunakan akun demo.</p>
+                            <p className={clsx(" text-Base/Base-Normal text-font-description-color ", fonts.roboto)}>Khusus pemula belajar dari 0 dan praktek langsung menggunakan akun demo.</p>
                         </div>
                         <Image src={"/images/components/Icon/arrow_right_up_our_program.svg"} alt={"Arrow"} width={24} height={24} className={clsx("ml-4")} />
                     </Link>
@@ -86,7 +87,7 @@ export default function Navbar(props) {
                         <Image src={"/images/components/illustration/dropdown_family.png"} alt={"dropdown_newbie"} width={80} height={80} />
                         <div className={clsx("ml-4")}>
                             <h6 className={clsx("text-heading-8 text-[#15345A] ")}>family</h6>
-                            <p className={clsx(" text-Base/Base-Normal font-roboto text-font-description-color ")}>Terbuka untuk umum yang sudah memahami dasar-dasar trading dan siap menggunakan akun real.</p>
+                            <p className={clsx(" text-Base/Base-Normal text-font-description-color ", fonts.roboto)}>Terbuka untuk umum yang sudah memahami dasar-dasar trading dan siap menggunakan akun real.</p>
                         </div>
                         <Image src={"/images/components/Icon/arrow_right_up_our_program.svg"} alt={"Arrow"} width={24} height={24} className={clsx("ml-4")} />
                     </Link>
@@ -95,7 +96,7 @@ export default function Navbar(props) {
                         <Image src={"/images/components/illustration/dropdown_priority.png"} alt={"dropdown_newbie"} width={80} height={80} />
                         <div className={clsx("ml-4")}>
                             <h6 className={clsx("text-heading-8 text-[#15345A] ")}>priority</h6>
-                            <p className={clsx(" text-Base/Base-Normal font-roboto text-font-description-color ")}>Eksklusif untuk trader yang ingin belajar berbagai ilmu trading lebih dalam dan detail.</p>
+                            <p className={clsx(" text-Base/Base-Normal text-font-description-color ", fonts.roboto)}>Eksklusif untuk trader yang ingin belajar berbagai ilmu trading lebih dalam dan detail.</p>
                         </div>
                         <Image src={"/images/components/Icon/arrow_right_up_our_program.svg"} alt={"Arrow"} width={24} height={24} className={clsx("ml-4")} />
                     </Link>

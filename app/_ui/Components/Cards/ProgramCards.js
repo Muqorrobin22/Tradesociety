@@ -2,6 +2,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import BenefitList from "@/app/_ui/Micro-Component/BenefitList/Benefit-List";
 import Button from "@/app/_ui/Micro-Component/Button/Button";
+import {fonts} from "@/app/_lib/utils/fonts/fonts";
 
 export default function ProgramCards({ type_class, description_class, benefitList, price, period, href, imageSrc, strikethroughPrice = "" }) {
     return (
@@ -13,7 +14,7 @@ export default function ProgramCards({ type_class, description_class, benefitLis
                 <div className={clsx("p-8")}>
                     <div className={clsx("mx-auto text-center mb-10")}>
                         <h1 className={clsx("text-heading-6 text-[#15345A] mb-2 ")}> {type_class} </h1>
-                        <p className={clsx("text-LG/LG-Normal font-roboto text-font-description-color  text-center mx-auto")}> {description_class} </p>
+                        <p className={clsx("text-LG/LG-Normal text-font-description-color  text-center mx-auto", fonts.roboto)}> {description_class} </p>
                     </div>
                     <div>
                         {benefitList.map((benefit) => (
@@ -24,8 +25,8 @@ export default function ProgramCards({ type_class, description_class, benefitLis
                     </div>
                     <div className={clsx("text-center absolute bottom-[32px] left-[32px] right-[32px] ")}>
                         <h1 className={clsx("mb-4 flex items-center justify-center ")}><span
-                            className={clsx(" text-heading-6", price.toLowerCase() === "free" ? "text-secondary-green-color" : "text-[#33568B]" )}>{price}</span> <span className={clsx("line-through text-LG/LG-Normal font-roboto text-font-description-color ml-1.5")}> {strikethroughPrice} </span> <span
-                            className={clsx("text-font-description-color font-roboto text-LG/LG-Normal ml-2")}>/ {period}</span>
+                            className={clsx(" text-heading-6", price.toLowerCase() === "free" ? "text-secondary-green-color" : "text-[#33568B]" )}>{price}</span> <span className={clsx("line-through text-LG/LG-Normal text-font-description-color ml-1.5", fonts.roboto)}> {strikethroughPrice} </span> <span
+                            className={clsx("text-font-description-color text-LG/LG-Normal ml-2", fonts.roboto)}>/ {period}</span>
                         </h1>
                         <Button href={href} text={"Lihat selengkapnya"} noIcon={true}/>
                     </div>

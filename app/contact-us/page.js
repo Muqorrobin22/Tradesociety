@@ -3,6 +3,7 @@ import Image from "next/image";
 import BenefitList from "@/app/_ui/Micro-Component/BenefitList/Benefit-List";
 import Button from "@/app/_ui/Micro-Component/Button/Button";
 import ContactUsCard from "@/app/_ui/Components/Cards/ContactusCard";
+import {fonts} from "@/app/_lib/utils/fonts/fonts";
 
 export default function ContactUsPage() {
 
@@ -26,9 +27,9 @@ export default function ContactUsPage() {
         <main className={clsx("mt-[157px] mb-[157px]")}>
             <section>
                 <div className={clsx("text-center mb-8")}>
-                    <p className={clsx("text-SM/SM-Strong font-roboto text-[#6195CF] py-[4px] px-[12px] bg-[#F3F6FC] rounded-[100px] text-center inline-block mb-4 ")}>Contact us</p>
+                    <p className={clsx("text-SM/SM-Strong text-[#6195CF] py-[4px] px-[12px] bg-[#F3F6FC] rounded-[100px] text-center inline-block mb-4 ", fonts.roboto)}>Contact us</p>
                     <h3 className={clsx("text-heading-3 text-[#15345A] mb-4 ")}> Get in touch</h3>
-                    <p className={clsx("text-XL/XL-Normal font-roboto text-font-description-color  text-center")}>
+                    <p className={clsx("text-XL/XL-Normal text-font-description-color  text-center", fonts.roboto)}>
                         Any questions or remarks? Just write us a message!</p>
                 </div>
                 <div className={clsx("grid grid-cols-3 gap-8 ")}>

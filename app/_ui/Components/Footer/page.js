@@ -3,6 +3,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
+import {fonts} from "@/app/_lib/utils/fonts/fonts";
 
 export default function Footer() {
 
@@ -46,7 +47,7 @@ export default function Footer() {
                         {links.map((link) => (
                             <li key={link.name} className={clsx("[&:not(:last-child)]:mr-6 text-center")}>
                                 <Link href={link.href}
-                                      className={clsx("text-LG/LG-Normal text-[#15345A] font-roboto  ")}> {link.name} </Link>
+                                      className={clsx("text-LG/LG-Normal text-[#15345A]  ", fonts.roboto)}> {link.name} </Link>
                             </li>))}
 
 
@@ -59,7 +60,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className={"text-center mt-[32px]"}>
-                <p className={clsx("font-roboto text-LG/LG-Normal text-[#00000073] mx-auto")}>© 2024 [Company name]. All rights reserved.</p>
+                <p className={clsx(" text-LG/LG-Normal text-[#00000073] mx-auto", fonts.roboto)}>© 2024 [Company name]. All rights reserved.</p>
             </div>
         </footer>
     )
