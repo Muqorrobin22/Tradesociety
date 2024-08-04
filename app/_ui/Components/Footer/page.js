@@ -32,8 +32,8 @@ export default function Footer() {
     ]
 
     return (
-        <footer className="footer py-8">
-            <div className="container flex items-center justify-between">
+        <footer className="footer desktop:py-8 mobile:py-8 mobile:w-auto ">
+            <div className="container flex desktop:items-center desktop:justify-between mobile:flex-col mobile:justify-center mobile:items-center mobile:mx-auto desktop:flex-row ">
                 <div>
                     <Image
                         alt="Logo Tradesociety"
@@ -43,9 +43,9 @@ export default function Footer() {
                     />
                 </div>
                 <div>
-                    <ul className={clsx("flex items-center mx-auto")}>
+                    <ul className={clsx("flex items-center mx-auto mobile:w-auto mobile:mt-[24px]")}>
                         {links.map((link) => (
-                            <li key={link.name} className={clsx("[&:not(:last-child)]:mr-6 text-center")}>
+                            <li key={link.name} className={clsx("desktop:[&:not(:last-child)]:mr-6 text-center mobile:[&:not(:last-child)]:mr-[24px] ")}>
                                 <Link href={link.href}
                                       className={clsx("text-LG/LG-Normal text-[#15345A]  ", fonts.roboto)}> {link.name} </Link>
                             </li>))}
@@ -53,7 +53,7 @@ export default function Footer() {
 
                     </ul>
                 </div>
-                <div className={clsx("flex items-center justify-between")}>
+                <div className={clsx("flex desktop:items-center desktop:justify-between mobile:justify-center mobile:mt-[26px]")}>
                     <a href="#" className={clsx("mr-4")}><Image src={"/images/components/Icon/telegram.svg"} alt={"Telegram Icon"} width={24} height={24} /></a>
                     <a href="#" className={clsx("mr-4")}><Image src={"/images/components/Icon/instagram.svg"} alt={"Instagram Icon"} width={24} height={24} /></a>
                     <a href="#" className={clsx()}><Image src={"/images/components/Icon/linkedin.svg"} alt={"Linkedin Icon"} width={24} height={24} /></a>
