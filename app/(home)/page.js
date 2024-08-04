@@ -165,13 +165,13 @@ export default function Home() {
 
       <section className={clsx("mt-[96px] flex desktop:justify-between desktop:flex-row mobile:flex-col desktop:items-center mobile:items-center mobile:justify-center")}>
           <div className={clsx("desktop:mt-0 mobile:mt-4")}>
-            <ProgramCards benefitList={newbieBenefitList} description_class={"Khusus pemula belajar dari 0 dan praktek langsung menggunakan akun demo."} period={"Lifetime"} price={"FREE"} type_class={"Newbie"} href={"/"} imageSrc={"/images/components/illustration/cards_home_1.png"} />
+            <ProgramCards benefitList={newbieBenefitList} description_class={"Khusus pemula belajar dari 0 dan praktek langsung menggunakan akun demo."} period={"Lifetime"} price={"FREE"} type_class={"Newbie"} href={"/our-program/programs/newbie"} imageSrc={"/images/components/illustration/cards_home_1.png"} />
           </div>
           <div className={clsx("desktop:mt-0 mobile:mt-4")}>
-            <ProgramCards benefitList={familyBenefitList} description_class={"Terbuka untuk umum yang sudah memahami dasar-dasar trading dan siap menggunakan akun real."} period={"Lifetime"} price={"FREE"} type_class={"Family"}  href={"/"} imageSrc={"/images/components/illustration/cards_home_2.png"}/>
+            <ProgramCards benefitList={familyBenefitList} description_class={"Terbuka untuk umum yang sudah memahami dasar-dasar trading dan siap menggunakan akun real."} period={"Lifetime"} price={"FREE"} type_class={"Family"}  href={"/our-program/programs/family"} imageSrc={"/images/components/illustration/cards_home_2.png"}/>
           </div>
         <div className={clsx("desktop:mt-0 mobile:mt-4")}>
-          <ProgramCards benefitList={priorityBenefitList} description_class={"Eksklusif untuk trader yang ingin belajar berbagai ilmu trading lebih dalam dan detail."} period={"Yearly"} price={"rp 1.500.000"} type_class={"priority"}  href={"/"} imageSrc={"/images/components/illustration/cards_home_3.png"} strikethroughPrice={"Rp5.000.000"}/>
+          <ProgramCards benefitList={priorityBenefitList} description_class={"Eksklusif untuk trader yang ingin belajar berbagai ilmu trading lebih dalam dan detail."} period={"Yearly"} price={"rp 1.500.000"} type_class={"priority"}  href={"/our-program/programs/priority"} imageSrc={"/images/components/illustration/cards_home_3.png"} strikethroughPrice={"Rp5.000.000"}/>
         </div>
       </section>
 
