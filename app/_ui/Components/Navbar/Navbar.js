@@ -144,7 +144,7 @@ export default function Navbar(props) {
             {/* End: For Desktop */}
 
             {/* Start: For Mobile */}
-            <div className={clsx("mobile:visible  desktop:hidden mobile:z-40 mobile:fixed mobile:left-[16px] mobile:right-[16px] top-[75px] mobile:drop-shadow-custom-cards  mobile:overflow-y-scroll mobile:bottom-0 ")}>
+            <div className={clsx("mobile:visible  desktop:hidden mobile:z-40 mobile:fixed mobile:left-[16px] mobile:right-[16px] top-[75px] mobile:drop-shadow-custom-cards  mobile:overflow-y-scroll mobile:bottom-0 ",  burgerOpen ? "mobile:visible" : "mobile:hidden")}>
 
 
                 <ul className={clsx("flex mx-auto flex-col items-start justify-start mobile:p-8 mobile:bg-white rounded-br-[32px] rounded-bl-[32px]  ", burgerOpen ? "mobile:visible" : "mobile:hidden")}>
