@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en" className={`${myFont.className} `}>
-      <body className=" xl:px-[120px] ">
+      <body className=" desktop:px-[120px] mobile:px-[16px]  ">
           <Navbar />
           {children}
           <Footer />
