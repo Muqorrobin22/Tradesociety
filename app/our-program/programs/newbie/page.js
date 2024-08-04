@@ -26,12 +26,19 @@ export default function NewbiePage() {
     const [scrollPositionDescriptionBar, setScrollPositionDescriptionBar] = useState(0);
     const [scrollActiveState, setScrollActiveState] = useState("");
     const [scrollNavbarLink, setScrollNavbarLink] = useState(0);
+    const [isReactBottom, setIsReactBottom] = useState(true);
 
     useEffect(() => {
         const handleScroll = () => {
             const position = window.scrollY;
             setScrollPositionCard(position);
             setScrollPositionDescriptionBar(position)
+
+            if(position > 3320 || position < 367) {
+                setIsReactBottom(true)
+            } else {
+                setIsReactBottom(false)
+            }
 
             if(position > 605) {
                 setScrollNavbarLink(position)
@@ -108,7 +115,7 @@ export default function NewbiePage() {
         // router.push(`#${id}`);
         const element = document.getElementById(id);
         if (element) {
-            const headerOffset = 100;
+            const headerOffset = 140;
             const elementPosition = element.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
@@ -124,7 +131,7 @@ export default function NewbiePage() {
 
             {/* Hero Section */}
             <section
-                className={clsx("relative bg-linear-gradient-program-newbie h-[400px] px-[72px] rounded-[32px] flex items-center ")}>
+                className={clsx("relative bg-linear-gradient-program-newbie desktop:h-[400px] mobile:h-[600px] desktop:px-[72px] rounded-[32px] flex desktop:items-center mobile:mt-[120px] mobile:p-8 desktop:m-0 overflow-x-hidden ")}>
 
                 <section className={clsx("text-left  w-[500px] relative z-20 ")}>
                     <p className={clsx("text-Base/Base-Strong text-[#1761B1]  ", fonts.roboto)}>Newbie</p>
@@ -141,7 +148,7 @@ export default function NewbiePage() {
                 {/*<Image src={"/images/components/illustration/about_us_hero.svg"} alt={""} height={486} width={500}*/}
                 {/*       className={clsx(" ml-auto ")}/>*/}
 
-                <div className={clsx("absolute flex items-center right-[32px] bottom-[32px] z-20 ")}>
+                <div className={clsx("absolute flex items-center desktop:right-[32px] mobile:right-[-64px] bottom-[32px] z-20 ")}>
                     {testimonialsList.map((testimonial, index) => (
                         <div key={testimonial.key} className={"ml-4"}>
                             <TestimonialCard name={testimonial.name} job={testimonial.job}
@@ -160,10 +167,11 @@ export default function NewbiePage() {
             <section className={clsx("mt-[80px] flex justify-between relative")}>
 
 
-                <section className={"basis-2/3"}>
+                <section className={"desktop:basis-2/3 mobile:basis-full"}>
                     {/*  Content > Navbar - Start  */}
 
-                    <section className={clsx(" border-b-[1px] border-[#E3EDFB]  left-0 right-0  ", scrollNavbarLink && "sticky top-0 z-20 bg-white py-6")}>
+                    <section
+                        className={clsx(" border-b-[1px] border-[#E3EDFB]  left-0 right-0  ", scrollNavbarLink && "desktop:sticky desktop:top-0 mobile:sticky mobile:top-[75px] z-30 bg-white py-6")}>
                         <ul className={clsx("flex")}>
                             <li>
                                 <a href="#Description"
@@ -171,7 +179,7 @@ export default function NewbiePage() {
                                        e.preventDefault();
                                        handleScrollToSection("Description");
                                    }}
-                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ",  fonts.roboto ,scrollActiveState === "Description" ? "border-b-[2px] border-[#154377]" : "")}>Deskripsi</a>
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ", fonts.roboto, scrollActiveState === "Description" ? "border-b-[2px] border-[#154377]" : "")}>Deskripsi</a>
                             </li>
 
                             <li className={clsx("ml-8")}>
@@ -180,7 +188,7 @@ export default function NewbiePage() {
                                        e.preventDefault();
                                        handleScrollToSection("Materi");
                                    }}
-                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] " , fonts.roboto , scrollActiveState === "materi" ? "border-b-[2px] border-[#154377]" : "")}>Materi</a>
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ", fonts.roboto, scrollActiveState === "materi" ? "border-b-[2px] border-[#154377]" : "")}>Materi</a>
                             </li>
 
                             <li className={clsx("ml-8")}>
@@ -189,7 +197,7 @@ export default function NewbiePage() {
                                        e.preventDefault();
                                        handleScrollToSection("Benefit");
                                    }}
-                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] " , fonts.roboto , scrollActiveState === "benefits" ? "border-b-[2px] border-[#154377]" : "")}>Benefits</a>
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ", fonts.roboto, scrollActiveState === "benefits" ? "border-b-[2px] border-[#154377]" : "")}>Benefits</a>
                             </li>
 
                             <li className={clsx("ml-8")}>
@@ -198,7 +206,7 @@ export default function NewbiePage() {
                                        e.preventDefault();
                                        handleScrollToSection("Jadwal_Kelas");
                                    }}
-                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] " , fonts.roboto , scrollActiveState === "jadwal_kelas" ? "border-b-[2px] border-[#154377]" : "")}>Jadwal
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ", fonts.roboto, scrollActiveState === "jadwal_kelas" ? "border-b-[2px] border-[#154377]" : "")}>Jadwal
                                     kelas</a>
                             </li>
 
@@ -210,10 +218,10 @@ export default function NewbiePage() {
 
                     {/*  Content > Description - Start  */}
 
-                    <section className={clsx("mt-8 relative")}  >
+                    <section className={clsx("mt-8 relative")}>
 
                         {/* Deskripsi */}
-                        <section className={clsx("pb-8 border-b-[1px] border-[#E3EDFB] ")} id={"Description"} >
+                        <section className={clsx("pb-8 border-b-[1px] border-[#E3EDFB] ")} id={"Description"}>
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Deskripsi</h3>
                             <p className={clsx("text-XL/XL-Normal text-font-description-color  text-left", fonts.roboto)}>Program
                                 ini dibuat khusus untuk pemula yang ingin belajar trading dari 0. Tidak hanya materi,
@@ -223,7 +231,7 @@ export default function NewbiePage() {
                         {/*Deskripsi*/}
 
                         {/* Materi */}
-                        <section className={clsx(" mt-8 pb-8 border-b-[1px] border-[#E3EDFB] ")} id={"Materi"} >
+                        <section className={clsx(" mt-8 pb-8 border-b-[1px] border-[#E3EDFB] ")} id={"Materi"}>
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Materi</h3>
                             <p className={clsx("text-XL/XL-Normal text-font-description-color  text-left", fonts.roboto)}>Beberapa
                                 materi yang akan kalian dapatkan di program Newbie.
@@ -240,7 +248,7 @@ export default function NewbiePage() {
                         {/*Materi*/}
 
                         {/* Benefit */}
-                        <section className={clsx("mt-8")} id={"Benefit"} >
+                        <section className={clsx("mt-8")} id={"Benefit"}>
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>BenefitS</h3>
                             <div className={clsx("mt-[24px]")}>
                                 {newbieBenefitList.map((benefit) => (
@@ -253,10 +261,10 @@ export default function NewbiePage() {
                         {/* Benefit */}
 
                         {/* Jadwal Kelas */}
-                        <section className={clsx("mt-8")} id={"Jadwal_Kelas"} >
+                        <section className={clsx("mt-8")} id={"Jadwal_Kelas"}>
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Jadwal kelas</h3>
-                            <div className={clsx("mt-[24px] border-[1px] border-[#E3EDFB] rounded-[32px] flex ")}>
-                                <div className={clsx("pt-4 px-8 pb-[36px] border-r-[1px] border-[#E3EDFB] basis-1/3 ")}>
+                            <div className={clsx("mt-[24px] border-[1px] border-[#E3EDFB] rounded-[32px] flex desktop:flex-row mobile:flex-col ")}>
+                                <div className={clsx("pt-4 px-8 pb-[36px] desktop:border-r-[1px] mobile:border-b-[1px] desktop:border-b-0 border-[#E3EDFB] basis-1/3 ")}>
                                     <div className={"flex items-center"}>
                                         <div className={"w-[8px] h-[8px] rounded-full bg-[#277DD0] "}/>
                                         <h3 className={clsx("text-heading-9 text-[#15345A] ml-2 ")}>Kelas edukasi</h3>
@@ -272,17 +280,19 @@ export default function NewbiePage() {
                                     </div>
                                 </div>
 
-                                <div className={clsx("pt-4 px-8 pb-[36px] border-r-[1px] border-[#E3EDFB] basis-1/3 ")}>
+                                <div className={clsx("pt-4 px-8 pb-[36px] desktop:border-r-[1px] mobile:border-b-[1px] desktop:border-b-0 border-[#E3EDFB] basis-1/3 ")}>
                                     <div className={"flex items-center"}>
                                         <div className={"w-[8px] h-[8px] rounded-full bg-secondary-green-color "}/>
                                         <h3 className={clsx("text-heading-9 text-[#15345A] ml-2 ")}>Live trading</h3>
                                     </div>
-                                    <p className={clsx("text-Base/Base-Normal text-font-description-color", fonts.roboto)}>Trading bersama seluruh member Trade Society</p>
+                                    <p className={clsx("text-Base/Base-Normal text-font-description-color", fonts.roboto)}>Trading
+                                        bersama seluruh member Trade Society</p>
 
                                     <div className={"flex items-center mt-8"}>
                                         <Image src={"/images/components/Icon/calendar.svg"} alt={"calendar"}
                                                width={18} height={18}/>
-                                        <p className={clsx("text-Base/Base-Normal text-font-description-color ml-2", fonts.roboto)}>1x seminggu mengikuti high impact news</p>
+                                        <p className={clsx("text-Base/Base-Normal text-font-description-color ml-2", fonts.roboto)}>1x
+                                            seminggu mengikuti high impact news</p>
                                     </div>
                                 </div>
 
@@ -291,12 +301,14 @@ export default function NewbiePage() {
                                         <div className={"w-[8px] h-[8px] rounded-full bg-secondary-gold-color "}/>
                                         <h3 className={clsx("text-heading-9 text-[#15345A] ml-2 ")}>Sharing session</h3>
                                     </div>
-                                    <p className={clsx("text-Base/Base-Normal text-font-description-color", fonts.roboto)}>QnA, Tips & Tricks, How to</p>
+                                    <p className={clsx("text-Base/Base-Normal text-font-description-color", fonts.roboto)}>QnA,
+                                        Tips & Tricks, How to</p>
 
                                     <div className={"flex items-center mt-8"}>
                                         <Image src={"/images/components/Icon/calendar.svg"} alt={"calendar"}
                                                width={18} height={18}/>
-                                        <p className={clsx("text-Base/Base-Normal text-font-description-color ml-2", fonts.roboto)}>Rabu, 20:00 WIB</p>
+                                        <p className={clsx("text-Base/Base-Normal text-font-description-color ml-2", fonts.roboto)}>Rabu,
+                                            20:00 WIB</p>
                                     </div>
                                 </div>
                             </div>
@@ -309,9 +321,9 @@ export default function NewbiePage() {
 
                 </section>
 
-                <section className={"basis-1/3 ml-[84px]  z-20 "}>
+                <section className={"  desktop:basis-1/3 mobile:basis-0 desktop:ml-[84px]  z-30 "}>
                     <div
-                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white p-8 sticky  top-[24px] drop-shadow-custom-cards ")}>
+                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white p-8 desktop:sticky mobile:fixed  desktop:top-[24px] drop-shadow-custom-cards ", isReactBottom ? "mobile:hidden" : " mobile:bottom-0 mobile:left-0 mobile:right-0")}>
 
 
                         <div
@@ -341,7 +353,7 @@ export default function NewbiePage() {
 
             {/*  Program lain yang kamu suka - Start  */}
 
-            <section className={clsx("mt-[80px] pt-8 px-[160px] pb-[60px] relative ")}>
+            <section className={clsx("mt-[80px] pt-8 desktop:px-[160px] mobile:px-8 desktop:pb-[60px] mobile:pb-[30px] relative ")}>
                 <section className={clsx("text-center relative z-20")}>
                     <h3 className={clsx("text-heading-3 text-[#15345A] my-2 ")}>Program lain yang sesuai dengan
                         kamu</h3>
@@ -349,37 +361,39 @@ export default function NewbiePage() {
                         Temukan program yang sesuai dengan kemampuan dan skillmu!
                     </p>
                 </section>
-                <section className={clsx("mt-8 grid grid-cols-2  relative z-20 ")}>
+                <section className={clsx("mt-8 grid desktop:grid-cols-2 relative z-20 ")}>
                     <div className={"w-full"}>
                         <ProgramCardsWithoutImage benefitList={familyBenefitList} period={"Lifetime"} price={"FREE"}
                                                   type_class={"Family"} href={"/our-program/programs/family"}/>
                     </div>
                     <div className={"w-full"}>
                         <ProgramCardsWithoutImage benefitList={priorityBenefitList} period={"Yearly"}
-                                                  price={"rp 1.500.000"} type_class={"priority"} href={"/our-program/programs/priority"}
+                                                  price={"rp 1.500.000"} type_class={"priority"}
+                                                  href={"/our-program/programs/priority"}
                                                   strikethroughPrice={"Rp5.000.000"}/>
                     </div>
                 </section>
 
-                <Image src={"/images/components/addons/about_us_jadi_bagian_tim_addons.png"} alt={"addons"} className={"absolute z-10"} fill={true} />
+                <Image src={"/images/components/addons/about_us_jadi_bagian_tim_addons.png"} alt={"addons"}
+                       className={"absolute z-10"} fill={true}/>
             </section>
 
             {/*  Program lain yang kamu suka - End  */}
 
-            <section className={clsx("mt-[60px] relative h-[216px]  px-[77px] bg-linear-gradient-faq rounded-[32px] mb-10 ")}>
-                <div className={clsx("flex items-center justify-between z-10 relative ")}>
-                    <div className={clsx("flex items-center")}>
-                        <Image src={"/images/components/illustration/faq_join_now_revision.svg"} alt={"Join Now"}
-                               width={216} height={216}/>
+            <section
+                className={clsx("mt-[60px] relative desktop:h-[216px] mobile:h-auto  desktop:px-[77px] bg-linear-gradient-faq rounded-[32px] ")}>
+                <div
+                    className={clsx("flex desktop:items-center desktop:justify-between mobile:flex-col desktop:flex-row  z-10 relative mobile:p-8 desktop:p-0 ")}>
 
-                        <div className={clsx("ml-8")}>
-                            <h6 className={clsx("text-heading-3 text-white mb-2")}>Ikuti kelas online dan mulai <br /> belajar sekarang</h6>
-                            <p className={clsx("text-white text-XL/XL-Normal ", fonts.roboto)}>Kami bantu untuk
-                                bisa profit
-                                konsisten!</p>
-                        </div>
+                    <Image src={"/images/components/illustration/faq_join_now_revision.svg"} alt={"Join Now"}
+                           width={216} height={216} className={clsx("mobile:order-3 desktop:order-1")}/>
+
+                    <div className={clsx("desktop:ml-8  mobile:order-1 desktop:order-2 desktop:mr-auto")}>
+                        <h6 className={clsx("text-heading-3 text-white mb-2")}>Ikut kelas online sekarang</h6>
+                        <p className={clsx("text-white text-XL/XL-Normal ", fonts.roboto)}>Kami bantu untuk bisa profit
+                            konsisten!</p>
                     </div>
-                    <div>
+                    <div className={clsx("desktop:order-3 mobile:order-2 mobile:mt-4 mobile:mb-8 desktop:my-0 ")}>
                         <Button href={"/"} type={"secondary"} text={"Hubungi kami"}/>
                     </div>
                 </div>
