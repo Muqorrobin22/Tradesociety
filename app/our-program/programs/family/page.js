@@ -136,7 +136,7 @@ export default function FamilyPage() {
 
             {/* Hero Section */}
             <section
-                className={clsx("relative bg-linear-gradient-program-family desktop:h-[400px] mobile:h-[600px] desktop:px-[72px] rounded-[32px] flex desktop:items-center mobile:mt-[120px] mobile:p-8 desktop:m-0 overflow-x-hidden ")}>
+                className={clsx("relative bg-linear-gradient-program-family desktop:h-[400px] mobile:h-[600px] desktop:px-[72px] rounded-[32px] flex desktop:items-center mobile:mt-[120px] mobile:p-8 desktop:m-0 overflow-hidden ")}>
 
                 <section className={clsx("text-left  w-[550px] relative z-20 ")}>
                     <p className={clsx(" text-Base/Base-Strong text-[#1761B1]  ", fonts.roboto)}>Family</p>
@@ -347,7 +347,7 @@ export default function FamilyPage() {
 
                 <section className={"desktop:basis-1/3 mobile:basis-0 desktop:ml-[84px]  z-30 "}>
                     <div
-                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white p-8 desktop:sticky mobile:fixed  desktop:top-[24px] drop-shadow-custom-cards ", isReactBottom ? "mobile:hidden" : " mobile:bottom-0 mobile:left-0 mobile:right-0")}>
+                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white p-8 desktop:sticky mobile:fixed  desktop:top-[24px] drop-shadow-custom-cards ", isReactBottom ? "mobile:hidden desktop:visible desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0")}>
 
 
                         <div
