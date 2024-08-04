@@ -93,17 +93,18 @@ export default function Home() {
     },
   ]
 
-  return <main className={clsx("mt-10")}>
+  return <main className={clsx("mt-10 ")}>
 
   {/* Hero Section */}
-    <section className={clsx("relative bg-linear-gradient-hero h-[524px] rounded-[32px] ")}>
+    <section className={clsx("relative bg-linear-gradient-hero h-[524px] rounded-[32px] mobile:mt-[120px] desktop:mt-0 ")}>
 
-      <Image src={"/images/components/addons/Hero_addons.png"} alt={""} height={353} width={1200} className={clsx("absolute bottom-0")} />
-      <Image src={"/images/components/illustration/image_hero.svg"} alt={""} height={400} width={640} className={clsx("absolute bottom-[-150px] left-[50%] translate-x-[-50%] ")} />
+      <Image src={"/images/components/addons/Hero_addons.png"} alt={""} height={353} width={1200} className={clsx("absolute desktop:bottom-0 mobile:hidden ")} />
+      <Image src={"/images/components/addons/Hero_addons_mobile.svg"} alt={""} height={353} width={1200} className={clsx("absolute mobile:bottom-0 desktop:hidden mobile:block mobile:visible ")} />
+      <Image src={"/images/components/illustration/image_hero.svg"} alt={""} height={400} width={640} className={clsx("absolute desktop:bottom-[-150px] mobile:bottom-[-80px] left-[50%] translate-x-[-50%] ")} />
 
       <section className={clsx("text-center pt-[64px]")}>
-        <h1 className={clsx("text-white text-heading-1 w-[400px] mx-auto ")}>Sukses trading bersama  Trade Society</h1>
-        <p className={clsx("text-XL/XL-Normal text-[#F6F6F6] text-center mx-auto w-[500px] mt-2 ", fonts.roboto)}>Bukan hanya belajar, tapi juga kelilingi diri kalian dengan  orang-orang yang yang memiliki tujuan dan mindset untuk menjadi sukses.</p>
+        <h1 className={clsx("text-white text-heading-1 desktop:w-[400px] mx-auto ")}>Sukses trading bersama  Trade Society</h1>
+        <p className={clsx("text-XL/XL-Normal text-[#F6F6F6] text-center mx-auto desktop:w-[500px] mt-2 ", fonts.roboto)}>Bukan hanya belajar, tapi juga kelilingi diri kalian dengan  orang-orang yang yang memiliki tujuan dan mindset untuk menjadi sukses.</p>
       </section>
     </section>
 
@@ -112,14 +113,14 @@ export default function Home() {
 
   {/*  Hero Section CTA - Start */}
 
-    <section className={clsx("relative mt-[180px] h-[306px] flex items-center px-[100px] ")}>
+    <section className={clsx("relative mt-[180px] h-[306px] desktop:flex desktop:items-center desktop:px-[100px] mobile:w-full ")}>
       <Image src={"/images/components/addons/hero_cta_revision_addons.png"} alt={""} height={306} width={1198} className={clsx("absolute z-10 left-[50%] translate-x-[-50%]")} />
-      <div className={clsx("z-20 flex justify-between items-center relative ")}>
-        <h1 className={clsx("text-primary-font-color text-heading-4 basis-2/3 ")}>
+      <div className={clsx("z-20 flex desktop:justify-between desktop:items-center relative mobile:flex-col mobile:items-start desktop:flex-row")}>
+        <h1 className={clsx("text-primary-font-color text-heading-4 desktop:basis-2/3 mobile:w-full ")}>
           Belajar trading <span className={clsx("text-secondary-gold-color")}>100% gratis!</span> <br/> Ikuti kelas
           online dan belajar sampai jago bersama para mentor!
         </h1>
-        <div className={clsx("basis-1/3 max-w-[200px]")}>
+        <div className={clsx("desktop:basis-1/3 desktop:max-w-[200px] mobile:mt-[15px]")}>
           <Button href={"/"} type={"primary"} text={"Daftar sekarang"}/>
         </div>
       </div>
@@ -135,7 +136,7 @@ export default function Home() {
 
       <section className={clsx("flex flex-col justify-center items-center")}>
         <p className={clsx("text-Base/Base-Strong text-[#1761B1]  ", fonts.roboto)}>Our programs</p>
-        <h3 className={clsx("text-heading-3 text-[#15345A] my-2 ")}>Belajar sesuai kemampuan</h3>
+        <h3 className={clsx("text-heading-3 text-[#15345A] my-2 mobile:text-center desktop:text-left ")}>Belajar sesuai kemampuan</h3>
         <p className={clsx("text-XL/XL-Normal text-font-description-color max-w-[550px] text-center", fonts.roboto)}>Bebas pilih program yang paling sesuai untuk kalian, baik  pemula ataupun berpengalaman, semuanya ada di sini!</p>
 
       </section>
