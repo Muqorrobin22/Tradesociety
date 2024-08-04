@@ -3,7 +3,7 @@ import Identifiers from "@/app/_ui/Micro-Component/Testimonials/Identifiers/Iden
 import {fonts} from "@/app/_lib/utils/fonts/fonts";
 
 export default function TestimonialCard({ name, comments, job, bg_color, bg_cards = "bg-white" }) {
-    return <div className={clsx(` rounded-[32px] border-[1px] border-[#4E9AE2] p-4 max-w-[270px] ${bg_cards} `)}>
+    return <div className={clsx(` rounded-[32px] border-[1px] border-[#4E9AE2] p-4 desktop:max-w-[270px] mobile:w-full ${bg_cards} `)}>
         <h4 className={clsx("text-Base/Base-Normal text-[#1761B1]", fonts.roboto)}>{`"${comments}"`}</h4>
         <div className={clsx("flex items-center mt-4")}>
 
