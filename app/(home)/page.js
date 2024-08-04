@@ -113,9 +113,9 @@ export default function Home() {
   return <main className={clsx("mt-10 ")}>
 
   {/* Hero Section */}
-    <section className={clsx("relative bg-linear-gradient-hero h-[524px] rounded-[32px] mobile:mt-[120px] desktop:mt-0 ")}>
+    <section className={clsx("relative bg-linear-gradient-hero h-[524px] rounded-[32px] mobile:mt-[120px] desktop:mt-0 mobile:p-4  desktop:p-0 ")}>
 
-      <Image src={"/images/components/addons/Hero_addons.png"} alt={""} height={353} width={1200} className={clsx("absolute desktop:bottom-0 mobile:hidden ")} />
+      <Image src={"/images/components/addons/Hero_addons.png"} alt={""} height={353} width={1200} className={clsx("absolute desktop:bottom-0 mobile:hidden desktop:block ")} />
       <Image src={"/images/components/addons/Hero_addons_mobile.svg"} alt={""} height={353} width={1200} className={clsx("absolute mobile:bottom-0 desktop:hidden mobile:block mobile:visible ")} />
       <Image src={"/images/components/illustration/image_hero.svg"} alt={""} height={400} width={640} className={clsx("absolute desktop:bottom-[-150px] mobile:bottom-[-80px] left-[50%] translate-x-[-50%] ")} />
 
@@ -130,7 +130,7 @@ export default function Home() {
 
   {/*  Hero Section CTA - Start */}
 
-    <section className={clsx("relative mt-[180px] h-[306px] desktop:flex desktop:items-center desktop:px-[100px] mobile:w-full ")}>
+    <section className={clsx("relative mt-[180px] h-[306px] desktop:flex desktop:items-center desktop:px-[100px] mobile:w-full mobile:px-8 ")}>
       <Image src={"/images/components/addons/hero_cta_revision_addons.png"} alt={""} height={306} width={1198} className={clsx("absolute z-10 left-[50%] translate-x-[-50%]")} />
       <div className={clsx("z-20 flex desktop:justify-between desktop:items-center relative mobile:flex-col mobile:items-start desktop:flex-row")}>
         <h1 className={clsx("text-primary-font-color text-heading-4 desktop:basis-2/3 mobile:w-full ")}>
@@ -147,7 +147,7 @@ export default function Home() {
 
     {/*  Our Program - Start */}
 
-    <section className={clsx("mt-[80px] py-[40px] ")}>
+    <section className={clsx("mt-[80px] py-[40px] mobile:px-8 desktop:px-0 ")}>
 
     {/*  Our program > Text Heading - Start  */}
 
@@ -163,7 +163,7 @@ export default function Home() {
 
       {/*  Our program > Cards - Start  */}
 
-      <section className={clsx("mt-[96px] flex desktop:justify-between desktop:flex-row mobile:flex-col")}>
+      <section className={clsx("mt-[96px] flex desktop:justify-between desktop:flex-row mobile:flex-col desktop:items-center mobile:items-center mobile:justify-center")}>
           <div className={clsx("desktop:mt-0 mobile:mt-4")}>
             <ProgramCards benefitList={newbieBenefitList} description_class={"Khusus pemula belajar dari 0 dan praktek langsung menggunakan akun demo."} period={"Lifetime"} price={"FREE"} type_class={"Newbie"} href={"/"} imageSrc={"/images/components/illustration/cards_home_1.png"} />
           </div>
@@ -200,7 +200,7 @@ export default function Home() {
     <section className={clsx("mt-[80px] desktop:py-[80px] mobile:py-[40px] desktop:px-[39px] mobile:px-0 ")}>
       {/*  Kata kata dari mereka > Heading - Start   */}
 
-      <section className={clsx("flex flex-col desktop:justify-center desktop:items-center mobile:justify-center mobile:items-center")}>
+      <section className={clsx("flex flex-col desktop:justify-center desktop:items-center mobile:justify-center mobile:items-center mobile:px-8 desktop:px-0 ")}>
         <p className={clsx(" text-Base/Base-Strong text-[#1761B1]  ", fonts.roboto)}>Our testimonials</p>
         <h3 className={clsx("text-heading-3 text-[#15345A] my-2 mobile:text-center desktop:text-left ")}>Our great member feedback</h3>
         <p className={clsx("text-XL/XL-Normal text-font-description-color max-w-[550px] text-center", fonts.roboto)}>Some of the students were greatly helped by [Product name].</p>
@@ -273,10 +273,10 @@ export default function Home() {
 
       {/*  FAQ > Heading - Start   */}
 
-      <section className={clsx("flex flex-col justify-center items-start")}>
-        <p className={clsx(" text-Base/Base-Strong text-[#1761B1]  ", fonts.roboto)}>Frequently asked questions</p>
-        <h3 className={clsx("text-heading-3 text-[#15345A] my-2 ")}>Jangan khawatir, semua pertanyaan <br /> kalian sudah terjawab!</h3>
-        <p className={clsx("text-XL/XL-Normal text-font-description-color  text-left", fonts.roboto)}>Kami sudah mengumpulkan jawaban dari pertanyaan yang sering ditanyakan.</p>
+      <section className={clsx("flex flex-col desktop:justify-center desktop:items-start mobile:px-8 desktop:px-0 mobile:items-center mobile:justify-center ")}>
+        <p className={clsx(" text-Base/Base-Strong text-[#1761B1] ", fonts.roboto)}>Frequently asked questions</p>
+        <h3 className={clsx("text-heading-3 text-[#15345A] my-2 desktop:text-left mobile:text-center ")}>Jangan khawatir, semua pertanyaan <br /> kalian sudah terjawab!</h3>
+        <p className={clsx("text-XL/XL-Normal text-font-description-color  desktop:text-left mobile:text-center ", fonts.roboto)}>Kami sudah mengumpulkan jawaban dari pertanyaan yang sering ditanyakan.</p>
 
       </section>
 
