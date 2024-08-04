@@ -24,15 +24,15 @@ export default function ContactUsPage() {
     ]
 
     return (
-        <main className={clsx("mt-[157px] mb-[157px]")}>
+        <main className={clsx("mt-[157px] desktop:mb-[157px] mobile:mb-[80px] ")}>
             <section>
-                <div className={clsx("text-center mb-8")}>
+                <div className={clsx("text-center desktop:mb-8")}>
                     <p className={clsx("text-SM/SM-Strong text-[#6195CF] py-[4px] px-[12px] bg-[#F3F6FC] rounded-[100px] text-center inline-block mb-4 ", fonts.roboto)}>Contact us</p>
                     <h3 className={clsx("text-heading-3 text-[#15345A] mb-4 ")}> Get in touch</h3>
                     <p className={clsx("text-XL/XL-Normal text-font-description-color  text-center", fonts.roboto)}>
                         Any questions or remarks? Just write us a message!</p>
                 </div>
-                <div className={clsx("grid grid-cols-3 gap-8 ")}>
+                <div className={clsx("grid desktop:grid-cols-3 gap-8 ")}>
                     {ContactList.map(item => (
                         <div key={item.key} className={"w-full mx-auto"}>
                             <ContactUsCard imageSrc={item.imageSrc} Sosmed={item.name} />
