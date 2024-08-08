@@ -115,11 +115,15 @@ export default function Home() {
   {/* Hero Section */}
     <section className={clsx("relative bg-linear-gradient-hero h-[524px] rounded-[32px] mobile:mt-[120px] desktop:mt-0 mobile:p-4  desktop:p-0 ")}>
 
-      <Image src={"/images/components/addons/Hero_addons.png"} alt={""} height={353} width={1200} className={clsx("absolute desktop:bottom-0 mobile:hidden desktop:block ")} />
-      <Image src={"/images/components/addons/Hero_addons_mobile.svg"} alt={""} height={353} width={1200} className={clsx("absolute mobile:bottom-0 desktop:hidden mobile:block mobile:visible ")} />
-      <Image src={"/images/components/illustration/image_hero.svg"} alt={""} height={400} width={640} className={clsx("absolute desktop:bottom-[-150px] mobile:bottom-[-80px] left-[50%] translate-x-[-50%] ")} />
+      {/*<Image src={"/images/components/addons/Hero_addons.png"} alt={""} height={353} width={1200} className={clsx("absolute desktop:bottom-0 mobile:hidden desktop:block ")} />*/}
+      {/*<Image src={"/images/components/addons/Hero_addons_mobile.svg"} alt={""} height={353} width={1200} className={clsx("absolute mobile:bottom-0 desktop:hidden mobile:block mobile:visible ")} />*/}
+      {/*<Image src={"/images/components/illustration/image_hero.svg"} alt={""} height={400} width={640} className={clsx("absolute desktop:bottom-[-150px] mobile:bottom-[-80px] left-[50%] translate-x-[-50%] ")} />*/}
 
-      <section className={clsx("text-center pt-[64px]")}>
+      <Image src={"/images/components/addons_new/hero_bg_addons.png"} alt={""} fill={true} className={clsx("absolute desktop:bottom-0 mobile:hidden desktop:block ")} />
+      <Image src={"/images/components/illustration_new/hero_bg_image.png"} alt={""} height={255} width={1440} className={clsx("absolute desktop:bottom-0 mobile:hidden desktop:block ")} />
+      <Image src={"/images/components/illustration_new/hero_bg_image_2.svg"} alt={""} height={419} width={421} className={clsx("absolute desktop:bottom-[-150px] desktop:left-[50%] desktop:translate-x-[-50%] mobile:hidden desktop:block ")} />
+
+      <section className={clsx("relative text-center pt-[64px] z-20")}>
         <h1 className={clsx("text-white text-heading-1 desktop:w-[400px] mx-auto ")}>Sukses trading bersama  Trade Society</h1>
         <p className={clsx("text-XL/XL-Normal text-[#F6F6F6] text-center mx-auto desktop:w-[500px] mt-2 ", fonts.roboto)}>Bukan hanya belajar, tapi juga kelilingi diri kalian dengan  orang-orang yang yang memiliki tujuan dan mindset untuk menjadi sukses.</p>
       </section>
@@ -131,7 +135,9 @@ export default function Home() {
   {/*  Hero Section CTA - Start */}
 
     <section className={clsx("relative mt-[180px] h-[306px] desktop:flex desktop:items-center desktop:px-[100px] mobile:w-full mobile:px-8 ")}>
-      <Image src={"/images/components/addons/hero_cta_revision_addons.png"} alt={""} height={306} width={1198} className={clsx("absolute z-10 left-[50%] translate-x-[-50%]")} />
+      {/*<Image src={"/images/components/addons/hero_cta_revision_addons.png"} alt={""} height={306} width={1198} className={clsx("absolute z-10 left-[50%] translate-x-[-50%]")} />*/}
+      <Image src={"/images/components/addons_new/belajar_trading_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 ")} />
+
       <div className={clsx("z-20 flex desktop:justify-between desktop:items-center relative mobile:flex-col mobile:items-start desktop:flex-row")}>
         <h1 className={clsx("text-primary-font-color text-heading-4 desktop:basis-2/3 mobile:w-full ")}>
           Belajar trading <span className={clsx("text-secondary-gold-color")}>100% gratis!</span> <br/> Ikuti kelas
@@ -151,11 +157,17 @@ export default function Home() {
 
     {/*  Our program > Text Heading - Start  */}
 
-      <section className={clsx("flex flex-col justify-center items-center")}>
-        <p className={clsx("text-Base/Base-Strong text-[#1761B1]  ", fonts.roboto)}>Our programs</p>
-        <h3 className={clsx("text-heading-3 text-[#15345A] my-2 mobile:text-center desktop:text-left ")}>Belajar sesuai kemampuan</h3>
-        <p className={clsx("text-XL/XL-Normal text-font-description-color max-w-[550px] text-center", fonts.roboto)}>Bebas pilih program yang paling sesuai untuk kalian, baik  pemula ataupun berpengalaman, semuanya ada di sini!</p>
+      <section className={clsx("relative p-8")}>
+        <Image src={"/images/components/addons_new/belajar_sesuai_kemampuan_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 ")} />
 
+        <section className={clsx("flex flex-col justify-center items-center")}>
+          <p className={clsx("text-Base/Base-Strong text-[#1761B1]  ", fonts.roboto)}>Our programs</p>
+          <h3 className={clsx("text-heading-3 text-[#15345A] my-2 mobile:text-center desktop:text-left ")}>Belajar
+            sesuai kemampuan</h3>
+          <p className={clsx("text-XL/XL-Normal text-font-description-color max-w-[550px] text-center", fonts.roboto)}>Bebas
+            pilih program yang paling sesuai untuk kalian, baik pemula ataupun berpengalaman, semuanya ada di sini!</p>
+
+        </section>
       </section>
 
       {/*  Our program > Text Heading - End  */}
@@ -163,9 +175,12 @@ export default function Home() {
 
       {/*  Our program > Cards - Start  */}
 
-      <section className={clsx("mt-[96px] flex desktop:justify-between desktop:flex-row mobile:flex-col desktop:items-center mobile:items-center mobile:justify-center")}>
-          <div className={clsx("desktop:mt-0 mobile:mt-4")}>
-            <ProgramCards benefitList={newbieBenefitList} description_class={"Khusus pemula belajar dari 0 dan praktek langsung menggunakan akun demo."} period={"Lifetime"} price={"FREE"} type_class={"Newbie"} href={"/our-program/programs/newbie"} imageSrc={"/images/components/illustration/cards_home_1.png"} />
+      <section
+          className={clsx("mt-[96px] flex desktop:justify-between desktop:flex-row mobile:flex-col desktop:items-center mobile:items-center mobile:justify-center")}>
+        <div className={clsx("desktop:mt-0 mobile:mt-4")}>
+          <ProgramCards benefitList={newbieBenefitList}
+                        description_class={"Khusus pemula belajar dari 0 dan praktek langsung menggunakan akun demo."}
+                        period={"Lifetime"} price={"FREE"} type_class={"Newbie"} href={"/our-program/programs/newbie"} imageSrc={"/images/components/illustration/cards_home_1.png"} />
           </div>
           <div className={clsx("desktop:mt-0 mobile:mt-4")}>
             <ProgramCards benefitList={familyBenefitList} description_class={"Terbuka untuk umum yang sudah memahami dasar-dasar trading dan siap menggunakan akun real."} period={"Lifetime"} price={"FREE"} type_class={"Family"}  href={"/our-program/programs/family"} imageSrc={"/images/components/illustration/cards_home_2.png"}/>
