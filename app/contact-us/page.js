@@ -11,15 +11,15 @@ export default function ContactUsPage() {
         {
             key: 1,
             name: "Telegram",
-            imageSrc: "/images/components/illustration/cards_home_1.png"
+            imageSrc: "/images/components/icon_new/Telegram.svg"
         },{
             key: 2,
             name: "Instagram",
-            imageSrc: "/images/components/illustration/cards_home_2.png"
+            imageSrc: "/images/components/icon_new/Instagram.svg"
         },{
             key: 3,
             name: "Linkedin",
-            imageSrc: "/images/components/illustration/cards_home_3.png"
+            imageSrc: "/images/components/icon_new/Linkedin.svg"
         },
     ]
 
