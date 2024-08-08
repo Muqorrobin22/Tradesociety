@@ -8,17 +8,19 @@ export default function AboutUsPage() {
         <section
             className={clsx("relative bg-linear-gradient-hero desktop:h-[524px] px-[72px] rounded-[32px] flex desktop:items-center desktop:justify-normal mobile:flex-col desktop:flex-row mobile:justify-center mobile:items-center  mobile:mt-[120px] desktop:mt-0 mobile:p-4  ")}>
 
-            <section className={clsx("text-left  desktop:w-[500px] ")}>
+            <section className={clsx("text-left  desktop:w-[500px] desktop:ml-10 ")}>
                 <h1 className={clsx("text-white text-heading-1 mx-auto ")}>Platform untuk para trader</h1>
                 <p className={clsx("text-XL/XL-Normal text-[#F6F6F6] text-left mx-auto  mt-2 ", fonts.roboto)}>Bukan
                     Kami memberikan peluang untuk trader pemula hingga profesional untuk bisa berhasil di industri
                     trading.</p>
             </section>
 
-            <Image src={"/images/components/addons/Hero_addons_about_us.png"} alt={"about us hero"} fill={true}
-                   className={clsx("absolute")}/>
+            <Image src={"/images/components/addons_new/about_us_hero_addons.png"} alt={"about us hero"} fill={true}
+                   className={clsx("absolute z-[10]")}/>
+            <Image src={"/images/components/illustration_new/about_us_hero_image.png"} alt={"about us hero"} width={1440} height={240}
+                   className={clsx("desktop:absolute desktop:bottom-0 desktop:left-0 z-[11]")}/>
             <Image src={"/images/components/illustration/about_us_hero.svg"} alt={""} height={486} width={500}
-                   className={clsx(" ml-auto ")}/>
+                   className={clsx(" ml-auto z-[12] ")}/>
 
         </section>
 
