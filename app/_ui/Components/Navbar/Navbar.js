@@ -16,8 +16,10 @@ export default function Navbar(props) {
     const [isOpen, setIsOpen] = useState(false);
     const [burgerOpen, setBurgerOpen] = useState(false);
 
-    const handleSetIsOpenOurProgram = (data) => {
+    const handleSetIsOpenOurProgram = (data, e) => {
+        console.log("our program clicked", e);
         if(data.dropdown) {
+            e.preventDefault();
             setIsOpen(prev => !prev);
         }
     }
@@ -88,7 +90,7 @@ export default function Navbar(props) {
                                       "bg-primary-light-color rounded-[100px] py-2.5 px-4": pathname === link.href
                                   }, {
                                       "bg-primary-light-color rounded-[100px] py-2.5 px-4": pathname.includes(link.hrefDetail)
-                                  }, fonts.roboto)} onClick={() => handleSetIsOpenOurProgram(link)}> {link.name} <Image
+                                  }, fonts.roboto)} onClick={(e) => handleSetIsOpenOurProgram(link, e)}> {link.name} <Image
                                 src={"/images/components/illustration/arrow_down.svg"} alt={"arrow"} width={14}
                                 height={14} className={clsx(link.dropdown ? "visible" : "hidden", "ml-2")}/> </Link>
                         </li>))}
@@ -155,7 +157,7 @@ export default function Navbar(props) {
                                       "bg-primary-light-color rounded-[100px] py-2.5 px-4": pathname === link.href
                                   }, {
                                       "bg-primary-light-color rounded-[100px] py-2.5 px-4": pathname.includes(link.hrefDetail)
-                                  }, fonts.roboto)} onClick={() => handleSetIsOpenOurProgram(link)}> {link.name} <Image
+                                  }, fonts.roboto)} onClick={(e) => handleSetIsOpenOurProgram(link, e)}> {link.name} <Image
                                 src={"/images/components/illustration/arrow_down.svg"} alt={"arrow"} width={14}
                                 height={14} className={clsx(link.dropdown ? "visible" : "hidden", "ml-2")}/> </Link>
                             <div
