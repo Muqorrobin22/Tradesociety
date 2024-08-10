@@ -32,7 +32,7 @@ export default function Footer() {
     ]
 
     return (
-        <footer className="footer desktop:py-8 mobile:py-8 mobile:w-auto ">
+        <footer className="footer desktop:py-8 mobile:py-8 mobile:w-auto rounded-tl-[32px] rounded-tr-[32px] border-[1px] border-[#E3EDFB] ">
             <div className="container flex desktop:items-center desktop:justify-between mobile:flex-col mobile:justify-center mobile:items-center mobile:mx-auto desktop:flex-row ">
                 <div>
                     <Image
