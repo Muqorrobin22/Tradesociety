@@ -61,12 +61,14 @@ export default function Navbar(props) {
     return (
         <nav className="flex items-center justify-between py-4 desktop:fixed mobile:fixed mobile:z-50 mobile:top-0 mobile:left-[16px] mobile:right-[16px] mobile:bg-white mobile:border-b-[1px] mobile:border-[#E3EDFB] desktop:px-[120px] desktop:z-50 desktop:left-0 desktop:right-0 desktop:top-0 ">
             <div className={clsx("mobile:order-1 desktop:order-1")}>
-                <Image
-                    alt="Logo Tradesociety"
-                    src={"/images/components/Icon/Logo.svg"}
-                    width={96}
-                    height={40}
-                />
+               <Link href={"/"}>
+                   <Image
+                       alt="Logo Tradesociety"
+                       src={"/images/components/Icon/Logo.svg"}
+                       width={96}
+                       height={40}
+                   />
+               </Link>
             </div>
             <div className={clsx("mobile:order-3 z-50 mobile:visible desktop:hidden")}>
                 <Image

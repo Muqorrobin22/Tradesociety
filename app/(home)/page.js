@@ -136,7 +136,7 @@ export default function Home() {
     <section className={clsx("relative mt-[180px] h-[306px] desktop:flex desktop:items-center desktop:px-[120px] mobile:w-full mobile:px-8  ")}>
       {/*<Image src={"/images/components/addons/hero_cta_revision_addons.png"} alt={""} height={306} width={1198} className={clsx("absolute z-10 left-[50%] translate-x-[-50%]")} />*/}
       <Image src={"/images/components/addons_new/belajar_trading_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 ")} />
-      <Image src={"/images/components/addons_new/home_belajar_gratis_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 ")} />
+      <Image src={"/images/components/addons_new/home_belajar_gratis_addons.png"} alt={""} width={1200} height={160} className={clsx("absolute z-10 left-[120px] ")} />
 
       <div className={clsx("z-20 flex desktop:justify-between desktop:items-center relative mobile:flex-col mobile:items-start desktop:flex-row desktop:mx-auto")}>
         <h1 className={clsx("text-primary-font-color text-heading-4 desktop:basis-2/3 mobile:w-full ")}>

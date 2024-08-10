@@ -76,7 +76,7 @@ export default function AboutUsPage() {
 
             <section className={clsx("mt-[80px] desktop:py-[80px] mobile:py-[40px] desktop:px-[220px] mobile:px-8 relative ")}>
                 <Image src={"/images/components/addons_new/about_us_bagian_dari_tim_addons.png"} alt={""} fill={true} className={clsx("absolute z-[15] top-0 left-0 ")} />
-                <Image src={"/images/components/addons_new/about_us_bagian_dari_tim_2_addons.png"} alt={""} width={1200} height={741} className={clsx("absolute z-10 top-0 left-[50%] translate-x-[-50%] ")} />
+                <Image src={"/images/components/addons_new/about_us_bagian_dari_tim_2_addons.png"} alt={""} width={1200} height={900} className={clsx("absolute z-10 top-0 left-[50%] translate-x-[-50%] bottom-0 ")} />
 
                 <div className={"relative z-20 bg-white"}>
                     <div className={clsx("text-center")}>

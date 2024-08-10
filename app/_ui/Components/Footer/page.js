@@ -35,12 +35,14 @@ export default function Footer() {
         <footer className="footer desktop:py-8 mobile:py-8 mobile:w-auto rounded-tl-[32px] rounded-tr-[32px] border-[1px] border-[#E3EDFB] ">
             <div className="container flex desktop:items-center desktop:justify-between mobile:flex-col mobile:justify-center mobile:items-center mobile:mx-auto desktop:flex-row ">
                 <div>
-                    <Image
-                        alt="Logo Tradesociety"
-                        src={"/images/components/Icon/Logo.svg"}
-                        width={96}
-                        height={40}
-                    />
+                    <Link href={"/"}>
+                        <Image
+                            alt="Logo Tradesociety"
+                            src={"/images/components/Icon/Logo.svg"}
+                            width={96}
+                            height={40}
+                        />
+                    </Link>
                 </div>
                 <div>
                     <ul className={clsx("flex items-center mx-auto mobile:w-auto mobile:mt-[24px]")}>
@@ -60,7 +62,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className={"text-center mt-[32px]"}>
-                <p className={clsx(" text-LG/LG-Normal text-[#00000073] mx-auto", fonts.roboto)}>© 2024 [Company name]. All rights reserved.</p>
+                <p className={clsx(" text-LG/LG-Normal text-[#00000073] mx-auto", fonts.roboto)}>© 2024 Trade Society. All rights reserved.</p>
             </div>
         </footer>
     )
