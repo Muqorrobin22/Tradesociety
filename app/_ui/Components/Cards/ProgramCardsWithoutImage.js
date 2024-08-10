@@ -7,7 +7,7 @@ import {fonts} from "@/app/_lib/utils/fonts/fonts";
 export default function ProgramCardsWithoutImage({ type_class, benefitList, price, period, href, strikethroughPrice = "" }) {
     return (
         <section className={clsx(" ")}>
-            <div className={clsx(" h-[570px] rounded-[32px] border-[1px] border-[#E3EDFB] p-[4px] relative  ")}>
+            <div className={clsx(" h-[570px] rounded-[32px] border-[1px] border-[#E3EDFB] p-[4px] relative bg-white  ")}>
 
                 <div className={clsx("p-8")}>
                     <div className={clsx("mx-auto text-center mb-10")}>

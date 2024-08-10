@@ -126,7 +126,7 @@ export default function PriorityPage() {
         // router.push(`#${id}`);
         const element = document.getElementById(id);
         if (element) {
-            const headerOffset = 140;
+            const headerOffset = 160;
             const elementPosition = element.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
@@ -142,7 +142,7 @@ export default function PriorityPage() {
 
             {/* Hero Section */}
             <section
-                className={clsx("relative bg-linear-gradient-program-priority desktop:h-[400px] mobile:h-[600px] desktop:px-[72px] rounded-[32px] flex desktop:items-center mobile:mt-[120px] mobile:p-8 desktop:m-0 overflow-hidden ")}>
+                className={clsx("relative bg-linear-gradient-program-priority desktop:h-[400px] mobile:h-[600px] desktop:px-[72px] rounded-[32px] flex desktop:items-center mobile:mt-[120px] desktop:mt-[120px] desktop:mx-[120px] mobile:p-8 desktop:m-0 overflow-hidden  ")}>
 
                 <section className={clsx("text-left  w-[550px] relative z-20 ")}>
                     <p className={clsx(" text-Base/Base-Strong text-[#D1B052]  ", fonts.roboto)}>Priority</p>
@@ -173,13 +173,13 @@ export default function PriorityPage() {
 
             {/*  Content - Start  */}
 
-            <section className={clsx("mt-[80px] flex justify-between relative")}>
+            <section className={clsx("mt-[80px] flex justify-between relative px-[120px]")}>
 
 
                 <section className={"desktop:basis-2/3 mobile:basis-full"}>
                     {/*  Content > Navbar - Start  */}
 
-                    <section className={clsx(" border-b-[1px] border-[#E3EDFB]  left-0 right-0  ", scrollNavbarLink && "desktop:sticky desktop:top-0 mobile:sticky mobile:top-[75px] z-30 bg-white py-6")}>
+                    <section className={clsx(" border-b-[1px] border-[#E3EDFB]  left-0 right-0  ", scrollNavbarLink && "desktop:sticky desktop:top-[70px] mobile:sticky mobile:top-[75px] z-30 bg-white py-6")}>
                         <ul className={clsx("flex")}>
                             <li>
                                 <a href="#Description"
@@ -355,7 +355,7 @@ export default function PriorityPage() {
 
                 <section className={"desktop:basis-1/3 mobile:basis-0 desktop:ml-[84px]  z-30 "}>
                     <div
-                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white overflow-hidden desktop:sticky mobile:fixed  desktop:top-[24px] drop-shadow-custom-cards ", isReactBottom ? "mobile:hidden desktop:visible desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0")}>
+                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white p-8 desktop:sticky mobile:fixed  desktop:top-[94px] drop-shadow-custom-cards ", isReactBottom ? "mobile:hidden desktop:visible desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0")}>
 
                         <div className={clsx("bg-[#E239141A] py-[8px] px-8 flex items-center ")}>
                             <Image src={"/images/components/Icon/alert-circle.svg"} alt={"Star"}
@@ -400,7 +400,7 @@ export default function PriorityPage() {
             {/*  Program lain yang kamu suka - Start  */}
 
             <section
-                className={clsx("mt-[80px] pt-8 desktop:px-[160px] mobile:px-8 desktop:pb-[60px] mobile:pb-[30px] relative ")}>
+                className={clsx("mt-[80px] pt-8 desktop:px-[120px] mobile:px-8 desktop:pb-[60px] mobile:pb-[30px] relative ")}>
                 <section className={clsx("text-center relative z-20")}>
                     <h3 className={clsx("text-heading-3 text-[#15345A] my-2 ")}>Program lain yang sesuai dengan
                         kamu</h3>
@@ -408,44 +408,50 @@ export default function PriorityPage() {
                         Temukan program yang sesuai dengan kemampuan dan skillmu!
                     </p>
                 </section>
-                <section className={clsx("mt-8 grid desktop:grid-cols-2  relative z-20 ")}>
+                <section className={clsx("mt-8 grid desktop:grid-cols-2 relative z-20 px-[160px] ")}>
                     <div className={"w-full"}>
                         <ProgramCardsWithoutImage benefitList={newbieBenefitList} period={"Lifetime"} price={"FREE"}
                                                   type_class={"Newbie"} href={"/our-program/programs/newbie"}/>
                     </div>
                     <div className={"w-full"}>
                         <ProgramCardsWithoutImage benefitList={familyBenefitList} period={"Lifetime"}
-                                                  price={"FREE"} type_class={"Family"} href={"/our-program/programs/family"}
-                                                  />
+                                                  price={"FREE"} type_class={"Family"}
+                                                  href={"/our-program/programs/family"}
+                        />
                     </div>
                 </section>
 
-                <Image src={"/images/components/addons/about_us_jadi_bagian_tim_addons.png"} alt={"addons"} className={"absolute z-10"} fill={true} />
+                <section
+                    className={clsx("mt-[60px] relative desktop:h-[216px] mobile:h-auto  desktop:px-[77px] desktop:mx-[40px] bg-linear-gradient-faq rounded-[32px] z-20 ")}>
+                    <div
+                        className={clsx("flex desktop:items-center desktop:justify-between mobile:flex-col desktop:flex-row  z-10 relative mobile:p-8 desktop:p-0 ")}>
+
+                        <Image src={"/images/components/illustration/faq_join_now_revision.svg"} alt={"Join Now"}
+                               width={216} height={216} className={clsx("mobile:order-3 desktop:order-1")}/>
+
+                        <div className={clsx("desktop:ml-8  mobile:order-1 desktop:order-2 desktop:mr-auto")}>
+                            <h6 className={clsx("text-heading-3 text-white mb-2")}>Ikut kelas online sekarang</h6>
+                            <p className={clsx("text-white text-XL/XL-Normal ", fonts.roboto)}>Kami bantu untuk bisa
+                                profit
+                                konsisten!</p>
+                        </div>
+                        <div className={clsx("desktop:order-3 mobile:order-2 mobile:mt-4 mobile:mb-8 desktop:my-0 ")}>
+                            <Button href={"/"} type={"secondary"} text={"Hubungi kami"}/>
+                        </div>
+                    </div>
+
+                    <Image src={"/images/components/addons/join_now_addons.png"} alt={""} height={353} width={1200}
+                           className={clsx("absolute bottom-0")}/>
+                </section>
+
+                <Image src={"/images/components/addons_new/our_programs_program_lain_addons.png"} alt={"addons"}
+                       className={"absolute z-10"} fill={true}/>
+                <Image src={"/images/components/addons_new/our_programs_program_lain_2_addons.png"} alt={"addons"}
+                       className={"absolute z-10 left-[140px] top-0 "} width={1200} height={670}/>
             </section>
 
             {/*  Program lain yang kamu suka - End  */}
 
-            <section
-                className={clsx("mt-[60px] relative desktop:h-[216px] mobile:h-auto  desktop:px-[77px] bg-linear-gradient-faq rounded-[32px] ")}>
-                <div
-                    className={clsx("flex desktop:items-center desktop:justify-between mobile:flex-col desktop:flex-row  z-10 relative mobile:p-8 desktop:p-0 ")}>
-
-                    <Image src={"/images/components/illustration/faq_join_now_revision.svg"} alt={"Join Now"}
-                           width={216} height={216} className={clsx("mobile:order-3 desktop:order-1")}/>
-
-                    <div className={clsx("desktop:ml-8  mobile:order-1 desktop:order-2 desktop:mr-auto")}>
-                        <h6 className={clsx("text-heading-3 text-white mb-2")}>Ikut kelas online sekarang</h6>
-                        <p className={clsx("text-white text-XL/XL-Normal ", fonts.roboto)}>Kami bantu untuk bisa profit
-                            konsisten!</p>
-                    </div>
-                    <div className={clsx("desktop:order-3 mobile:order-2 mobile:mt-4 mobile:mb-8 desktop:my-0 ")}>
-                        <Button href={"/"} type={"secondary"} text={"Hubungi kami"}/>
-                    </div>
-                </div>
-
-                <Image src={"/images/components/addons/join_now_addons.png"} alt={""} height={353} width={1200}
-                       className={clsx("absolute bottom-0")}/>
-            </section>
 
         </main>
     )
