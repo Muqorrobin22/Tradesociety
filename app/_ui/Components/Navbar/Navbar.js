@@ -80,6 +80,13 @@ export default function Navbar(props) {
                     className={clsx("cursor-pointer")}
                 />
             </div>
+
+            {/* Start: Overlay */}
+
+            <div className={clsx("fixed desktop:top-[70px] desktop:bottom-0 desktop:left-0 desktop:right-0 bg-[#010101BF] z-[30] ", isOpen ? "visible" : "hidden")}></div>
+
+            {/* End: Overlay */}
+
             {/* Start: For Desktop */}
             <div className={clsx("desktop:relative desktop:visible desktop:block desktop:order-2 mx-auto mobile:hidden  z-40")}>
 
