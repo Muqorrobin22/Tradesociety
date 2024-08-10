@@ -136,6 +136,7 @@ export default function Home() {
     <section className={clsx("relative mt-[180px] h-[306px] desktop:flex desktop:items-center desktop:px-[120px] mobile:w-full mobile:px-8  ")}>
       {/*<Image src={"/images/components/addons/hero_cta_revision_addons.png"} alt={""} height={306} width={1198} className={clsx("absolute z-10 left-[50%] translate-x-[-50%]")} />*/}
       <Image src={"/images/components/addons_new/belajar_trading_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 ")} />
+      <Image src={"/images/components/addons_new/home_belajar_gratis_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 ")} />
 
       <div className={clsx("z-20 flex desktop:justify-between desktop:items-center relative mobile:flex-col mobile:items-start desktop:flex-row desktop:mx-auto")}>
         <h1 className={clsx("text-primary-font-color text-heading-4 desktop:basis-2/3 mobile:w-full ")}>
@@ -159,7 +160,7 @@ export default function Home() {
       <section className={clsx("relative p-8 desktop:py-8 desktop:px-[120px]")}>
         <Image src={"/images/components/addons_new/belajar_sesuai_kemampuan_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 ")} />
 
-        <section className={clsx("flex flex-col justify-center items-center")}>
+        <section className={clsx("flex flex-col justify-center items-center relative z-20")}>
           <p className={clsx("text-Base/Base-Strong text-[#1761B1]  ", fonts.roboto)}>Our programs</p>
           <h3 className={clsx("text-heading-3 text-[#15345A] my-2 mobile:text-center desktop:text-left ")}>Belajar
             sesuai kemampuan</h3>
@@ -196,8 +197,8 @@ export default function Home() {
 
       <section className={clsx(" desktop:relative text-center flex desktop:items-center desktop:justify-center mt-10 pt-8 pb-10 desktop:flex-row mobile:flex-col mobile:justify-center mobile:items-center")}>
         <Image src={"/images/components/addons_new/belajar_sesuai_kemampuan_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 ")} />
-        <h1 className={clsx("text-font-description-color text-XL/XL-Normal mr-[10px]", fonts.roboto)}>Punya pertanyaan lain?</h1>
-        <div className={clsx("mobile:mt-4 desktop:mt-0")}>
+        <h1 className={clsx("text-font-description-color text-XL/XL-Normal mr-[10px] relative z-20", fonts.roboto)}>Punya pertanyaan lain?</h1>
+        <div className={clsx("mobile:mt-4 desktop:mt-0 relative z-20")}>
           <Button href={"/"} text={"Hubungi kami"} type={"secondary"} />
         </div>
       </section>
