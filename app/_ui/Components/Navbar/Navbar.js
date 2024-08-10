@@ -105,7 +105,7 @@ export default function Navbar(props) {
                     onMouseLeave={() => setIsOpen(false)}>
                     <Link href={"/our-program/programs/newbie"}
                           className={clsx("flex items-center justify-between pb-8 border-b-[1px] border-[#E3EDFB] hover:translate-y-[-3px] transition-all duration-300 ")}>
-                        <Image src={"/images/components/illustration/dropdown_newbie.png"} alt={"dropdown_newbie"}
+                        <Image src={"/images/components/illustration_new/newbie_navbar_img.png"} alt={"dropdown_newbie"}
                                width={80} height={80}/>
                         <div className={clsx("ml-4")}>
                             <h6 className={clsx("text-heading-8 text-[#15345A] ")}>Newbie</h6>
@@ -118,7 +118,7 @@ export default function Navbar(props) {
 
                     <Link href={"/our-program/programs/family"}
                           className={clsx("flex items-center justify-between pb-8 border-b-[1px] border-[#E3EDFB] mt-8 hover:translate-y-[-3px] transition-all duration-300 ")}>
-                        <Image src={"/images/components/illustration/dropdown_family.png"} alt={"dropdown_newbie"}
+                        <Image src={"/images/components/illustration_new/family_navbar_img.png"} alt={"dropdown_newbie"}
                                width={80} height={80}/>
                         <div className={clsx("ml-4")}>
                             <h6 className={clsx("text-heading-8 text-[#15345A] ")}>family</h6>
@@ -131,7 +131,7 @@ export default function Navbar(props) {
 
                     <Link href={"/our-program/programs/priority"}
                           className={clsx("flex items-center justify-between mt-8 hover:translate-y-[-3px] transition-all duration-300 ")}>
-                        <Image src={"/images/components/illustration/dropdown_priority.png"} alt={"dropdown_newbie"}
+                        <Image src={"/images/components/illustration_new/priority_navbar_img.png"} alt={"dropdown_newbie"}
                                width={80} height={80}/>
                         <div className={clsx("ml-4")}>
                             <h6 className={clsx("text-heading-8 text-[#15345A] ")}>priority</h6>
@@ -165,7 +165,7 @@ export default function Navbar(props) {
                                 onMouseLeave={() => setIsOpen(false)}>
                                 <Link href={"/our-program/programs/newbie"}
                                       className={clsx("flex items-center justify-between pb-8 border-b-[1px] border-[#E3EDFB] hover:translate-y-[-3px] transition-all duration-300 ")}>
-                                    <Image src={"/images/components/illustration/dropdown_newbie.png"}
+                                    <Image src={"/images/components/illustration_new/newbie_navbar_img.png"}
                                            alt={"dropdown_newbie"}
                                            width={80} height={80}/>
                                     <div className={clsx("ml-4 text-left")}>
@@ -180,7 +180,7 @@ export default function Navbar(props) {
 
                                 <Link href={"/our-program/programs/family"}
                                       className={clsx("flex items-center justify-between pb-8 border-b-[1px] border-[#E3EDFB] mt-8 hover:translate-y-[-3px] transition-all duration-300 ")}>
-                                    <Image src={"/images/components/illustration/dropdown_family.png"}
+                                    <Image src={"/images/components/illustration_new/family_navbar_img.png"}
                                            alt={"dropdown_newbie"}
                                            width={80} height={80}/>
                                     <div className={clsx("ml-4 text-left break-words")}>
@@ -196,7 +196,7 @@ export default function Navbar(props) {
 
                                 <Link href={"/our-program/programs/priority"}
                                       className={clsx("flex items-center justify-between mt-8 hover:translate-y-[-3px] transition-all duration-300 ")}>
-                                    <Image src={"/images/components/illustration/dropdown_priority.png"}
+                                    <Image src={"/images/components/illustration_new/priority_navbar_img.png"}
                                            alt={"dropdown_newbie"}
                                            width={80} height={80}/>
                                     <div className={clsx("ml-4 text-left break-words")}>

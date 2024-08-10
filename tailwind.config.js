@@ -58,6 +58,14 @@ module.exports = {
             // letterSpacing: "1px",
           },
         ],
+        "heading-5": [
+          "36px",
+          {
+            lineHeight: "43px",
+            fontWeight: "400",
+            // letterSpacing: "1px",
+          },
+        ],
         "heading-6": [
           "32px",
           {

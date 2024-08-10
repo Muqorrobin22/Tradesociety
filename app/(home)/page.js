@@ -220,8 +220,8 @@ export default function Home() {
 
       <section className={clsx("relative flex flex-col desktop:justify-center desktop:items-center mobile:justify-center mobile:items-center mobile:px-8 desktop:px-0 z-20 ")}>
         <p className={clsx(" text-Base/Base-Strong text-[#1761B1]  ", fonts.roboto)}>Our testimonials</p>
-        <h3 className={clsx("text-heading-3 text-[#15345A] my-2 mobile:text-center desktop:text-left ")}>Our great member feedback</h3>
-        <p className={clsx("text-XL/XL-Normal text-font-description-color max-w-[550px] text-center", fonts.roboto)}>Some of the students were greatly helped by [Product name].</p>
+        <h3 className={clsx("text-heading-3 text-[#15345A] my-2 mobile:text-center desktop:text-left ")}>Kata-kata dari mereka</h3>
+        <p className={clsx("text-XL/XL-Normal text-font-description-color max-w-[550px] text-center", fonts.roboto)}>Beberapa member sukses Trade Society</p>
 
       </section>
 
