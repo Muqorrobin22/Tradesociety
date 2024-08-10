@@ -1,21 +1,22 @@
 import clsx from "clsx";
 import Image from "next/image";
 import {fonts} from "@/app/_lib/utils/fonts/fonts";
+import Button from "@/app/_ui/Micro-Component/Button/Button";
 
 export default function AboutUsPage() {
     return <main className={clsx("mt-10")}>
         {/* Hero Section */}
         <section
-            className={clsx("relative bg-linear-gradient-hero desktop:h-[524px] px-[72px] rounded-[32px] flex desktop:items-center desktop:justify-normal mobile:flex-col desktop:flex-row mobile:justify-center mobile:items-center  mobile:mt-[120px] desktop:mt-0 mobile:p-4  ")}>
+            className={clsx("relative bg-linear-gradient-hero desktop:h-[524px] px-[72px] rounded-[32px] flex desktop:items-center desktop:justify-normal mobile:flex-col desktop:flex-row mobile:justify-center mobile:items-center  mobile:mt-[120px] desktop:mt-[120px] desktop:mx-[120px] overflow-hidden mobile:p-4  ")}>
 
-            <section className={clsx("text-left  desktop:w-[500px] desktop:ml-10 ")}>
+            <section className={clsx("text-left  desktop:w-[500px] desktop:ml-10 relative z-20")}>
                 <h1 className={clsx("text-white text-heading-1 mx-auto ")}>Platform untuk para trader</h1>
                 <p className={clsx("text-XL/XL-Normal text-[#F6F6F6] text-left mx-auto  mt-2 ", fonts.roboto)}>Bukan
                     Kami memberikan peluang untuk trader pemula hingga profesional untuk bisa berhasil di industri
                     trading.</p>
             </section>
 
-            <Image src={"/images/components/addons_new/about_us_hero_addons.png"} alt={"about us hero"} fill={true}
+            <Image src={"/images/components/addons_new/about_us_hero_new_addons.png"} alt={"about us hero"} fill={true}
                    className={clsx("absolute z-[10]")}/>
             <Image src={"/images/components/illustration_new/about_us_hero_image.png"} alt={"about us hero"} width={1440} height={240}
                    className={clsx("desktop:absolute desktop:bottom-0 desktop:left-0 z-[11]")}/>
@@ -28,7 +29,7 @@ export default function AboutUsPage() {
 
         {/*  Why we here - Start  */}
 
-        <section className={clsx("mt-[80px] py-[40px] relative mobile:px-4 desktop:px-0")}>
+        <section className={clsx("mt-[80px] py-[40px] relative mobile:px-4 desktop:px-[120px] desktop:py-[69px]")}>
             <section className={clsx("flex flex-col justify-center items-center relative z-20")}>
                 <p className={clsx(" text-Base/Base-Strong text-[#1761B1]  ", fonts.roboto)}>Why we here</p>
                 <h3 className={clsx("text-heading-3 text-[#15345A] my-4 desktop:text-left mobile:text-center ")}>Bersama menuju kesuksesan di industri trading</h3>
@@ -36,7 +37,10 @@ export default function AboutUsPage() {
                     sini!</p>
 
             </section>
-            <Image src={"/images/components/addons/hero_cta_revision_addons.png"} alt={""} height={306} width={1198} className={clsx("absolute z-10 top-0 ")} />
+            {/*<Image src={"/images/components/addons/hero_cta_revision_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 top-0 left-[-120px] right-[-120px] ")} />*/}
+            <Image src={"/images/components/addons_new/about_us_cta_addons.png"} alt={""} fill={true} className={clsx("absolute z-[15] top-0 left-0 ")} />
+            <Image src={"/images/components/addons_new/about_us_cta_2_addons.png"} alt={""} width={1120} height={306} className={clsx("absolute z-[15] top-0 left-[50%] translate-x-[-50%] ")} />
+
 
         </section>
 
@@ -44,7 +48,8 @@ export default function AboutUsPage() {
 
         {/*  Why we here - Start  */}
 
-        <section className={clsx("mt-[80px] desktop:py-[40px] desktop:px-[140px] mobile:px-4 ")}>
+        <section className={clsx("mt-[80px] desktop:py-[40px] desktop:px-[280px] mobile:px-4 relative ")}>
+            <Image src={"/images/components/addons_new/about_us_vision_addons.png"} alt={""} fill={true} className={clsx("absolute z-[15] top-0 left-0 ")} />
             <div className={clsx("p-8 rounded-[32px] bg-[#F4F8FD]  flex desktop:items-center desktop:justify-normal desktop:flex-row mobile:flex-col ")}>
                 <Image src={"/images/components/illustration/about_us_vision_revision.svg"} alt={"vision"} width={180}
                        height={180} className={clsx("desktop:order-1 mobile:order-2 mobile:mx-auto desktop:m-0 mobile:mt-8")} />
@@ -74,8 +79,11 @@ export default function AboutUsPage() {
 
         {/*  Jadi bagian dari tim- Start  */}
 
-            <section className={clsx("mt-[80px] desktop:py-[80px] mobile:py-[40px] desktop:px-[92px] mobile:px-8 relative ")}>
-                <div className={"relative z-20"}>
+            <section className={clsx("mt-[80px] desktop:py-[80px] mobile:py-[40px] desktop:px-[220px] mobile:px-8 relative ")}>
+                <Image src={"/images/components/addons_new/about_us_bagian_dari_tim_addons.png"} alt={""} fill={true} className={clsx("absolute z-[15] top-0 left-0 ")} />
+                <Image src={"/images/components/addons_new/about_us_bagian_dari_tim_2_addons.png"} alt={""} width={1200} height={741} className={clsx("absolute z-10 top-0 left-[50%] translate-x-[-50%] ")} />
+
+                <div className={"relative z-20 bg-white"}>
                     <div className={clsx("text-center")}>
                         <h3 className={clsx("text-heading-3 text-[#15345A] mb-4 ")}> gabung dengan trade society!</h3>
                         <p className={clsx("text-XL/XL-Normal text-font-description-color  text-center", fonts.roboto)}>
@@ -115,9 +123,13 @@ export default function AboutUsPage() {
                             </div>
                         </div>
                     </div>
+                    <div className={clsx("mt-8 mx-auto text-center")}>
+                        <div className={clsx("inline-block")}>
+                            <Button href={"/"} text={"Hubungi kami"}/>
+                        </div>
+                    </div>
                 </div>
 
-                <Image src={"/images/components/addons/about_us_jadi_bagian_tim_addons.png"} alt={"addons"} className={"absolute z-10"} fill={true} />
             </section>
 
         {/*  Jadi bagian dari tim- End  */}
