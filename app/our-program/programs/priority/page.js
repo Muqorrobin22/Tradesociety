@@ -12,6 +12,7 @@ import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
 import {familyBenefitList, priorityBenefitList, newbieBenefitList} from "@/app/_lib/const/VARIABLES";
 import {fonts} from "@/app/_lib/utils/fonts/fonts";
+import TestimonialCardV2 from "@/app/_ui/Micro-Component/Testimonials/Cards/TestimonialCardV2";
 
 export default function PriorityPage() {
 
@@ -85,6 +86,12 @@ export default function PriorityPage() {
             job: "Writer",
             comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
             bgColor: "bg-secondary-gold-color"
+        },{
+            key: 3,
+            name: "Ardas dipa",
+            job: "Writer",
+            comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
+            bgColor: "bg-secondary-gold-color"
         }
     ]
 
@@ -142,27 +149,27 @@ export default function PriorityPage() {
 
             {/* Hero Section */}
             <section
-                className={clsx("relative bg-linear-gradient-program-priority desktop:h-[400px] mobile:h-[600px] desktop:px-[72px] rounded-[32px] flex desktop:items-center mobile:mt-[120px] desktop:mt-[120px] desktop:mx-[120px] mobile:p-8 desktop:m-0 overflow-hidden  ")}>
+                className={clsx("relative bg-linear-gradient-program-priority desktop:h-[400px] mobile:h-[600px] desktop:px-[60px] rounded-[32px] flex desktop:items-start mobile:mt-[120px] desktop:mt-[120px] desktop:mx-[120px] mobile:p-8 desktop:m-0 overflow-hidden  ")}>
 
                 <section className={clsx("text-left  w-[550px] relative z-20 ")}>
-                    <p className={clsx(" text-Base/Base-Strong text-[#D1B052]  ", fonts.roboto)}>Priority</p>
-                    <h3 className={clsx("text-heading-3 text-[#15345A] my-2 ")}>Belajar lebih dalam</h3>
-                    <p className={clsx("text-XL/XL-Normal text-font-description-color  text-left", fonts.roboto)}>Special untuk kalian yang ingin menjadi professional trader.
+                    {/*<p className={clsx(" text-Base/Base-Strong text-[#D1B052]  ", fonts.roboto)}>Priority</p>*/}
+                    <h3 className={clsx("text-heading-3 text-white my-2 ")}>Belajar lebih dalam</h3>
+                    <p className={clsx("text-XL/XL-Normal text-white text-left", fonts.roboto)}>Special untuk kalian yang ingin menjadi professional trader.
                     </p>
                 </section>
 
-                <Image src={"/images/components/addons/newbie_program_addons.svg"} alt={"newbie hero"} width={1300}
-                       height={400}
+                <Image src={"/images/components/addons_new/our_programs_hero_addons.png"} alt={"newbie hero"} fill={true}
                        className={clsx("absolute left-0 z-10 ")}/>
-                {/*<Image src={"/images/components/illustration/about_us_hero.svg"} alt={""} height={486} width={500}*/}
-                {/*       className={clsx(" ml-auto ")}/>*/}
+                <Image src={"/images/components/illustration_new/priority_hero_new_illustration.svg"} alt={"newbie hero"} width={610} height={400} className={clsx("absolute z-[11] desktop:right-0 desktop:bottom-0 ")}/>
+                <Image src={"/images/components/illustration_new/priority_hero_new_illustration_2.svg"} alt={"newbie hero"} width={400} height={400} className={clsx("absolute z-[11] desktop:right-0 desktop:bottom-0 ")}/>
 
-                <div className={clsx("absolute flex items-center desktop:right-[32px] mobile:right-[-64px] bottom-[32px] z-20")}>
+
+                <div className={clsx("absolute flex items-center  mobile:right-[-64px] desktop:left-[30px] bottom-[32px] z-20 ")}>
                     {testimonialsList.map((testimonial, index) => (
                         <div key={testimonial.key} className={"ml-4"}>
-                            <TestimonialCard name={testimonial.name} job={testimonial.job}
+                            <TestimonialCardV2 name={testimonial.name} job={testimonial.job}
                                              bg_color={testimonial.bgColor} comments={testimonial.comment}
-                                             bg_cards={"bg-[#E3EDFB]"}/>
+                                             bg_cards={"bg-[#BD943566] text-white border-[1px] border-[#D1B052]"}/>
                         </div>
                     ))}
                 </div>
@@ -355,7 +362,7 @@ export default function PriorityPage() {
 
                 <section className={"desktop:basis-1/3 mobile:basis-0 desktop:ml-[84px]  z-30 "}>
                     <div
-                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white p-8 desktop:sticky mobile:fixed  desktop:top-[94px] drop-shadow-custom-cards ", isReactBottom ? "mobile:hidden desktop:visible desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0")}>
+                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white overflow-hidden desktop:sticky mobile:fixed  desktop:top-[94px] drop-shadow-custom-cards ", isReactBottom ? "mobile:hidden desktop:visible desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0")}>
 
                         <div className={clsx("bg-[#E239141A] py-[8px] px-8 flex items-center ")}>
                             <Image src={"/images/components/Icon/alert-circle.svg"} alt={"Star"}
@@ -369,10 +376,10 @@ export default function PriorityPage() {
                                 className={"desktop:pb-[24px] mobile:pb-[12px] mb-[24px] border-b-[1px] border-[#E3EDFB] flex items-center justify-between "}>
 
                                 <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Priority</h3>
-                                <div className={"flex"}>
+                                <div className={"flex items-center"}>
                                     <Image src={"/images/components/Icon/star.svg"} alt={"Star"}
                                            width={24} height={24}/>
-                                    <h6 className={clsx(" text-heading-5 text-font-description-color ml-1", fonts.roboto)}>5.0</h6>
+                                    <h6 className={clsx(" text-heading-5/2 text-font-description-color ml-1", fonts.roboto)}>5.0</h6>
                                 </div>
                             </div>
                             <div className={clsx("text-left desktop:block mobile:flex mobile:items-center mobile:justify-between ")}>

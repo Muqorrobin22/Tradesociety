@@ -18,9 +18,9 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "linear-gradient-hero": " linear-gradient( to bottom, #15345A, #4E9AE2 ), url(/images/TS_Graphic_Element/TS_Graphic_Element-08.jpg) ",
         "linear-gradient-faq": "linear-gradient( to right, #4E9AE2, #215A99 )",
-        "linear-gradient-program-newbie": "linear-gradient( to bottom, #8BBCEE, #C2DBF5 )",
-        "linear-gradient-program-family": "linear-gradient( to bottom, #A8DACA, #DBF0E8 )",
-        "linear-gradient-program-priority": "linear-gradient( to bottom, #D1B052, #F2EDCF )",
+        "linear-gradient-program-newbie": "linear-gradient( to bottom, #4E9AE2, #144E8F )",
+        "linear-gradient-program-family": "linear-gradient( to bottom, #8ACBBA, #277467 )",
+        "linear-gradient-program-priority": "linear-gradient( to bottom, #E7DBA1, #A3752B )",
       },
       dropShadow: {
         "custom-cards": "0 10px 20px rgba(39, 125, 208, 0.1)"
@@ -62,6 +62,14 @@ module.exports = {
           "36px",
           {
             lineHeight: "43px",
+            fontWeight: "400",
+            // letterSpacing: "1px",
+          },
+        ],
+        "heading-5/2": [
+          "16px",
+          {
+            lineHeight: "14px",
             fontWeight: "400",
             // letterSpacing: "1px",
           },
