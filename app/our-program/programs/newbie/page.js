@@ -77,21 +77,21 @@ export default function NewbiePage() {
     const testimonialsList = [
         {
             key: 1,
-            name: "Ardas dipa",
+            name: "Muhammad Irsal Hadi",
             job: "Writer",
-            comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
+            comment: "Metode Pembelajarannya mantap dan mudah dipahami.",
             bgColor: "bg-secondary-gold-color"
         },{
             key: 2,
-            name: "Ardas dipa",
+            name: "Achmad Akbar Alfarizzy",
             job: "Writer",
-            comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
+            comment: "Sistem pembelajarannya bagus,  materi basic tapi daging banget isinya",
             bgColor: "bg-secondary-gold-color"
         }, {
             key: 3,
-            name: "Ardas dipa",
+            name: "Khiar Tsany Fiyantasib",
             job: "Writer",
-            comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
+            comment: "Semua mentor sangat baik. Metode yang diajarkan gampang dimengerti.",
             bgColor: "bg-secondary-gold-color"
         }
     ]

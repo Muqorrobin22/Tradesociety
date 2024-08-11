@@ -23,27 +23,55 @@ export default function Home() {
   const testimonialsList = [
     {
       key: 1,
-      name: "Ardas dipa",
+      name: "Jihanyuniawati",
       job: "Writer",
-      comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
+      comment: "Masya allah.gropnya sangat bermanfaat banget saya dapat ilmu dan sinyal.",
       bgColor: "bg-[#F47643]"
     },{
       key: 2,
-      name: "Ardas dipa",
+      name: "Abul Hasan",
       job: "Writer",
-      comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
+      comment: "Alhamdulillah, grub ini membantu saya dalam mempelajari trading.",
       bgColor: "bg-[#59AE9B]"
     },{
       key: 3,
-      name: "Ardas dipa",
+      name: "Andika Pradana",
       job: "Writer",
-      comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
+      comment: "Trade Society membawa saya jauh lebih konsisten dalam melakukan trading.",
       bgColor: "bg-[#D1B052]"
     },{
       key: 4,
-      name: "Ardas dipa",
+      name: "Nuralam Esa Putra",
       job: "Writer",
-      comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
+      comment: "Komunitas yang full edukasinya dan asik.",
+      bgColor: "bg-[#F47643]"
+    },
+  ]
+
+  const testimonialsListBottom = [
+    {
+      key: 1,
+      name: "Iwan Juliatmoko",
+      job: "Writer",
+      comment: "Dari semua program yang di adakan sangat² menarik dan mengedukasi.",
+      bgColor: "bg-[#F47643]"
+    },{
+      key: 2,
+      name: "Mochamad Indra Leksana",
+      job: "Writer",
+      comment: "Signal dan materi pembelajaran di dunia trading sangat membantu para newbie trader",
+      bgColor: "bg-[#59AE9B]"
+    },{
+      key: 3,
+      name: "Jody Christian Sumampow",
+      job: "Writer",
+      comment: "Edukasi yang saya terima dari nol sampe sekarang semuanya bagus",
+      bgColor: "bg-[#D1B052]"
+    },{
+      key: 4,
+      name: "Mohammad Rizqi Arafat",
+      job: "Writer",
+      comment: "semenjak gabung di trade society ini gaya trading saya mulai ada perkembangan",
       bgColor: "bg-[#F47643]"
     },
   ]
@@ -51,15 +79,15 @@ export default function Home() {
   const testimonialsListMobile = [
     {
       key: 1,
-      name: "Ardas dipa",
+      name: "Jihanyuniawati",
       job: "Writer",
-      comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
+      comment: "Masya allah.gropnya sangat bermanfaat banget saya dapat ilmu dan sinyal.",
       bgColor: "bg-[#F47643]"
     },{
       key: 2,
-      name: "Ardas dipa",
+      name: "Abul Hasan",
       job: "Writer",
-      comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
+      comment: "Alhamdulillah, grub ini membantu saya dalam mempelajari trading.",
       bgColor: "bg-[#59AE9B]"
     }
   ]
@@ -303,7 +331,7 @@ export default function Home() {
 
           {/* Start: Desktop Version */}
           <div className={clsx("flex items-center justify-between mt-4 translate-x-[-75px] mobile:hidden desktop:visible desktop:flex ")}>
-            {testimonialsList.map((testimonial) => (
+            {testimonialsListBottom.map((testimonial) => (
                 <div key={testimonial.key} className={clsx("")}>
                   <TestimonialCard name={testimonial.name} job={testimonial.job} comments={testimonial.comment}
                                    bg_color={testimonial.bgColor}/>

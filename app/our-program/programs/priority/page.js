@@ -77,21 +77,21 @@ export default function PriorityPage() {
     const testimonialsList = [
         {
             key: 1,
-            name: "Ardas dipa",
+            name: "Rafsanjani Hermawan",
             job: "Writer",
-            comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
+            comment: "saya menjadi lebih percaya diri terhadap plan trading yang saya buat.",
             bgColor: "bg-secondary-gold-color"
         },{
             key: 2,
-            name: "Ardas dipa",
+            name: "Aredia Zaki Utama",
             job: "Writer",
-            comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
+            comment: "Terbaik. Pembelajaran dilakukan setiap hari.",
             bgColor: "bg-secondary-gold-color"
         },{
             key: 3,
-            name: "Ardas dipa",
+            name: "Eggy Nofa Wahyudi",
             job: "Writer",
-            comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
+            comment: "Bintang 100000000.",
             bgColor: "bg-secondary-gold-color"
         }
     ]

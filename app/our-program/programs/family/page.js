@@ -77,22 +77,22 @@ export default function FamilyPage() {
     const testimonialsList = [
         {
             key: 1,
-            name: "Ardas dipa",
+            name: "Kurniawan",
             job: "Writer",
-            comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
+            comment: "Membatu untuk belajar analisa apalagi yg msih pemula.",
             bgColor: "bg-secondary-gold-color"
         },{
             key: 2,
-            name: "Ardas dipa",
+            name: "Rizki Nanda Aulia",
             job: "Writer",
-            comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
+            comment: "Ilmunya bagus, mulai dari mm sampai teknik yang di pakai.",
             bgColor: "bg-secondary-gold-color"
         },
         {
             key: 3,
-            name: "Ardas dipa",
+            name: "Silvia Febri Agata",
             job: "Writer",
-            comment: "Thank you so much for your help. It's  exactly what I've been looking for.",
+            comment: "Ts family nyaman ramah serta para mentornya yg friendly.",
             bgColor: "bg-secondary-gold-color"
         }
     ]
