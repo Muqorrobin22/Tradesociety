@@ -4,10 +4,10 @@ import BenefitList from "@/app/_ui/Micro-Component/BenefitList/Benefit-List";
 import Button from "@/app/_ui/Micro-Component/Button/Button";
 import {fonts} from "@/app/_lib/utils/fonts/fonts";
 
-export default function ProgramCardsWithoutImage({ type_class, benefitList, price, period, href, strikethroughPrice = "" }) {
+export default function ProgramCardsWithoutImage({ type_class, benefitList, price, period, href, strikethroughPrice = "", rounded }) {
     return (
         <section className={clsx(" ")}>
-            <div className={clsx(" h-[570px] rounded-[32px] border-[1px] border-[#E3EDFB] p-[4px] relative bg-white  ")}>
+            <div className={clsx(" h-[570px]  border-[1px] border-[#E3EDFB] p-[4px] relative bg-white  ", rounded )}>
 
                 <div className={clsx("p-8")}>
                     <div className={clsx("mx-auto text-center mb-10")}>

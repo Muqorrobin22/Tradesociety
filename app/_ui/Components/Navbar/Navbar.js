@@ -2,16 +2,18 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import {usePathname} from "next/navigation";
+import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import clsx from "clsx";
 import Button from "@/app/_ui/Micro-Component/Button/Button";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {fonts} from "@/app/_lib/utils/fonts/fonts";
+import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
+import {getCookie, setCookie} from "cookies-next";
 
 
 export default function Navbar(props) {
 
-    const pathname = usePathname()
+    // const pathname = usePathname()
 
     const [isOpen, setIsOpen] = useState(false);
     const [burgerOpen, setBurgerOpen] = useState(false);
@@ -57,6 +59,32 @@ export default function Navbar(props) {
         },
 
     ]
+
+    const searchParams = useSearchParams();
+    const pathname = usePathname();
+    const params = new URLSearchParams(searchParams);
+
+    // End of: Route Params
+
+    // Start of: Redux
+    const router = useRouter();
+
+    const [telegramLink, setTelegramLink] = useState("");
+
+    // console.log("search params: ", searchParams.get("ref"))
+
+    useEffect(() => {
+        setTelegramLink(GetReferralLinkTelegram(searchParams.get("ref") || getCookie("referral") || ""))
+    }, [searchParams])
+
+    useEffect(() => {
+        if(searchParams.has("ref")) {
+            setCookie("referral", searchParams.get("ref"));
+        } else {
+            params.set("ref", getCookie("referral"));
+            router.push(`${pathname}?${params.toString()}`);
+        }
+    }, );
 
     return (
         <nav className="flex items-center justify-between py-4 desktop:fixed mobile:fixed mobile:z-50 mobile:top-0 mobile:left-[16px] mobile:right-[16px] mobile:bg-white mobile:border-b-[1px] mobile:border-[#E3EDFB] desktop:px-[120px] desktop:z-50 desktop:left-0 desktop:right-0 desktop:top-0 ">
@@ -232,7 +260,7 @@ export default function Navbar(props) {
             {/*</div>*/}
 
             <div className={clsx("mobile:ml-auto mobile:mr-4 mobile:order-2 desktop:order-3 desktop:ml-0")}>
-                <Button href={"https://t.me/m/am6DU9LKNDI1"} text={"Join now"}/>
+                <Button href={telegramLink} text={"Join now"}/>
             </div>
         </nav>
     )

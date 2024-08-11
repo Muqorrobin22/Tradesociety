@@ -449,7 +449,7 @@ export default function FamilyPage() {
                         viewport={{once: true}}
                         className={"w-full"}>
                         <ProgramCardsWithoutImage benefitList={newbieBenefitList} period={"Lifetime"} price={"FREE"}
-                                                  type_class={"Newbie"} href={"/our-program/programs/newbie"}/>
+                                                  type_class={"Newbie"} href={"/our-program/programs/newbie"} rounded={"rounded-tl-[32px] rounded-bl-[32px]"}/>
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, translateY: "50px" }}
@@ -460,7 +460,7 @@ export default function FamilyPage() {
                         <ProgramCardsWithoutImage benefitList={priorityBenefitList} period={"Yearly"}
                                                   price={"rp 1.500.000"} type_class={"priority"}
                                                   href={"/our-program/programs/priority"}
-                                                  strikethroughPrice={"Rp5.000.000"}/>
+                                                  strikethroughPrice={"Rp5.000.000"} rounded={"rounded-tr-[32px] rounded-br-[32px]"}/>
                     </motion.div>
                 </section>
 

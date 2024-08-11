@@ -432,7 +432,7 @@ export default function NewbiePage() {
                         viewport={{once: true}}
                         className={"w-full"}>
                         <ProgramCardsWithoutImage benefitList={familyBenefitList} period={"Lifetime"} price={"FREE"}
-                                                  type_class={"Family"} href={"/our-program/programs/family"}/>
+                                                  type_class={"Family"} href={"/our-program/programs/family"} rounded={"rounded-tl-[32px] rounded-bl-[32px]"} />
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, translateY: "50px" }}
@@ -443,7 +443,7 @@ export default function NewbiePage() {
                         <ProgramCardsWithoutImage benefitList={priorityBenefitList} period={"Yearly"}
                                                   price={"rp 1.500.000"} type_class={"priority"}
                                                   href={"/our-program/programs/priority"}
-                                                  strikethroughPrice={"Rp5.000.000"}/>
+                                                  strikethroughPrice={"Rp5.000.000"} rounded={"rounded-tr-[32px] rounded-br-[32px]"} />
                     </motion.div>
                 </section>
 
