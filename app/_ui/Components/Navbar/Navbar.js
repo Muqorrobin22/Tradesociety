@@ -232,7 +232,7 @@ export default function Navbar(props) {
             {/*</div>*/}
 
             <div className={clsx("mobile:ml-auto mobile:mr-4 mobile:order-2 desktop:order-3 desktop:ml-0")}>
-                <Button href={"/"} text={"Join now"}/>
+                <Button href={"https://t.me/m/am6DU9LKNDI1"} text={"Join now"}/>
             </div>
         </nav>
     )
