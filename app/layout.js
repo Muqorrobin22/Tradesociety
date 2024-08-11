@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
       <body className=" desktop:px-[0] mobile:px-[16px]  ">
           <Navbar />
           {children}
-          <Footer />
+          {/*<Footer />*/}
       </body>
     </html>
   );
