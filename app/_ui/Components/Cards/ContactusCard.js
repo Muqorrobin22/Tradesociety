@@ -1,9 +1,9 @@
 import clsx from "clsx";
 import Image from "next/image";
 
-export default function ContactUsCard({Sosmed, imageSrc, rounded}) {
+export default function ContactUsCard({Sosmed, imageSrc, rounded, href}) {
     return (
-        <a href={"#"}
+        <a href={href} target="_blank"
             className={clsx("w-auto  border-[1px] border-[#E3EDFB]  relative block hover:translate-y-[-5px] transition-all duration-300 p-8 ", rounded)}>
             <div className={clsx("relative my-auto ")}>
                 <Image src={imageSrc} alt={Sosmed} width={125} height={141} className={clsx('mx-auto my-auto')}  />

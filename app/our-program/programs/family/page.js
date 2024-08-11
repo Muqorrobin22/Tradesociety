@@ -9,11 +9,13 @@ import Button from "@/app/_ui/Micro-Component/Button/Button";
 import ProgramCardsWithoutImage from "@/app/_ui/Components/Cards/ProgramCardsWithoutImage";
 import ProgramCards from "@/app/_ui/Components/Cards/ProgramCards";
 import {useEffect, useState} from "react";
-import {useRouter} from "next/navigation";
+import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {familyBenefitList, priorityBenefitList, newbieBenefitList} from "@/app/_lib/const/VARIABLES";
 import {fonts} from "@/app/_lib/utils/fonts/fonts";
 import TestimonialCardV2 from "@/app/_ui/Micro-Component/Testimonials/Cards/TestimonialCardV2";
 import { motion } from "framer-motion"
+import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
+import {getCookie, setCookie} from "cookies-next";
 
 export default function FamilyPage() {
 
@@ -139,6 +141,32 @@ export default function FamilyPage() {
             });
         }
     };
+
+    const searchParams = useSearchParams();
+    const pathname = usePathname();
+    const params = new URLSearchParams(searchParams);
+
+    // End of: Route Params
+
+    // Start of: Redux
+    const router = useRouter();
+
+    const [telegramLink, setTelegramLink] = useState("");
+
+    // console.log("search params: ", searchParams.get("ref"))
+
+    useEffect(() => {
+        setTelegramLink(GetReferralLinkTelegram(searchParams.get("ref") || getCookie("referral") || ""))
+    }, [])
+
+    useEffect(() => {
+        if(searchParams.has("ref")) {
+            setCookie("referral", searchParams.get("ref"));
+        } else {
+            params.set("ref", getCookie("referral"));
+            router.push(`${pathname}?${params.toString()}`);
+        }
+    }, []);
 
     return (
         <main className={clsx("mt-10")}>
@@ -388,7 +416,7 @@ export default function FamilyPage() {
                                 <span
                                     className={clsx("text-font-description-color text-LG/LG-Normal ml-2", fonts.roboto)}>/ Lifetime </span>
                             </h1>
-                            <Button href={"/"} text={"Gabung Kelas ini"} noIcon={false}/>
+                            <Button href={telegramLink} text={"Gabung Kelas ini"} noIcon={false}/>
                         </div>
                     </div>
                 </section>
@@ -455,7 +483,7 @@ export default function FamilyPage() {
                                 konsisten!</p>
                         </div>
                         <div className={clsx("desktop:order-3 mobile:order-2 mobile:mt-4 mobile:mb-8 desktop:my-0 ")}>
-                            <Button href={"/"} type={"secondary"} text={"Hubungi kami"}/>
+                            <Button href={telegramLink} type={"secondary"} text={"Hubungi kami"}/>
                         </div>
                     </div>
 

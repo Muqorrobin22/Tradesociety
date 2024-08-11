@@ -1,34 +1,70 @@
+"use client"
+
 import clsx from "clsx";
 import Image from "next/image";
 import BenefitList from "@/app/_ui/Micro-Component/BenefitList/Benefit-List";
 import Button from "@/app/_ui/Micro-Component/Button/Button";
 import ContactUsCard from "@/app/_ui/Components/Cards/ContactusCard";
 import {fonts} from "@/app/_lib/utils/fonts/fonts";
+import {usePathname, useRouter, useSearchParams} from "next/navigation";
+import {useEffect, useState} from "react";
+import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
+import {getCookie, setCookie} from "cookies-next";
 
 export default function ContactUsPage() {
+
+    const searchParams = useSearchParams();
+    const pathname = usePathname();
+    const params = new URLSearchParams(searchParams);
+
+    // End of: Route Params
+
+    // Start of: Redux
+    const router = useRouter();
+
+    const [telegramLink, setTelegramLink] = useState("");
+
+    // console.log("search params: ", searchParams.get("ref"))
+
+    useEffect(() => {
+        setTelegramLink(GetReferralLinkTelegram(searchParams.get("ref") || getCookie("referral") || ""))
+    }, [])
+
+    useEffect(() => {
+        if(searchParams.has("ref")) {
+            setCookie("referral", searchParams.get("ref"));
+        } else {
+            params.set("ref", getCookie("referral"));
+            router.push(`${pathname}?${params.toString()}`);
+        }
+    }, []);
 
     const ContactList = [
         {
             key: 1,
             name: "Telegram",
             imageSrc: "/images/components/icon_new/Telegram.svg",
-            rounded: "rounded-tl-[32px] rounded-bl-[32px]"
+            rounded: "rounded-tl-[32px] rounded-bl-[32px]",
+            href: `${telegramLink}`
         },{
             key: 2,
             name: "Instagram",
             imageSrc: "/images/components/icon_new/Instagram.svg",
-            rounded: ""
+            rounded: "",
+            href: ""
         },{
             key: 3,
             name: "Linkedin",
             imageSrc: "/images/components/icon_new/Linkedin.svg",
-            rounded: ""
+            rounded: "",
+            href: ""
         },
         {
             key: 4,
             name: "Tiktok",
             imageSrc: "/images/components/icon_new/Tiktok.svg",
-            rounded: "rounded-tr-[32px] rounded-br-[32px]"
+            rounded: "rounded-tr-[32px] rounded-br-[32px]",
+            href: ""
         },
     ]
 
@@ -44,7 +80,7 @@ export default function ContactUsPage() {
                 <div className={clsx("grid desktop:grid-cols-4  ")}>
                     {ContactList.map(item => (
                         <div key={item.key} className={"w-full mx-auto"}>
-                            <ContactUsCard imageSrc={item.imageSrc} Sosmed={item.name} rounded={item.rounded} />
+                            <ContactUsCard href={item.href} imageSrc={item.imageSrc} Sosmed={item.name} rounded={item.rounded} />
                         </div>
                     ))}
                 </div>
