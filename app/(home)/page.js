@@ -13,6 +13,7 @@ import {useDispatch} from "react-redux";
 import {setShowFaq} from "@/app/_lib/store/features/faqslices/faqSlices";
 import {familyBenefitList, newbieBenefitList, priorityBenefitList} from "@/app/_lib/const/VARIABLES";
 import {fonts} from "@/app/_lib/utils/fonts/fonts";
+import { motion } from "framer-motion"
 
 export default function Home() {
 
@@ -120,10 +121,15 @@ export default function Home() {
         <Image src={"/images/components/illustration_new/hero_bg_image.png"} alt={""} height={255} width={1440} className={clsx("absolute desktop:bottom-0 mobile:hidden desktop:block ")} />
 
 
-        <section className={clsx("relative text-center pt-[64px] z-20")}>
+        <motion.section initial={{ opacity: 0, translateY: "50px" }}
+                        whileInView={{ opacity: 1, translateY: "0" }}
+                        transition={{duration: 10, type: "spring", stiffness: 150}}
+                        viewport={{once: true}}
+
+                        className={clsx("relative text-center pt-[64px] z-20")}>
           <h1 className={clsx("text-white text-heading-1 desktop:w-[400px] mx-auto ")}>Sukses trading bersama  Trade Society</h1>
           <p className={clsx("text-XL/XL-Normal text-[#F6F6F6] text-center mx-auto desktop:w-[500px] mt-2 ", fonts.roboto)}>Bukan hanya belajar, tapi juga kelilingi diri kalian dengan  orang-orang yang yang memiliki tujuan dan mindset untuk menjadi sukses.</p>
-        </section>
+        </motion.section>
       </div>
       <Image src={"/images/components/illustration_new/hero_bg_image_2.svg"} alt={""} height={419} width={421} className={clsx("absolute desktop:bottom-[-180px] desktop:left-[50%] desktop:translate-x-[-50%] mobile:hidden desktop:block ")} />
     </section>
@@ -138,7 +144,12 @@ export default function Home() {
       <Image src={"/images/components/addons_new/belajar_trading_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 ")} />
       <Image src={"/images/components/addons_new/home_belajar_gratis_addons.png"} alt={""} width={1200} height={160} className={clsx("absolute z-10 left-[120px] ")} />
 
-      <div className={clsx("z-20 flex desktop:justify-between desktop:items-center relative mobile:flex-col mobile:items-start desktop:flex-row desktop:mx-auto")}>
+      <motion.div
+          initial={{ opacity: 0, translateY: "50px" }}
+          whileInView={{ opacity: 1, translateY: "0" }}
+          transition={{duration: 10, type: "spring", stiffness: 100, delay: .3}}
+          viewport={{once: true}}
+          className={clsx("z-20 flex desktop:justify-between desktop:items-center relative mobile:flex-col mobile:items-start desktop:flex-row desktop:mx-auto")}>
         <h1 className={clsx("text-primary-font-color text-heading-4 desktop:basis-2/3 mobile:w-full ")}>
           Belajar trading <span className={clsx("text-secondary-gold-color")}>100% gratis!</span> <br/> Ikuti kelas
           online dan belajar sampai jago bersama para mentor!
@@ -146,7 +157,7 @@ export default function Home() {
         <div className={clsx("desktop:basis-1/3 desktop:max-w-[200px] mobile:mt-[15px]")}>
           <Button href={"/"} type={"primary"} text={"Daftar sekarang"}/>
         </div>
-      </div>
+      </motion.div>
     </section>
 
     {/*  Hero Section CTA - End */}
