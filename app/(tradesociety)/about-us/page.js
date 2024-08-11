@@ -27,7 +27,7 @@ export default function AboutUsPage() {
 
     useEffect(() => {
         setTelegramLink(GetReferralLinkTelegram(searchParams.get("ref") || getCookie("referral") || ""))
-    }, [])
+    }, [searchParams])
 
     useEffect(() => {
         if(searchParams.has("ref")) {
@@ -36,7 +36,7 @@ export default function AboutUsPage() {
             params.set("ref", getCookie("referral"));
             router.push(`${pathname}?${params.toString()}`);
         }
-    }, []);
+    }, );
 
     return <main className={clsx("mt-10")}>
         {/* Hero Section */}

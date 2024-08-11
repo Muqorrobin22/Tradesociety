@@ -162,7 +162,7 @@ export default function PriorityPage() {
 
     useEffect(() => {
         setTelegramLink(GetReferralLinkTelegram(searchParams.get("ref") || getCookie("referral") || ""))
-    }, [])
+    }, [searchParams])
 
     useEffect(() => {
         if(searchParams.has("ref")) {
@@ -171,7 +171,7 @@ export default function PriorityPage() {
             params.set("ref", getCookie("referral"));
             router.push(`${pathname}?${params.toString()}`);
         }
-    }, []);
+    }, );
 
     return (
         <main className={clsx("mt-10")}>

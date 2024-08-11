@@ -40,7 +40,7 @@ export default function Home() {
 
   useEffect(() => {
     setTelegramLink(GetReferralLinkTelegram(searchParams.get("ref") || getCookie("referral") || ""))
-  }, [])
+  }, [searchParams])
 
   useEffect(() => {
     if(searchParams.has("ref")) {
@@ -49,7 +49,7 @@ export default function Home() {
       params.set("ref", getCookie("referral"));
       router.push(`${pathname}?${params.toString()}`);
     }
-  }, []);
+  }, );
 
 
   const testimonialsList = [

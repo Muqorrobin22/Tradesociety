@@ -151,7 +151,7 @@ export default function NewbiePage() {
 
     useEffect(() => {
         setTelegramLink(GetReferralLinkTelegram(searchParams.get("ref") || getCookie("referral") || ""))
-    }, [])
+    }, [searchParams])
 
     useEffect(() => {
         if(searchParams.has("ref")) {
@@ -160,7 +160,7 @@ export default function NewbiePage() {
             params.set("ref", getCookie("referral"));
             router.push(`${pathname}?${params.toString()}`);
         }
-    }, []);
+    }, );
 
     return (
         <main className={clsx("mt-10")}>
