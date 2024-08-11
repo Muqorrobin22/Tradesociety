@@ -292,7 +292,7 @@ export default function Home() {
           transition={{duration: 10, type: "spring", stiffness: 100, delay: .3}}
           viewport={{once: true}}
           className={clsx(" desktop:relative text-center flex desktop:items-center desktop:justify-center mt-10 pt-8 pb-10 desktop:flex-row mobile:flex-col mobile:justify-center mobile:items-center")}>
-        <Image src={"/images/components/addons_new/belajar_sesuai_kemampuan_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 ")} />
+        <Image src={"/images/components/addons_new/home_pertanyaan_lain_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 ")} />
         <h1 className={clsx("text-font-description-color text-XL/XL-Normal mr-[10px] relative z-20", fonts.roboto)}>Punya pertanyaan lain?</h1>
         <div className={clsx("mobile:mt-4 desktop:mt-0 relative z-20")}>
           <Button href={telegramLink} text={"Hubungi kami"} type={"secondary"} />
@@ -338,9 +338,11 @@ export default function Home() {
           transition={{duration: 10, type: "spring", stiffness: 100, delay: .3}}
           viewport={{once: true}}
           className={clsx("mt-[42px] py-[64px] px-8 bg-[#F4F8FD] rounded-[32px]  relative z-20 ")}>
-        <div className={clsx("overflow-x-hidden")}>
+
+        <div className={clsx("")}>
+          <Image src={"/images/components/addons_new/home_testimonials_addons.png"} alt={""} width={1106} height={450} className={clsx("absolute z-10 left-0 top-0 bottom-0  ")} />
           {/* Start: Desktop Version */}
-          <div className={clsx("flex items-center justify-between translate-x-[75px] mobile:hidden desktop:visible desktop:flex ")}>
+          <div className={clsx("flex items-center justify-between  mobile:hidden desktop:visible desktop:flex relative z-20 ")}>
             {testimonialsList.map((testimonial) => (
                 <div key={testimonial.key} className={clsx("")}>
                   <TestimonialCard name={testimonial.name} job={testimonial.job} comments={testimonial.comment}
@@ -351,7 +353,7 @@ export default function Home() {
           {/* End: Desktop Version */}
 
           {/* Start: Mobile Version */}
-          <div className={clsx("flex items-center justify-between translate-x-[75px] desktop:hidden mobile:visible mobile:flex")}>
+          <div className={clsx("flex items-center justify-between  desktop:hidden mobile:visible mobile:flex relative z-20")}>
             {testimonialsListMobile.map((testimonial) => (
                 <div key={testimonial.key} className={clsx("mobile:ml-4 desktop:ml-0")}>
                   <TestimonialCard name={testimonial.name} job={testimonial.job} comments={testimonial.comment}
@@ -362,7 +364,7 @@ export default function Home() {
           {/* End: Mobile Version */}
 
           {/* Start: Desktop Version */}
-          <div className={clsx("flex items-center justify-between mt-4 translate-x-[-75px] mobile:hidden desktop:visible desktop:flex ")}>
+          <div className={clsx("flex items-center justify-between mt-4  mobile:hidden desktop:visible desktop:flex relative z-20 ")}>
             {testimonialsListBottom.map((testimonial) => (
                 <div key={testimonial.key} className={clsx("")}>
                   <TestimonialCard name={testimonial.name} job={testimonial.job} comments={testimonial.comment}
@@ -373,7 +375,7 @@ export default function Home() {
           {/* End: Desktop Version */}
 
           {/* Start: Mobile Version */}
-          <div className={clsx("flex items-center justify-between mt-4 translate-x-[-75px] desktop:hidden mobile:visible mobile:flex ")}>
+          <div className={clsx("flex items-center justify-between mt-4 desktop:hidden mobile:visible mobile:flex relative z-20 ")}>
             {testimonialsListMobile.map((testimonial) => (
                 <div key={testimonial.key} className={clsx("mobile:mr-4 desktop:mr-0")}>
                   <TestimonialCard name={testimonial.name} job={testimonial.job} comments={testimonial.comment}
