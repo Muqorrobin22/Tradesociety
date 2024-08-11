@@ -86,10 +86,18 @@ export default function Footer() {
 
                     </ul>
                 </div>
-                <div className={clsx("flex desktop:items-center desktop:justify-between mobile:justify-center mobile:mt-[26px]")}>
-                    <a href={telegramLink}  target="_blank" className={clsx("mr-4")}><Image src={"/images/components/Icon/telegram.svg"} alt={"Telegram Icon"} width={24} height={24} /></a>
-                    <a href="#" target="_blank" className={clsx("mr-4")}><Image src={"/images/components/Icon/instagram.svg"} alt={"Instagram Icon"} width={24} height={24} /></a>
-                    <a href="#" target="_blank" className={clsx()}><Image src={"/images/components/Icon/linkedin.svg"} alt={"Linkedin Icon"} width={24} height={24} /></a>
+                <div
+                    className={clsx("flex desktop:items-center desktop:justify-between mobile:justify-center mobile:mt-[26px]")}>
+                    <a href={telegramLink} target="_blank" className={clsx("mr-4")}><Image
+                        src={"/images/components/Icon/telegram.svg"} alt={"Telegram Icon"} width={24} height={24}/></a>
+                    <a href="https://www.instagram.com/tradesociety.id/" target="_blank" className={clsx("mr-4")}><Image
+                        src={"/images/components/Icon/instagram.svg"} alt={"Instagram Icon"} width={24}
+                        height={24}/></a>
+                    <a href="https://www.linkedin.com/company/trade-society" target="_blank" className={clsx("mr-4")}><Image src={"/images/components/Icon/linkedin.svg"}
+                                                                          alt={"Linkedin Icon"} width={24} height={24}/></a>
+                    <a href="https://www.tiktok.com/@tradesociety.id" target="_blank" className={clsx()}><Image src={"/images/components/Icon_new/Tiktok_footer.svg"}
+                                                                          alt={"Linkedin Icon"} width={24} height={24}/></a>
+
                 </div>
             </div>
             <div className={"text-center mt-[32px]"}>
