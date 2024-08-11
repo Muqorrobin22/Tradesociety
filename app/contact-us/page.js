@@ -11,20 +11,24 @@ export default function ContactUsPage() {
         {
             key: 1,
             name: "Telegram",
-            imageSrc: "/images/components/icon_new/Telegram.svg"
+            imageSrc: "/images/components/icon_new/Telegram.svg",
+            rounded: "rounded-tl-[32px] rounded-bl-[32px]"
         },{
             key: 2,
             name: "Instagram",
-            imageSrc: "/images/components/icon_new/Instagram.svg"
+            imageSrc: "/images/components/icon_new/Instagram.svg",
+            rounded: ""
         },{
             key: 3,
             name: "Linkedin",
-            imageSrc: "/images/components/icon_new/Linkedin.svg"
+            imageSrc: "/images/components/icon_new/Linkedin.svg",
+            rounded: ""
         },
         {
             key: 4,
             name: "Tiktok",
-            imageSrc: "/images/components/icon_new/Tiktok.svg"
+            imageSrc: "/images/components/icon_new/Tiktok.svg",
+            rounded: "rounded-tr-[32px] rounded-br-[32px]"
         },
     ]
 
@@ -37,10 +41,10 @@ export default function ContactUsPage() {
                     <p className={clsx("text-XL/XL-Normal text-font-description-color  text-center", fonts.roboto)}>
                         Any questions or remarks? Just write us a message!</p>
                 </div>
-                <div className={clsx("grid desktop:grid-cols-4 gap-8 ")}>
+                <div className={clsx("grid desktop:grid-cols-4  ")}>
                     {ContactList.map(item => (
                         <div key={item.key} className={"w-full mx-auto"}>
-                            <ContactUsCard imageSrc={item.imageSrc} Sosmed={item.name} />
+                            <ContactUsCard imageSrc={item.imageSrc} Sosmed={item.name} rounded={item.rounded} />
                         </div>
                     ))}
                 </div>
