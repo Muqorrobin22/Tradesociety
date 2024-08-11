@@ -143,7 +143,7 @@ export default function AboutUsPage() {
                         className={clsx("text-center")}>
                         <h3 className={clsx("text-heading-3 text-[#15345A] mb-4 ")}> Jadi bagian dari Team</h3>
                         <p className={clsx("text-XL/XL-Normal text-font-description-color  text-center", fonts.roboto)}>
-                           Bersama kita kembangkan Tradesociety</p>
+                           Bersama kita kembangkan Trade society</p>
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, translateY: "50px" }}
@@ -163,15 +163,15 @@ export default function AboutUsPage() {
                             <div className={"text-center"}>
                                 <h3 className={clsx("text-heading-6 text-[#15345A] mb-4 ")}> Analyst</h3>
                                 <p className={clsx("text-XL/XL-Normal text-font-description-color  text-center desktop:w-[350px] mx-auto ", fonts.roboto)}>
-                                    Bertanggung jawab terhadap  signal trading dan market outlook  Trade society.</p>
+                                    Bertanggung jawab terhadap signal  trading, market outlook, dan live trading.</p>
                             </div>
                         </div>
 
                         <div className={clsx("p-8 items-center justify-center border-t-[1px] border-[#E3EDFB]  ")}>
                             <div className={"text-center"}>
-                                <h3 className={clsx("text-heading-6 text-[#15345A] mb-4 ")}> leaders</h3>
+                                <h3 className={clsx("text-heading-6 text-[#15345A] mb-4 ")}> TRADER</h3>
                                 <p className={clsx("text-XL/XL-Normal text-font-description-color  text-center desktop:w-[350px] mx-auto ", fonts.roboto)}>
-                                    Bertanggung jawab sebagai ketua  di seluruh komunitas Trade Society</p>
+                                    Bertanggung jawab terhadap akun trading investor Trade Society dan live trading.</p>
                             </div>
                         </div>
 
@@ -179,8 +179,7 @@ export default function AboutUsPage() {
                             <div className={"text-center"}>
                                 <h3 className={clsx("text-heading-6 text-[#15345A] mb-4 ")}> consultant</h3>
                                 <p className={clsx("text-XL/XL-Normal text-font-description-color  text-center desktop:w-[350px] mx-auto ", fonts.roboto)}>
-                                    Bertanggung jawab terhadap proses  onboarding calon member dan
-                                    bimbingan member di komunitas.</p>
+                                    Bertanggung jawab terhadap proses  onboarding calon member dan bimbingan member di komunitas.</p>
                             </div>
                         </div>
                     </motion.div>
