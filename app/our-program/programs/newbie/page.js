@@ -47,9 +47,9 @@ export default function NewbiePage() {
             if(position > 605) {
                 setScrollNavbarLink(position)
             }
-            if (position >= 1414) {
+            if (position >= 1360) {
                 setScrollActiveState("jadwal_kelas");
-            } else if (position >= 1132) {
+            } else if (position >= 1082) {
                 setScrollActiveState("benefits");
             } else if (position >= 705) {
                 setScrollActiveState("materi");
@@ -125,7 +125,7 @@ export default function NewbiePage() {
         // router.push(`#${id}`);
         const element = document.getElementById(id);
         if (element) {
-            const headerOffset = 160;
+            const headerOffset = 170;
             const elementPosition = element.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
