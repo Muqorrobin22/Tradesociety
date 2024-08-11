@@ -5,8 +5,39 @@ import Image from "next/image";
 import {fonts} from "@/app/_lib/utils/fonts/fonts";
 import Button from "@/app/_ui/Micro-Component/Button/Button";
 import { motion } from "framer-motion"
+import {usePathname, useRouter, useSearchParams} from "next/navigation";
+import {useEffect, useState} from "react";
+import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
+import {getCookie, setCookie} from "cookies-next";
 
 export default function AboutUsPage() {
+
+    const searchParams = useSearchParams();
+    const pathname = usePathname();
+    const params = new URLSearchParams(searchParams);
+
+    // End of: Route Params
+
+    // Start of: Redux
+    const router = useRouter();
+
+    const [telegramLink, setTelegramLink] = useState("");
+
+    // console.log("search params: ", searchParams.get("ref"))
+
+    useEffect(() => {
+        setTelegramLink(GetReferralLinkTelegram(searchParams.get("ref") || getCookie("referral") || ""))
+    }, [])
+
+    useEffect(() => {
+        if(searchParams.has("ref")) {
+            setCookie("referral", searchParams.get("ref"));
+        } else {
+            params.set("ref", getCookie("referral"));
+            router.push(`${pathname}?${params.toString()}`);
+        }
+    }, []);
+
     return <main className={clsx("mt-10")}>
         {/* Hero Section */}
         <section
@@ -160,7 +191,7 @@ export default function AboutUsPage() {
                         viewport={{once: true}}
                         className={clsx("mt-8 mx-auto text-center")}>
                         <div className={clsx("inline-block")}>
-                            <Button href={"/"} text={"Hubungi kami"}/>
+                            <Button href={telegramLink} text={"Hubungi kami"}/>
                         </div>
                     </motion.div>
                 </div>

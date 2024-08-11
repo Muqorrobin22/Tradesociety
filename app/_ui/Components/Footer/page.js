@@ -2,12 +2,15 @@
 import Image from "next/image";
 import clsx from "clsx";
 import Link from "next/link";
-import {usePathname} from "next/navigation";
+import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {fonts} from "@/app/_lib/utils/fonts/fonts";
+import {useEffect, useState} from "react";
+import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
+import {getCookie, setCookie} from "cookies-next";
 
 export default function Footer() {
 
-    const pathname = usePathname()
+    // const pathname = usePathname()
 
     const links = [
         {
@@ -30,6 +33,34 @@ export default function Footer() {
         },
 
     ]
+
+    // Start of: Route Params
+
+    const searchParams = useSearchParams();
+    const pathname = usePathname();
+    const params = new URLSearchParams(searchParams);
+
+    // End of: Route Params
+
+    // Start of: Redux
+    const router = useRouter();
+
+    const [telegramLink, setTelegramLink] = useState("");
+
+    // console.log("search params: ", searchParams.get("ref"))
+
+    useEffect(() => {
+        setTelegramLink(GetReferralLinkTelegram(searchParams.get("ref") || getCookie("referral") || ""))
+    }, [])
+
+    useEffect(() => {
+        if(searchParams.has("ref")) {
+            setCookie("referral", searchParams.get("ref"));
+        } else {
+            params.set("ref", getCookie("referral"));
+            router.push(`${pathname}?${params.toString()}`);
+        }
+    }, []);
 
     return (
         <footer className="footer desktop:py-8 mobile:py-8 mobile:w-auto rounded-tl-[32px] rounded-tr-[32px] border-[1px] border-[#E3EDFB] ">
@@ -56,9 +87,9 @@ export default function Footer() {
                     </ul>
                 </div>
                 <div className={clsx("flex desktop:items-center desktop:justify-between mobile:justify-center mobile:mt-[26px]")}>
-                    <a href="#" className={clsx("mr-4")}><Image src={"/images/components/Icon/telegram.svg"} alt={"Telegram Icon"} width={24} height={24} /></a>
-                    <a href="#" className={clsx("mr-4")}><Image src={"/images/components/Icon/instagram.svg"} alt={"Instagram Icon"} width={24} height={24} /></a>
-                    <a href="#" className={clsx()}><Image src={"/images/components/Icon/linkedin.svg"} alt={"Linkedin Icon"} width={24} height={24} /></a>
+                    <a href={telegramLink}  target="_blank" className={clsx("mr-4")}><Image src={"/images/components/Icon/telegram.svg"} alt={"Telegram Icon"} width={24} height={24} /></a>
+                    <a href="#" target="_blank" className={clsx("mr-4")}><Image src={"/images/components/Icon/instagram.svg"} alt={"Instagram Icon"} width={24} height={24} /></a>
+                    <a href="#" target="_blank" className={clsx()}><Image src={"/images/components/Icon/linkedin.svg"} alt={"Linkedin Icon"} width={24} height={24} /></a>
                 </div>
             </div>
             <div className={"text-center mt-[32px]"}>

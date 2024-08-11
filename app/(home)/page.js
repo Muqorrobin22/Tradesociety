@@ -7,18 +7,50 @@ import BenefitList from "@/app/_ui/Micro-Component/BenefitList/Benefit-List";
 import ProgramCards from "@/app/_ui/Components/Cards/ProgramCards";
 import Identifiers from "@/app/_ui/Micro-Component/Testimonials/Identifiers/Identifiers";
 import TestimonialCard from "@/app/_ui/Micro-Component/Testimonials/Cards/TestimonialCard";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import FAQCard from "@/app/_ui/Micro-Component/FAQ/FAQCard";
 import {useDispatch} from "react-redux";
 import {setShowFaq} from "@/app/_lib/store/features/faqslices/faqSlices";
 import {familyBenefitList, newbieBenefitList, priorityBenefitList} from "@/app/_lib/const/VARIABLES";
 import {fonts} from "@/app/_lib/utils/fonts/fonts";
 import { motion } from "framer-motion"
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
+import {getCookie, setCookie} from "cookies-next";
 
 export default function Home() {
 
   // const [showFaq, setShowFaq] = useState(false);
   const dispatch = useDispatch()
+
+  // Start of: Route Params
+
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const params = new URLSearchParams(searchParams);
+
+  // End of: Route Params
+
+  // Start of: Redux
+  const router = useRouter();
+
+  const [telegramLink, setTelegramLink] = useState("");
+
+  // console.log("search params: ", searchParams.get("ref"))
+
+  useEffect(() => {
+    setTelegramLink(GetReferralLinkTelegram(searchParams.get("ref") || getCookie("referral") || ""))
+  }, [])
+
+  useEffect(() => {
+    if(searchParams.has("ref")) {
+      setCookie("referral", searchParams.get("ref"));
+    } else {
+      params.set("ref", getCookie("referral"));
+      router.push(`${pathname}?${params.toString()}`);
+    }
+  }, []);
+
 
   const testimonialsList = [
     {
@@ -183,7 +215,7 @@ export default function Home() {
           online dan belajar sampai jago bersama para mentor!
         </h1>
         <div className={clsx("desktop:basis-1/3 desktop:max-w-[200px] mobile:mt-[15px]")}>
-          <Button href={"/"} type={"primary"} text={"Daftar sekarang"}/>
+          <Button href={telegramLink} type={"primary"} text={"Daftar sekarang"}/>
         </div>
       </motion.div>
     </section>
@@ -263,7 +295,7 @@ export default function Home() {
         <Image src={"/images/components/addons_new/belajar_sesuai_kemampuan_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 ")} />
         <h1 className={clsx("text-font-description-color text-XL/XL-Normal mr-[10px] relative z-20", fonts.roboto)}>Punya pertanyaan lain?</h1>
         <div className={clsx("mobile:mt-4 desktop:mt-0 relative z-20")}>
-          <Button href={"/"} text={"Hubungi kami"} type={"secondary"} />
+          <Button href={telegramLink} text={"Hubungi kami"} type={"secondary"} />
         </div>
       </motion.section>
 
@@ -419,7 +451,7 @@ export default function Home() {
                 konsisten!</p>
             </div>
           <div className={clsx("desktop:order-3 mobile:order-2 mobile:mt-4 mobile:mb-8 desktop:my-0 ")}>
-            <Button href={"/"} type={"secondary"} text={"Hubungi kami"} />
+            <Button href={telegramLink} type={"secondary"} text={"Hubungi kami"} />
           </div>
         </div>
 
