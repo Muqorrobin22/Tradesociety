@@ -13,6 +13,7 @@ import {useRouter} from "next/navigation";
 import {familyBenefitList, priorityBenefitList, newbieBenefitList} from "@/app/_lib/const/VARIABLES";
 import {fonts} from "@/app/_lib/utils/fonts/fonts";
 import TestimonialCardV2 from "@/app/_ui/Micro-Component/Testimonials/Cards/TestimonialCardV2";
+import { motion } from "framer-motion"
 
 export default function PriorityPage() {
 
@@ -151,12 +152,17 @@ export default function PriorityPage() {
             <section
                 className={clsx("relative bg-linear-gradient-program-priority desktop:h-[400px] mobile:h-[600px] desktop:px-[60px] rounded-[32px] flex desktop:items-start mobile:mt-[120px] desktop:mt-[120px] desktop:mx-[120px] mobile:p-8 desktop:m-0 overflow-hidden  ")}>
 
-                <section className={clsx("text-left  w-[550px] relative z-20 ")}>
+                <motion.section
+                    initial={{ opacity: 0, translateY: "50px" }}
+                    whileInView={{ opacity: 1, translateY: "0" }}
+                    transition={{duration: 10, type: "spring", stiffness: 100, delay: .3}}
+                    viewport={{once: true}}
+                    className={clsx("text-left  w-[550px] relative z-20 ")}>
                     {/*<p className={clsx(" text-Base/Base-Strong text-[#D1B052]  ", fonts.roboto)}>Priority</p>*/}
                     <h3 className={clsx("text-heading-3 text-white my-2 ")}>Belajar lebih dalam</h3>
                     <p className={clsx("text-XL/XL-Normal text-white text-left", fonts.roboto)}>Special untuk kalian yang ingin menjadi professional trader.
                     </p>
-                </section>
+                </motion.section>
 
                 <Image src={"/images/components/addons_new/our_programs_hero_addons.png"} alt={"newbie hero"} fill={true}
                        className={clsx("absolute left-0 z-10 ")}/>
@@ -164,7 +170,12 @@ export default function PriorityPage() {
                 <Image src={"/images/components/illustration_new/priority_hero_new_illustration_2.svg"} alt={"newbie hero"} width={400} height={400} className={clsx("absolute z-[11] desktop:right-0 desktop:bottom-0 ")}/>
 
 
-                <div className={clsx("absolute flex items-center  mobile:right-[-64px] desktop:left-[30px] bottom-[32px] z-20 ")}>
+                <motion.div
+                    initial={{ opacity: 0, translateX: "-150px" }}
+                    whileInView={{ opacity: 1, translateX: "0" }}
+                    transition={{duration: 10, type: "spring", stiffness: 100, delay: .5}}
+                    viewport={{once: true}}
+                    className={clsx("absolute flex items-center  mobile:right-[-64px] desktop:left-[30px] bottom-[32px] z-20 ")}>
                     {testimonialsList.map((testimonial, index) => (
                         <div key={testimonial.key} className={"ml-4"}>
                             <TestimonialCardV2 name={testimonial.name} job={testimonial.job}
@@ -172,7 +183,7 @@ export default function PriorityPage() {
                                              bg_cards={"bg-[#BD943566] text-white border-[1px] border-[#D1B052]"}/>
                         </div>
                     ))}
-                </div>
+                </motion.div>
 
             </section>
 
@@ -180,7 +191,12 @@ export default function PriorityPage() {
 
             {/*  Content - Start  */}
 
-            <section className={clsx("mt-[80px] flex justify-between relative px-[120px]")}>
+            <motion.section
+                initial={{ opacity: 0, translateY: "50px" }}
+                whileInView={{ opacity: 1, translateY: "0" }}
+                transition={{duration: 10, type: "spring", stiffness: 100, delay: .7}}
+                viewport={{once: true}}
+                className={clsx("mt-[80px] flex justify-between relative px-[120px]")}>
 
 
                 <section className={"desktop:basis-2/3 mobile:basis-full"}>
@@ -399,7 +415,7 @@ export default function PriorityPage() {
                         </div>
                     </div>
                 </section>
-            </section>
+            </motion.section>
 
             {/*  Content - End  */}
 
@@ -408,27 +424,46 @@ export default function PriorityPage() {
 
             <section
                 className={clsx("mt-[80px] pt-8 desktop:px-[120px] mobile:px-8 desktop:pb-[60px] mobile:pb-[30px] relative ")}>
-                <section className={clsx("text-center relative z-20")}>
+                <motion.section
+                    initial={{ opacity: 0, translateY: "50px" }}
+                    whileInView={{ opacity: 1, translateY: "0" }}
+                    transition={{duration: 10, type: "spring", stiffness: 100, delay: .5}}
+                    viewport={{once: true}}
+                    className={clsx("text-center relative z-20")}>
                     <h3 className={clsx("text-heading-3 text-[#15345A] my-2 ")}>Program lain yang sesuai dengan
                         kamu</h3>
                     <p className={clsx("text-XL/XL-Normal text-font-description-color  text-center", fonts.roboto)}>Jangan
                         Temukan program yang sesuai dengan kemampuan dan skillmu!
                     </p>
-                </section>
+                </motion.section>
                 <section className={clsx("mt-8 grid desktop:grid-cols-2 relative z-20 px-[160px] ")}>
-                    <div className={"w-full"}>
+                    <motion.div
+                        initial={{ opacity: 0, translateY: "50px" }}
+                        whileInView={{ opacity: 1, translateY: "0" }}
+                        transition={{duration: 10, type: "spring", stiffness: 100, delay: .7}}
+                        viewport={{once: true}}
+                        className={"w-full"}>
                         <ProgramCardsWithoutImage benefitList={newbieBenefitList} period={"Lifetime"} price={"FREE"}
                                                   type_class={"Newbie"} href={"/our-program/programs/newbie"}/>
-                    </div>
-                    <div className={"w-full"}>
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, translateY: "50px" }}
+                        whileInView={{ opacity: 1, translateY: "0" }}
+                        transition={{duration: 10, type: "spring", stiffness: 100, delay: .9}}
+                        viewport={{once: true}}
+                        className={"w-full"}>
                         <ProgramCardsWithoutImage benefitList={familyBenefitList} period={"Lifetime"}
                                                   price={"FREE"} type_class={"Family"}
                                                   href={"/our-program/programs/family"}
                         />
-                    </div>
+                    </motion.div>
                 </section>
 
-                <section
+                <motion.section
+                    initial={{ opacity: 0, translateY: "50px" }}
+                    whileInView={{ opacity: 1, translateY: "0" }}
+                    transition={{duration: 10, type: "spring", stiffness: 100, delay: .3}}
+                    viewport={{once: true}}
                     className={clsx("mt-[60px] relative desktop:h-[216px] mobile:h-auto  desktop:px-[77px] desktop:mx-[40px] bg-linear-gradient-faq rounded-[32px] z-20 ")}>
                     <div
                         className={clsx("flex desktop:items-center desktop:justify-between mobile:flex-col desktop:flex-row  z-10 relative mobile:p-8 desktop:p-0 ")}>
@@ -449,7 +484,7 @@ export default function PriorityPage() {
 
                     <Image src={"/images/components/addons/join_now_addons.png"} alt={""} height={353} width={1200}
                            className={clsx("absolute bottom-0")}/>
-                </section>
+                </motion.section>
 
                 <Image src={"/images/components/addons_new/our_programs_program_lain_addons.png"} alt={"addons"}
                        className={"absolute z-10"} fill={true}/>
