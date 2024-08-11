@@ -51,20 +51,20 @@ export default function ContactUsPage() {
             name: "Instagram",
             imageSrc: "/images/components/icon_new/Instagram.svg",
             rounded: "",
-            href: ""
+            href: "https://www.instagram.com/tradesociety.id/"
         },{
             key: 3,
             name: "Linkedin",
             imageSrc: "/images/components/icon_new/Linkedin.svg",
             rounded: "",
-            href: ""
+            href: "https://www.linkedin.com/company/trade-society\n"
         },
         {
             key: 4,
             name: "Tiktok",
             imageSrc: "/images/components/icon_new/Tiktok.svg",
             rounded: "rounded-tr-[32px] rounded-br-[32px]",
-            href: ""
+            href: "https://www.tiktok.com/@tradesociety.id"
         },
     ]
 
