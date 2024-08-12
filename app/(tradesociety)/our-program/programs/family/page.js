@@ -16,6 +16,7 @@ import TestimonialCardV2 from "@/app/_ui/Micro-Component/Testimonials/Cards/Test
 import { motion } from "framer-motion"
 import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
 import {getCookie, setCookie} from "cookies-next";
+import {InfiniteMovingCardsPrograms} from "@/components/ui/infinity-moving-cards-programs";
 
 export default function FamilyPage() {
 
@@ -82,20 +83,23 @@ export default function FamilyPage() {
             name: "Kurniawan",
             job: "Writer",
             comment: "Membatu untuk belajar analisa apalagi yg msih pemula.",
-            bgColor: "bg-secondary-gold-color"
+            bgColor: "bg-secondary-gold-color",
+            bgCards: "bg-[#59AE9B99] text-white",
         },{
             key: 2,
             name: "Rizki Nanda Aulia",
             job: "Writer",
             comment: "Ilmunya bagus, mulai dari mm sampai teknik yang di pakai.",
-            bgColor: "bg-secondary-gold-color"
+            bgColor: "bg-secondary-gold-color",
+            bgCards: "bg-[#59AE9B99] text-white",
         },
         {
             key: 3,
             name: "Silvia Febri Agata",
             job: "Writer",
             comment: "Ts family nyaman ramah serta para mentornya yg friendly.",
-            bgColor: "bg-secondary-gold-color"
+            bgColor: "bg-secondary-gold-color",
+            bgCards: "bg-[#59AE9B99] text-white",
         }
     ]
 
@@ -194,18 +198,21 @@ export default function FamilyPage() {
                        className={clsx("absolute z-[11] desktop:right-0 desktop:bottom-0 ")}/>
 
                 <motion.div
-                    initial={{ opacity: 0, translateX: "-150px" }}
-                    whileInView={{ opacity: 1, translateX: "0" }}
+                    initial={{opacity: 0, translateX: "-150px"}}
+                    whileInView={{opacity: 1, translateX: "0"}}
                     transition={{duration: 10, type: "spring", stiffness: 100, delay: .5}}
                     viewport={{once: true}}
                     className={clsx("absolute flex items-center  mobile:right-[-64px] desktop:left-[30px] bottom-[32px] z-20")}>
-                    {testimonialsList.map((testimonial, index) => (
-                        <div key={testimonial.key} className={"ml-4"}>
-                            <TestimonialCardV2 name={testimonial.name} job={testimonial.job}
-                                             bg_color={testimonial.bgColor} comments={testimonial.comment}
-                                             bg_cards={"bg-[#59AE9B99] text-white"}/>
-                        </div>
-                    ))}
+                    {/*{testimonialsList.map((testimonial, index) => (*/}
+                    {/*    <div key={testimonial.key} className={"ml-4"}>*/}
+                    {/*        <TestimonialCardV2 name={testimonial.name} job={testimonial.job}*/}
+                    {/*                         bg_color={testimonial.bgColor} comments={testimonial.comment}*/}
+                    {/*                         bg_cards={testimonial.bgCard}/>*/}
+                    {/*    </div>*/}
+                    {/*))}*/}
+                    <div className={clsx("w-[850px]")}>
+                        <InfiniteMovingCardsPrograms items={testimonialsList} direction="right" speed="fast"/>
+                    </div>
                 </motion.div>
 
             </section>
@@ -215,7 +222,7 @@ export default function FamilyPage() {
             {/*  Content - Start  */}
 
             <motion.section
-                initial={{ opacity: 0, translateY: "50px" }}
+                initial={{opacity: 0, translateY: "50px" }}
                 whileInView={{ opacity: 1, translateY: "0" }}
                 transition={{duration: 10, type: "spring", stiffness: 100, delay: .7}}
                 viewport={{once: true}}
