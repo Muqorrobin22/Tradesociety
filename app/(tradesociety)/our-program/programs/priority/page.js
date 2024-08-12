@@ -17,6 +17,7 @@ import { motion } from "framer-motion"
 import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
 import {getCookie, setCookie} from "cookies-next";
 import {InfiniteMovingCardsPrograms} from "@/components/ui/infinity-moving-cards-programs";
+import {HoverEffectOurPrograms} from "@/components/ui/card-hover-effect-our-programs";
 
 export default function PriorityPage() {
 
@@ -133,6 +134,37 @@ export default function PriorityPage() {
             desc: "Kalian akan memahami cara mengatur dan mengelola modal trading dengan baik.",
             imgSrc: "/images/components/Icon/pie-chart.svg"
         },
+    ]
+
+    const ProgramLainCards = [
+        {
+            key: 1,
+            elements: <motion.div
+                initial={{opacity: 0, translateY: "50px"}}
+                whileInView={{opacity: 1, translateY: "0"}}
+                transition={{duration: 10, type: "spring", stiffness: 100, delay: .7}}
+                viewport={{once: true}}
+                className={"w-full"}>
+                <ProgramCardsWithoutImage benefitList={newbieBenefitList} period={"Lifetime"} price={"FREE"}
+                                          type_class={"Newbie"} href={"/our-program/programs/newbie"}
+                                          rounded={"rounded-tl-[32px] rounded-bl-[32px]"}/>
+            </motion.div>
+        },
+        {
+            key: 2,
+            elements: <motion.div
+                initial={{opacity: 0, translateY: "50px"}}
+                whileInView={{opacity: 1, translateY: "0"}}
+                transition={{duration: 10, type: "spring", stiffness: 100, delay: .9}}
+                viewport={{once: true}}
+                className={"w-full"}>
+                <ProgramCardsWithoutImage benefitList={familyBenefitList} period={"Lifetime"}
+                                          price={"FREE"} type_class={"Family"}
+                                          href={"/our-program/programs/family"}
+                                          rounded={"rounded-tr-[32px] rounded-br-[32px]"}
+                />
+            </motion.div>
+        }
     ]
 
 
@@ -471,28 +503,10 @@ export default function PriorityPage() {
                         Temukan program yang sesuai dengan kemampuan dan skillmu!
                     </p>
                 </motion.section>
-                <section className={clsx("mt-8 grid desktop:grid-cols-2 relative z-20 px-[160px] ")}>
-                    <motion.div
-                        initial={{ opacity: 0, translateY: "50px" }}
-                        whileInView={{ opacity: 1, translateY: "0" }}
-                        transition={{duration: 10, type: "spring", stiffness: 100, delay: .7}}
-                        viewport={{once: true}}
-                        className={"w-full"}>
-                        <ProgramCardsWithoutImage benefitList={newbieBenefitList} period={"Lifetime"} price={"FREE"}
-                                                  type_class={"Newbie"} href={"/our-program/programs/newbie"} rounded={"rounded-tl-[32px] rounded-bl-[32px]"}/>
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, translateY: "50px" }}
-                        whileInView={{ opacity: 1, translateY: "0" }}
-                        transition={{duration: 10, type: "spring", stiffness: 100, delay: .9}}
-                        viewport={{once: true}}
-                        className={"w-full"}>
-                        <ProgramCardsWithoutImage benefitList={familyBenefitList} period={"Lifetime"}
-                                                  price={"FREE"} type_class={"Family"}
-                                                  href={"/our-program/programs/family"}
-                                                  rounded={"rounded-tr-[32px] rounded-br-[32px]"}
-                        />
-                    </motion.div>
+                <section className={clsx("mt-8  relative z-20 px-[160px] ")}>
+
+                    <HoverEffectOurPrograms items={ProgramLainCards} className={"grid desktop:grid-cols-2"} />
+
                 </section>
 
                 <motion.section

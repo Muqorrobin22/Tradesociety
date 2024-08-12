@@ -17,6 +17,7 @@ import { motion } from "framer-motion"
 import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
 import {getCookie, setCookie} from "cookies-next";
 import {InfiniteMovingCardsPrograms} from "@/components/ui/infinity-moving-cards-programs";
+import {HoverEffectOurPrograms} from "@/components/ui/card-hover-effect-our-programs";
 
 export default function FamilyPage() {
 
@@ -128,6 +129,37 @@ export default function FamilyPage() {
             desc: "Kalian akan mempelajari beberapa metode analisa teknikal dan cara penerapannya.",
             imgSrc: "/images/components/Icon/Trading.svg"
         },
+    ]
+
+    const ProgramLainCards = [
+        {
+            key: 1,
+            elements: <motion.div
+                initial={{opacity: 0, translateY: "50px"}}
+                whileInView={{opacity: 1, translateY: "0"}}
+                transition={{duration: 10, type: "spring", stiffness: 100, delay: .7}}
+                viewport={{once: true}}
+                className={"w-full"}>
+                <ProgramCardsWithoutImage benefitList={newbieBenefitList} period={"Lifetime"} price={"FREE"}
+                                          type_class={"Newbie"} href={"/our-program/programs/newbie"}
+                                          rounded={"rounded-tl-[32px] rounded-bl-[32px]"}/>
+            </motion.div>
+        },
+        {
+            key: 2,
+            elements: <motion.div
+                initial={{opacity: 0, translateY: "50px"}}
+                whileInView={{opacity: 1, translateY: "0"}}
+                transition={{duration: 10, type: "spring", stiffness: 100, delay: .9}}
+                viewport={{once: true}}
+                className={"w-full"}>
+                <ProgramCardsWithoutImage benefitList={priorityBenefitList} period={"Yearly"}
+                                          price={"rp 1.500.000"} type_class={"priority"}
+                                          href={"/our-program/programs/priority"}
+                                          strikethroughPrice={"Rp5.000.000"}
+                                          rounded={"rounded-tr-[32px] rounded-br-[32px]"}/>
+            </motion.div>
+        }
     ]
 
 
@@ -448,27 +480,9 @@ export default function FamilyPage() {
                         Temukan program yang sesuai dengan kemampuan dan skillmu!
                     </p>
                 </motion.section>
-                <section className={clsx("mt-8 grid desktop:grid-cols-2 relative z-20 px-[160px] ")}>
-                    <motion.div
-                        initial={{ opacity: 0, translateY: "50px" }}
-                        whileInView={{ opacity: 1, translateY: "0" }}
-                        transition={{duration: 10, type: "spring", stiffness: 100, delay: .7}}
-                        viewport={{once: true}}
-                        className={"w-full"}>
-                        <ProgramCardsWithoutImage benefitList={newbieBenefitList} period={"Lifetime"} price={"FREE"}
-                                                  type_class={"Newbie"} href={"/our-program/programs/newbie"} rounded={"rounded-tl-[32px] rounded-bl-[32px]"}/>
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, translateY: "50px" }}
-                        whileInView={{ opacity: 1, translateY: "0" }}
-                        transition={{duration: 10, type: "spring", stiffness: 100, delay: .9}}
-                        viewport={{once: true}}
-                        className={"w-full"}>
-                        <ProgramCardsWithoutImage benefitList={priorityBenefitList} period={"Yearly"}
-                                                  price={"rp 1.500.000"} type_class={"priority"}
-                                                  href={"/our-program/programs/priority"}
-                                                  strikethroughPrice={"Rp5.000.000"} rounded={"rounded-tr-[32px] rounded-br-[32px]"}/>
-                    </motion.div>
+                <section className={clsx("mt-8  relative z-20 px-[160px] ")}>
+
+                    <HoverEffectOurPrograms items={ProgramLainCards} className={clsx("grid desktop:grid-cols-2")} />
                 </section>
 
                 <motion.section
