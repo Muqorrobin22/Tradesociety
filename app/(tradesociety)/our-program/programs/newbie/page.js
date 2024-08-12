@@ -128,6 +128,7 @@ export default function NewbiePage() {
     const ProgramLainList = [
         {
             key: 1,
+            type: "family",
             elements: <motion.div
                 initial={{opacity: 0, translateY: "50px"}}
                 whileInView={{opacity: 1, translateY: "0"}}
@@ -141,6 +142,7 @@ export default function NewbiePage() {
         },
         {
             key: 2,
+            type: "priority",
             elements: <motion.div
                 initial={{opacity: 0, translateY: "50px"}}
                 whileInView={{opacity: 1, translateY: "0"}}

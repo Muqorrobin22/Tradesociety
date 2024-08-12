@@ -139,6 +139,7 @@ export default function PriorityPage() {
     const ProgramLainCards = [
         {
             key: 1,
+            type: "newbie",
             elements: <motion.div
                 initial={{opacity: 0, translateY: "50px"}}
                 whileInView={{opacity: 1, translateY: "0"}}
@@ -152,6 +153,7 @@ export default function PriorityPage() {
         },
         {
             key: 2,
+            type: "family",
             elements: <motion.div
                 initial={{opacity: 0, translateY: "50px"}}
                 whileInView={{opacity: 1, translateY: "0"}}
