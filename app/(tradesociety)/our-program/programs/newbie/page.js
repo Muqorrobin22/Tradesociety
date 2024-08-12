@@ -18,6 +18,7 @@ import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
 import {getCookie, setCookie} from "cookies-next";
 import {InfiniteMovingCards} from "@/components/ui/infinite-moving-cards";
 import {InfiniteMovingCardsPrograms} from "@/components/ui/infinity-moving-cards-programs";
+import {HoverEffectOurPrograms} from "@/components/ui/card-hover-effect-our-programs";
 
 export default function NewbiePage() {
 
@@ -124,6 +125,36 @@ export default function NewbiePage() {
         },
     ]
 
+    const ProgramLainList = [
+        {
+            key: 1,
+            elements: <motion.div
+                initial={{opacity: 0, translateY: "50px"}}
+                whileInView={{opacity: 1, translateY: "0"}}
+                transition={{duration: 10, type: "spring", stiffness: 100, delay: .7}}
+                viewport={{once: true}}
+                className={"w-full"}>
+                <ProgramCardsWithoutImage benefitList={familyBenefitList} period={"Lifetime"} price={"FREE"}
+                                          type_class={"Family"} href={"/our-program/programs/family"}
+                                          rounded={"rounded-tl-[32px] rounded-bl-[32px]"}/>
+            </motion.div>
+        },
+        {
+            key: 2,
+            elements: <motion.div
+                initial={{opacity: 0, translateY: "50px"}}
+                whileInView={{opacity: 1, translateY: "0"}}
+                transition={{duration: 10, type: "spring", stiffness: 100, delay: .9}}
+                viewport={{once: true}}
+                className={"w-full"}>
+                <ProgramCardsWithoutImage benefitList={priorityBenefitList} period={"Yearly"}
+                                          price={"rp 1.500.000"} type_class={"priority"}
+                                          href={"/our-program/programs/priority"}
+                                          strikethroughPrice={"Rp5.000.000"}
+                                          rounded={"rounded-tr-[32px] rounded-br-[32px]"}/>
+            </motion.div>
+        }
+    ]
 
 
     const handleScrollToSection = (id) => {
@@ -432,27 +463,10 @@ export default function NewbiePage() {
                         Temukan program yang sesuai dengan kemampuan dan skillmu!
                     </p>
                 </motion.section>
-                <section className={clsx("mt-8 grid desktop:grid-cols-2 relative z-20 px-[160px] ")}>
-                    <motion.div
-                        initial={{ opacity: 0, translateY: "50px" }}
-                        whileInView={{ opacity: 1, translateY: "0" }}
-                        transition={{duration: 10, type: "spring", stiffness: 100, delay: .7}}
-                        viewport={{once: true}}
-                        className={"w-full"}>
-                        <ProgramCardsWithoutImage benefitList={familyBenefitList} period={"Lifetime"} price={"FREE"}
-                                                  type_class={"Family"} href={"/our-program/programs/family"} rounded={"rounded-tl-[32px] rounded-bl-[32px]"} />
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, translateY: "50px" }}
-                        whileInView={{ opacity: 1, translateY: "0" }}
-                        transition={{duration: 10, type: "spring", stiffness: 100, delay: .9}}
-                        viewport={{once: true}}
-                        className={"w-full"}>
-                        <ProgramCardsWithoutImage benefitList={priorityBenefitList} period={"Yearly"}
-                                                  price={"rp 1.500.000"} type_class={"priority"}
-                                                  href={"/our-program/programs/priority"}
-                                                  strikethroughPrice={"Rp5.000.000"} rounded={"rounded-tr-[32px] rounded-br-[32px]"} />
-                    </motion.div>
+                <section className={clsx("mt-8  relative z-20 px-[160px] ")}>
+
+                    <HoverEffectOurPrograms items={ProgramLainList} className={clsx("grid desktop:grid-cols-2")} />
+
                 </section>
 
                 <motion.section
