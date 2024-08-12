@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+import clsx from "clsx";
 
 export const HoverEffect = ({ items, className }) => {
     const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -16,14 +17,17 @@ export const HoverEffect = ({ items, className }) => {
             {items.map((item, idx) => (
                 <div
                     key={item.id}
-                    className="relative group block p-2 "
+                    className="relative group block p-1.5 "
                     onMouseEnter={() => setHoveredIndex(idx)}
                     onMouseLeave={() => setHoveredIndex(null)}
                 >
                     <AnimatePresence>
                         {hoveredIndex === idx && (
                             <motion.span
-                                className="absolute inset-0 h-full w-full bg-primary-light-color block rounded-[32px] "
+                                className={clsx("absolute inset-0 h-full w-full block rounded-[32px] ",
+                                    item.type === "family" && "bg-[#8ACBBA]",
+                                    item.type === "priority" && "bg-[#E7DBA1]",
+                                    item.type === "newbie" && "bg-[#4E9AE2]",)}
                                 layoutId="hoverBackground"
                                 initial={{ opacity: 0 }}
                                 animate={{

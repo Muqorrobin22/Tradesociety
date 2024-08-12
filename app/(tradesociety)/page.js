@@ -177,6 +177,7 @@ export default function Home() {
   const ProgramCardsList = [
     {
       id: 1,
+      type: "newbie",
       elements: (<motion.div
             initial={{opacity: 0, translateY: "50px"}}
             whileInView={{opacity: 1, translateY: "0"}}
@@ -191,6 +192,7 @@ export default function Home() {
     },
     {
       id: 2,
+      type: "family",
       elements: <motion.div
           initial={{opacity: 0, translateY: "50px"}}
           whileInView={{opacity: 1, translateY: "0"}}
@@ -205,6 +207,7 @@ export default function Home() {
     },
     {
       id: 3,
+      type: "priority",
       elements: <motion.div
           initial={{opacity: 0, translateY: "50px"}}
           whileInView={{opacity: 1, translateY: "0"}}
