@@ -17,6 +17,7 @@ import { motion } from "framer-motion"
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
 import {getCookie, setCookie} from "cookies-next";
+import {CardBody, CardContainer, CardItem} from "@/components/ui/3d-cards";
 
 export default function Home() {
 
@@ -191,7 +192,13 @@ export default function Home() {
           <p className={clsx("text-XL/XL-Normal text-[#F6F6F6] text-center mx-auto desktop:w-[500px] mt-2 ", fonts.roboto)}>Bukan hanya belajar, tapi juga kelilingi diri kalian dengan  orang-orang yang yang memiliki tujuan dan mindset untuk menjadi sukses.</p>
         </motion.section>
       </div>
-      <Image src={"/images/components/illustration_new/hero_bg_image_2.svg"} alt={""} height={419} width={421} className={clsx("absolute desktop:bottom-[-180px] desktop:left-[50%] desktop:translate-x-[-50%] mobile:hidden desktop:block ")} />
+      <CardContainer className={clsx("absolute bottom-0")}>
+        <CardBody>
+          <CardItem translateZ="100" >
+            <Image src={"/images/components/illustration_new/hero_bg_image_2.svg"} alt={""} height={419} width={421} className={clsx(" mobile:hidden desktop:block ")} />
+          </CardItem>
+        </CardBody>
+      </CardContainer>
     </section>
 
     {/* Hero Section - End */}
@@ -199,7 +206,7 @@ export default function Home() {
 
   {/*  Hero Section CTA - Start */}
 
-    <section className={clsx("relative mt-[180px] h-[306px] desktop:flex desktop:items-center desktop:px-[120px] mobile:w-full mobile:px-8  ")}>
+    <section className={clsx("relative  h-[306px] desktop:flex desktop:items-center desktop:px-[120px] mobile:w-full mobile:px-8  ")}>
       {/*<Image src={"/images/components/addons/hero_cta_revision_addons.png"} alt={""} height={306} width={1198} className={clsx("absolute z-10 left-[50%] translate-x-[-50%]")} />*/}
       <Image src={"/images/components/addons_new/belajar_trading_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 ")} />
       <Image src={"/images/components/addons_new/home_belajar_gratis_addons.png"} alt={""} width={1200} height={160} className={clsx("absolute z-10 left-[120px] ")} />
