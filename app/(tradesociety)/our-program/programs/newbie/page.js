@@ -16,6 +16,8 @@ import TestimonialCardV2 from "@/app/_ui/Micro-Component/Testimonials/Cards/Test
 import { motion } from "framer-motion"
 import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
 import {getCookie, setCookie} from "cookies-next";
+import {InfiniteMovingCards} from "@/components/ui/infinite-moving-cards";
+import {InfiniteMovingCardsPrograms} from "@/components/ui/infinity-moving-cards-programs";
 
 export default function NewbiePage() {
 
@@ -82,19 +84,22 @@ export default function NewbiePage() {
             name: "Muhammad Irsal Hadi",
             job: "Writer",
             comment: "Metode Pembelajarannya mantap dan mudah dipahami.",
-            bgColor: "bg-secondary-gold-color"
+            bgColor: "bg-secondary-gold-color",
+            bgCards: "bg-[#277DD099] text-white"
         },{
             key: 2,
             name: "Achmad Akbar Alfarizzy",
             job: "Writer",
             comment: "Sistem pembelajarannya bagus,  materi basic tapi daging banget isinya",
-            bgColor: "bg-secondary-gold-color"
+            bgColor: "bg-secondary-gold-color",
+            bgCards: "bg-[#277DD099] text-white"
         }, {
             key: 3,
             name: "Khiar Tsany Fiyantasib",
             job: "Writer",
             comment: "Semua mentor sangat baik. Metode yang diajarkan gampang dimengerti.",
-            bgColor: "bg-secondary-gold-color"
+            bgColor: "bg-secondary-gold-color",
+            bgCards: "bg-[#277DD099] text-white"
         }
     ]
 
@@ -201,13 +206,16 @@ export default function NewbiePage() {
                     transition={{duration: 10, type: "spring", stiffness: 100, delay: .5}}
                     viewport={{once: true}}
                     className={clsx("absolute flex items-center  mobile:right-[-64px] desktop:left-[30px] bottom-[32px] z-20 ")}>
-                    {testimonialsList.map((testimonial, index) => (
-                        <div key={testimonial.key} className={"ml-4"}>
-                            <TestimonialCardV2 name={testimonial.name} job={testimonial.job}
-                                             bg_color={testimonial.bgColor} comments={testimonial.comment}
-                                             bg_cards={"bg-[#277DD099] text-white"}/>
-                        </div>
-                    ))}
+                    {/*{testimonialsList.map((testimonial, index) => (*/}
+                    {/*    <div key={testimonial.key} className={"ml-4"}>*/}
+                    {/*        <TestimonialCardV2 name={testimonial.name} job={testimonial.job}*/}
+                    {/*                         bg_color={testimonial.bgColor} comments={testimonial.comment}*/}
+                    {/*                         bg_cards={testimonial.bgCards}/>*/}
+                    {/*    </div>*/}
+                    {/*))}*/}
+                    <div className={clsx("w-[850px]")}>
+                        <InfiniteMovingCardsPrograms items={testimonialsList} direction="right" speed="fast" />
+                    </div>
                 </motion.div>
 
             </section>
