@@ -16,6 +16,7 @@ import TestimonialCardV2 from "@/app/_ui/Micro-Component/Testimonials/Cards/Test
 import { motion } from "framer-motion"
 import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
 import {getCookie, setCookie} from "cookies-next";
+import {InfiniteMovingCardsPrograms} from "@/components/ui/infinity-moving-cards-programs";
 
 export default function PriorityPage() {
 
@@ -82,19 +83,22 @@ export default function PriorityPage() {
             name: "Rafsanjani Hermawan",
             job: "Writer",
             comment: "saya menjadi lebih percaya diri terhadap plan trading yang saya buat.",
-            bgColor: "bg-secondary-gold-color"
+            bgColor: "bg-secondary-gold-color",
+            bgCards: "bg-[#BD943566] text-white border-[1px] border-[#D1B052]",
         },{
             key: 2,
             name: "Aredia Zaki Utama",
             job: "Writer",
             comment: "Terbaik. Pembelajaran dilakukan setiap hari.",
-            bgColor: "bg-secondary-gold-color"
+            bgColor: "bg-secondary-gold-color",
+            bgCards: "bg-[#BD943566] text-white border-[1px] border-[#D1B052]",
         },{
             key: 3,
             name: "Eggy Nofa Wahyudi",
             job: "Writer",
             comment: "Bintang 100000000.",
-            bgColor: "bg-secondary-gold-color"
+            bgColor: "bg-secondary-gold-color",
+            bgCards: "bg-[#BD943566] text-white border-[1px] border-[#D1B052]",
         }
     ]
 
@@ -199,18 +203,21 @@ export default function PriorityPage() {
 
 
                 <motion.div
-                    initial={{ opacity: 0, translateX: "-150px" }}
-                    whileInView={{ opacity: 1, translateX: "0" }}
+                    initial={{opacity: 0, translateX: "-150px"}}
+                    whileInView={{opacity: 1, translateX: "0"}}
                     transition={{duration: 10, type: "spring", stiffness: 100, delay: .5}}
                     viewport={{once: true}}
                     className={clsx("absolute flex items-center  mobile:right-[-64px] desktop:left-[30px] bottom-[32px] z-20 ")}>
-                    {testimonialsList.map((testimonial, index) => (
-                        <div key={testimonial.key} className={"ml-4"}>
-                            <TestimonialCardV2 name={testimonial.name} job={testimonial.job}
-                                             bg_color={testimonial.bgColor} comments={testimonial.comment}
-                                             bg_cards={"bg-[#BD943566] text-white border-[1px] border-[#D1B052]"}/>
-                        </div>
-                    ))}
+                    {/*{testimonialsList.map((testimonial, index) => (*/}
+                    {/*    <div key={testimonial.key} className={"ml-4"}>*/}
+                    {/*        <TestimonialCardV2 name={testimonial.name} job={testimonial.job}*/}
+                    {/*                         bg_color={testimonial.bgColor} comments={testimonial.comment}*/}
+                    {/*                         bg_cards={testimonial.bgCards}/>*/}
+                    {/*    </div>*/}
+                    {/*))}*/}
+                    <div className={clsx("w-[850px]")}>
+                        <InfiniteMovingCardsPrograms items={testimonialsList} direction="right" speed="fast"/>
+                    </div>
                 </motion.div>
 
             </section>
@@ -220,7 +227,7 @@ export default function PriorityPage() {
             {/*  Content - Start  */}
 
             <motion.section
-                initial={{ opacity: 0, translateY: "50px" }}
+                initial={{opacity: 0, translateY: "50px" }}
                 whileInView={{ opacity: 1, translateY: "0" }}
                 transition={{duration: 10, type: "spring", stiffness: 100, delay: .7}}
                 viewport={{once: true}}
