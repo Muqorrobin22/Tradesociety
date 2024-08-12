@@ -19,6 +19,7 @@ import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
 import {getCookie, setCookie} from "cookies-next";
 import {CardBody, CardContainer, CardItem} from "@/components/ui/3d-cards";
 import {InfiniteMovingCards} from "@/components/ui/infinite-moving-cards";
+import {HoverEffect} from "@/components/ui/card-hover-effect";
 
 export default function Home() {
 
@@ -173,14 +174,64 @@ export default function Home() {
     },
   ]
 
+  const ProgramCardsList = [
+    {
+      id: 1,
+      elements: (<motion.div
+            initial={{opacity: 0, translateY: "50px"}}
+            whileInView={{opacity: 1, translateY: "0"}}
+            transition={{duration: 10, type: "spring", stiffness: 100, delay: .3}}
+            viewport={{once: true}}
+            className={clsx("desktop:mt-0 mobile:mt-4")}>
+          <ProgramCards benefitList={newbieBenefitList}
+                        description_class={"Khusus pemula belajar dari 0 dan praktek langsung menggunakan akun demo."}
+                        period={"Lifetime"} price={"FREE"} type_class={"Newbie"} href={"/our-program/programs/newbie"}
+                        imageSrc={"/images/components/illustration_new/newbie_new_card.png"}/>
+        </motion.div> )
+    },
+    {
+      id: 2,
+      elements: <motion.div
+          initial={{opacity: 0, translateY: "50px"}}
+          whileInView={{opacity: 1, translateY: "0"}}
+          transition={{duration: 10, type: "spring", stiffness: 100, delay: .5}}
+          viewport={{once: true}}
+          className={clsx("desktop:mt-0 mobile:mt-4")}>
+        <ProgramCards benefitList={familyBenefitList}
+                      description_class={"Terbuka untuk umum yang sudah memahami dasar-dasar trading dan siap menggunakan akun real."}
+                      period={"Lifetime"} price={"FREE"} type_class={"Family"} href={"/our-program/programs/family"}
+                      imageSrc={"/images/components/illustration_new/family_new_card.png"}/>
+      </motion.div>
+    },
+    {
+      id: 3,
+      elements: <motion.div
+          initial={{opacity: 0, translateY: "50px"}}
+          whileInView={{opacity: 1, translateY: "0"}}
+          transition={{duration: 10, type: "spring", stiffness: 100, delay: .7}}
+          viewport={{once: true}}
+          className={clsx("desktop:mt-0 mobile:mt-4")}>
+        <ProgramCards benefitList={priorityBenefitList}
+                      description_class={"Eksklusif untuk trader yang ingin belajar berbagai ilmu trading lebih dalam dan detail."}
+                      period={"Yearly"} price={"rp 1.500.000"} type_class={"priority"}
+                      href={"/our-program/programs/priority"}
+                      imageSrc={"/images/components/illustration_new/priority_new_card.png"}
+                      strikethroughPrice={"Rp5.000.000"}/>
+      </motion.div>
+    }
+  ]
+
   return <main className={clsx("mt-10 ")}>
 
-  {/* Hero Section */}
+    {/* Hero Section */}
     <section className={clsx("relative ")}>
 
-      <div className={clsx("relative bg-linear-gradient-hero h-[524px] rounded-[32px] mobile:mt-[120px] desktop:mt-[120px] mobile:p-4  desktop:p-0 desktop:mx-[120px] desktop:overflow-hidden")}>
-        <Image src={"/images/components/addons_new/hero_bg_addons.png"} alt={""} fill={true} className={clsx("absolute desktop:bottom-0 mobile:hidden desktop:block ")} />
-        <Image src={"/images/components/illustration_new/hero_bg_image.png"} alt={""} height={255} width={1440} className={clsx("absolute desktop:bottom-0 mobile:hidden desktop:block ")} />
+      <div
+          className={clsx("relative bg-linear-gradient-hero h-[524px] rounded-[32px] mobile:mt-[120px] desktop:mt-[120px] mobile:p-4  desktop:p-0 desktop:mx-[120px] desktop:overflow-hidden")}>
+        <Image src={"/images/components/addons_new/hero_bg_addons.png"} alt={""} fill={true}
+               className={clsx("absolute desktop:bottom-0 mobile:hidden desktop:block ")}/>
+        <Image src={"/images/components/illustration_new/hero_bg_image.png"} alt={""} height={255} width={1440}
+               className={clsx("absolute desktop:bottom-0 mobile:hidden desktop:block ")}/>
 
 
         <motion.section initial={{ opacity: 0, translateY: "50px" }}
@@ -260,33 +311,8 @@ export default function Home() {
       {/*  Our program > Cards - Start  */}
 
       <section
-          className={clsx("mt-[96px] flex desktop:justify-between desktop:flex-row mobile:flex-col desktop:items-center mobile:items-center mobile:justify-center desktop:px-[120px]")}>
-        <motion.div
-            initial={{ opacity: 0, translateY: "50px" }}
-            whileInView={{ opacity: 1, translateY: "0" }}
-            transition={{duration: 10, type: "spring", stiffness: 100, delay: .3}}
-            viewport={{once: true}}
-            className={clsx("desktop:mt-0 mobile:mt-4")}>
-          <ProgramCards benefitList={newbieBenefitList}
-                        description_class={"Khusus pemula belajar dari 0 dan praktek langsung menggunakan akun demo."}
-                        period={"Lifetime"} price={"FREE"} type_class={"Newbie"} href={"/our-program/programs/newbie"} imageSrc={"/images/components/illustration_new/newbie_new_card.png"} />
-          </motion.div>
-          <motion.div
-              initial={{ opacity: 0, translateY: "50px" }}
-              whileInView={{ opacity: 1, translateY: "0" }}
-              transition={{duration: 10, type: "spring", stiffness: 100, delay: .5}}
-              viewport={{once: true}}
-              className={clsx("desktop:mt-0 mobile:mt-4")}>
-            <ProgramCards benefitList={familyBenefitList} description_class={"Terbuka untuk umum yang sudah memahami dasar-dasar trading dan siap menggunakan akun real."} period={"Lifetime"} price={"FREE"} type_class={"Family"}  href={"/our-program/programs/family"} imageSrc={"/images/components/illustration_new/family_new_card.png"}/>
-          </motion.div>
-        <motion.div
-            initial={{ opacity: 0, translateY: "50px" }}
-            whileInView={{ opacity: 1, translateY: "0" }}
-            transition={{duration: 10, type: "spring", stiffness: 100, delay: .7}}
-            viewport={{once: true}}
-            className={clsx("desktop:mt-0 mobile:mt-4")}>
-          <ProgramCards benefitList={priorityBenefitList} description_class={"Eksklusif untuk trader yang ingin belajar berbagai ilmu trading lebih dalam dan detail."} period={"Yearly"} price={"rp 1.500.000"} type_class={"priority"}  href={"/our-program/programs/priority"} imageSrc={"/images/components/illustration_new/priority_new_card.png"} strikethroughPrice={"Rp5.000.000"}/>
-        </motion.div>
+          className={clsx("mt-[96px] ")}>
+        <HoverEffect items={ProgramCardsList} className={"flex desktop:justify-between desktop:flex-row mobile:flex-col desktop:items-center mobile:items-center mobile:justify-center desktop:px-[120px]"} />
       </section>
 
       {/*  Our program > Cards - End  */}
