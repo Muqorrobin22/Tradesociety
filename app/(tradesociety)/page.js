@@ -18,6 +18,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
 import {getCookie, setCookie} from "cookies-next";
 import {CardBody, CardContainer, CardItem} from "@/components/ui/3d-cards";
+import {InfiniteMovingCards} from "@/components/ui/infinite-moving-cards";
 
 export default function Home() {
 
@@ -347,15 +348,16 @@ export default function Home() {
           className={clsx("mt-[42px] py-[64px] px-8 bg-[#F4F8FD] rounded-[32px]  relative z-20 ")}>
 
         <div className={clsx("")}>
-          <Image src={"/images/components/addons_new/home_testimonials_addons.png"} alt={""} width={1106} height={450} className={clsx("absolute z-10 left-0 top-0 bottom-0  ")} />
+          <Image src={"/images/components/addons_new/home_testimonials_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 left-0 top-0 bottom-0 object-cover object-center  ")} />
           {/* Start: Desktop Version */}
           <div className={clsx("flex items-center justify-between  mobile:hidden desktop:visible desktop:flex relative z-20 ")}>
-            {testimonialsList.map((testimonial) => (
-                <div key={testimonial.key} className={clsx("")}>
-                  <TestimonialCard name={testimonial.name} job={testimonial.job} comments={testimonial.comment}
-                                   bg_color={testimonial.bgColor}/>
-                </div>
-            ))}
+            {/*{testimonialsList.map((testimonial) => (*/}
+            {/*    <div key={testimonial.key} className={clsx("")}>*/}
+            {/*      <TestimonialCard name={testimonial.name} job={testimonial.job} comments={testimonial.comment}*/}
+            {/*                       bg_color={testimonial.bgColor}/>*/}
+            {/*    </div>*/}
+            {/*))}*/}
+            <InfiniteMovingCards items={testimonialsList} direction="left" speed="slow" />
           </div>
           {/* End: Desktop Version */}
 
@@ -372,12 +374,17 @@ export default function Home() {
 
           {/* Start: Desktop Version */}
           <div className={clsx("flex items-center justify-between mt-4  mobile:hidden desktop:visible desktop:flex relative z-20 ")}>
-            {testimonialsListBottom.map((testimonial) => (
-                <div key={testimonial.key} className={clsx("")}>
-                  <TestimonialCard name={testimonial.name} job={testimonial.job} comments={testimonial.comment}
-                                   bg_color={testimonial.bgColor}/>
-                </div>
-            ))}
+            {/*{testimonialsListBottom.map((testimonial) => (*/}
+            {/*    <div key={testimonial.key} className={clsx("")}>*/}
+            {/*      <TestimonialCard name={testimonial.name} job={testimonial.job} comments={testimonial.comment}*/}
+            {/*                       bg_color={testimonial.bgColor}/>*/}
+            {/*    </div>*/}
+            {/*))}*/}
+            <InfiniteMovingCards
+                items={testimonialsListBottom}
+                direction="right"
+                speed="slow"
+            />
           </div>
           {/* End: Desktop Version */}
 
