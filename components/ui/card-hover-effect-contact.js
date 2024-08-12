@@ -15,7 +15,7 @@ export const HoverEffectContact = ({ items, className }) => {
         >
             {items.map((item, idx) => (
                 <div
-                    key={item.id}
+                    key={item.key}
                     className="relative group block p-1 "
                     onMouseEnter={() => setHoveredIndex(idx)}
                     onMouseLeave={() => setHoveredIndex(null)}
