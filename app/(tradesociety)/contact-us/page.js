@@ -10,6 +10,7 @@ import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {useEffect, useState} from "react";
 import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
 import {getCookie, setCookie} from "cookies-next";
+import {HoverEffectContact} from "@/components/ui/card-hover-effect-contact";
 
 export default function ContactUsPage() {
 
@@ -42,29 +43,17 @@ export default function ContactUsPage() {
     const ContactList = [
         {
             key: 1,
-            name: "Telegram",
-            imageSrc: "/images/components/icon_new/Telegram.svg",
-            rounded: "rounded-tl-[32px] rounded-bl-[32px]",
-            href: `${telegramLink}`
+            elements: <ContactUsCard href={telegramLink} imageSrc={"/images/components/icon_new/Telegram.svg"} Sosmed={"Telegram"} rounded={"rounded-[32px]"} />
         },{
             key: 2,
-            name: "Instagram",
-            imageSrc: "/images/components/icon_new/Instagram.svg",
-            rounded: "",
-            href: "https://www.instagram.com/tradesociety.id/"
+            elements:  <ContactUsCard href={"https://www.instagram.com/tradesociety.id/"} imageSrc={"/images/components/icon_new/Instagram.svg"} Sosmed={"Instagram"} rounded={"rounded-[32px]"} />
         },{
             key: 3,
-            name: "Linkedin",
-            imageSrc: "/images/components/icon_new/Linkedin.svg",
-            rounded: "",
-            href: "https://www.linkedin.com/company/trade-society\n"
+            elements: <ContactUsCard href={"https://www.linkedin.com/company/trade-society"} imageSrc={"/images/components/icon_new/Linkedin.svg"} Sosmed={"Linkedin"} rounded={"rounded-[32px]"} />
         },
         {
             key: 4,
-            name: "Tiktok",
-            imageSrc: "/images/components/icon_new/Tiktok.svg",
-            rounded: "rounded-tr-[32px] rounded-br-[32px]",
-            href: "https://www.tiktok.com/@tradesociety.id"
+            elements: <ContactUsCard href={"https://www.tiktok.com/@tradesociety.id"} imageSrc={"/images/components/icon_new/Tiktok.svg"} Sosmed={"Tiktok"} rounded={"rounded-[32px]"} />
         },
     ]
 
@@ -77,12 +66,13 @@ export default function ContactUsPage() {
                     <p className={clsx("text-XL/XL-Normal text-font-description-color  text-center", fonts.roboto)}>
                         Any questions or remarks? Just write us a message!</p>
                 </div>
-                <div className={clsx("grid desktop:grid-cols-4  ")}>
-                    {ContactList.map(item => (
-                        <div key={item.key} className={"w-full mx-auto"}>
-                            <ContactUsCard href={item.href} imageSrc={item.imageSrc} Sosmed={item.name} rounded={item.rounded} />
-                        </div>
-                    ))}
+                <div className={clsx(" ")}>
+                    {/*{ContactList.map(item => (*/}
+                    {/*    <div key={item.key} className={"w-full mx-auto"}>*/}
+                    {/*        <ContactUsCard href={item.href} imageSrc={item.imageSrc} Sosmed={item.name} rounded={item.rounded} />*/}
+                    {/*    </div>*/}
+                    {/*))}*/}
+                    <HoverEffectContact items={ContactList} className={clsx("grid desktop:grid-cols-4")}  />
                 </div>
             </section>
         </main>
