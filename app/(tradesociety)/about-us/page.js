@@ -9,6 +9,8 @@ import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {useEffect, useState} from "react";
 import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
 import {getCookie, setCookie} from "cookies-next";
+import {TextGenerateEffect} from "@/components/ui/text-generate-effect";
+import {TextGenerateEffectDescription} from "@/components/ui/text-generate-effect-description";
 
 export default function AboutUsPage() {
 
@@ -37,6 +39,10 @@ export default function AboutUsPage() {
             router.push(`${pathname}?${params.toString()}`);
         }
     }, );
+
+    const wordsWhyWeWhere = `Why we here`
+    const wordsBersama = `Bersama menuju kesuksesan di industri trading`
+    const wordsAdaBanyak = `Ada banyak cara untuk sukses dalam berkarir di industri trading yang belum banyak diketahui. Di sini, kami memberikan edukasi secara menyeluruh untuk sukses, tidak hanya sebagai trader, tetapi juga dalam peran profesional lainnya dalam industri trading.`
 
     return <main className={clsx("mt-10")}>
         {/* Hero Section */}
@@ -75,9 +81,11 @@ export default function AboutUsPage() {
                 viewport={{once: true}}
                 className={clsx("flex flex-col justify-center items-center relative z-20")}>
                 <p className={clsx(" text-Base/Base-Strong text-[#1761B1]  ", fonts.roboto)}>Why we here</p>
-                <h3 className={clsx("text-heading-3 text-[#15345A] my-4 desktop:text-left mobile:text-center ")}>Bersama menuju kesuksesan di industri trading</h3>
-                <p className={clsx("text-XL/XL-Normal text-font-description-color max-w-[800px] text-center", fonts.roboto)}>Ada banyak cara untuk sukses dalam berkarir di industri trading yang belum banyak diketahui. Di sini, kami memberikan edukasi secara menyeluruh untuk sukses, tidak hanya sebagai trader, tetapi juga dalam peran profesional lainnya dalam industri trading.</p>
+                {/*<h3 className={clsx("text-heading-3 text-[#15345A] my-4 desktop:text-left mobile:text-center ")}>Bersama menuju kesuksesan di industri trading</h3>*/}
+                <TextGenerateEffect words={wordsBersama} className={clsx("text-heading-3 text-[#15345A] desktop:text-left mobile:text-center")} duration={1} />
+                {/*<p className={clsx("text-XL/XL-Normal text-font-description-color max-w-[800px] text-center", fonts.roboto)}>Ada banyak cara untuk sukses dalam berkarir di industri trading yang belum banyak diketahui. Di sini, kami memberikan edukasi secara menyeluruh untuk sukses, tidak hanya sebagai trader, tetapi juga dalam peran profesional lainnya dalam industri trading.</p>*/}
 
+                <TextGenerateEffectDescription words={wordsAdaBanyak} className={clsx("text-XL/XL-Normal text-font-description-color max-w-[850px] text-center", fonts.roboto)} duration={.5}  />
             </motion.section>
             {/*<Image src={"/images/components/addons/hero_cta_revision_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 top-0 left-[-120px] right-[-120px] ")} />*/}
             <Image src={"/images/components/addons_new/about_us_cta_addons.png"} alt={""} fill={true} className={clsx("absolute z-[15] top-0 left-0 ")} />
