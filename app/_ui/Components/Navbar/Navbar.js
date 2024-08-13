@@ -88,7 +88,7 @@ export default function Navbar(props) {
     }, );
 
     return (
-        <nav className="flex items-center justify-between py-4 desktop:fixed mobile:fixed mobile:z-50 mobile:top-0 mobile:left-[16px] mobile:right-[16px] mobile:bg-white mobile:border-b-[1px] mobile:border-[#E3EDFB] desktop:px-[120px] desktop:z-50 desktop:left-0 desktop:right-0 desktop:top-0 ">
+        <nav className="flex items-center justify-between py-4 desktop:fixed mobile:fixed mobile:z-50 mobile:top-0 mobile:left-[0] mobile:right-[0] mobile:bg-white mobile:border-b-[1px] mobile:border-[#E3EDFB] desktop:px-[120px] mobile:px-[16px] desktop:z-50 desktop:left-0 desktop:right-0 desktop:top-0 ">
             <div className={clsx("mobile:order-1 desktop:order-1")}>
                <Link href={"/"}>
                    <Image
@@ -106,15 +106,29 @@ export default function Navbar(props) {
                     width={18}
                     height={18}
                     onClick={handleBurgerOpen}
-                    className={clsx("cursor-pointer")}
+                    className={clsx("cursor-pointer", burgerOpen ? "mobile:hidden": "mobile:visible")}
+                />
+                <Image
+                    alt="Burger X Icon"
+                    src={"/images/components/Icon/x_circle_burger.svg"}
+                    width={24}
+                    height={24}
+                    onClick={handleBurgerOpen}
+                    className={clsx("cursor-pointer", burgerOpen ? "mobile:visible" : "mobile:hidden")}
                 />
             </div>
 
-            {/* Start: Overlay */}
+            {/* Start: Overlay - Desktop */}
 
             <div className={clsx("fixed desktop:top-[70px] desktop:bottom-0 desktop:left-0 desktop:right-0 bg-[#010101BF] z-[30] ", isOpen ? "visible" : "hidden")}></div>
 
-            {/* End: Overlay */}
+            {/* End: Overlay - Desktop */}
+
+            {/* Start: Overlay - Mobile */}
+
+            <div className={clsx("fixed mobile:top-[80px] mobile:bottom-0 mobile:left-0 mobile:right-0 bg-[#010101BF] z-[30] ", burgerOpen ? "visible" : "hidden")}></div>
+
+            {/* End: Overlay - Mobile */}
 
             {/* Start: For Desktop */}
             <div className={clsx("desktop:relative desktop:visible desktop:block desktop:order-2 mx-auto mobile:hidden  z-40")}>
