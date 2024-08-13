@@ -85,7 +85,7 @@ export default function AboutUsPage() {
                 <TextGenerateEffect words={wordsBersama} className={clsx("text-heading-3 text-[#15345A] desktop:text-left mobile:text-center")} duration={1} />
                 {/*<p className={clsx("text-XL/XL-Normal text-font-description-color max-w-[800px] text-center", fonts.roboto)}>Ada banyak cara untuk sukses dalam berkarir di industri trading yang belum banyak diketahui. Di sini, kami memberikan edukasi secara menyeluruh untuk sukses, tidak hanya sebagai trader, tetapi juga dalam peran profesional lainnya dalam industri trading.</p>*/}
 
-                <TextGenerateEffectDescription words={wordsAdaBanyak} className={clsx("text-XL/XL-Normal text-font-description-color max-w-[850px] text-center", fonts.roboto)} duration={.5}  />
+                <TextGenerateEffectDescription words={wordsAdaBanyak} className={clsx("text-XL/XL-Normal text-font-description-color max-w-[800px] text-center", fonts.roboto)} duration={.5}  />
             </motion.section>
             {/*<Image src={"/images/components/addons/hero_cta_revision_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 top-0 left-[-120px] right-[-120px] ")} />*/}
             <Image src={"/images/components/addons_new/about_us_cta_addons.png"} alt={""} fill={true} className={clsx("absolute z-[15] top-0 left-0 ")} />

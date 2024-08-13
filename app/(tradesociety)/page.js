@@ -20,6 +20,7 @@ import {getCookie, setCookie} from "cookies-next";
 import {CardBody, CardContainer, CardItem} from "@/components/ui/3d-cards";
 import {InfiniteMovingCards} from "@/components/ui/infinite-moving-cards";
 import {HoverEffect} from "@/components/ui/card-hover-effect";
+import {TextGenerateEffectHome} from "@/components/ui/text-generate-effect-home";
 
 export default function Home() {
 
@@ -174,6 +175,8 @@ export default function Home() {
     },
   ]
 
+  const wordBelajarGratis = `Belajar trading 100% gratis! Ikuti kelas online dan belajar sampai jago bersama para mentor!`
+
   const ProgramCardsList = [
     {
       id: 1,
@@ -264,7 +267,7 @@ export default function Home() {
     <section className={clsx("relative  h-[306px] desktop:flex desktop:items-center desktop:px-[120px] mobile:w-full mobile:px-8  ")}>
       {/*<Image src={"/images/components/addons/hero_cta_revision_addons.png"} alt={""} height={306} width={1198} className={clsx("absolute z-10 left-[50%] translate-x-[-50%]")} />*/}
       <Image src={"/images/components/addons_new/belajar_trading_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 ")} />
-      <Image src={"/images/components/addons_new/home_belajar_gratis_addons.png"} alt={""} width={1200} height={160} className={clsx("absolute z-10 left-[120px] ")} />
+      <Image src={"/images/components/addons_new/home_belajar_gratis_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 object-center object-contain ")} />
 
       <motion.div
           initial={{ opacity: 0, translateY: "50px" }}
@@ -272,10 +275,11 @@ export default function Home() {
           transition={{duration: 10, type: "spring", stiffness: 100, delay: .3}}
           viewport={{once: true}}
           className={clsx("z-20 flex desktop:justify-between desktop:items-center relative mobile:flex-col mobile:items-start desktop:flex-row desktop:mx-auto")}>
-        <h1 className={clsx("text-primary-font-color text-heading-4 desktop:basis-2/3 mobile:w-full ")}>
-          Belajar trading <span className={clsx("text-secondary-gold-color")}>100% gratis!</span> <br/> Ikuti kelas
-          online dan belajar sampai jago bersama para mentor!
-        </h1>
+        {/*<h1 className={clsx("text-primary-font-color text-heading-4 desktop:basis-2/3 mobile:w-full ")}>*/}
+        {/*  Belajar trading <span className={clsx("text-secondary-gold-color")}>100% gratis!</span> <br/> Ikuti kelas*/}
+        {/*  online dan belajar sampai jago bersama para mentor!*/}
+        {/*</h1>*/}
+        <TextGenerateEffectHome words={wordBelajarGratis} className={clsx("text-primary-font-color text-heading-4 desktop:basis-2/3 mobile:w-full ")} />
         <div className={clsx("desktop:basis-1/3 desktop:max-w-[200px] mobile:mt-[15px]")}>
           <Button href={telegramLink} type={"primary"} text={"Daftar sekarang"}/>
         </div>

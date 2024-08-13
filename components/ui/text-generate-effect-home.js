@@ -2,8 +2,9 @@
 import { useEffect } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/lib/utils";
+import clsx from "clsx";
 
-export const TextGenerateEffectDescription = ({ words, className, filter = true, duration = 0.5 }) => {
+export const TextGenerateEffectHome = ({ words, className, filter = true, duration = 0.5 }) => {
     const [scope, animate] = useAnimate();
     const wordsArray = words.split(" ");
 
@@ -27,12 +28,12 @@ export const TextGenerateEffectDescription = ({ words, className, filter = true,
                 {wordsArray.map((word, idx) => (
                     <motion.span
                         key={word + idx}
-                        className="text-XL/XL-Normal text-font-description-color opacity-0"
+                        className={clsx(" text-heading-4 opacity-0", word.includes("100") || word.includes("gratis") ? "text-secondary-gold-color" : "text-primary-font-color")}
                         style={{
                             filter: filter ? "blur(10px)" : "none",
                         }}
                     >
-                        {word}{" "}
+                        {word} {word === "gratis!" ? <br /> : " "} {" "}
                     </motion.span>
                 ))}
             </motion.div>
@@ -41,7 +42,7 @@ export const TextGenerateEffectDescription = ({ words, className, filter = true,
 
     return (
         <div className={cn("", className)}>
-            <div className="mt-4">
+            <div className="">
                 <div className=" ">
                     {renderWords()}
                 </div>
