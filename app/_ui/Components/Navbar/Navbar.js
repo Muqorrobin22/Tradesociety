@@ -9,6 +9,7 @@ import {useEffect, useState} from "react";
 import {fonts} from "@/app/_lib/utils/fonts/fonts";
 import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
 import {getCookie, setCookie} from "cookies-next";
+import ButtonWithoutAnimation from "@/app/_ui/Micro-Component/Button/ButtonWithoutAnimation";
 
 
 export default function Navbar(props) {
@@ -260,7 +261,7 @@ export default function Navbar(props) {
             {/*</div>*/}
 
             <div className={clsx("mobile:ml-auto mobile:mr-4 mobile:order-2 desktop:order-3 desktop:ml-0")}>
-                <Button href={telegramLink} text={"Join now"}/>
+                <ButtonWithoutAnimation href={telegramLink} text={"Join now"}/>
             </div>
         </nav>
     )

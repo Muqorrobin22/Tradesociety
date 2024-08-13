@@ -3,6 +3,7 @@ import Image from "next/image";
 import BenefitList from "@/app/_ui/Micro-Component/BenefitList/Benefit-List";
 import Button from "@/app/_ui/Micro-Component/Button/Button";
 import {fonts} from "@/app/_lib/utils/fonts/fonts";
+import ButtonWithoutAnimation from "@/app/_ui/Micro-Component/Button/ButtonWithoutAnimation";
 
 export default function ProgramCards({ type_class, description_class, benefitList, price, period, href, imageSrc, strikethroughPrice = "" }) {
     return (
@@ -33,7 +34,7 @@ export default function ProgramCards({ type_class, description_class, benefitLis
                             <span
                                 className={clsx("text-font-description-color text-LG/LG-Normal ml-2", fonts.roboto)}>/ {period}</span>
                         </h1>
-                        <Button href={href} text={"Lihat selengkapnya"} noIcon={true}/>
+                        <ButtonWithoutAnimation href={href} text={"Lihat selengkapnya"} noIcon={true}/>
                     </div>
                 </div>
                 <div className={clsx("absolute bottom-0 left-0 right-0", type_class.toLowerCase() === "priority" ? "visible" : "hidden")}>
