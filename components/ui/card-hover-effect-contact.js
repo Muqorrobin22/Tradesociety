@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+import clsx from "clsx";
 
 export const HoverEffectContact = ({ items, className }) => {
     const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -16,14 +17,14 @@ export const HoverEffectContact = ({ items, className }) => {
             {items.map((item, idx) => (
                 <div
                     key={item.key}
-                    className="relative group block p-1 "
+                    className={clsx("relative group block py-1 ", item.key === 1 && "pl-1", item.key === 4 && "pr-1")}
                     onMouseEnter={() => setHoveredIndex(idx)}
                     onMouseLeave={() => setHoveredIndex(null)}
                 >
                     <AnimatePresence>
                         {hoveredIndex === idx && (
                             <motion.span
-                                className="absolute inset-0 h-full w-full bg-primary-light-color block rounded-[32px] "
+                                className={clsx("absolute inset-0 h-full w-full bg-primary-light-color block", item.key === 1 && "rounded-tl-[32px] rounded-bl-[32px]", item.key === 4 && "rounded-tr-[32px] rounded-br-[32px]" )}
                                 layoutId="hoverBackground"
                                 initial={{ opacity: 0 }}
                                 animate={{
@@ -37,7 +38,7 @@ export const HoverEffectContact = ({ items, className }) => {
                             />
                         )}
                     </AnimatePresence>
-                    <div className={"bg-white rounded-[32px]  relative z-20"}>
+                    <div className={clsx("bg-white  relative z-20", item.key === 1 && "rounded-tl-[32px] rounded-bl-[32px]", item.key === 4 && "rounded-tr-[32px] rounded-br-[32px]")}>
                         {item.elements}
                     </div>
                 </div>

@@ -43,17 +43,17 @@ export default function ContactUsPage() {
     const ContactList = [
         {
             key: 1,
-            elements: <ContactUsCard href={telegramLink} imageSrc={"/images/components/icon_new/Telegram.svg"} Sosmed={"Telegram"} rounded={"rounded-[32px]"} />
+            elements: <ContactUsCard href={telegramLink} imageSrc={"/images/components/icon_new/Telegram.svg"} Sosmed={"Telegram"} rounded={"rounded-tl-[32px] rounded-bl-[32px]"} />
         },{
             key: 2,
-            elements:  <ContactUsCard href={"https://www.instagram.com/tradesociety.id/"} imageSrc={"/images/components/icon_new/Instagram.svg"} Sosmed={"Instagram"} rounded={"rounded-[32px]"} />
+            elements:  <ContactUsCard href={"https://www.instagram.com/tradesociety.id/"} imageSrc={"/images/components/icon_new/Instagram.svg"} Sosmed={"Instagram"} rounded={""} />
         },{
             key: 3,
-            elements: <ContactUsCard href={"https://www.linkedin.com/company/trade-society"} imageSrc={"/images/components/icon_new/Linkedin.svg"} Sosmed={"Linkedin"} rounded={"rounded-[32px]"} />
+            elements: <ContactUsCard href={"https://www.linkedin.com/company/trade-society"} imageSrc={"/images/components/icon_new/Linkedin.svg"} Sosmed={"Linkedin"} rounded={""} />
         },
         {
             key: 4,
-            elements: <ContactUsCard href={"https://www.tiktok.com/@tradesociety.id"} imageSrc={"/images/components/icon_new/Tiktok.svg"} Sosmed={"Tiktok"} rounded={"rounded-[32px]"} />
+            elements: <ContactUsCard href={"https://www.tiktok.com/@tradesociety.id"} imageSrc={"/images/components/icon_new/Tiktok.svg"} Sosmed={"Tiktok"} rounded={"rounded-tr-[32px] rounded-br-[32px]"} />
         },
     ]
 

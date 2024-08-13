@@ -25,9 +25,9 @@ export const HoverEffectOurPrograms = ({ items, className }) => {
                         {hoveredIndex === idx && (
                             <motion.span
                                 className={clsx("absolute inset-0 h-full w-full  block rounded-[32px] ",
-                                    item.type === "family" && "bg-[#8ACBBA]",
-                                    item.type === "priority" && "bg-[#E7DBA1]",
-                                    item.type === "newbie" && "bg-[#4E9AE2]",
+                                    item.type === "family" && "bg-linear-gradient-program-family",
+                                    item.type === "priority" && "bg-linear-gradient-program-priority",
+                                    item.type === "newbie" && "bg-linear-gradient-program-newbie",
                                 )}
                                 layoutId="hoverBackground"
                                 initial={{ opacity: 0 }}
