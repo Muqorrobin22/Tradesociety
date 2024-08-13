@@ -139,7 +139,7 @@ export default function Navbar(props) {
 
 
                 <div
-                    className={clsx("p-8  bg-white rounded-[32px] shadow-2xl absolute z-30  right-[-60%] top-[120%] w-[546px]", isOpen ? "visible" : "hidden")}
+                    className={clsx("p-8 border-t-[1px] border-[#E3EDFB] bg-white rounded-bl-[32px] rounded-br-[32px] shadow-2xl absolute z-30  right-[-60%] top-[120%] w-[546px]", isOpen ? "visible" : "hidden")}
                     onMouseLeave={() => setIsOpen(false)}>
                     <Link href={"/our-program/programs/newbie"}
                           className={clsx("flex items-center justify-between pb-8 border-b-[1px] border-[#E3EDFB] hover:translate-y-[-3px] transition-all duration-300 ")}>
