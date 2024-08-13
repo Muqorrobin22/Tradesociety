@@ -17,6 +17,7 @@ export function ButtonWithMovingBorders({
                            borderClassName,
                            duration,
                            className,
+    type = "primary",
                            ...otherProps
                        }) {
     return (
@@ -37,7 +38,7 @@ export function ButtonWithMovingBorders({
                 <MovingBorder duration={duration} rx="30%" ry="30%">
                     <div
                         className={cn(
-                            "h-20 w-20 opacity-[0.8] bg-[radial-gradient(var(--sky-500)_40%,transparent_60%)]",
+                            "h-20 w-20 opacity-[0.8]", type === "primary" && "bg-[radial-gradient(#144E8F_60%,transparent_50%)]", type === "secondary" && "bg-[radial-gradient(#D1B052_60%,transparent_50%)]",
                             borderClassName
                         )}
                     />
@@ -46,7 +47,7 @@ export function ButtonWithMovingBorders({
 
             <div
                 className={cn(
-                    "relative  text-white flex items-center justify-center w-full h-full text-sm antialiased",
+                    "relative text-white flex items-center justify-center w-full h-full text-sm antialiased",
                     className
                 )}
                 style={{

@@ -6,7 +6,7 @@ import {ButtonWithMovingBorders} from "@/components/ui/moving-borders";
 
 export default function Button({href, type = "primary", noIcon = false, text}) {
     return <div>
-        <ButtonWithMovingBorders borderRadius="1.75rem">
+        <ButtonWithMovingBorders borderRadius="1.75rem" type={type}>
             <a href={href} target={"_blank"}
                className={clsx("py-2.5 px-4 w-full text-center  rounded-[100px] text-LG/LG-Strong flex items-center justify-center ", fonts.roboto, type === "primary" && "bg-primary-color text-white", type === "secondary" && "bg-white border-[1px] border-secondary-gold-color text-secondary-gold-color ")}>
                 <span> {text} </span>
