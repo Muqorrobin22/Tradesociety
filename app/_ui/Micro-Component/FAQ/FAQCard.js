@@ -13,7 +13,7 @@ export default function FAQCard({onClick, activeIndex, theAnswer, theQuestion, h
 
     return (
         <div
-            className={clsx(" border-[1px] border-[#E3EDFB] rounded-[32px] p-8 bg-white flex flex-col  transition-all duration-500  ", showFaq === activeIndex ? `${height}` : `${idleHeight}`)}>
+            className={clsx(" border-[1px] border-[#E3EDFB] rounded-[32px] p-8  flex flex-col  transition-all duration-500  ", showFaq === activeIndex ? `${height}` : `${idleHeight}`, showFaq === activeIndex ? "bg-[#F4F8FD]" : "bg-white")}>
             <div className={clsx("flex items-center justify-between")}>
                 <h5 className={clsx("text-XL/XL-Strong text-[#15345A] ", fonts.roboto)}>{theQuestion}</h5>
                 <Image src={"/images/components/Icon/plus-circle.svg"} alt={"Plus icon"} width={24} height={24}
