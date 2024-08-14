@@ -50,8 +50,11 @@ export default function Home() {
     if(searchParams.has("ref")) {
       setCookie("referral", searchParams.get("ref"));
     } else {
-      params.set("ref", getCookie("referral"));
-      router.push(`${pathname}?${params.toString()}`);
+      if(getCookie("referral")) {
+        params.set("ref", getCookie("referral"));
+        router.push(`${pathname}?${params.toString()}`);
+      }
+
     }
   }, );
 
