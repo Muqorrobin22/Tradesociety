@@ -58,11 +58,11 @@ export default function ContactUsPage() {
     ]
 
     return (
-        <main className={clsx("mt-[157px] desktop:mb-[157px] mobile:mb-[80px] desktop:px-[200px] desktop:mx-0 mobile:mx-4 ")}>
+        <main className={clsx("mt-[100px] desktop:mb-[157px] mobile:mb-[80px] desktop:px-[200px] desktop:mx-0 mobile:mx-4 ")}>
             <section>
-                <div className={clsx("text-center desktop:mb-8")}>
-                    <p className={clsx("text-Base/Base-Strong text-[#1761B1]     text-center inline-block mb-4 ", fonts.roboto)}>Contact us</p>
-                    <h3 className={clsx("text-heading-3 text-[#15345A] mb-4 ")}> Get in touch</h3>
+                <div className={clsx("text-center desktop:mb-8 mobile:mb-4")}>
+                    <p className={clsx("text-Base/Base-Strong text-[#1761B1]     text-center inline-block desktop:mb-4 mobile:mb-1 ", fonts.roboto)}>Contact us</p>
+                    <h3 className={clsx("text-heading-3 text-[#15345A] desktop:mb-4 mobile:mb-1 ")}> Get in touch</h3>
                     <p className={clsx("text-XL/XL-Normal text-font-description-color  text-center", fonts.roboto)}>
                         Any questions or remarks? Just write us a message!</p>
                 </div>

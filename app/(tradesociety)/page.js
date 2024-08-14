@@ -252,7 +252,7 @@ export default function Home() {
     <section className={clsx("relative ")}>
 
       <div
-          className={clsx("relative bg-linear-gradient-hero desktop:h-[524px] mobile:h-[600px] rounded-[32px] mobile:mt-[120px] desktop:mt-[120px] mobile:p-4  desktop:p-0 desktop:mx-[120px] desktop:overflow-hidden mobile:mx-[16px] mobile:overflow-hidden")}>
+          className={clsx("relative bg-linear-gradient-hero desktop:h-[524px] mobile:h-[600px] rounded-[32px] mobile:mt-[100px] desktop:mt-[120px] mobile:p-4  desktop:p-0 desktop:mx-[120px] desktop:overflow-hidden mobile:mx-[16px] mobile:overflow-hidden")}>
         <Image src={"/images/components/addons_new/hero_bg_addons.png"} alt={""} fill={true}
                className={clsx("absolute desktop:bottom-0 mobile:hidden desktop:block ")}/>
         <Image src={"/images/components/illustration_new/hero_bg_image.png"} alt={""} height={255} width={1440}

@@ -47,7 +47,7 @@ export default function AboutUsPage() {
     return <main className={clsx("mt-10")}>
         {/* Hero Section */}
         <section
-            className={clsx("relative bg-linear-gradient-hero desktop:h-[524px] mobile:h-[600px] px-[72px] rounded-[32px] flex desktop:items-center desktop:justify-normal mobile:flex-col desktop:flex-row mobile:justify-start mobile:items-start  mobile:mt-[120px] desktop:mt-[120px] desktop:mx-[120px] mobile:mx-[16px] overflow-hidden mobile:p-8  ")}>
+            className={clsx("relative bg-linear-gradient-hero desktop:h-[524px] mobile:h-[600px] px-[72px] rounded-[32px] flex desktop:items-center desktop:justify-normal mobile:flex-col desktop:flex-row mobile:justify-start mobile:items-start  mobile:mt-[100px] desktop:mt-[120px] desktop:mx-[120px] mobile:mx-[16px] overflow-hidden mobile:p-8  ")}>
 
             <motion.section
                 initial={{ opacity: 0, translateY: "50px" }}

@@ -205,7 +205,7 @@ export default function NewbiePage() {
 
             {/* Hero Section */}
             <section
-                className={clsx("relative bg-linear-gradient-program-newbie desktop:h-[400px] mobile:h-[700px] desktop:px-[60px] rounded-[32px] flex desktop:items-start mobile:mt-[120px] mobile:items-start desktop:mt-[120px] desktop:mx-[120px] mobile:mx-4 mobile:p-8 desktop:m-0 overflow-hidden ")}>
+                className={clsx("relative bg-linear-gradient-program-newbie desktop:h-[400px] mobile:h-[700px] desktop:px-[60px] rounded-[32px] flex desktop:items-start mobile:mt-[100px] mobile:items-start desktop:mt-[120px] desktop:mx-[120px] mobile:mx-4 mobile:p-8 desktop:m-0 overflow-hidden ")}>
 
                 <motion.section
                     initial={{ opacity: 0, translateY: "50px" }}
@@ -247,7 +247,7 @@ export default function NewbiePage() {
                     whileInView={{ opacity: 1, translateX: "0" }}
                     transition={{duration: 10, type: "spring", stiffness: 100, delay: .5}}
                     viewport={{once: true}}
-                    className={clsx("absolute flex items-center  mobile:right-[-64px] desktop:left-[30px] bottom-[40%] z-20 ")}>
+                    className={clsx("absolute flex items-center  mobile:right-[-64px] desktop:left-[30px] bottom-[25%] z-20 ")}>
                     {/*{testimonialsList.map((testimonial, index) => (*/}
                     {/*    <div key={testimonial.key} className={"ml-4"}>*/}
                     {/*        <TestimonialCardV2 name={testimonial.name} job={testimonial.job}*/}

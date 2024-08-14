@@ -216,7 +216,7 @@ export default function PriorityPage() {
 
             {/* Hero Section */}
             <section
-                className={clsx("relative bg-linear-gradient-program-priority desktop:h-[400px] mobile:h-[700px] desktop:px-[60px] rounded-[32px] flex desktop:items-start mobile:mt-[120px] desktop:mt-[120px] desktop:mx-[120px] mobile:p-8 desktop:m-0 overflow-hidden mobile:mx-4  ")}>
+                className={clsx("relative bg-linear-gradient-program-priority desktop:h-[400px] mobile:h-[700px] desktop:px-[60px] rounded-[32px] flex desktop:items-start mobile:mt-[100px] desktop:mt-[120px] desktop:mx-[120px] mobile:p-8 desktop:m-0 overflow-hidden mobile:mx-4  ")}>
 
                 <motion.section
                     initial={{ opacity: 0, translateY: "50px" }}

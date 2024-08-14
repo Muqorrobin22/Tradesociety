@@ -198,10 +198,10 @@ export default function Navbar(props) {
             {/* End: For Desktop */}
 
             {/* Start: For Mobile */}
-            <div className={clsx("mobile:visible  desktop:hidden mobile:z-40 mobile:fixed mobile:left-[16px] mobile:right-[16px] top-[75px] mobile:drop-shadow-custom-cards  mobile:overflow-y-scroll mobile:bottom-0 mobile:border-t-[1px] mobile:border-[#E3EDFB] ",  burgerOpen ? "mobile:visible" : "mobile:hidden")}>
+            <div className={clsx("mobile:visible  desktop:hidden mobile:z-40 mobile:fixed mobile:left-[0] mobile:right-[0] top-[75px] mobile:drop-shadow-custom-cards  mobile:overflow-y-scroll mobile:bottom-0 mobile:border-t-[1px] mobile:border-[#E3EDFB] ",  burgerOpen ? "mobile:visible" : "mobile:hidden")}>
 
 
-                <ul className={clsx("flex mx-auto flex-col items-start justify-start mobile:p-8 mobile:bg-white rounded-br-[32px] rounded-bl-[32px]  ", burgerOpen ? "mobile:visible" : "mobile:hidden")}>
+                <ul className={clsx("flex mx-auto flex-col items-start justify-start mobile:p-4 mobile:bg-white rounded-br-[32px] rounded-bl-[32px]  ", burgerOpen ? "mobile:visible" : "mobile:hidden")}>
                     {links.map((link) => (
                         <li key={link.name} className={clsx("[&:not(:first-child)]:mt-6 text-center transition-all ")}>
                             <Link href={link.dropdown ? "#" : link.href}
