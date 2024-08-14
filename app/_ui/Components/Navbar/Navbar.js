@@ -90,14 +90,14 @@ export default function Navbar(props) {
     return (
         <nav className="flex items-center justify-between py-4 desktop:fixed mobile:fixed mobile:z-50 mobile:top-0 mobile:left-[0] mobile:right-[0] mobile:bg-white mobile:border-b-[1px] mobile:border-[#E3EDFB] desktop:px-[120px] mobile:px-[16px] desktop:z-50 desktop:left-0 desktop:right-0 desktop:top-0 ">
             <div className={clsx("mobile:order-1 desktop:order-1")}>
-               <Link href={"/"}>
+               <a href={"/"}>
                    <Image
                        alt="Logo Tradesociety"
                        src={"/images/components/Icon/Logo.svg"}
                        width={96}
                        height={40}
                    />
-               </Link>
+               </a>
             </div>
             <div className={clsx("mobile:order-3 z-50 mobile:visible desktop:hidden")}>
                 <Image
@@ -137,14 +137,14 @@ export default function Navbar(props) {
                 <ul className={clsx("flex items-center mx-auto")}>
                     {links.map((link) => (
                         <li key={link.name} className={clsx("[&:not(:last-child)]:mr-3 text-center transition-all")}>
-                            <Link href={link.dropdown ? "#" : link.href}
+                            <a href={link.dropdown ? "#" : link.href}
                                   className={clsx("text-LG/LG-Normal text-[#15345A] hover:border-[1px] hover:border-[#C2DBF5] hover:rounded-[100px] py-2.5 px-4 transition-all flex items-center ", {
                                       "bg-primary-light-color rounded-[100px] py-2.5 px-4": pathname === link.href
                                   }, {
                                       "bg-primary-light-color rounded-[100px] py-2.5 px-4": pathname.includes(link.hrefDetail)
                                   }, fonts.roboto)} onClick={(e) => handleSetIsOpenOurProgram(link, e)}> {link.name} <Image
                                 src={"/images/components/illustration/arrow_down.svg"} alt={"arrow"} width={14}
-                                height={14} className={clsx(link.dropdown ? "visible" : "hidden", "ml-2")}/> </Link>
+                                height={14} className={clsx(link.dropdown ? "visible" : "hidden", "ml-2")}/> </a>
                         </li>))}
 
 
@@ -155,7 +155,7 @@ export default function Navbar(props) {
                 <div
                     className={clsx("p-8 border-t-[1px] border-[#E3EDFB] bg-white rounded-bl-[32px] rounded-br-[32px] shadow-2xl absolute z-30  right-[-60%] top-[120%] w-[546px]", isOpen ? "visible" : "hidden")}
                     onMouseLeave={() => setIsOpen(false)}>
-                    <Link href={"/our-program/programs/newbie"}
+                    <a href={"/our-program/programs/newbie"}
                           className={clsx("flex items-center justify-between pb-8 border-b-[1px] border-[#E3EDFB] hover:translate-y-[-3px] transition-all duration-300 ")}>
                         <Image src={"/images/components/illustration_new/newbie_navbar_img.png"} alt={"dropdown_newbie"}
                                width={80} height={80}/>
@@ -166,9 +166,9 @@ export default function Navbar(props) {
                         </div>
                         <Image src={"/images/components/Icon/arrow_right_up_our_program.svg"} alt={"Arrow"} width={24}
                                height={24} className={clsx("ml-4")}/>
-                    </Link>
+                    </a>
 
-                    <Link href={"/our-program/programs/family"}
+                    <a href={"/our-program/programs/family"}
                           className={clsx("flex items-center justify-between pb-8 border-b-[1px] border-[#E3EDFB] mt-8 hover:translate-y-[-3px] transition-all duration-300 ")}>
                         <Image src={"/images/components/illustration_new/family_navbar_img.png"} alt={"dropdown_newbie"}
                                width={80} height={80}/>
@@ -179,9 +179,9 @@ export default function Navbar(props) {
                         </div>
                         <Image src={"/images/components/Icon/arrow_right_up_our_program.svg"} alt={"Arrow"} width={24}
                                height={24} className={clsx("ml-4")}/>
-                    </Link>
+                    </a>
 
-                    <Link href={"/our-program/programs/priority"}
+                    <a href={"/our-program/programs/priority"}
                           className={clsx("flex items-center justify-between mt-8 hover:translate-y-[-3px] transition-all duration-300 ")}>
                         <Image src={"/images/components/illustration_new/priority_navbar_img.png"} alt={"dropdown_newbie"}
                                width={80} height={80}/>
@@ -192,7 +192,7 @@ export default function Navbar(props) {
                         </div>
                         <Image src={"/images/components/Icon/arrow_right_up_our_program.svg"} alt={"Arrow"} width={24}
                                height={24} className={clsx("ml-4")}/>
-                    </Link>
+                    </a>
                 </div>
             </div>
             {/* End: For Desktop */}
@@ -204,18 +204,18 @@ export default function Navbar(props) {
                 <ul className={clsx("flex mx-auto flex-col items-start justify-start mobile:p-4 mobile:bg-white rounded-br-[32px] rounded-bl-[32px]  ", burgerOpen ? "mobile:visible" : "mobile:hidden")}>
                     {links.map((link) => (
                         <li key={link.name} className={clsx("[&:not(:first-child)]:mt-6 text-center transition-all ")}>
-                            <Link href={link.dropdown ? "#" : link.href}
+                            <a href={link.dropdown ? "#" : link.href}
                                   className={clsx("text-LG/LG-Normal text-[#15345A] hover:border-[1px] hover:border-[#C2DBF5] hover:rounded-[100px] py-2.5 px-4 transition-all flex items-center ", {
                                       "bg-primary-light-color rounded-[100px] py-2.5 px-4": pathname === link.href
                                   }, {
                                       "bg-primary-light-color rounded-[100px] py-2.5 px-4": pathname.includes(link.hrefDetail)
                                   }, fonts.roboto)} onClick={(e) => handleSetIsOpenOurProgram(link, e)}> {link.name} <Image
                                 src={"/images/components/illustration/arrow_down.svg"} alt={"arrow"} width={14}
-                                height={14} className={clsx(link.dropdown ? "visible" : "hidden", "ml-2")}/> </Link>
+                                height={14} className={clsx(link.dropdown ? "visible" : "hidden", "ml-2")}/> </a>
                             <div
                                 className={clsx("p-8 pl-4  bg-white rounded-[32px] ", isOpen && link.dropdown  ? "visible" : "hidden")}
                                 onMouseLeave={() => setIsOpen(false)}>
-                                <Link href={"/our-program/programs/newbie"}
+                                <a href={"/our-program/programs/newbie"}
                                       className={clsx("flex items-center justify-between pb-8 border-b-[1px] border-[#E3EDFB] hover:translate-y-[-3px] transition-all duration-300 ")}>
                                     <Image src={"/images/components/illustration_new/newbie_navbar_img.png"}
                                            alt={"dropdown_newbie"}
@@ -228,9 +228,9 @@ export default function Navbar(props) {
                                     <Image src={"/images/components/Icon/arrow_right_up_our_program.svg"} alt={"Arrow"}
                                            width={24}
                                            height={24} className={clsx("ml-4")}/>
-                                </Link>
+                                </a>
 
-                                <Link href={"/our-program/programs/family"}
+                                <a href={"/our-program/programs/family"}
                                       className={clsx("flex items-center justify-between pb-8 border-b-[1px] border-[#E3EDFB] mt-8 hover:translate-y-[-3px] transition-all duration-300 ")}>
                                     <Image src={"/images/components/illustration_new/family_navbar_img.png"}
                                            alt={"dropdown_newbie"}
@@ -244,9 +244,9 @@ export default function Navbar(props) {
                                     <Image src={"/images/components/Icon/arrow_right_up_our_program.svg"} alt={"Arrow"}
                                            width={24}
                                            height={24} className={clsx("ml-4")}/>
-                                </Link>
+                                </a>
 
-                                <Link href={"/our-program/programs/priority"}
+                                <a href={"/our-program/programs/priority"}
                                       className={clsx("flex items-center justify-between mt-8 hover:translate-y-[-3px] transition-all duration-300 ")}>
                                     <Image src={"/images/components/illustration_new/priority_navbar_img.png"}
                                            alt={"dropdown_newbie"}
@@ -260,7 +260,7 @@ export default function Navbar(props) {
                                     <Image src={"/images/components/Icon/arrow_right_up_our_program.svg"} alt={"Arrow"}
                                            width={24}
                                            height={24} className={clsx("ml-4")}/>
-                                </Link>
+                                </a>
                             </div>
                         </li>))}
 

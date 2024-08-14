@@ -252,7 +252,7 @@ export default function PriorityPage() {
                     whileInView={{opacity: 1, translateX: "0"}}
                     transition={{duration: 10, type: "spring", stiffness: 100, delay: .5}}
                     viewport={{once: true}}
-                    className={clsx("absolute flex items-center  mobile:right-[-64px] desktop:left-[30px] bottom-[40%] z-20 ")}>
+                    className={clsx("absolute flex items-center  mobile:right-[-64px] desktop:left-[30px] desktop:bottom-[30px] mobile:bottom-[40%] z-20 ")}>
                     {/*{testimonialsList.map((testimonial, index) => (*/}
                     {/*    <div key={testimonial.key} className={"ml-4"}>*/}
                     {/*        <TestimonialCardV2 name={testimonial.name} job={testimonial.job}*/}
