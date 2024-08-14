@@ -6,7 +6,7 @@ import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {fonts} from "@/app/_lib/utils/fonts/fonts";
 import {useEffect, useState} from "react";
 import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
-import {getCookie, setCookie} from "cookies-next";
+import {getCookie, hasCookie, setCookie} from "cookies-next";
 
 export default function Footer() {
 
@@ -57,8 +57,11 @@ export default function Footer() {
         if(searchParams.has("ref")) {
             setCookie("referral", searchParams.get("ref"));
         } else {
-            params.set("ref", getCookie("referral"));
-            router.push(`${pathname}?${params.toString()}`);
+            if(hasCookie("referral")) {
+                params.set("ref", getCookie("referral"));
+                router.push(`${pathname}?${params.toString()}`);
+            }
+
         }
     }, );
 

@@ -15,7 +15,7 @@ import {fonts} from "@/app/_lib/utils/fonts/fonts";
 import TestimonialCardV2 from "@/app/_ui/Micro-Component/Testimonials/Cards/TestimonialCardV2";
 import { motion } from "framer-motion"
 import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
-import {getCookie, setCookie} from "cookies-next";
+import {getCookie, hasCookie, setCookie} from "cookies-next";
 import {InfiniteMovingCardsPrograms} from "@/components/ui/infinity-moving-cards-programs";
 import {HoverEffectOurPrograms} from "@/components/ui/card-hover-effect-our-programs";
 
@@ -206,8 +206,11 @@ export default function PriorityPage() {
         if(searchParams.has("ref")) {
             setCookie("referral", searchParams.get("ref"));
         } else {
-            params.set("ref", getCookie("referral"));
-            router.push(`${pathname}?${params.toString()}`);
+            if(hasCookie("referral")) {
+                params.set("ref", getCookie("referral"));
+                router.push(`${pathname}?${params.toString()}`);
+            }
+
         }
     }, );
 

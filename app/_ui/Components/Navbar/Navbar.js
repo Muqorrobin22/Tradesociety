@@ -8,7 +8,7 @@ import Button from "@/app/_ui/Micro-Component/Button/Button";
 import {useEffect, useState} from "react";
 import {fonts} from "@/app/_lib/utils/fonts/fonts";
 import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
-import {getCookie, setCookie} from "cookies-next";
+import {getCookie, hasCookie, setCookie} from "cookies-next";
 import ButtonWithoutAnimation from "@/app/_ui/Micro-Component/Button/ButtonWithoutAnimation";
 
 
@@ -82,8 +82,11 @@ export default function Navbar(props) {
         if(searchParams.has("ref")) {
             setCookie("referral", searchParams.get("ref"));
         } else {
-            params.set("ref", getCookie("referral"));
-            router.push(`${pathname}?${params.toString()}`);
+            if(hasCookie("referral")) {
+                params.set("ref", getCookie("referral"));
+                router.push(`${pathname}?${params.toString()}`);
+            }
+
         }
     }, );
 

@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {useEffect, useState} from "react";
 import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
-import {getCookie, setCookie} from "cookies-next";
+import {getCookie, hasCookie, setCookie} from "cookies-next";
 import {TextGenerateEffect} from "@/components/ui/text-generate-effect";
 import {TextGenerateEffectDescription} from "@/components/ui/text-generate-effect-description";
 
@@ -35,8 +35,11 @@ export default function AboutUsPage() {
         if(searchParams.has("ref")) {
             setCookie("referral", searchParams.get("ref"));
         } else {
-            params.set("ref", getCookie("referral"));
-            router.push(`${pathname}?${params.toString()}`);
+            if(hasCookie("referral")) {
+                params.set("ref", getCookie("referral"));
+                router.push(`${pathname}?${params.toString()}`);
+            }
+
         }
     }, );
 
