@@ -468,7 +468,7 @@ export default function PriorityPage() {
 
                 <section className={"desktop:basis-1/3 mobile:basis-0 desktop:ml-[84px]  z-30 "}>
                     <div
-                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white overflow-hidden desktop:sticky mobile:fixed  desktop:top-[94px] drop-shadow-custom-cards ", isReactBottom ? "mobile:hidden desktop:visible desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0")}>
+                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white overflow-hidden desktop:sticky mobile:fixed  desktop:top-[94px] drop-shadow-custom-cards ", isReactBottom ? "mobile:fixed mobile:left-0 desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0")}>
 
                         <div className={clsx("bg-[#E239141A] py-[8px] px-8 flex items-center ")}>
                             <Image src={"/images/components/Icon/alert-circle.svg"} alt={"Star"}
