@@ -137,7 +137,7 @@ export default function NewbiePage() {
                 className={"w-full"}>
                 <ProgramCardsWithoutImage benefitList={familyBenefitList} period={"Lifetime"} price={"FREE"}
                                           type_class={"Family"} href={"/our-program/programs/family"}
-                                          rounded={"rounded-tl-[32px] rounded-bl-[32px]"}/>
+                                          rounded={"desktop:rounded-tl-[32px] desktop:rounded-bl-[32px] desktop:rounded-tr-[0] mobile:rounded-tl-[32px] mobile:rounded-tr-[32px] "}/>
             </motion.div>
         },
         {
@@ -153,7 +153,7 @@ export default function NewbiePage() {
                                           price={"rp 1.500.000"} type_class={"priority"}
                                           href={"/our-program/programs/priority"}
                                           strikethroughPrice={"Rp5.000.000"}
-                                          rounded={"rounded-tr-[32px] rounded-br-[32px]"}/>
+                                          rounded={" mobile:rounded-bl-[32px] mobile:rounded-br-[32px] desktop:rounded-bl-[0] desktop:rounded-tr-[32px] desktop:rounded-br-[32px]  "}/>
             </motion.div>
         }
     ]
@@ -205,7 +205,7 @@ export default function NewbiePage() {
 
             {/* Hero Section */}
             <section
-                className={clsx("relative bg-linear-gradient-program-newbie desktop:h-[400px] mobile:h-[600px] desktop:px-[60px] rounded-[32px] flex desktop:items-start mobile:mt-[120px] desktop:mt-[120px] desktop:mx-[120px] mobile:p-8 desktop:m-0 overflow-hidden ")}>
+                className={clsx("relative bg-linear-gradient-program-newbie desktop:h-[400px] mobile:h-[700px] desktop:px-[60px] rounded-[32px] flex desktop:items-start mobile:mt-[120px] mobile:items-start desktop:mt-[120px] desktop:mx-[120px] mobile:mx-4 mobile:p-8 desktop:m-0 overflow-hidden ")}>
 
                 <motion.section
                     initial={{ opacity: 0, translateY: "50px" }}
@@ -221,24 +221,33 @@ export default function NewbiePage() {
                     </p>
                 </motion.section>
 
+                {/* Start: Desktop */}
                 <Image src={"/images/components/addons_new/our_programs_hero_addons.png"} alt={"newbie hero"} fill={true}
-                       className={clsx("absolute left-0 z-10 ")}/>
+                       className={clsx("absolute left-0 z-10 desktop:block mobile:hidden")}/>
                 <Image src={"/images/components/illustration_new/newbie_hero_new_illustration.svg"} alt={"newbie hero"} width={610} height={400}
-                       className={clsx("absolute z-[11] desktop:right-0 desktop:bottom-0 ")}/>
+                       className={clsx("absolute z-[11] desktop:right-0 desktop:bottom-0 desktop:block mobile:hidden")}/>
                 <Image src={"/images/components/illustration_new/newbie_hero_new_illustration_2.svg"} alt={"newbie hero"} width={300} height={300}
-                       className={clsx("absolute z-[11] desktop:right-0 desktop:bottom-0 ")}/>
+                       className={clsx("absolute z-[11] desktop:right-0 desktop:bottom-0 desktop:block mobile:hidden")}/>
                 <Image src={"/images/components/illustration_new/newbie_hero_new_illustration_3.svg"} alt={"newbie hero"} width={400} height={400}
-                       className={clsx("absolute z-[21] desktop:right-[100px] desktop:bottom-0 ")}/>
-                {/*<Image src={"/images/components/addons/newbie_program_addons.svg"} alt={"newbie hero"} width={1300}*/}
-                {/*       height={400}*/}
-                {/*       className={clsx("absolute left-0 z-10 ")}/>*/}
+                       className={clsx("absolute z-[21] desktop:right-[100px] desktop:bottom-0 desktop:block mobile:hidden")}/>
+
+                {/* End: Desktop */}
+
+                {/* Start: Mobile */}
+
+                <Image src={"/images/components/responsive/mobile/addons/our_programs_hero_addons.png"} alt={"newbie hero"} fill={true}
+                       className={clsx("absolute left-0 z-10 desktop:hidden mobile:block")}/>
+                <Image src={"/images/components/responsive/mobile/illustration/our_programs_hero.png"} alt={"newbie hero"} width={400} height={281}
+                       className={clsx("absolute left-0 z-10 desktop:hidden mobile:block mobile:w-full mobile:bottom-0 ")}/>
+
+                {/* End: Mobile */}
 
                 <motion.div
                     initial={{ opacity: 0, translateX: "-150px" }}
                     whileInView={{ opacity: 1, translateX: "0" }}
                     transition={{duration: 10, type: "spring", stiffness: 100, delay: .5}}
                     viewport={{once: true}}
-                    className={clsx("absolute flex items-center  mobile:right-[-64px] desktop:left-[30px] bottom-[32px] z-20 ")}>
+                    className={clsx("absolute flex items-center  mobile:right-[-64px] desktop:left-[30px] bottom-[40%] z-20 ")}>
                     {/*{testimonialsList.map((testimonial, index) => (*/}
                     {/*    <div key={testimonial.key} className={"ml-4"}>*/}
                     {/*        <TestimonialCardV2 name={testimonial.name} job={testimonial.job}*/}
@@ -246,7 +255,7 @@ export default function NewbiePage() {
                     {/*                         bg_cards={testimonial.bgCards}/>*/}
                     {/*    </div>*/}
                     {/*))}*/}
-                    <div className={clsx("w-[850px]")}>
+                    <div className={clsx("desktop:w-[850px] mobile:w-[500px]")}>
                         <InfiniteMovingCardsPrograms items={testimonialsList} direction="right" speed="fast" />
                     </div>
                 </motion.div>
@@ -255,6 +264,13 @@ export default function NewbiePage() {
 
             {/* Hero Section - End */}
 
+            {/* Start: Mobile Only */}
+            <div className={clsx("my-10")}>
+                <Image src={"/images/components/responsive/mobile/addons/interceptor.png"} alt={"newbie hero"} height={1} width={428}
+                       className={clsx("absolute left-0 z-10 desktop:hidden mobile:block w-full")}/>
+            </div>
+            {/* End: Mobile Only */}
+
             {/*  Content - Start  */}
 
             <motion.section
@@ -262,7 +278,7 @@ export default function NewbiePage() {
                 whileInView={{ opacity: 1, translateY: "0" }}
                 transition={{duration: 10, type: "spring", stiffness: 100, delay: .7}}
                 viewport={{once: true}}
-                className={clsx("mt-[80px] flex justify-between relative px-[120px]")}>
+                className={clsx("mt-[80px] flex justify-between relative desktop:px-[120px] mobile:px-4 ")}>
 
 
                 <section className={"desktop:basis-2/3 mobile:basis-full"}>
@@ -465,7 +481,7 @@ export default function NewbiePage() {
                         Temukan program yang sesuai dengan kemampuan dan skillmu!
                     </p>
                 </motion.section>
-                <section className={clsx("mt-8  relative z-20 px-[160px] ")}>
+                <section className={clsx("mt-8  relative z-20 desktop:px-[160px] ")}>
 
                     <HoverEffectOurPrograms items={ProgramLainList} className={clsx("grid desktop:grid-cols-2")} />
 
@@ -500,9 +516,13 @@ export default function NewbiePage() {
 
 
                 <Image src={"/images/components/addons_new/our_programs_program_lain_addons.png"} alt={"addons"}
-                       className={"absolute z-10"} fill={true}/>
+                       className={"absolute z-10 desktop:block mobile:hidden"} fill={true}/>
                 <Image src={"/images/components/addons_new/our_programs_program_lain_2_addons.png"} alt={"addons"}
-                       className={"absolute z-10 left-[140px] top-0 "} width={1200} height={670}/>
+                       className={"absolute z-10 left-[140px] top-0 desktop:block mobile:hidden "} width={1200} height={670}/>
+
+
+                <Image src={"/images/components/responsive/mobile/addons/our_program_program_lain_addons.png"} alt={"addons"}
+                       className={"absolute z-10 desktop:hidden mobile:block"} fill={true}/>
             </section>
 
             {/*  Program lain yang kamu suka - End  */}

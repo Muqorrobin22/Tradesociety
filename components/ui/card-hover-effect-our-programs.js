@@ -17,14 +17,14 @@ export const HoverEffectOurPrograms = ({ items, className }) => {
             {items.map((item, idx) => (
                 <div
                     key={item.key}
-                    className={clsx("relative group block py-2 ", item.key === 1 ? "pl-2" : "pr-2")}
+                    className={clsx("relative group block desktop:py-2 desktop:px-0 mobile:px-1 ", item.key === 1 ? "desktop:pl-2 mobile:pt-1" : "desktop:pr-2 mobile:pb-1")}
                     onMouseEnter={() => setHoveredIndex(idx)}
                     onMouseLeave={() => setHoveredIndex(null)}
                 >
                     <AnimatePresence>
                         {hoveredIndex === idx && (
                             <motion.span
-                                className={clsx("absolute inset-0 h-full w-full  block rounded-[32px] ",
+                                className={clsx("absolute inset-0 h-full w-full  block desktop:rounded-[32px] mobile:rounded-[32px] ",
                                     item.type === "family" && "bg-linear-gradient-program-family",
                                     item.type === "priority" && "bg-linear-gradient-program-priority",
                                     item.type === "newbie" && "bg-linear-gradient-program-newbie",
@@ -42,7 +42,7 @@ export const HoverEffectOurPrograms = ({ items, className }) => {
                             />
                         )}
                     </AnimatePresence>
-                    <div className={"bg-white rounded-[32px]  relative z-20"}>
+                    <div className={"bg-white desktop:rounded-[32px] mobile:rounded-[32px] relative z-20"}>
                         {item.elements}
                     </div>
                 </div>
