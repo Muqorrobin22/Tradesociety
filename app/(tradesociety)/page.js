@@ -424,7 +424,7 @@ export default function Home() {
             {/*                       bg_color={testimonial.bgColor}/>*/}
             {/*    </div>*/}
             {/*))}*/}
-            <InfiniteMovingCards items={testimonialsList} direction="left" speed="slow" />
+            <InfiniteMovingCards items={testimonialsList} direction="left" speed="normal" />
           </div>
           {/* End: Desktop Version */}
 
@@ -436,7 +436,7 @@ export default function Home() {
             {/*                       bg_color={testimonial.bgColor}/>*/}
             {/*    </div>*/}
             {/*))}*/}
-            <InfiniteMovingCards items={testimonialsListMobile} direction={"left"} speed={"slow"} />
+            <InfiniteMovingCards items={testimonialsListMobile} direction={"left"} speed={"fast"} />
           </div>
           {/* End: Mobile Version */}
 
@@ -451,7 +451,7 @@ export default function Home() {
             <InfiniteMovingCards
                 items={testimonialsListBottom}
                 direction="right"
-                speed="slow"
+                speed="normal"
             />
           </div>
           {/* End: Desktop Version */}
@@ -464,7 +464,7 @@ export default function Home() {
             {/*                       bg_color={testimonial.bgColor}/>*/}
             {/*    </div>*/}
             {/*))}*/}
-            <InfiniteMovingCards items={testimonialsListMobileBottom} direction={"right"} speed={""} />
+            <InfiniteMovingCards items={testimonialsListMobileBottom} direction={"right"} speed={"fast"} />
           </div>
           {/* End: Mobile Version */}
         </div>

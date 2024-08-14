@@ -49,7 +49,7 @@ export const InfiniteMovingCards = ({
         if (containerRef.current) {
             let duration;
             if (speed === "fast") {
-                duration = "20s";
+                duration = "15s";
             } else if (speed === "normal") {
                 duration = "40s";
             } else {
