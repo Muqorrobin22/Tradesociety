@@ -78,6 +78,7 @@ export default function NewbiePage() {
     }, []);
 
     console.log("scroll active state: ", scrollActiveState)
+    console.log("isReactBottom", isReactBottom)
 
     // Scroll Page Behaviour
 
