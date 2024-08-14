@@ -33,7 +33,7 @@ export default function NewbiePage() {
     const [scrollPositionDescriptionBar, setScrollPositionDescriptionBar] = useState(0);
     const [scrollActiveState, setScrollActiveState] = useState("");
     const [scrollNavbarLink, setScrollNavbarLink] = useState(0);
-    const [isReactBottom, setIsReactBottom] = useState("");
+    // const [isReactBottom, setIsReactBottom] = useState("");
 
     useEffect(() => {
         if(typeof  window !== "undefined") {
