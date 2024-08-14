@@ -218,7 +218,7 @@ export default function AboutUsPage() {
                         viewport={{once: true}}
                         className={clsx("mt-8 mx-auto text-center")}>
                         <div className={clsx("inline-block")}>
-                            <Button href={telegramLink} text={"Hubungi kami"}/>
+                            <Button href={"https://t.me/m/1z4YahMtZmM1"} text={"Hubungi kami"}/>
                         </div>
                     </motion.div>
                 </div>
