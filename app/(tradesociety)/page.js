@@ -128,6 +128,22 @@ export default function Home() {
     }
   ]
 
+  const testimonialsListMobileBottom = [
+    {
+      key: 1,
+      name: "Iwan Juliatmoko",
+      job: "Writer",
+      comment: "Dari semua program yang di adakan sangat² menarik dan mengedukasi.",
+      bgColor: "bg-[#F47643]"
+    },{
+      key: 2,
+      name: "Mochamad Indra Leksana",
+      job: "Writer",
+      comment: "Signal dan materi pembelajaran di dunia trading sangat membantu para newbie trader",
+      bgColor: "bg-[#59AE9B]"
+    },
+  ]
+
 
   const faqDataList = [
     {
@@ -233,11 +249,17 @@ export default function Home() {
     <section className={clsx("relative ")}>
 
       <div
-          className={clsx("relative bg-linear-gradient-hero h-[524px] rounded-[32px] mobile:mt-[120px] desktop:mt-[120px] mobile:p-4  desktop:p-0 desktop:mx-[120px] desktop:overflow-hidden")}>
+          className={clsx("relative bg-linear-gradient-hero desktop:h-[524px] mobile:h-[600px] rounded-[32px] mobile:mt-[120px] desktop:mt-[120px] mobile:p-4  desktop:p-0 desktop:mx-[120px] desktop:overflow-hidden mobile:mx-[16px] mobile:overflow-hidden")}>
         <Image src={"/images/components/addons_new/hero_bg_addons.png"} alt={""} fill={true}
                className={clsx("absolute desktop:bottom-0 mobile:hidden desktop:block ")}/>
         <Image src={"/images/components/illustration_new/hero_bg_image.png"} alt={""} height={255} width={1440}
                className={clsx("absolute desktop:bottom-0 mobile:hidden desktop:block ")}/>
+
+        <Image src={"/images/components/responsive/mobile/addons/home_hero_bg_image.png"} alt={""} fill={true}
+               className={clsx("absolute desktop:bottom-0 mobile:block desktop:hidden ")}/>
+
+        <Image src={"/images/components/responsive/mobile/illustration/hero_bg_image.png"} alt={""} height={178} width={450}
+               className={clsx("absolute mobile:bottom-0 mobile:left-0 mobile:block desktop:hidden w-full ")}/>
 
 
         <motion.section initial={{ opacity: 0, translateY: "50px" }}
@@ -254,6 +276,8 @@ export default function Home() {
         <CardBody>
           <CardItem translateZ="100" >
             <Image src={"/images/components/illustration_new/hero_bg_image_2.svg"} alt={""} height={419} width={421} className={clsx(" mobile:hidden desktop:block ")} />
+            <Image src={"/images/components/responsive/mobile/illustration/hero_bg_image_2.svg"} alt={""} height={265} width={265}
+                   className={clsx(" mobile:relative mobile:block desktop:hidden mobile:translate-x-[25%] translate-y-[35%] ")}/>
           </CardItem>
         </CardBody>
       </CardContainer>
@@ -264,10 +288,13 @@ export default function Home() {
 
   {/*  Hero Section CTA - Start */}
 
-    <section className={clsx("relative  h-[306px] desktop:flex desktop:items-center desktop:px-[120px] mobile:w-full mobile:px-8  ")}>
+    <section className={clsx("relative  desktop:h-[306px] desktop:flex desktop:items-center desktop:px-[120px] mobile:w-full mobile:px-[48px] mobile:py-[40px] mobile:h-auto  ")}>
       {/*<Image src={"/images/components/addons/hero_cta_revision_addons.png"} alt={""} height={306} width={1198} className={clsx("absolute z-10 left-[50%] translate-x-[-50%]")} />*/}
-      <Image src={"/images/components/addons_new/belajar_trading_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 ")} />
-      <Image src={"/images/components/addons_new/home_belajar_gratis_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 object-center object-contain ")} />
+      <Image src={"/images/components/addons_new/belajar_trading_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 desktop:block mobile:hidden ")} />
+      <Image src={"/images/components/addons_new/home_belajar_gratis_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 object-center object-contain desktop:block mobile:hidden ")} />
+
+      <Image src={"/images/components/responsive/mobile/addons/home_belajar_trading_addons.png"} alt={"addons 1"} fill={true} className={clsx("absolute z-10 mobile:block desktop:hidden mobile:object-cover mobile:object-center ")} />
+      <Image src={"/images/components/responsive/mobile/addons/home_belajar_trading_2.png"} alt={"addons 2"} fill={true} className={clsx("absolute z-10 mobile:object-center mobile:block desktop:hidden mobile:object-cover mobile:h-full ")} />
 
       <motion.div
           initial={{ opacity: 0, translateY: "50px" }}
@@ -290,12 +317,13 @@ export default function Home() {
 
     {/*  Our Program - Start */}
 
-    <section className={clsx("mt-[80px] py-[40px] mobile:px-8 desktop:px-0 ")}>
+    <section className={clsx("mt-[80px] py-[40px] desktop:px-0 ")}>
 
     {/*  Our program > Text Heading - Start  */}
 
-      <section className={clsx("relative p-8 desktop:py-8 desktop:px-[120px]")}>
-        <Image src={"/images/components/addons_new/belajar_sesuai_kemampuan_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 ")} />
+      <section className={clsx("relative p-8 desktop:py-8 desktop:px-[120px] mobile:px-[48px] mobile:py-[32px]")}>
+        <Image src={"/images/components/addons_new/belajar_sesuai_kemampuan_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 desktop:block mobile:hidden ")} />
+        <Image src={"/images/components/responsive/mobile/addons/home_our_program_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 desktop:hidden mobile:block  mobile:object-center ")} />
 
         <motion.section
             initial={{ opacity: 0, translateY: "50px" }}
@@ -332,8 +360,9 @@ export default function Home() {
           whileInView={{ opacity: 1, translateY: "0" }}
           transition={{duration: 10, type: "spring", stiffness: 100, delay: .3}}
           viewport={{once: true}}
-          className={clsx(" desktop:relative text-center flex desktop:items-center desktop:justify-center mt-10 pt-8 pb-10 desktop:flex-row mobile:flex-col mobile:justify-center mobile:items-center")}>
-        <Image src={"/images/components/addons_new/home_pertanyaan_lain_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 ")} />
+          className={clsx(" desktop:relative mobile:relative text-center flex desktop:items-center desktop:justify-center mt-10 pt-8 pb-10 desktop:flex-row mobile:flex-col mobile:justify-center mobile:items-center")}>
+        <Image src={"/images/components/addons_new/home_pertanyaan_lain_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 desktop:block mobile:hidden ")} />
+        <Image src={"/images/components/responsive/mobile/addons/home_punya_pertanyaan_addons.png"} alt={"pertanyaan mobile"} fill={true} className={clsx("absolute z-10 desktop:hidden mobile:block mobile:object-center ")} />
         <h1 className={clsx("text-font-description-color text-XL/XL-Normal mr-[10px] relative z-20", fonts.roboto)}>Punya pertanyaan lain?</h1>
         <div className={clsx("mobile:mt-4 desktop:mt-0 relative z-20")}>
           <Button href={telegramLink} text={"Hubungi kami"} type={"secondary"} />
@@ -350,9 +379,10 @@ export default function Home() {
 
     {/*  Kata kata dari mereka - Start */}
 
-    <section className={clsx("mt-[80px] desktop:py-[80px] mobile:py-[40px] desktop:px-[159px] mobile:px-0 desktop:relative ")}>
+    <section className={clsx("mt-[80px] mobile:relative desktop:py-[80px] mobile:py-[40px] desktop:px-[159px] mobile:px-0 desktop:relative ")}>
 
-      <Image src={"/images/components/addons_new/our_testimonials_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 ")} />
+      <Image src={"/images/components/addons_new/our_testimonials_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 desktop:block mobile:hidden ")} />
+      <Image src={"/images/components/responsive/mobile/addons/home_testimonials_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 desktop:hidden mobile:block")} />
 
       {/*  Kata kata dari mereka > Heading - Start   */}
 
@@ -378,7 +408,7 @@ export default function Home() {
           whileInView={{ opacity: 1, translateY: "0" }}
           transition={{duration: 10, type: "spring", stiffness: 100, delay: .3}}
           viewport={{once: true}}
-          className={clsx("mt-[42px] py-[64px] px-8 bg-[#F4F8FD] rounded-[32px]  relative z-20 ")}>
+          className={clsx("mt-[42px] desktop:py-[64px] desktop:px-8 mobile:py-8 mobile:px-6 mobile:mx-8 bg-[#F4F8FD] rounded-[32px]  relative z-20 ")}>
 
         <div className={clsx("")}>
           <Image src={"/images/components/addons_new/home_testimonials_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 left-0 top-0 bottom-0 object-cover object-center  ")} />
@@ -396,12 +426,13 @@ export default function Home() {
 
           {/* Start: Mobile Version */}
           <div className={clsx("flex items-center justify-between  desktop:hidden mobile:visible mobile:flex relative z-20")}>
-            {testimonialsListMobile.map((testimonial) => (
-                <div key={testimonial.key} className={clsx("mobile:ml-4 desktop:ml-0")}>
-                  <TestimonialCard name={testimonial.name} job={testimonial.job} comments={testimonial.comment}
-                                   bg_color={testimonial.bgColor}/>
-                </div>
-            ))}
+            {/*{testimonialsListMobile.map((testimonial) => (*/}
+            {/*    <div key={testimonial.key} className={clsx("mobile:ml-4 desktop:ml-0")}>*/}
+            {/*      <TestimonialCard name={testimonial.name} job={testimonial.job} comments={testimonial.comment}*/}
+            {/*                       bg_color={testimonial.bgColor}/>*/}
+            {/*    </div>*/}
+            {/*))}*/}
+            <InfiniteMovingCards items={testimonialsListMobile} direction={"left"} speed={"slow"} />
           </div>
           {/* End: Mobile Version */}
 
@@ -423,12 +454,13 @@ export default function Home() {
 
           {/* Start: Mobile Version */}
           <div className={clsx("flex items-center justify-between mt-4 desktop:hidden mobile:visible mobile:flex relative z-20 ")}>
-            {testimonialsListMobile.map((testimonial) => (
-                <div key={testimonial.key} className={clsx("mobile:mr-4 desktop:mr-0")}>
-                  <TestimonialCard name={testimonial.name} job={testimonial.job} comments={testimonial.comment}
-                                   bg_color={testimonial.bgColor}/>
-                </div>
-            ))}
+            {/*{testimonialsListMobile.map((testimonial) => (*/}
+            {/*    <div key={testimonial.key} className={clsx("mobile:mr-4 desktop:mr-0")}>*/}
+            {/*      <TestimonialCard name={testimonial.name} job={testimonial.job} comments={testimonial.comment}*/}
+            {/*                       bg_color={testimonial.bgColor}/>*/}
+            {/*    </div>*/}
+            {/*))}*/}
+            <InfiniteMovingCards items={testimonialsListMobileBottom} direction={"right"} speed={""} />
           </div>
           {/* End: Mobile Version */}
         </div>
@@ -445,7 +477,8 @@ export default function Home() {
 
     <section className={clsx("mt-[80px] desktop:pt-[80px] mobile:pt[40px] desktop:px-[160px] pb-10 relative ")}>
 
-      <Image src={"/images/components/addons_new/faq_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 ")} />
+      <Image src={"/images/components/addons_new/faq_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 desktop:block mobile:hidden ")} />
+      <Image src={"/images/components/responsive/mobile/addons/hero_testimonials_core_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 desktop:hidden mobile:block ")} />
 
       {/*  FAQ > Heading - Start   */}
 
@@ -454,7 +487,7 @@ export default function Home() {
           whileInView={{ opacity: 1, translateY: "0" }}
           transition={{duration: 10, type: "spring", stiffness: 100, delay: .3}}
           viewport={{once: true}}
-          className={clsx("flex flex-col desktop:justify-center desktop:items-start mobile:px-8 desktop:px-0 mobile:items-center mobile:justify-center relative z-20 ")}>
+          className={clsx("flex flex-col desktop:justify-center desktop:items-start mobile:px-8 desktop:px-0 desktop:pt-0 mobile:pt-8 mobile:items-center mobile:justify-center relative z-20 ")}>
         <p className={clsx(" text-Base/Base-Strong text-[#1761B1] ", fonts.roboto)}>Frequently asked questions</p>
         <h3 className={clsx("text-heading-3 text-[#15345A] my-2 desktop:text-left mobile:text-center ")}>Jangan khawatir, semua pertanyaan <br /> kalian sudah terjawab!</h3>
         <p className={clsx("text-XL/XL-Normal text-font-description-color  desktop:text-left mobile:text-center ", fonts.roboto)}>Kami sudah mengumpulkan jawaban dari pertanyaan yang sering ditanyakan.</p>
@@ -464,7 +497,7 @@ export default function Home() {
       {/*  FAQ > Heading - End   */}
 
       {/*  FAQ > Main - Start   */}
-      <section className={clsx("mt-[30px] relative z-20")}>
+      <section className={clsx("mt-[30px] relative z-20 mobile:px-10 desktop:px-0")}>
         <motion.div
             initial={{ opacity: 0, translateY: "50px" }}
             whileInView={{ opacity: 1, translateY: "0" }}
@@ -489,7 +522,7 @@ export default function Home() {
           whileInView={{ opacity: 1, translateY: "0" }}
           transition={{duration: 10, type: "spring", stiffness: 100, delay: .3}}
           viewport={{once: true}}
-          className={clsx("mt-[60px] relative desktop:h-[216px] mobile:h-auto  desktop:px-[77px] bg-linear-gradient-faq rounded-[32px] z-20")}>
+          className={clsx("mt-[60px] relative desktop:h-[216px] mobile:h-auto  desktop:px-[77px] desktop:mx-0 mobile:mx-6 bg-linear-gradient-faq rounded-[32px] z-20")}>
         <div className={clsx("flex desktop:items-center desktop:justify-between mobile:flex-col desktop:flex-row  z-10 relative mobile:p-8 desktop:p-0 ")}>
 
             <Image src={"/images/components/illustration/faq_join_now_revision.svg"} alt={"Join Now"} width={216} height={216} className={clsx("mobile:order-3 desktop:order-1")} />

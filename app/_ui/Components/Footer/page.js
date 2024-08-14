@@ -63,7 +63,7 @@ export default function Footer() {
     }, );
 
     return (
-        <footer className="footer desktop:py-8 mobile:py-8 mobile:w-auto rounded-tl-[32px] rounded-tr-[32px] border-[1px] border-[#E3EDFB] ">
+        <footer className="footer desktop:px-[120px] desktop:py-8 mobile:py-8 mobile:w-auto rounded-tl-[32px] rounded-tr-[32px] border-[1px] border-[#E3EDFB] ">
             <div className="container flex desktop:items-center desktop:justify-between mobile:flex-col mobile:justify-center mobile:items-center mobile:mx-auto desktop:flex-row ">
                 <div>
                     <Link href={"/"}>
@@ -78,9 +78,9 @@ export default function Footer() {
                 <div>
                     <ul className={clsx("flex items-center mx-auto mobile:w-auto mobile:mt-[24px]")}>
                         {links.map((link) => (
-                            <li key={link.name} className={clsx("desktop:[&:not(:last-child)]:mr-6 text-center mobile:[&:not(:last-child)]:mr-[24px] ")}>
+                            <li key={link.name} className={clsx("desktop:[&:not(:last-child)]:mr-6 text-center mobile:[&:not(:last-child)]:mr-[24px] desktop:w-auto")}>
                                 <Link href={link.href}
-                                      className={clsx("text-LG/LG-Normal text-[#15345A]  ", fonts.roboto)}> {link.name} </Link>
+                                      className={clsx("text-LG/LG-Normal text-[#15345A] ", fonts.roboto)}> {link.name} </Link>
                             </li>))}
 
 
@@ -100,7 +100,7 @@ export default function Footer() {
 
                 </div>
             </div>
-            <div className={"text-center mt-[32px]"}>
+            <div className={"text-center mt-[32px] mx-auto"}>
                 <p className={clsx(" text-LG/LG-Normal text-[#00000073] mx-auto", fonts.roboto)}>© 2024 Trade Society. All rights reserved.</p>
             </div>
         </footer>
