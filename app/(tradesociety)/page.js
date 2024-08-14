@@ -349,7 +349,7 @@ export default function Home() {
       {/*  Our program > Cards - Start  */}
 
       <section
-          className={clsx("mt-[96px] ")}>
+          className={clsx("desktop:mt-[96px] mobile:mt-6 ")}>
         <HoverEffect items={ProgramCardsList} className={"flex desktop:justify-between desktop:flex-row mobile:flex-col desktop:items-center mobile:items-center mobile:justify-center desktop:px-[120px]"} />
       </section>
 
@@ -414,7 +414,8 @@ export default function Home() {
           className={clsx("mt-[42px] desktop:py-[64px] desktop:px-8 mobile:py-8 mobile:px-6 mobile:mx-8 bg-[#F4F8FD] rounded-[32px]  relative z-20 ")}>
 
         <div className={clsx("")}>
-          <Image src={"/images/components/addons_new/home_testimonials_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 left-0 top-0 bottom-0 object-cover object-center  ")} />
+          <Image src={"/images/components/addons_new/home_testimonials_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 left-0 top-0 bottom-0 object-cover object-center desktop:block mobile:hidden  ")} />
+          <Image src={"/images/components/responsive/mobile/illustration/hero_testimonials_addons.png"} alt={"testimonials"} fill={true} className={clsx("absolute z-10 left-0 top-0 bottom-0 object-cover object-center desktop:hidden mobile:block  ")} />
           {/* Start: Desktop Version */}
           <div className={clsx("flex items-center justify-between  mobile:hidden desktop:visible desktop:flex relative z-20 ")}>
             {/*{testimonialsList.map((testimonial) => (*/}
