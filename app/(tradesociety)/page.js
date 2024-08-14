@@ -16,7 +16,7 @@ import {fonts} from "@/app/_lib/utils/fonts/fonts";
 import { motion } from "framer-motion"
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {GetReferralLinkTelegram} from "@/app/_lib/const/REFERRAL";
-import {getCookie, setCookie} from "cookies-next";
+import {getCookie, hasCookie, setCookie} from "cookies-next";
 import {CardBody, CardContainer, CardItem} from "@/components/ui/3d-cards";
 import {InfiniteMovingCards} from "@/components/ui/infinite-moving-cards";
 import {HoverEffect} from "@/components/ui/card-hover-effect";
@@ -50,7 +50,7 @@ export default function Home() {
     if(searchParams.has("ref")) {
       setCookie("referral", searchParams.get("ref"));
     } else {
-      if(getCookie("referral")) {
+      if(hasCookie("referral")) {
         params.set("ref", getCookie("referral"));
         router.push(`${pathname}?${params.toString()}`);
       }
