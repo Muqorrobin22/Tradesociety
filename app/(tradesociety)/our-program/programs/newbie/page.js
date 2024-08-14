@@ -33,7 +33,7 @@ export default function NewbiePage() {
     const [scrollPositionDescriptionBar, setScrollPositionDescriptionBar] = useState(0);
     const [scrollActiveState, setScrollActiveState] = useState("");
     const [scrollNavbarLink, setScrollNavbarLink] = useState(0);
-    const [isReactBottom, setIsReactBottom] = useState("inactive");
+    const [isReactBottom, setIsReactBottom] = useState("");
 
     useEffect(() => {
         if(typeof  window !== "undefined") {
@@ -42,30 +42,25 @@ export default function NewbiePage() {
                 setScrollPositionCard(position);
                 setScrollPositionDescriptionBar(position)
 
-                // if(position > 3320 || position < 367) {
-                //     setIsReactBottom(true)
-                // } else {
-                //     setIsReactBottom(false)
-                // }
+                if(position > 3320 || position < 367) {
+                    setIsReactBottom("")
+                } else {
+                    setIsReactBottom("active")
+                }
 
                 if(position > 605) {
                     setScrollNavbarLink(position)
                 }
                 if (position >= 1360) {
                     setScrollActiveState("jadwal_kelas");
-                    setIsReactBottom("inactive")
                 } else if (position >= 1082) {
                     setScrollActiveState("benefits");
-                    setIsReactBottom("active")
                 } else if (position >= 705) {
                     setScrollActiveState("materi");
-                    setIsReactBottom("active")
                 } else if (position >= 510) {
                     setScrollActiveState("Description");
-                    setIsReactBottom("active")
                 } else {
                     setScrollActiveState("");
-                    setIsReactBottom("inactive")
                 }
 
 
@@ -83,7 +78,7 @@ export default function NewbiePage() {
     }, []);
 
     console.log("scroll active state: ", scrollActiveState)
-    console.log("isReactBottom", isReactBottom)
+    // console.log("isReactBottom", isReactBottom)
 
     // Scroll Page Behaviour
 
@@ -450,7 +445,7 @@ export default function NewbiePage() {
 
                 <section className={"  desktop:basis-1/3 mobile:basis-0 desktop:ml-[84px]  z-30 "}>
                     <div
-                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white p-8 desktop:sticky mobile:fixed  desktop:top-[94px] drop-shadow-custom-cards ", isReactBottom === "inactive" ? "mobile:hidden desktop:visible desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0")}>
+                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white p-8 desktop:sticky mobile:fixed  desktop:top-[94px] drop-shadow-custom-cards ",   isReactBottom !== "active" ? "mobile:hidden desktop:visible desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0")}>
 
 
                         <div
