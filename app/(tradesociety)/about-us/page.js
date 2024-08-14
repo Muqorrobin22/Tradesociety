@@ -47,7 +47,7 @@ export default function AboutUsPage() {
     return <main className={clsx("mt-10")}>
         {/* Hero Section */}
         <section
-            className={clsx("relative bg-linear-gradient-hero desktop:h-[524px] px-[72px] rounded-[32px] flex desktop:items-center desktop:justify-normal mobile:flex-col desktop:flex-row mobile:justify-center mobile:items-center  mobile:mt-[120px] desktop:mt-[120px] desktop:mx-[120px] overflow-hidden mobile:p-4  ")}>
+            className={clsx("relative bg-linear-gradient-hero desktop:h-[524px] mobile:h-[600px] px-[72px] rounded-[32px] flex desktop:items-center desktop:justify-normal mobile:flex-col desktop:flex-row mobile:justify-start mobile:items-start  mobile:mt-[120px] desktop:mt-[120px] desktop:mx-[120px] mobile:mx-[16px] overflow-hidden mobile:p-8  ")}>
 
             <motion.section
                 initial={{ opacity: 0, translateY: "50px" }}
@@ -61,11 +61,21 @@ export default function AboutUsPage() {
             </motion.section>
 
             <Image src={"/images/components/addons_new/about_us_hero_new_addons.png"} alt={"about us hero"} fill={true}
-                   className={clsx("absolute z-[10]")}/>
+                   className={clsx("absolute z-[10] desktop:block mobile:hidden")}/>
             <Image src={"/images/components/illustration_new/about_us_hero_image.png"} alt={"about us hero"} width={1440} height={240}
-                   className={clsx("desktop:absolute desktop:bottom-0 desktop:left-0 z-[11]")}/>
+                   className={clsx("desktop:absolute desktop:bottom-0 desktop:left-0 z-[11] desktop:block mobile:hidden")}/>
             <Image src={"/images/components/illustration/about_us_hero.svg"} alt={""} height={486} width={500}
-                   className={clsx(" ml-auto z-[12] ")}/>
+                   className={clsx(" ml-auto z-[12] desktop:block mobile:hidden ")}/>
+
+            {/* Start: Mobile Version */}
+            <Image src={"/images/components/responsive/mobile/addons/about_us_hero.png"} alt={"about us hero"} fill={true}
+                   className={clsx("absolute z-[10] desktop:hidden mobile:block")}/>
+            <Image src={"/images/components/responsive/mobile/illustration/about_us_hero_2.png"} alt={"about us hero"} width={400} height={300}
+                   className={clsx("mobile:absolute mobile:bottom-0 z-[11] desktop:hidden mobile:block w-full mobile:left-0")}/>
+            <Image src={"/images/components/responsive/mobile/illustration/about_us_hero.svg"} alt={""} height={350} width={350}
+                   className={clsx(" ml-auto z-[12] desktop:hidden mobile:block ")}/>
+
+            {/* End: Mobile Version */}
 
         </section>
 
@@ -73,7 +83,7 @@ export default function AboutUsPage() {
 
         {/*  Why we here - Start  */}
 
-        <section className={clsx("mt-[80px] py-[40px] relative mobile:px-4 desktop:px-[120px] desktop:py-[69px]")}>
+        <section className={clsx("mt-[80px] py-[40px] relative mobile:px-8 desktop:px-[120px] desktop:py-[69px]")}>
             <motion.section
                 initial={{ opacity: 0, translateY: "50px" }}
                 whileInView={{ opacity: 1, translateY: "0" }}
@@ -87,9 +97,12 @@ export default function AboutUsPage() {
 
                 <TextGenerateEffectDescription words={wordsAdaBanyak} className={clsx("text-XL/XL-Normal text-font-description-color max-w-[800px] text-center", fonts.roboto)} duration={.5}  />
             </motion.section>
-            {/*<Image src={"/images/components/addons/hero_cta_revision_addons.png"} alt={""} fill={true} className={clsx("absolute z-10 top-0 left-[-120px] right-[-120px] ")} />*/}
-            <Image src={"/images/components/addons_new/about_us_cta_addons.png"} alt={""} fill={true} className={clsx("absolute z-[15] top-0 left-0 ")} />
-            <Image src={"/images/components/addons_new/about_us_cta_2_addons.png"} alt={""} width={1120} height={306} className={clsx("absolute z-[15] top-0 left-[50%] translate-x-[-50%] ")} />
+
+            <Image src={"/images/components/addons_new/about_us_cta_addons.png"} alt={""} fill={true} className={clsx("absolute z-[15] top-0 left-0 desktop:block mobile:hidden")} />
+            <Image src={"/images/components/addons_new/about_us_cta_2_addons.png"} alt={""} width={1120} height={306} className={clsx("absolute z-[15] top-0 left-[50%] translate-x-[-50%] desktop:block mobile:hidden")} />
+
+            {/* Mobile */}
+            <Image src={"/images/components/responsive/mobile/addons/about_us_why_we_here.png"} alt={""} fill={true} className={clsx("absolute z-[15] top-0 left-0 desktop:hidden mobile:block")} />
 
 
         </section>
@@ -98,8 +111,12 @@ export default function AboutUsPage() {
 
         {/*  Why we here - Start  */}
 
-        <section className={clsx("mt-[80px] desktop:py-[40px] desktop:px-[280px] mobile:px-4 relative ")}>
-            <Image src={"/images/components/addons_new/about_us_vision_addons.png"} alt={""} fill={true} className={clsx("absolute z-[15] top-0 left-0 ")} />
+        <section className={clsx("mt-[80px] desktop:py-[40px] desktop:px-[280px] mobile:px-8 mobile:py-10 relative ")}>
+            <Image src={"/images/components/addons_new/about_us_vision_addons.png"} alt={""} fill={true} className={clsx("absolute z-[15] top-0 left-0 desktop:block mobile:hidden ")} />
+
+            <Image src={"/images/components/responsive/mobile/addons/about_us_vision.png"} alt={""} fill={true} className={clsx("absolute z-[15] top-0 left-0 desktop:hidden mobile:block ")} />
+
+
             <motion.div
                 initial={{ opacity: 0, translateY: "50px" }}
                 whileInView={{ opacity: 1, translateY: "0" }}
@@ -139,8 +156,11 @@ export default function AboutUsPage() {
         {/*  Jadi bagian dari tim- Start  */}
 
             <section className={clsx("mt-[80px] desktop:py-[80px] mobile:py-[40px] desktop:px-[220px] mobile:px-8 relative ")}>
-                <Image src={"/images/components/addons_new/about_us_bagian_dari_tim_addons.png"} alt={""} fill={true} className={clsx("absolute z-[15] top-0 left-0 ")} />
-                <Image src={"/images/components/addons_new/about_us_bagian_dari_tim_2_addons.png"} alt={""} width={1200} height={900} className={clsx("absolute z-10 top-0 left-[50%] translate-x-[-50%] bottom-0 ")} />
+                <Image src={"/images/components/addons_new/about_us_bagian_dari_tim_addons.png"} alt={""} fill={true} className={clsx("absolute z-[15] top-0 left-0 desktop:block mobile:hidden")} />
+                <Image src={"/images/components/addons_new/about_us_bagian_dari_tim_2_addons.png"} alt={""} width={1200} height={900} className={clsx("absolute z-10 top-0 left-[50%] translate-x-[-50%] bottom-0 desktop:block mobile:hidden")} />
+
+
+                <Image src={"/images/components/responsive/mobile/addons/about_us_jadi_bagian.png"} alt={"jadi bagian dari tim"} fill={true} className={clsx("absolute z-[15] top-0 left-0 desktop:hidden mobile:block")} />
 
                 <div className={"relative z-20 bg-white"}>
                     <motion.div
@@ -167,7 +187,7 @@ export default function AboutUsPage() {
                             </div>
                         </div>
 
-                        <div className={clsx("p-8 items-center justify-center border-[#E3EDFB] border-l-[1px] ")}>
+                        <div className={clsx("p-8 items-center justify-center border-[#E3EDFB] desktop:border-l-[1px] ")}>
                             <div className={"text-center"}>
                                 <h3 className={clsx("text-heading-6 text-[#15345A] mb-4 ")}> Analyst</h3>
                                 <p className={clsx("text-XL/XL-Normal text-font-description-color  text-center desktop:w-[350px] mx-auto ", fonts.roboto)}>
@@ -183,7 +203,7 @@ export default function AboutUsPage() {
                             </div>
                         </div>
 
-                        <div className={clsx("p-8 items-center justify-center border-t-[1px] border-[#E3EDFB] border-l-[1px] ")}>
+                        <div className={clsx("p-8 items-center justify-center border-t-[1px] border-[#E3EDFB] desktop:border-l-[1px] ")}>
                             <div className={"text-center"}>
                                 <h3 className={clsx("text-heading-6 text-[#15345A] mb-4 ")}> consultant</h3>
                                 <p className={clsx("text-XL/XL-Normal text-font-description-color  text-center desktop:w-[350px] mx-auto ", fonts.roboto)}>

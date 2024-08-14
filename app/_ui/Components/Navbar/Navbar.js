@@ -126,7 +126,7 @@ export default function Navbar(props) {
 
             {/* Start: Overlay - Mobile */}
 
-            <div className={clsx("fixed mobile:top-[80px] mobile:bottom-0 mobile:left-0 mobile:right-0 bg-[#010101BF] z-[30] ", burgerOpen ? "visible" : "hidden")}></div>
+            <div className={clsx("fixed mobile:top-[75px] mobile:bottom-0 mobile:left-0 mobile:right-0 bg-[#010101BF] z-[30] ", burgerOpen ? "visible" : "hidden")}></div>
 
             {/* End: Overlay - Mobile */}
 
@@ -198,7 +198,7 @@ export default function Navbar(props) {
             {/* End: For Desktop */}
 
             {/* Start: For Mobile */}
-            <div className={clsx("mobile:visible  desktop:hidden mobile:z-40 mobile:fixed mobile:left-[16px] mobile:right-[16px] top-[75px] mobile:drop-shadow-custom-cards  mobile:overflow-y-scroll mobile:bottom-0 ",  burgerOpen ? "mobile:visible" : "mobile:hidden")}>
+            <div className={clsx("mobile:visible  desktop:hidden mobile:z-40 mobile:fixed mobile:left-[16px] mobile:right-[16px] top-[75px] mobile:drop-shadow-custom-cards  mobile:overflow-y-scroll mobile:bottom-0 mobile:border-t-[1px] mobile:border-[#E3EDFB] ",  burgerOpen ? "mobile:visible" : "mobile:hidden")}>
 
 
                 <ul className={clsx("flex mx-auto flex-col items-start justify-start mobile:p-8 mobile:bg-white rounded-br-[32px] rounded-bl-[32px]  ", burgerOpen ? "mobile:visible" : "mobile:hidden")}>
