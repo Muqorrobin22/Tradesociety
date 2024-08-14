@@ -42,11 +42,11 @@ export default function NewbiePage() {
                 setScrollPositionCard(position);
                 setScrollPositionDescriptionBar(position)
 
-                if(position > 3320 || position < 367) {
-                    setIsReactBottom(true)
-                } else {
-                    setIsReactBottom(false)
-                }
+                // if(position > 3320 || position < 367) {
+                //     setIsReactBottom(true)
+                // } else {
+                //     setIsReactBottom(false)
+                // }
 
                 if(position > 605) {
                     setScrollNavbarLink(position)
