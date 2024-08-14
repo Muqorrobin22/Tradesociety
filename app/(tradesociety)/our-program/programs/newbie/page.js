@@ -292,7 +292,7 @@ export default function NewbiePage() {
                     {/*  Content > Navbar - Start  */}
 
                     <section
-                        className={clsx(" border-b-[1px] border-[#E3EDFB]  left-0 right-0  ", scrollNavbarLink && "desktop:sticky desktop:top-[70px] mobile:sticky mobile:top-[75px] z-30 bg-white py-6")}>
+                        className={clsx(" border-b-[1px] border-[#E3EDFB]  left-0 right-0  ")}>
                         <ul className={clsx("flex")}>
                             <li>
                                 <a href="#Description"
