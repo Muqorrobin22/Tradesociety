@@ -79,9 +79,9 @@ export default function Footer() {
                     </Link>
                 </div>
                 <div>
-                    <ul className={clsx("flex items-center mx-auto mobile:w-auto mobile:mt-[24px]")}>
+                    <ul className={clsx("flex items-center mx-auto mobile:w-auto mobile:mt-[24px] mobile:flex-wrap mobile:justify-center")}>
                         {links.map((link) => (
-                            <li key={link.name} className={clsx("desktop:[&:not(:last-child)]:mr-6 text-center mobile:[&:not(:last-child)]:mr-[24px] desktop:w-auto")}>
+                            <li key={link.name} className={clsx("desktop:[&:not(:last-child)]:mr-6 text-center mobile:[&:not(:last-child)]:mr-[24px] mobile:my-1 desktop:w-auto")}>
                                 <Link href={link.href}
                                       className={clsx("text-LG/LG-Normal text-[#15345A] ", fonts.roboto)}> {link.name} </Link>
                             </li>))}
