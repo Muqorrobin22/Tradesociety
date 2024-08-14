@@ -33,7 +33,7 @@ export default function NewbiePage() {
     const [scrollPositionDescriptionBar, setScrollPositionDescriptionBar] = useState(0);
     const [scrollActiveState, setScrollActiveState] = useState("");
     const [scrollNavbarLink, setScrollNavbarLink] = useState(0);
-    // const [isReactBottom, setIsReactBottom] = useState("");
+    const [isReactBottom, setIsReactBottom] = useState("");
 
     useEffect(() => {
         if(typeof  window !== "undefined") {
@@ -42,11 +42,11 @@ export default function NewbiePage() {
                 setScrollPositionCard(position);
                 setScrollPositionDescriptionBar(position)
 
-                // if(position > 3320 || position < 367) {
-                //     setIsReactBottom("")
-                // } else {
-                //     setIsReactBottom("active")
-                // }
+                if(position > 3320 || position < 367) {
+                    setIsReactBottom("")
+                } else {
+                    setIsReactBottom("active")
+                }
 
                 if(position > 605) {
                     setScrollNavbarLink(position)
@@ -445,7 +445,7 @@ export default function NewbiePage() {
 
                 <section className={"  desktop:basis-1/3 mobile:basis-0 desktop:ml-[84px]  z-30 "}>
                     <div
-                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white p-8 desktop:sticky mobile:fixed  desktop:top-[94px] drop-shadow-custom-cards ",    )}>
+                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white p-8 desktop:sticky mobile:fixed  desktop:top-[94px] drop-shadow-custom-cards ",   isReactBottom !== "active" ? "" : "")}>
 
 
                         <div
