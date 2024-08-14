@@ -39,8 +39,8 @@ export default function NewbiePage() {
         if(typeof  window !== "undefined") {
             const handleScroll = () => {
                 const position = window.scrollY;
-                setScrollPositionCard(position);
-                setScrollPositionDescriptionBar(position)
+                // setScrollPositionCard(position);
+                // setScrollPositionDescriptionBar(position)
 
                 if(position > 3320 || position < 367) {
                     setIsReactBottom(true)
@@ -79,6 +79,8 @@ export default function NewbiePage() {
 
     // console.log("scroll active state: ", scrollActiveState)
     // console.log("window type: ", typeof window)
+
+    console.log()
 
     // Scroll Page Behaviour
 
@@ -164,19 +166,19 @@ export default function NewbiePage() {
 
     const handleScrollToSection = (id) => {
         // router.push(`#${id}`);
-        if(typeof window !== "undefined") {
-            const element = document.getElementById(id);
-            if (element) {
-                const headerOffset = 170;
-                const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth",
-                });
-            }
-        }
+        // if(typeof window !== "undefined") {
+        //     const element = document.getElementById(id);
+        //     if (element) {
+        //         const headerOffset = 170;
+        //         const elementPosition = element.getBoundingClientRect().top;
+        //         const offsetPosition = elementPosition + window.scrollY - headerOffset;
+        //
+        //         window.scrollTo({
+        //             top: offsetPosition,
+        //             behavior: "smooth",
+        //         });
+        //     }
+        // }
     };
 
     const searchParams = useSearchParams();
