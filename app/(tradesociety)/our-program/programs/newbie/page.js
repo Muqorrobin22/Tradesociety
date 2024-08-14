@@ -301,7 +301,7 @@ export default function NewbiePage() {
                                        e.preventDefault();
                                        handleScrollToSection("Description");
                                    }}
-                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ", fonts.roboto, )}>Deskripsi</a>
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ", fonts.roboto, scrollActiveState === "Description" ? "border-b-[2px] border-[#154377]" : "")}>Deskripsi</a>
                             </li>
 
                             <li className={clsx("ml-8")}>
@@ -310,7 +310,7 @@ export default function NewbiePage() {
                                        e.preventDefault();
                                        handleScrollToSection("Materi");
                                    }}
-                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ", fonts.roboto, )}>Materi</a>
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ", fonts.roboto, scrollActiveState === "materi" ? "border-b-[2px] border-[#154377]" : "")}>Materi</a>
                             </li>
 
                             <li className={clsx("ml-8")}>
@@ -319,7 +319,7 @@ export default function NewbiePage() {
                                        e.preventDefault();
                                        handleScrollToSection("Benefit");
                                    }}
-                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ", fonts.roboto, )}>Benefits</a>
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ", fonts.roboto, scrollActiveState === "benefits" ? "border-b-[2px] border-[#154377]" : "")}>Benefits</a>
                             </li>
 
                             <li className={clsx("ml-8")}>
@@ -328,7 +328,7 @@ export default function NewbiePage() {
                                        e.preventDefault();
                                        handleScrollToSection("Jadwal_Kelas");
                                    }}
-                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ", fonts.roboto, )}>Jadwal
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ", fonts.roboto, scrollActiveState === "jadwal_kelas" ? "border-b-[2px] border-[#154377]" : "")}>Jadwal
                                     kelas</a>
                             </li>
 
@@ -445,7 +445,7 @@ export default function NewbiePage() {
 
                 <section className={"  desktop:basis-1/3 mobile:basis-0 desktop:ml-[84px]  z-30 "}>
                     <div
-                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white p-8 desktop:sticky mobile:fixed  desktop:top-[94px] drop-shadow-custom-cards ", isReactBottom && isReactBottom ? "mobile:hidden desktop:visible desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0")}>
+                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white p-8 desktop:sticky mobile:fixed  desktop:top-[94px] drop-shadow-custom-cards ", isReactBottom === true ? "mobile:hidden desktop:visible desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0")}>
 
 
                         <div
