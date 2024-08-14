@@ -36,45 +36,45 @@ export default function NewbiePage() {
     const [isReactBottom, setIsReactBottom] = useState(true);
 
     useEffect(() => {
-        // if(typeof  window !== "undefined") {
-        //     const handleScroll = () => {
-        //         const position = window.scrollY;
-        //         // setScrollPositionCard(position);
-        //         // setScrollPositionDescriptionBar(position)
-        //
-        //         if(position > 3320 || position < 367) {
-        //             setIsReactBottom(true)
-        //         } else {
-        //             setIsReactBottom(false)
-        //         }
-        //
-        //         if(position > 605) {
-        //             setScrollNavbarLink(position)
-        //         }
-        //         if (position >= 1360) {
-        //             setScrollActiveState("jadwal_kelas");
-        //         } else if (position >= 1082) {
-        //             setScrollActiveState("benefits");
-        //         } else if (position >= 705) {
-        //             setScrollActiveState("materi");
-        //         } else if (position >= 510) {
-        //             setScrollActiveState("Description");
-        //         } else {
-        //             setScrollActiveState("");
-        //         }
-        //
-        //
-        //
-        //
-        //         console.log("position: ", position)
-        //     };
-        //
-        //     window.addEventListener('scroll', handleScroll);
-        //
-        //     return () => {
-        //         window.removeEventListener('scroll', handleScroll);
-        //     };
-        // }
+        if(typeof  window !== "undefined") {
+            const handleScroll = () => {
+                const position = window.scrollY;
+                // setScrollPositionCard(position);
+                // setScrollPositionDescriptionBar(position)
+
+                if(position > 3320 || position < 367) {
+                    setIsReactBottom(true)
+                } else {
+                    setIsReactBottom(false)
+                }
+
+                if(position > 605) {
+                    setScrollNavbarLink(position)
+                }
+                if (position >= 1360) {
+                    setScrollActiveState("jadwal_kelas");
+                } else if (position >= 1082) {
+                    setScrollActiveState("benefits");
+                } else if (position >= 705) {
+                    setScrollActiveState("materi");
+                } else if (position >= 510) {
+                    setScrollActiveState("Description");
+                } else {
+                    setScrollActiveState("");
+                }
+
+
+
+
+                console.log("position: ", position)
+            };
+
+            window.addEventListener('scroll', handleScroll);
+
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            };
+        }
     }, []);
 
     // console.log("scroll active state: ", scrollActiveState)
@@ -165,20 +165,20 @@ export default function NewbiePage() {
 
 
     const handleScrollToSection = (id) => {
-        // router.push(`#${id}`);
-        // if(typeof window !== "undefined") {
-        //     const element = document.getElementById(id);
-        //     if (element) {
-        //         const headerOffset = 170;
-        //         const elementPosition = element.getBoundingClientRect().top;
-        //         const offsetPosition = elementPosition + window.scrollY - headerOffset;
-        //
-        //         window.scrollTo({
-        //             top: offsetPosition,
-        //             behavior: "smooth",
-        //         });
-        //     }
-        // }
+        router.push(`#${id}`);
+        if(typeof window !== "undefined") {
+            const element = document.getElementById(id);
+            if (element) {
+                const headerOffset = 170;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth",
+                });
+            }
+        }
     };
 
     const searchParams = useSearchParams();
