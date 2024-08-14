@@ -77,8 +77,8 @@ export default function NewbiePage() {
         }
     }, []);
 
-    console.log("scroll active state: ", scrollActiveState)
-    console.log("window type: ", typeof window)
+    // console.log("scroll active state: ", scrollActiveState)
+    // console.log("window type: ", typeof window)
 
     // Scroll Page Behaviour
 
