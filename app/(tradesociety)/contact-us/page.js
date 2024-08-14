@@ -43,7 +43,7 @@ export default function ContactUsPage() {
     const ContactList = [
         {
             key: 1,
-            elements: <ContactUsCard href={telegramLink} imageSrc={"/images/components/icon_new/Telegram.svg"} Sosmed={"Telegram"} rounded={"rounded-tl-[32px] rounded-bl-[32px]"} />
+            elements: <ContactUsCard href={telegramLink} imageSrc={"/images/components/icon_new/Telegram.svg"} Sosmed={"Telegram"} rounded={"desktop:rounded-tl-[32px] desktop:rounded-bl-[32px] mobile:rounded-tl-[32px] mobile:rounded-tr-[32px]"} />
         },{
             key: 2,
             elements:  <ContactUsCard href={"https://www.instagram.com/tradesociety.id/"} imageSrc={"/images/components/icon_new/Instagram.svg"} Sosmed={"Instagram"} rounded={""} />
@@ -53,12 +53,12 @@ export default function ContactUsPage() {
         },
         {
             key: 4,
-            elements: <ContactUsCard href={"https://www.tiktok.com/@tradesociety.id"} imageSrc={"/images/components/icon_new/Tiktok.svg"} Sosmed={"Tiktok"} rounded={"rounded-tr-[32px] rounded-br-[32px]"} />
+            elements: <ContactUsCard href={"https://www.tiktok.com/@tradesociety.id"} imageSrc={"/images/components/icon_new/Tiktok.svg"} Sosmed={"Tiktok"} rounded={"desktop:rounded-tr-[32px] desktop:rounded-br-[32px] mobile:rounded-bl-[32px] mobile:rounded-br-[32px]"} />
         },
     ]
 
     return (
-        <main className={clsx("mt-[157px] desktop:mb-[157px] mobile:mb-[80px] desktop:px-[200px] ")}>
+        <main className={clsx("mt-[157px] desktop:mb-[157px] mobile:mb-[80px] desktop:px-[200px] desktop:mx-0 mobile:mx-4 ")}>
             <section>
                 <div className={clsx("text-center desktop:mb-8")}>
                     <p className={clsx("text-Base/Base-Strong text-[#1761B1]     text-center inline-block mb-4 ", fonts.roboto)}>Contact us</p>
