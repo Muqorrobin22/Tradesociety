@@ -488,8 +488,8 @@ export default function PriorityPage() {
                                     <h6 className={clsx(" text-heading-5/2 text-font-description-color ml-1", fonts.roboto)}>5.0</h6>
                                 </div>
                             </div>
-                            <div className={clsx("text-left desktop:block mobile:flex mobile:items-center mobile:justify-between ")}>
-                                <div className={clsx("desktop:mb-4")}>
+                            <div className={clsx("text-left desktop:block mobile:flex  mobile:justify-between mobile:flex-col mobile:items-stretch ")}>
+                                <div className={clsx("desktop:mb-4 mobile:mb-4")}>
                                     <h1
                                         className={clsx("line-through text-LG/LG-Normal text-font-description-color", fonts.roboto)}> Rp5.000.000 </h1>
                                     <h1 className={clsx(" flex items-center desktop:inline-block ")}><span
@@ -498,7 +498,7 @@ export default function PriorityPage() {
 
                                     </h1>
                                     <p
-                                        className={clsx("text-font-description-color text-LG/LG-Normal mobile:block desktop:inline-block desktop:ml-2 ", fonts.roboto)}>/ Yearly</p>
+                                        className={clsx("text-font-description-color text-LG/LG-Normal mobile:inline-block desktop:inline-block desktop:ml-2 ", fonts.roboto)}>/ Yearly</p>
                                 </div>
                                 <Button href={telegramLink} text={"Gabung Kelas ini"} noIcon={false}/>
                             </div>
