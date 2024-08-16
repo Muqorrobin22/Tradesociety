@@ -60,7 +60,7 @@ export default function AboutUsPage() {
 
                 className={clsx("text-left  desktop:w-[500px] desktop:ml-10 relative z-20")}>
                 <h1 className={clsx("text-white text-heading-1 mx-auto ")}>Platform untuk para trader</h1>
-                <p className={clsx("text-XL/XL-Normal text-[#F6F6F6] text-left mx-auto  mt-2 ", fonts.roboto)}>Kami memberikan peluang untuk trader pemula  hingga profesional untuk bisa berhasil di  industri trading.</p>
+                <p className={clsx("text-XL/XL-Normal text-[#F6F6F6] text-left mx-auto  mt-2 ", fonts.roboto)}>Kami memberikan peluang untuk trader pemula hingga profesional untuk bisa berhasil di industri trading.</p>
             </motion.section>
 
             <Image src={"/images/components/addons_new/about_us_hero_new_addons.png"} alt={"about us hero"} fill={true}

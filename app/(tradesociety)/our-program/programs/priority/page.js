@@ -408,7 +408,7 @@ export default function PriorityPage() {
                                     <div className={"flex items-center mt-8"}>
                                         <Image src={"/images/components/Icon/calendar.svg"} alt={"calendar"}
                                                width={18} height={18}/>
-                                        <p className={clsx("text-Base/Base-Normal text-font-description-color ml-2", fonts.roboto)}>SSelasa, 20:00 WIB</p>
+                                        <p className={clsx("text-Base/Base-Normal text-font-description-color ml-2", fonts.roboto)}>Selasa, 20:00 WIB</p>
                                     </div>
                                 </div>
 
