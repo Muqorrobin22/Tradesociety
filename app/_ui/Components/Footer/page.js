@@ -98,7 +98,7 @@ export default function Footer() {
                         height={24}/></a>
                     <a href="https://www.linkedin.com/company/trade-society" target="_blank" className={clsx("mr-4")}><Image src={"/images/components/Icon/linkedin.svg"}
                                                                           alt={"Linkedin Icon"} width={24} height={24}/></a>
-                    <a href="https://www.tiktok.com/@tradesociety.id" target="_blank" className={clsx()}><Image src={"/images/components/Icon_new/Tiktok_footer.svg"}
+                    <a href="https://www.tiktok.com/@tradesociety.id" target="_blank" className={clsx()}><Image src={"/images/components/icon_new/Tiktok_footer.svg"}
                                                                           alt={"Linkedin Icon"} width={24} height={24}/></a>
 
                 </div>
