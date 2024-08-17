@@ -49,6 +49,15 @@ export default function Navbar(props) {
         }
     }
 
+    const handleSetChangeUrlHomeimage = (link) => {
+        router.push(link)
+        router.refresh()
+        if(hasCookie("referral")) {
+            params.set("ref", getCookie("referral"));
+            router.push(`${link}?${params.toString()}`);
+        }
+    }
+
     const handleBurgerOpen = () => {
         setBurgerOpen(prev => !prev)
     }
@@ -111,14 +120,15 @@ export default function Navbar(props) {
     return (
         <nav className="flex items-center justify-between py-4 desktop:fixed mobile:fixed mobile:z-50 mobile:top-0 mobile:left-[0] mobile:right-[0] mobile:bg-white mobile:border-b-[1px] mobile:border-[#E3EDFB] desktop:px-[120px] mobile:px-[16px] desktop:z-50 desktop:left-0 desktop:right-0 desktop:top-0 ">
             <div className={clsx("mobile:order-1 desktop:order-1")}>
-               <a href={"/"}>
+
                    <Image
                        alt="Logo Tradesociety"
                        src={"/images/components/Icon/Logo.svg"}
                        width={96}
                        height={40}
+                       onClick={() => handleSetChangeUrlHomeimage("/")}
+                       className={"cursor-pointer"}
                    />
-               </a>
             </div>
             <div className={clsx("mobile:order-3 z-50 mobile:visible desktop:hidden")}>
                 <Image
