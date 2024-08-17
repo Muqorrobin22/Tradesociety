@@ -42,6 +42,15 @@ export default function Footer() {
 
     // End of: Route Params
 
+    const handleSetChangeUrl = (link) => {
+        router.push(link)
+        router.refresh()
+        if(hasCookie("referral")) {
+            params.set("ref", getCookie("referral"));
+            router.push(`${link}?${params.toString()}`);
+        }
+    }
+
     // Start of: Redux
     const router = useRouter();
 
@@ -53,37 +62,28 @@ export default function Footer() {
         setTelegramLink(GetReferralLinkTelegram(searchParams.get("ref") || getCookie("referral") || ""))
     }, [searchParams])
 
-    // useEffect(() => {
-    //     if(searchParams.has("ref")) {
-    //         setCookie("referral", searchParams.get("ref"));
-    //     } else {
-    //         if(hasCookie("referral")) {
-    //             params.set("ref", getCookie("referral"));
-    //             router.push(`${pathname}?${params.toString()}`);
-    //         }
-    //
-    //     }
-    // }, );
+
+
 
     return (
         <footer className="footer desktop:px-[120px] desktop:py-8 mobile:py-8 mobile:w-auto rounded-tl-[32px] rounded-tr-[32px] border-[1px] border-[#E3EDFB] ">
             <div className="container flex desktop:items-center desktop:justify-between mobile:flex-col mobile:justify-center mobile:items-center mobile:mx-auto desktop:flex-row ">
                 <div>
-                    <Link href={"/"}>
                         <Image
                             alt="Logo Tradesociety"
                             src={"/images/components/Icon/Logo.svg"}
                             width={96}
                             height={40}
+                            onClick={() => handleSetChangeUrl("/")}
+                            className={clsx("cursor-pointer")}
                         />
-                    </Link>
                 </div>
                 <div>
                     <ul className={clsx("flex items-center mx-auto mobile:w-auto mobile:mt-[24px] mobile:flex-wrap mobile:justify-center")}>
                         {links.map((link) => (
                             <li key={link.name} className={clsx("desktop:[&:not(:last-child)]:mr-6 text-center mobile:[&:not(:last-child)]:mr-[24px] mobile:my-1 desktop:w-auto")}>
-                                <Link href={link.href}
-                                      className={clsx("text-LG/LG-Normal text-[#15345A] ", fonts.roboto)}> {link.name} </Link>
+                                <button onClick={() => handleSetChangeUrl(link.href)}
+                                      className={clsx("text-LG/LG-Normal text-[#15345A] ", fonts.roboto)}> {link.name} </button>
                             </li>))}
 
 
