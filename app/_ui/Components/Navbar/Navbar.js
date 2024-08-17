@@ -77,7 +77,7 @@ export default function Navbar(props) {
         },
         {
             name: "About us",
-            href: "/about-us",
+            href: "/about-us/",
             dropdown: false
         }, {
             name: "Our programs",
@@ -86,7 +86,7 @@ export default function Navbar(props) {
             dropdown: true
         }, {
             name: "Contact us",
-            href: "/contact-us",
+            href: "/contact-us/",
             dropdown: false
         },
 
