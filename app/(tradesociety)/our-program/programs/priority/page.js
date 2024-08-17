@@ -202,17 +202,17 @@ export default function PriorityPage() {
         setTelegramLink(GetReferralLinkTelegram(searchParams.get("ref") || getCookie("referral") || ""))
     }, [searchParams])
 
-    useEffect(() => {
-        if(searchParams.has("ref")) {
-            setCookie("referral", searchParams.get("ref"));
-        } else {
-            if(hasCookie("referral")) {
-                params.set("ref", getCookie("referral"));
-                router.push(`${pathname}?${params.toString()}`);
-            }
-
-        }
-    }, );
+    // useEffect(() => {
+    //     if(searchParams.has("ref")) {
+    //         setCookie("referral", searchParams.get("ref"));
+    //     } else {
+    //         if(hasCookie("referral")) {
+    //             params.set("ref", getCookie("referral"));
+    //             router.push(`${pathname}?${params.toString()}`);
+    //         }
+    //
+    //     }
+    // }, );
 
     return (
         <main className={clsx("mt-10")}>
