@@ -53,17 +53,17 @@ export default function Footer() {
         setTelegramLink(GetReferralLinkTelegram(searchParams.get("ref") || getCookie("referral") || ""))
     }, [searchParams])
 
-    useEffect(() => {
-        if(searchParams.has("ref")) {
-            setCookie("referral", searchParams.get("ref"));
-        } else {
-            if(hasCookie("referral")) {
-                params.set("ref", getCookie("referral"));
-                router.push(`${pathname}?${params.toString()}`);
-            }
-
-        }
-    }, );
+    // useEffect(() => {
+    //     if(searchParams.has("ref")) {
+    //         setCookie("referral", searchParams.get("ref"));
+    //     } else {
+    //         if(hasCookie("referral")) {
+    //             params.set("ref", getCookie("referral"));
+    //             router.push(`${pathname}?${params.toString()}`);
+    //         }
+    //
+    //     }
+    // }, );
 
     return (
         <footer className="footer desktop:px-[120px] desktop:py-8 mobile:py-8 mobile:w-auto rounded-tl-[32px] rounded-tr-[32px] border-[1px] border-[#E3EDFB] ">
