@@ -129,7 +129,9 @@ export default function AboutUsPage() {
                 transition={{duration: 10, type: "spring", stiffness: 100, delay: .3}}
                 viewport={{once: true}}
                 className={clsx("p-8 rounded-[32px] bg-[#F4F8FD]  flex desktop:items-center desktop:justify-normal desktop:flex-row mobile:flex-col relative z-20 ")}>
-                <Image src={"/images/components/illustration/about_us_vision_revision.svg"} alt={"vision"} width={180}
+                {/*<Image src={"/images/components/illustration/about_us_vision_revision.svg"} alt={"vision"} width={180}*/}
+                {/*       height={250} className={clsx("desktop:order-1 mobile:order-2 mobile:mx-auto desktop:m-0 mobile:mt-8")} />*/}
+                <Image src={"/images/components/illustration_new/about_us_vision.gif"} alt={"vision"} width={250}
                        height={250} className={clsx("desktop:order-1 mobile:order-2 mobile:mx-auto desktop:m-0 mobile:mt-8")} />
                 {/*<Image src={"/images/components/illustration_new/about_us_vision.gif"} alt={"vision"} width={250}*/}
 
@@ -154,7 +156,9 @@ export default function AboutUsPage() {
                     <p className={clsx("text-XL/XL-Normal text-font-description-color  text-left", fonts.roboto)}>
                         Menyediakan sumber belajar terbaik dari para ahli trading di berbagai instrumen finansial dan memberikan peluang bagi para trader untuk memperbesar dampak mereka di industri trading.</p>
                 </div>
-                <Image src={"/images/components/illustration/about_us_mission.svg"} alt={"vision"} width={250}
+                {/*<Image src={"/images/components/illustration/about_us_mission.svg"} alt={"vision"} width={250}*/}
+                {/*       height={250} className={clsx("desktop:m-0 mobile:mx-auto mobile:mt-8")} />*/}
+                <Image src={"/images/components/illustration_new/about_us_mission.gif"} alt={"vision"} width={250}
                        height={250} className={clsx("desktop:m-0 mobile:mx-auto mobile:mt-8")} />
                 {/*<Image src={"/images/components/illustration_new/about_us_mission.gif"} alt={"vision"} width={250}*/}
                 {/*       height={250} className={clsx("desktop:m-0 mobile:mx-auto mobile:mt-8")} />*/}
