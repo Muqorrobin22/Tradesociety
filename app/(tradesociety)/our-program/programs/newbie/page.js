@@ -32,6 +32,7 @@ export default function NewbiePage() {
     const [scrollPositionCard, setScrollPositionCard] = useState(0);
     const [scrollPositionDescriptionBar, setScrollPositionDescriptionBar] = useState(0);
     const [scrollActiveState, setScrollActiveState] = useState("");
+    const [scrollActiveStateMobile, setScrollActiveStateMobile] = useState("");
     const [scrollNavbarLink, setScrollNavbarLink] = useState(0);
     const [isReactBottom, setIsReactBottom] = useState("");
 
@@ -63,6 +64,19 @@ export default function NewbiePage() {
                     setScrollActiveState("");
                 }
 
+                // Start: Mobile Scroll
+                if (position >= 1852) {
+                    setScrollActiveStateMobile("jadwal_kelas");
+                } else if (position >= 1570) {
+                    setScrollActiveStateMobile("benefits");
+                } else if (position >= 1070) {
+                    setScrollActiveStateMobile("materi");
+                } else if (position >= 820) {
+                    setScrollActiveStateMobile("Description");
+                } else {
+                    setScrollActiveStateMobile("");
+                }
+                // End: Mobile Scroll
 
 
 
@@ -301,7 +315,7 @@ export default function NewbiePage() {
                                        e.preventDefault();
                                        handleScrollToSection("Description");
                                    }}
-                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ", fonts.roboto, scrollActiveState === "Description" ? "border-b-[2px] border-[#154377]" : "")}>Deskripsi</a>
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ", fonts.roboto, scrollActiveState === "Description" ? "desktop:border-b-[2px] desktop:border-[#154377]" : "", scrollActiveStateMobile === "Description" ? "mobile:border-b-[2px] mobile:border-[#154377]" : "")}>Deskripsi</a>
                             </li>
 
                             <li className={clsx("ml-8")}>
@@ -310,7 +324,7 @@ export default function NewbiePage() {
                                        e.preventDefault();
                                        handleScrollToSection("Materi");
                                    }}
-                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ", fonts.roboto, scrollActiveState === "materi" ? "border-b-[2px] border-[#154377]" : "")}>Materi</a>
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ", fonts.roboto, scrollActiveState === "materi" ? "desktop:border-b-[2px] desktop:border-[#154377]" : "", scrollActiveStateMobile === "materi" ? "mobile:border-b-[2px] mobile:border-[#154377]" : "")}>Materi</a>
                             </li>
 
                             <li className={clsx("ml-8")}>
@@ -319,7 +333,7 @@ export default function NewbiePage() {
                                        e.preventDefault();
                                        handleScrollToSection("Benefit");
                                    }}
-                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ", fonts.roboto, scrollActiveState === "benefits" ? "border-b-[2px] border-[#154377]" : "")}>Benefits</a>
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ", fonts.roboto, scrollActiveState === "benefits" ? "desktop:border-b-[2px] desktop:border-[#154377]" : "", scrollActiveStateMobile === "benefits" ? "mobile:border-b-[2px] mobile:border-[#154377]" : "")}>Benefits</a>
                             </li>
 
                             <li className={clsx("ml-8")}>
@@ -328,7 +342,7 @@ export default function NewbiePage() {
                                        e.preventDefault();
                                        handleScrollToSection("Jadwal_Kelas");
                                    }}
-                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ", fonts.roboto, scrollActiveState === "jadwal_kelas" ? "border-b-[2px] border-[#154377]" : "")}>Jadwal
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ", fonts.roboto, scrollActiveState === "jadwal_kelas" ? "desktop:border-b-[2px] desktop:border-[#154377]" : "", scrollActiveStateMobile === "jadwal_kelas" ? "mobile:border-b-[2px] mobile:border-[#154377]" : "")}>Jadwal
                                     kelas</a>
                             </li>
 
