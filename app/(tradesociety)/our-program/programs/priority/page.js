@@ -313,7 +313,7 @@ export default function PriorityPage() {
                                        e.preventDefault();
                                        handleScrollToSection("Description");
                                    }}
-                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ",  fonts.roboto ,scrollActiveState === "Description" ? "desktop:border-b-[2px] desktop:border-[#154377]" : "", scrollActiveStateMobile === "Description" ? "mobile:border-b-[2px] mobile:border-[#154377]" : "")}>Deskripsi</a>
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] ",  fonts.roboto ,scrollActiveState === "Description" ? "desktop:border-b-[2px] desktop:border-[#154377]" : "", scrollActiveStateMobile === "Description" ? "mobile:border-b-[2px] mobile:border-[#154377] desktop:border-b-0" : "")}>Deskripsi</a>
                             </li>
 
                             <li className={clsx("ml-8")}>
@@ -322,7 +322,7 @@ export default function PriorityPage() {
                                        e.preventDefault();
                                        handleScrollToSection("Materi");
                                    }}
-                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] " , fonts.roboto , scrollActiveState === "materi" ? "desktop:border-b-[2px] desktop:border-[#154377]" : "", scrollActiveStateMobile === "materi" ? "mobile:border-b-[2px] mobile:border-[#154377]" : "")}>Materi</a>
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] " , fonts.roboto , scrollActiveState === "materi" ? "desktop:border-b-[2px] desktop:border-[#154377]" : "", scrollActiveStateMobile === "materi" ? "mobile:border-b-[2px] mobile:border-[#154377] desktop:border-b-0" : "")}>Materi</a>
                             </li>
 
                             <li className={clsx("ml-8")}>
@@ -331,7 +331,7 @@ export default function PriorityPage() {
                                        e.preventDefault();
                                        handleScrollToSection("Benefit");
                                    }}
-                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] " , fonts.roboto , scrollActiveState === "benefits" ? "desktop:border-b-[2px] desktop:border-[#154377]" : "", scrollActiveStateMobile === "benefits" ? "mobile:border-b-[2px] mobile:border-[#154377]" : "")}>Benefits</a>
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] " , fonts.roboto , scrollActiveState === "benefits" ? "desktop:border-b-[2px] desktop:border-[#154377]" : "", scrollActiveStateMobile === "benefits" ? "mobile:border-b-[2px] mobile:border-[#154377] desktop:border-b-0" : "")}>Benefits</a>
                             </li>
 
                             <li className={clsx("ml-8")}>
@@ -340,7 +340,7 @@ export default function PriorityPage() {
                                        e.preventDefault();
                                        handleScrollToSection("Jadwal_Kelas");
                                    }}
-                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] " , fonts.roboto , scrollActiveState === "jadwal_kelas" ? "desktop:border-b-[2px] desktop:border-[#154377]" : "", scrollActiveStateMobile === "jadwal_kelas" ? "mobile:border-b-[2px] mobile:border-[#154377]" : "")}>Jadwal
+                                   className={clsx("inline-block  pb-2 text-Base/Base-Strong text-[#154377] " , fonts.roboto , scrollActiveState === "jadwal_kelas" ? "desktop:border-b-[2px] desktop:border-[#154377]" : "", scrollActiveStateMobile === "jadwal_kelas" ? "mobile:border-b-[2px] mobile:border-[#154377] desktop:border-b-0" : "")}>Jadwal
                                     kelas</a>
                             </li>
 
