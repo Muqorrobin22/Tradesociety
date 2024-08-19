@@ -65,11 +65,11 @@ export default function NewbiePage() {
                 }
 
                 // Start: Mobile Scroll
-                if (position >= 1852) {
+                if (position >= 1800) {
                     setScrollActiveStateMobile("jadwal_kelas");
-                } else if (position >= 1570) {
+                } else if (position >= 1520) {
                     setScrollActiveStateMobile("benefits");
-                } else if (position >= 1070) {
+                } else if (position >= 1037) {
                     setScrollActiveStateMobile("materi");
                 } else if (position >= 820) {
                     setScrollActiveStateMobile("Description");
