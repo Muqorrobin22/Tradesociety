@@ -459,11 +459,11 @@ export default function NewbiePage() {
 
                 <section className={"  desktop:basis-1/3 mobile:basis-0 desktop:ml-[84px]  z-30 "}>
                     <div
-                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white p-8 desktop:sticky mobile:fixed  desktop:top-[94px] drop-shadow-custom-cards ",   isReactBottom !== "active" ? "mobile:fixed mobile:left-0 desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0 mobile:block")}>
+                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white desktop:p-8 mobile:p-4 desktop:sticky mobile:fixed  desktop:top-[94px] drop-shadow-custom-cards ",   isReactBottom !== "active" ? "mobile:fixed mobile:left-0 desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0 mobile:block")}>
 
 
                         <div
-                            className={"pb-[24px] mb-[24px] border-b-[1px] border-[#E3EDFB] flex items-center justify-between"}>
+                            className={"desktop:pb-[24px] mb-[24px] border-b-[1px] border-[#E3EDFB] flex items-center justify-between"}>
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Newbie</h3>
                             <div className={"flex items-center"}>
                                 <Image src={"/images/components/Icon/star.svg"} alt={"Star"}

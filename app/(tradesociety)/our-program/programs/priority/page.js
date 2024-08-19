@@ -483,16 +483,16 @@ export default function PriorityPage() {
                     <div
                         className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white overflow-hidden desktop:sticky mobile:fixed  desktop:top-[94px] drop-shadow-custom-cards ", isReactBottom ? "mobile:fixed mobile:left-0 desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0")}>
 
-                        <div className={clsx("bg-[#E239141A] py-[8px] px-8 flex items-center ")}>
+                        <div className={clsx("bg-[#E239141A] py-[8px] desktop:px-8 mobile:px-4 flex items-center ")}>
                             <Image src={"/images/components/Icon/alert-circle.svg"} alt={"Star"}
                                    width={16} height={16}/>
                             <div className={clsx("ml-[12px]")}>
-                                <p className={clsx(" font-light text-[#E23914] ", fonts.inter)}>Harga diskon ini terbatas - <br /> <span className={clsx(" font-bold ")}>Gabung sekarang!</span> </p>
+                                <p className={clsx(" font-light text-[#E23914] mobile:text-sm desktop:text-base", fonts.inter)}>Harga diskon ini terbatas - <br /> <span className={clsx(" font-bold ")}>Gabung sekarang!</span> </p>
                             </div>
                         </div>
-                        <div className={clsx("p-8")}>
+                        <div className={clsx("desktop:p-8 mobile:p-4")}>
                             <div
-                                className={"desktop:pb-[24px] mobile:pb-[12px] mb-[24px] border-b-[1px] border-[#E3EDFB] flex items-center justify-between "}>
+                                className={"desktop:pb-[24px] mobile:pb-[4px] mb-[24px] border-b-[1px] border-[#E3EDFB] flex items-center justify-between "}>
 
                                 <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Priority</h3>
                                 <div className={"flex items-center"}>
@@ -506,12 +506,14 @@ export default function PriorityPage() {
                                     <h1
                                         className={clsx("line-through text-LG/LG-Normal text-font-description-color", fonts.roboto)}> Rp5.000.000 </h1>
                                     <h1 className={clsx(" flex items-center desktop:inline-block ")}><span
-                                        className={clsx(" text-heading-6", "text-[#33568B]")}> rp 1.500.000 </span>
+                                        className={clsx(" text-heading-6", "text-[#33568B]")}> rp 1.500.000 </span>  <span
+                                        className={clsx("text-font-description-color text-LG/LG-Normal mobile:inline-block  desktop:ml-2 mobile:ml-2 desktop:hidden ", fonts.roboto)}>/
+                                        Yearly</span>
 
 
                                     </h1>
                                     <p
-                                        className={clsx("text-font-description-color text-LG/LG-Normal mobile:inline-block desktop:inline-block desktop:ml-2 ", fonts.roboto)}>/ Yearly</p>
+                                        className={clsx("text-font-description-color text-LG/LG-Normal mobile:hidden desktop:inline-block desktop:ml-2 ", fonts.roboto)}>/ Yearly</p>
                                 </div>
                                 <Button href={telegramLink} text={"Gabung Kelas ini"} noIcon={false}/>
                             </div>
