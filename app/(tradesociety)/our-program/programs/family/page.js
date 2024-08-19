@@ -63,13 +63,13 @@ export default function FamilyPage() {
             }
 
             // Start: Mobile Scroll
-            if (position >= 2032) {
+            if (position >= 1981) {
                 setScrollActiveStateMobile("jadwal_kelas");
-            } else if (position >= 1702) {
+            } else if (position >= 1651) {
                 setScrollActiveStateMobile("benefits");
-            } else if (position >= 1111) {
+            } else if (position >= 1082) {
                 setScrollActiveStateMobile("materi");
-            } else if (position >= 832) {
+            } else if (position >= 830) {
                 setScrollActiveStateMobile("Description");
             } else {
                 setScrollActiveStateMobile("");
