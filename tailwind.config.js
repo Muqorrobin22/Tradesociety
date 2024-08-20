@@ -28,7 +28,8 @@ module.exports = {
         "linear-gradient-program-priority": "linear-gradient( to bottom, #E7DBA1, #A3752B )",
       },
       dropShadow: {
-        "custom-cards": "0 10px 20px rgba(39, 125, 208, 0.1)"
+        "custom-cards": "0 10px 20px rgba(39, 125, 208, 0.1)",
+        "our-programs-cards": "0 0 20px rgba(39, 125, 208, 0.2)"
       },
       colors: {
         "primary-color": "#33568B",

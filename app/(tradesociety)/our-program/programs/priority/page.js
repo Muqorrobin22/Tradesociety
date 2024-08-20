@@ -35,6 +35,12 @@ export default function PriorityPage() {
     const [scrollNavbarLink, setScrollNavbarLink] = useState(0);
     const [isReactBottom, setIsReactBottom] = useState(true);
 
+    const [isHideDescOurPrograms, setIsHideDescOurPrograms] = useState(false)
+
+    const handleSetHiddenOurPrograms = () => {
+        setIsHideDescOurPrograms(prev => !prev)
+    }
+
     useEffect(() => {
         const handleScroll = () => {
             const position = window.scrollY;
@@ -481,13 +487,27 @@ export default function PriorityPage() {
 
                 <section className={"desktop:basis-1/3 mobile:basis-0 desktop:ml-[84px]  z-30 "}>
                     <div
-                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white overflow-hidden desktop:sticky mobile:fixed  desktop:top-[94px] drop-shadow-custom-cards ", isReactBottom ? "mobile:fixed mobile:left-0 desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0")}>
+                        className={clsx("desktop:rounded-[32px] border-[1px] border-[#E3EDFB] bg-white desktop:sticky mobile:fixed  desktop:top-[94px] desktop:drop-shadow-custom-cards mobile:transition-all mobile:duration-300 mobile:drop-shadow-our-programs-cards desktop:h-auto ", isReactBottom ? "mobile:fixed mobile:left-0 desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0",  isHideDescOurPrograms ? "mobile:h-[22px]" : "mobile:h-[300px]")}>
 
-                        <div className={clsx("bg-[#E239141A] py-[8px] desktop:px-8 mobile:px-4 flex items-center ")}>
+                        <div
+                            className={clsx("desktop:hidden mobile:absolute mobile:top-[-12px] mobile:left-[50%] mobile:translate-x-[-50%] mobile:cursor-pointer mobile:flex mobile:items-center mobile:bg-white mobile:my-[4px] mobile:px-4 rounded-[16px] ")}
+                            onTouchMove={handleSetHiddenOurPrograms} onClick={handleSetHiddenOurPrograms}>
+                            <p className={clsx("text-SM/SM-Normal text-[#15345A]", fonts.roboto)}>{isHideDescOurPrograms ? "Show" : "Hide"}</p>
+                            <Image src={"/images/components/responsive/mobile/addons/arrow_down.svg"} alt={"Star"}
+                                   width={20} height={20}
+                                   className={clsx(!isHideDescOurPrograms ? "mobile:block" : "mobile:hidden", "ml-1")}/>
+                            <Image src={"/images/components/responsive/mobile/addons/arrow_up.svg"} alt={"Star"}
+                                   width={20} height={20}
+                                   className={clsx(isHideDescOurPrograms ? "mobile:block" : "mobile:hidden", "ml-1")}/>
+                        </div>
+
+                        <div className={clsx("bg-[#E239141A] py-[8px] desktop:px-8 mobile:px-4 flex items-center desktop:rounded-tl-[32px] desktop:rounded-tr-[32px] ", isHideDescOurPrograms ? "mobile:mt-8" : "mobile:mt-0")}>
                             <Image src={"/images/components/Icon/alert-circle.svg"} alt={"Star"}
                                    width={16} height={16}/>
                             <div className={clsx("ml-[12px]")}>
-                                <p className={clsx(" font-light text-[#E23914] mobile:text-sm desktop:text-base", fonts.inter)}>Harga diskon ini terbatas - <br /> <span className={clsx(" font-bold ")}>Gabung sekarang!</span> </p>
+                                <p className={clsx(" font-light text-[#E23914] mobile:text-sm desktop:text-base", fonts.inter)}>Harga
+                                    diskon ini terbatas - <br/> <span
+                                        className={clsx(" font-bold ")}>Gabung sekarang!</span></p>
                             </div>
                         </div>
                         <div className={clsx("desktop:p-8 mobile:p-4")}>
@@ -501,19 +521,22 @@ export default function PriorityPage() {
                                     <h6 className={clsx(" text-heading-5/2 text-font-description-color ml-1", fonts.roboto)}>5.0</h6>
                                 </div>
                             </div>
-                            <div className={clsx("text-left desktop:block mobile:flex  mobile:justify-between mobile:flex-col mobile:items-stretch ")}>
+                            <div
+                                className={clsx("text-left desktop:block mobile:flex  mobile:justify-between mobile:flex-col mobile:items-stretch ")}>
                                 <div className={clsx("desktop:mb-4 mobile:mb-4")}>
                                     <h1
                                         className={clsx("line-through text-LG/LG-Normal text-font-description-color", fonts.roboto)}> Rp5.000.000 </h1>
                                     <h1 className={clsx(" flex items-center desktop:inline-block ")}><span
-                                        className={clsx(" text-heading-6", "text-[#33568B]")}> rp 1.500.000 </span>  <span
-                                        className={clsx("text-font-description-color text-LG/LG-Normal mobile:inline-block  desktop:ml-2 mobile:ml-2 desktop:hidden ", fonts.roboto)}>/
+                                        className={clsx(" text-heading-6", "text-[#33568B]")}> rp 1.500.000 </span>
+                                        <span
+                                            className={clsx("text-font-description-color text-LG/LG-Normal mobile:inline-block  desktop:ml-2 mobile:ml-2 desktop:hidden ", fonts.roboto)}>/
                                         Yearly</span>
 
 
                                     </h1>
                                     <p
-                                        className={clsx("text-font-description-color text-LG/LG-Normal mobile:hidden desktop:inline-block desktop:ml-2 ", fonts.roboto)}>/ Yearly</p>
+                                        className={clsx("text-font-description-color text-LG/LG-Normal mobile:hidden desktop:inline-block desktop:ml-2 ", fonts.roboto)}>/
+                                        Yearly</p>
                                 </div>
                                 <Button href={telegramLink} text={"Gabung Kelas ini"} noIcon={false}/>
                             </div>
@@ -530,8 +553,8 @@ export default function PriorityPage() {
             <section
                 className={clsx("mt-[80px] pt-8 desktop:px-[120px] mobile:px-8 desktop:pb-[60px] mobile:pb-[30px] relative ")}>
                 <motion.section
-                    initial={{ opacity: 0, translateY: "50px" }}
-                    whileInView={{ opacity: 1, translateY: "0" }}
+                    initial={{opacity: 0, translateY: "50px"}}
+                    whileInView={{opacity: 1, translateY: "0"}}
                     transition={{duration: 10, type: "spring", stiffness: 100, delay: .5}}
                     viewport={{once: true}}
                     className={clsx("text-center relative z-20")}>

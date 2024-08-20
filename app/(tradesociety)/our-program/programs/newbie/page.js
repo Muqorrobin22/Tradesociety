@@ -465,10 +465,16 @@ export default function NewbiePage() {
 
                 <section className={"  desktop:basis-1/3 mobile:basis-0 desktop:ml-[84px]  z-30 "}>
                     <div
-                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white desktop:p-8 mobile:p-4 desktop:sticky mobile:fixed desktop:top-[94px] mobile:transition-all mobile:duration-300 drop-shadow-custom-cards ",   isReactBottom !== "active" ? "mobile:fixed mobile:left-0 desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0 mobile:block", isHideDescOurPrograms ? "mobile:h-[5px]" : "mobile:h-[215px]")}>
+                        className={clsx("desktop:rounded-[32px] border-[1px] border-[#E3EDFB] bg-white desktop:p-8 mobile:p-4 desktop:sticky mobile:fixed desktop:top-[94px] mobile:transition-all mobile:duration-300 desktop:drop-shadow-custom-cards mobile:drop-shadow-our-programs-cards desktop:h-auto ",   isReactBottom !== "active" ? "mobile:fixed mobile:left-0 desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0 mobile:block", isHideDescOurPrograms ? "mobile:h-[5px]" : "mobile:h-[215px]")}>
 
-                        <Image src={"/images/components/responsive/mobile/addons/dropdown_hide_our_programs.svg"} alt={"Star"}
-                               width={56} height={6} className={clsx("desktop:hidden mobile:block mobile:absolute mobile:top-[8px] mobile:left-[50%] mobile:translate-x-[-50%] mobile:cursor-pointer")} onClick={handleSetHiddenOurPrograms}/>
+                        <div
+                               className={clsx("desktop:hidden mobile:absolute mobile:top-[-12px] mobile:left-[50%] mobile:translate-x-[-50%] mobile:cursor-pointer mobile:flex mobile:items-center mobile:bg-white mobile:my-[4px] mobile:px-4 rounded-[16px] ")} onTouchMove={handleSetHiddenOurPrograms} onClick={handleSetHiddenOurPrograms}>
+                            <p className={clsx("text-SM/SM-Normal text-[#15345A]", fonts.roboto)}>{isHideDescOurPrograms ? "Show" : "Hide"}</p>
+                            <Image src={"/images/components/responsive/mobile/addons/arrow_down.svg"} alt={"Star"}
+                                   width={20} height={20} className={clsx(!isHideDescOurPrograms ? "mobile:block" : "mobile:hidden", "ml-1")}/>
+                            <Image src={"/images/components/responsive/mobile/addons/arrow_up.svg"} alt={"Star"}
+                                   width={20} height={20} className={clsx(isHideDescOurPrograms ? "mobile:block" : "mobile:hidden", "ml-1")}/>
+                        </div>
                         <div
                             className={"desktop:pb-[24px] mb-[24px] border-b-[1px] border-[#E3EDFB] flex items-center justify-between"}>
                             <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ", isHideDescOurPrograms ? "mobile:mt-8" : "mobile:mt-0")}>Newbie</h3>

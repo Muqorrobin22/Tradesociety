@@ -35,6 +35,12 @@ export default function FamilyPage() {
     const [scrollNavbarLink, setScrollNavbarLink] = useState(0);
     const [isReactBottom, setIsReactBottom] = useState(true);
 
+    const [isHideDescOurPrograms, setIsHideDescOurPrograms] = useState(false)
+
+    const handleSetHiddenOurPrograms = () => {
+        setIsHideDescOurPrograms(prev => !prev)
+    }
+
     useEffect(() => {
         const handleScroll = () => {
             const position = window.scrollY;
@@ -472,12 +478,23 @@ export default function FamilyPage() {
 
                 <section className={"desktop:basis-1/3 mobile:basis-0 desktop:ml-[84px]  z-30 "}>
                     <div
-                        className={clsx("rounded-[32px] border-[1px] border-[#E3EDFB] bg-white desktop:p-8 mobile:p-4 desktop:sticky mobile:fixed  desktop:top-[94px] drop-shadow-custom-cards ", isReactBottom ? "mobile:fixed mobile:left-0 desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0")}>
+                        className={clsx("desktop:rounded-[32px] mobile:transition-all mobile:duration-300 desktop:h-auto border-[1px] border-[#E3EDFB] bg-white desktop:p-8 mobile:p-4 desktop:sticky mobile:fixed  desktop:top-[94px] desktop:drop-shadow-custom-cards mobile:drop-shadow-our-programs-cards ", isReactBottom ? "mobile:fixed mobile:left-0 desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0", isHideDescOurPrograms ? "mobile:h-[5px]" : "mobile:h-[215px]")}>
 
+                        <div
+                            className={clsx("desktop:hidden mobile:absolute mobile:top-[-12px] mobile:left-[50%] mobile:translate-x-[-50%] mobile:cursor-pointer mobile:flex mobile:items-center mobile:bg-white mobile:my-[4px] mobile:px-4 rounded-[16px] ")}
+                            onTouchMove={handleSetHiddenOurPrograms} onClick={handleSetHiddenOurPrograms}>
+                            <p className={clsx("text-SM/SM-Normal text-[#15345A]", fonts.roboto)}>{isHideDescOurPrograms ? "Show" : "Hide"}</p>
+                            <Image src={"/images/components/responsive/mobile/addons/arrow_down.svg"} alt={"Star"}
+                                   width={20} height={20}
+                                   className={clsx(!isHideDescOurPrograms ? "mobile:block" : "mobile:hidden", "ml-1")}/>
+                            <Image src={"/images/components/responsive/mobile/addons/arrow_up.svg"} alt={"Star"}
+                                   width={20} height={20}
+                                   className={clsx(isHideDescOurPrograms ? "mobile:block" : "mobile:hidden", "ml-1")}/>
+                        </div>
 
                         <div
                             className={"desktop:pb-[24px] mb-[24px] border-b-[1px] border-[#E3EDFB] flex items-center justify-between"}>
-                            <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ")}>Family</h3>
+                            <h3 className={clsx("text-heading-6 text-[#15345A] my-2 ", isHideDescOurPrograms ? "mobile:mt-8" : "mobile:mt-0")}>Family</h3>
                             <div className={"flex items-center"}>
                                 <Image src={"/images/components/Icon/star.svg"} alt={"Star"}
                                        width={24} height={24}/>
@@ -505,8 +522,8 @@ export default function FamilyPage() {
             <section
                 className={clsx("mt-[80px] pt-8 desktop:px-[120px] mobile:px-8 desktop:pb-[60px] mobile:pb-[30px] relative ")}>
                 <motion.section
-                    initial={{ opacity: 0, translateY: "50px" }}
-                    whileInView={{ opacity: 1, translateY: "0" }}
+                    initial={{opacity: 0, translateY: "50px"}}
+                    whileInView={{opacity: 1, translateY: "0"}}
                     transition={{duration: 10, type: "spring", stiffness: 100, delay: .5}}
                     viewport={{once: true}}
                     className={clsx("text-center relative z-20")}>
