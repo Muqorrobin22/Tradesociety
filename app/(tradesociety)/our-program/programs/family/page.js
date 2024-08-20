@@ -482,7 +482,7 @@ export default function FamilyPage() {
 
                         <div
                             className={clsx("desktop:hidden mobile:absolute mobile:top-[-12px] mobile:left-[50%] mobile:translate-x-[-50%] mobile:cursor-pointer mobile:flex mobile:items-center mobile:bg-white mobile:my-[4px] mobile:px-4 rounded-[16px] ")}
-                            onTouchMove={handleSetHiddenOurPrograms} onClick={handleSetHiddenOurPrograms}>
+                            onClick={handleSetHiddenOurPrograms}>
                             <p className={clsx("text-SM/SM-Normal text-[#15345A]", fonts.roboto)}>{isHideDescOurPrograms ? "Show" : "Hide"}</p>
                             <Image src={"/images/components/responsive/mobile/addons/arrow_down.svg"} alt={"Star"}
                                    width={20} height={20}
