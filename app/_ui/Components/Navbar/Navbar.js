@@ -25,6 +25,7 @@ export default function Navbar(props) {
 
     const handleSetIsOpenOurProgram = (data, e) => {
         console.log("our program clicked", e);
+
         if(data.dropdown) {
             e.preventDefault();
             setIsOpen(prev => !prev);
@@ -35,21 +36,27 @@ export default function Navbar(props) {
                 params.set("ref", getCookie("referral"));
                 router.push(`${data.href}?${params.toString()}`);
             }
+            setBurgerOpen(false)
+            setIsOpen(false)
         }
     }
 
     const handleSetChangeUrlOurProgram = (link) => {
+        setBurgerOpen(false)
+        setIsOpen(false)
         router.push(link)
         // router.refresh()
-        window.location.reload()
+        // window.location.reload()
         if(hasCookie("referral")) {
-            window.location.reload()
+            // window.location.reload()
             params.set("ref", getCookie("referral"));
             router.push(`${link}?${params.toString()}`);
         }
     }
 
     const handleSetChangeUrlHomeimage = (link) => {
+        setBurgerOpen(false)
+        setIsOpen(false)
         router.push(link)
         router.refresh()
         if(hasCookie("referral")) {
@@ -235,14 +242,14 @@ export default function Navbar(props) {
                 <ul className={clsx("flex mx-auto flex-col items-start justify-start mobile:p-4 mobile:bg-white rounded-br-[32px] rounded-bl-[32px]  ", burgerOpen ? "mobile:visible" : "mobile:hidden")}>
                     {links.map((link) => (
                         <li key={link.name} className={clsx("[&:not(:first-child)]:mt-6 text-center transition-all ")}>
-                            <a href={link.dropdown ? "#" : link.href}
+                            <button
                                   className={clsx("text-LG/LG-Normal text-[#15345A] hover:border-[1px] hover:border-[#C2DBF5] hover:rounded-[100px] py-2.5 px-4 transition-all flex items-center ", {
                                       "bg-primary-light-color rounded-[100px] py-2.5 px-4": pathname === link.href
                                   }, {
                                       "bg-primary-light-color rounded-[100px] py-2.5 px-4": pathname.includes(link.hrefDetail)
                                   }, fonts.roboto)} onClick={(e) => handleSetIsOpenOurProgram(link, e)}> {link.name} <Image
                                 src={"/images/components/illustration/arrow_down.svg"} alt={"arrow"} width={14}
-                                height={14} className={clsx(link.dropdown ? "visible" : "hidden", "ml-2")}/> </a>
+                                height={14} className={clsx(link.dropdown ? "visible" : "hidden", "ml-2")}/> </button>
                             <div
                                 className={clsx("p-8 pl-4  bg-white rounded-[32px] ", isOpen && link.dropdown  ? "visible" : "hidden")}
                                 onMouseLeave={() => setIsOpen(false)}>
