@@ -490,7 +490,7 @@ export default function PriorityPage() {
                         className={clsx("desktop:rounded-[32px] border-[1px] border-[#E3EDFB] bg-white desktop:sticky mobile:fixed  desktop:top-[94px] desktop:drop-shadow-custom-cards mobile:transition-all mobile:duration-300 mobile:drop-shadow-our-programs-cards desktop:h-auto ", isReactBottom ? "mobile:fixed mobile:left-0 desktop:block" : " mobile:bottom-0 mobile:left-0 mobile:right-0",  isHideDescOurPrograms ? "mobile:h-[22px]" : "mobile:h-[300px]")}>
 
                         <div
-                            className={clsx("desktop:hidden mobile:absolute mobile:top-[-12px] mobile:left-[50%] mobile:translate-x-[-50%] mobile:cursor-pointer mobile:flex mobile:items-center mobile:bg-white mobile:my-[4px] mobile:px-4 rounded-[16px] ")}
+                            className={clsx("desktop:hidden mobile:absolute mobile:top-[-12px] mobile:left-[50%] mobile:translate-x-[-50%] mobile:cursor-pointer mobile:flex mobile:items-center mobile:bg-white mobile:my-[4px] mobile:px-4 rounded-[16px] z-[21] ")}
                            onClick={handleSetHiddenOurPrograms}>
                             <p className={clsx("text-SM/SM-Normal text-[#15345A]", fonts.roboto)}>{isHideDescOurPrograms ? "Show" : "Hide"}</p>
                             <Image src={"/images/components/responsive/mobile/addons/arrow_down.svg"} alt={"Star"}
