@@ -76,9 +76,9 @@ export default function AboutUsPage() {
             <Image src={"/images/components/responsive/mobile/illustration/about_us_hero_2.png"} alt={"about us hero"} width={400} height={300}
                    className={clsx("mobile:absolute mobile:bottom-0 z-[11] desktop:hidden mobile:block w-full mobile:left-0")}/>
 
-            <div className={clsx(" z-[12] desktop:hidden mobile:block mobile:h-auto mobile:w-auto mobile:max-w-[350px] mobile:max-h-[350px] relative mobile:left-[50%] mobile:translate-x-[-50%] mobile:top-[20px]  ")}>
+            <div className={clsx(" z-[14] desktop:hidden mobile:block mobile:h-auto mobile:w-auto mobile:max-w-[350px] mobile:max-h-[350px] relative mobile:left-[50%] mobile:translate-x-[-50%] mobile:top-[20px]  ")}>
                 <img src={"/images/components/illustration/about_us_hero.svg"} alt={""}
-                       className={clsx(" ml-auto z-[12] desktop:hidden mobile:block mobile:w-[100%] ")}/>
+                       className={clsx(" ml-auto z-[14] desktop:hidden mobile:block mobile:w-[100%] ")}/>
             </div>
 
             {/* End: Mobile Version */}
