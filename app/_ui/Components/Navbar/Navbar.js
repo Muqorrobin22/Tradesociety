@@ -111,10 +111,6 @@ export default function Navbar(props) {
     // console.log("search params: ", searchParams.get("ref"))
 
     useEffect(() => {
-        setTelegramLink(GetReferralLinkTelegram(searchParams.get("ref") || getCookie("referral") || ""))
-    }, [searchParams])
-
-    useEffect(() => {
         if(searchParams.has("ref")) {
             setCookie("referral", searchParams.get("ref"));
         } else {
@@ -123,6 +119,10 @@ export default function Navbar(props) {
 
         }
     }, );
+
+    useEffect(() => {
+        setTelegramLink(GetReferralLinkTelegram(searchParams.get("ref") || getCookie("referral") || ""))
+    }, [searchParams])
 
     return (
         <nav className="flex items-center justify-between py-4 desktop:fixed mobile:fixed mobile:z-50 mobile:top-0 mobile:left-[0] mobile:right-[0] mobile:bg-white mobile:border-b-[1px] mobile:border-[#E3EDFB] desktop:px-[120px] mobile:px-[16px] desktop:z-50 desktop:left-0 desktop:right-0 desktop:top-0 ">
