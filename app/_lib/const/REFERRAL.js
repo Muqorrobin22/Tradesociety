@@ -9,7 +9,7 @@ export function GetReferralLinkTelegram(referral) {
             return "https://t.me/DatsFxgold";
         case "DenFX":
             return "https://t.me/DenFXTrade";
-        case "RipFxs":
+        case "RipFXs":
             return "https://t.me/RipFXs";
         case "rasyatrade":
             return "https://t.me/rasyatradefxgold";
