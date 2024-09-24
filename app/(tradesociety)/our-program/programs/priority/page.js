@@ -501,12 +501,12 @@ export default function PriorityPage() {
                                    className={clsx(isHideDescOurPrograms ? "mobile:block" : "mobile:hidden", "ml-1")}/>
                         </div>
 
-                        <div className={clsx("bg-[#E239141A] py-[8px] desktop:px-8 mobile:px-4 flex items-center desktop:rounded-tl-[32px] desktop:rounded-tr-[32px] ", isHideDescOurPrograms ? "mobile:mt-8" : "mobile:mt-0")}>
+                        <div className={clsx("bg-[#E239141A] py-[8px] desktop:px-8 mobile:px-4 flex items-center justify-center desktop:rounded-tl-[32px] desktop:rounded-tr-[32px] ", isHideDescOurPrograms ? "mobile:mt-8" : "mobile:mt-0")}>
                             <Image src={"/images/components/Icon/alert-circle.svg"} alt={"Star"}
                                    width={16} height={16}/>
                             <div className={clsx("ml-[12px]")}>
-                                <p className={clsx(" font-light text-[#E23914] mobile:text-sm desktop:text-base", fonts.inter)}>Harga
-                                    diskon ini terbatas - <br/> <span
+                                <p className={clsx(" font-light text-[#E23914] mobile:text-sm desktop:text-base", fonts.inter)}>
+                                    diskon terbatas - <span
                                         className={clsx(" font-bold ")}>Gabung sekarang!</span></p>
                             </div>
                         </div>
