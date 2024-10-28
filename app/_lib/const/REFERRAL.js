@@ -21,6 +21,12 @@ export function GetReferralLinkTelegram(referral) {
             return "https://t.me/tradeefriendly";
         case "Saylor90":
             return "https://t.me/Saylor90 ";
+        case "Aldy_raja":
+            return "https://t.me/trade_society_channel";
+        case "Satrioutomo":
+            return "https://t.me/cstradesociety";
+        case "MrGhaniy":
+            return "https://t.me/trade_society_channel";
         default:
             return "https://t.me/m/am6DU9LKNDI1";
     }
